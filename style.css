@@ -19,6 +19,11 @@ footer {
   gap: 4rem;
   background: rgb(240, 240, 240);
 }
+
+.footer__paragraph {
+  text-align: center;
+}
+
 .icons__container {
   display: flex;
 }
