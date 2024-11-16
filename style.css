@@ -28,20 +28,23 @@ footer {
   display: flex;
 }
 .icon {
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
   border-radius: 100px;
-  margin: 20px;
+  margin: 10px;
   background: #fff;
   text-align: center;
-  font-size: 50px;
-  line-height: 75px;
+  font-size: 30px;
+  line-height: 50px;
   font-family: sans-serif;
   overflow: hidden;
   box-shadow: 5px 10px 20px rgba(150, 150, 150, 0.3);
   transition: all 3s ease-out;
 }
 
+.socials_name {
+  padding: 10px;
+}
 .icon:hover {
   width: 200px;
   cursor: pointer;
