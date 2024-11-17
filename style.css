@@ -4,6 +4,30 @@
   box-sizing: border-box;
 }
 
+:root {
+  --facebook-color: #1a6de8;
+  --X-twitter-color: #1b1c1e;
+  --instagram-colour: #c13584;
+  --linkedin-colour: #0077b5;
+  --youtube-color: #ff0000;
+  --github-color: #24292e;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.nav__links {
+  display: flex;
+  list-style: none;
+}
+
+.nav__link {
+  margin: 10px;
+  text-decoration: none;
+}
 .logo {
   width: 6rem;
 }
@@ -59,56 +83,56 @@ footer {
 }
 /*Facebook */
 .icon .fa-facebook {
-  color: #1a6de8;
+  color: var(--facebook-color);
 }
 
 .fb:hover {
-  background: #1a6de8;
+  background: var(--facebook-color);
 }
 
 /* Twitter */
 .icon .fa-x-twitter {
-  color: #1b1c1e;
+  color: var(--X-twitter-color);
 }
 
 .x-twt:hover {
-  background: #1b1c1e;
+  background: var(--X-twitter-color);
 }
 
 /* Instagram */
 .icon .fa-instagram {
-  color: #c13584;
+  color: var(--instagram-colour);
 }
 
 .inst:hover {
-  background: #c13584;
+  background: var(--instagram-colour);
 }
 
 /* linkedin*/
 .icon .fa-linkedin-in {
-  color: #0077b5;
+  color: var(--linkedin-colour);
 }
 
 .lnk:hover {
-  background: #0077b5;
+  background: var(--linkedin-colour);
 }
 
 /* Youtube */
 .icon .fa-youtube {
-  color: #ff0000;
+  color: var(--youtube-color);
 }
 
 .ytb:hover {
-  background: #ff0000;
+  background: var(--youtube-color);
 }
 
 /* Git hub */
 .icon .fa-github {
-  color: #24292e;
+  color: var(--github-color);
 }
 
 .git:hover {
-  background: #24292e;
+  background: var(--github-color);
 }
 
 img {
