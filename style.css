@@ -22,9 +22,6 @@ header {
 
   border-bottom: 1px solid var(--pure-white);
   box-shadow: 5px 10px 20px rgba(150, 150, 150);
-
-  /* border-bottom: 5px;
-  border-color: var(--github-color); */
 }
 
 nav {
@@ -47,11 +44,15 @@ nav {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 16px;
+
+  color: var(--linkedin-colour);
+  transition: transform 0.3s ease-in;
+  transition-duration: 0.5s;
 }
-/* .logo {
-  max-width: 400px;
-  max-height: 4rem;
-} */
+
+.nav__link:hover {
+  font-size: 20px;
+}
 
 .login__button {
   padding: 10px;
@@ -71,7 +72,73 @@ img {
 
 #section--1 {
   height: 100vh;
-  padding-top: 40px;
+  padding-top: 20vh;
+  padding-left: 10px;
+  margin: 10px;
+  position: relative;
+
+  display: flex;
+  background-image: linear-gradient(
+    to bottom right,
+    var(--linkedin-colour) 50%,
+    var(--pure-white) 50%
+  );
+
+  box-shadow: 5px 10px 20px rgba(150, 150, 150);
+
+  /* background-image: linear-gradient(
+      to top left,
+      transparent 50%,
+      var(--linkedin-colour) 50%
+    ),
+    url("img/myoelectric_prosthetic_hand.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;  */
+}
+
+.welcome__header {
+  color: var(--pure-white);
+  display: flex;
+  align-items: center;
+  padding-left: 3rem;
+  font-size: 50px;
+}
+
+.welcome__paragraph {
+  /* margin-top: 20%; */
+  padding-top: 5%;
+  padding-left: 3rem;
+  padding-bottom: 50%;
+  width: 50%;
+
+  font-size: large;
+  color: #ebeaff;
+  grid-row: 2/3;
+  align-content: center;
+  overflow: hidden;
+}
+
+.welcome__image {
+  width: 50%;
+  position: absolute;
+  bottom: 50px;
+  right: 20px;
+  border-radius: 20px;
+  /* border: var(--pure-white); */
+  box-shadow: 5px 10px 20px rgba(150, 150, 150);
+  /* margin-right: 40px; */
+}
+
+.About__us--container {
+  margin-top: 100px;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+.write-us--container {
+  width: 50%;
 }
 footer {
   width: 100%;
