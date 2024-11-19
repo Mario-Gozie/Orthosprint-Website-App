@@ -16,6 +16,8 @@
   --pure-white: #fff;
 }
 
+/* HEADER/NAV SECTION */
+
 header {
   background: rgb(240, 240, 240);
   --pure-white: #fff;
@@ -106,7 +108,6 @@ img {
 }
 
 .welcome__paragraph {
-  /* margin-top: 20%; */
   padding-top: 5%;
   padding-left: 3rem;
   padding-bottom: 50%;
@@ -122,31 +123,34 @@ img {
 .welcome__image {
   width: 50%;
   position: absolute;
-  bottom: 50px;
-  right: 20px;
+
+  bottom: 10%;
+  right: 5%;
   border-radius: 20px;
   /* border: var(--pure-white); */
   box-shadow: 5px 10px 20px rgba(150, 150, 150);
   /* margin-right: 40px; */
 }
 
+/* ABOUT US SECTION */
 #section--2 {
-  background: linear-gradient(
+  /* background: linear-gradient(
     to bottom,
     var(--linkedin-colour) 30%,
     var(--pure-white) 70%
-  );
+  ); */
   box-shadow: 5px 10px 20px rgba(150, 150, 150);
   margin: 10px;
 }
 
-.About__us--container {
-  padding-top: 10%;
+.about__us--container {
+  /* padding-top: 10%; */
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   height: 100vh;
+  position: relative;
 }
 
 .write-us--container {
@@ -156,15 +160,66 @@ img {
 /* .about_us-header {
   color: var(--linkedin-colour);
 } */
-
+.about_us-header {
+  background-color: var(--linkedin-colour);
+  width: 100%;
+  height: 30vh;
+  padding-top: 100px;
+}
 .about__us-heading {
   text-align: center;
+  color: var(--pure-white);
+}
 
-  padding-bottom: 200px;
+.about__us-paragraph {
+  padding-top: 200px;
 }
 
 .about__us-img {
-  color: red;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%); /* This moves the object 50% back of it's size*/
+  border: var(--pure-white) 5px;
+  border-radius: 5px;
+  box-shadow: 5px 10px 20px rgba(150, 150, 150);
+}
+
+/* OUR PRODUCT SECTION */
+
+.products {
+  background: linear-gradient(
+    to right,
+    var(--linkedin-colour) 50%,
+    rgb(240, 240, 240) 50%
+  );
+}
+
+.section__title {
+  padding-top: 100px;
+  text-align: center;
+}
+.button__container {
+  display: flex;
+  padding-top: 100px;
+  justify-content: space-evenly;
+}
+
+.btn {
+  padding: 10px;
+  border-radius: 10px;
+  width: 15%;
+}
+
+span {
+  padding: 10px;
+}
+/* FOOTER SECTION */
+
+#Section--3 {
+  margin: 10px;
+  box-shadow: 5px 10px 20px rgba(150, 150, 150);
+  height: 100vh;
 }
 
 footer {
