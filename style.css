@@ -14,8 +14,13 @@
   --youtube-color: #ff0000;
   --github-color: #24292e;
   --pure-white: #fff;
+  --sea-green: #0dffb7;
+  --border-shadow: rgba(150, 150, 150);
 }
 
+.section__header {
+  text-align: center;
+}
 /* HEADER/NAV SECTION */
 
 header {
@@ -23,7 +28,7 @@ header {
   --pure-white: #fff;
 
   border-bottom: 1px solid var(--pure-white);
-  box-shadow: 5px 10px 20px rgba(150, 150, 150);
+  box-shadow: 5px 10px 20px var(--border-shadow);
 }
 
 nav {
@@ -54,11 +59,11 @@ nav {
 
 .nav__link:hover {
   padding: 10px;
-  border: var(--pure-white);
+  border: 2px solid var(--sea-green);
   background: var(--linkedin-colour);
   border-radius: 200px;
   color: var(--pure-white);
-  box-shadow: 5px 10px 20px rgba(150, 150, 150);
+  box-shadow: 5px 10px 20px var(--border-shadow);
   font-size: 20px;
 }
 
@@ -72,7 +77,7 @@ nav {
   height: 50px;
   text-align: center;
   border: var(--pure-white);
-  box-shadow: 5px 10px 20px rgba(150, 150, 150);
+  box-shadow: 5px 10px 20px var(--border-shadow);
 }
 img {
   width: 300px;
@@ -92,7 +97,7 @@ img {
     var(--pure-white) 50%
   );
 
-  box-shadow: 5px 10px 20px rgba(150, 150, 150);
+  box-shadow: 5px 10px 20px var(--border-shadow);
 
   /* background-image: linear-gradient(
       to top left,
@@ -129,12 +134,12 @@ img {
 .welcome__image {
   width: 50%;
   position: absolute;
-
+  border: var(--pure-white) solid 5px;
   bottom: 10%;
   right: 5%;
   border-radius: 20px;
   /* border: var(--pure-white); */
-  box-shadow: 5px 10px 20px rgba(150, 150, 150);
+  box-shadow: 5px 10px 20px var(--border-shadow);
   /* margin-right: 40px; */
 }
 
@@ -145,7 +150,7 @@ img {
     var(--linkedin-colour) 30%,
     var(--pure-white) 70%
   ); */
-  box-shadow: 5px 10px 20px rgba(150, 150, 150);
+  box-shadow: 5px 10px 20px var(--border-shadow);
   margin: 10px;
 }
 
@@ -186,9 +191,9 @@ img {
   top: 20%;
   left: 50%;
   transform: translate(-50%); /* This moves the object 50% back of it's size*/
-  border: var(--pure-white) 5px;
+  border: var(--pure-white) solid 5px;
   border-radius: 5px;
-  box-shadow: 5px 10px 20px rgba(150, 150, 150);
+  box-shadow: 5px 10px 20px var(--border-shadow);
 }
 
 /* OUR PRODUCT SECTION */
@@ -225,6 +230,26 @@ img {
 span {
   padding-right: 10px;
 }
+
+.service {
+  display: none;
+}
+
+.services__description {
+  display: flex;
+  justify-self: center;
+  width: 80%;
+  margin-top: 6rem;
+  border: var(--pure-white) solid 5px;
+  border-radius: 20px;
+  background: red;
+
+  box-shadow: 5px 10px 20px rgba(150, 150, 150);
+}
+
+.service__active {
+  display: flex;
+}
 /* FOOTER SECTION */
 
 #Section--3 {
@@ -243,10 +268,6 @@ footer {
   justify-content: center;
   gap: 4rem;
   background: rgb(240, 240, 240);
-}
-
-.footer__paragraph {
-  text-align: center;
 }
 
 .icons__container {
