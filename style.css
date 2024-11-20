@@ -198,6 +198,12 @@ img {
 
 /* OUR PRODUCT SECTION */
 
+#Section--3 {
+  margin: 10px;
+  box-shadow: 5px 10px 20px rgba(150, 150, 150);
+  height: 100vh;
+}
+
 .services {
   margin: 10px;
   background: linear-gradient(to bottom right, white, lightblue);
@@ -269,13 +275,12 @@ span {
 .description {
   padding-left: 4rem;
 }
-/* FOOTER SECTION */
 
-#Section--3 {
-  margin: 10px;
-  box-shadow: 5px 10px 20px rgba(150, 150, 150);
+#Section--4 {
   height: 100vh;
 }
+
+/* FOOTER SECTION */
 
 footer {
   width: 100%;
