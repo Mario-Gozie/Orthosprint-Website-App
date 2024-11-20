@@ -199,12 +199,15 @@ img {
 /* OUR PRODUCT SECTION */
 
 .services {
-  background: linear-gradient(
+  margin: 10px;
+  background: linear-gradient(to bottom right, white, lightblue);
+  /* background: linear-gradient(
     to right,
     var(--linkedin-colour) 50%,
     rgb(240, 240, 240) 50%
-  );
+  ); */
   position: relative;
+  height: 100vh;
 }
 
 .section__title {
@@ -236,19 +239,35 @@ span {
 }
 
 .services__description {
+  padding: 100px;
+  max-height: 600px;
   display: flex;
   justify-self: center;
   width: 80%;
   margin-top: 6rem;
-  border: var(--pure-white) solid 5px;
+  background: var(--pure-white);
+  border: var(--sea-green) solid 5px;
   border-radius: 20px;
-  background: red;
-
-  box-shadow: 5px 10px 20px rgba(150, 150, 150);
+  /* background: linear-gradient(to bottom right, white, lightblue); */
+  /* background: linear-gradient(
+    to right,
+    rgb(240, 240, 240) 50%,
+    var(--linkedin-colour) 50%
+  );
+  box-shadow: 5px 10px 20px rgba(150, 150, 150); */
 }
 
 .service__active {
   display: flex;
+}
+
+.service_description {
+  width: 60%;
+  align-self: center;
+}
+
+.description {
+  padding-left: 4rem;
 }
 /* FOOTER SECTION */
 
