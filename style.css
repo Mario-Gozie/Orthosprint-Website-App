@@ -15,6 +15,7 @@
   --github-color: #24292e;
   --pure-white: #fff;
   --sea-green: #0dffb7;
+  --brown-color: #f4a460;
   --border-shadow: rgba(150, 150, 150);
 }
 
@@ -59,7 +60,7 @@ nav {
 
 .nav__link:hover {
   padding: 10px;
-  border: 2px solid var(--sea-green);
+  border: 2px solid var(--brown-color);
   background: var(--linkedin-colour);
   border-radius: 200px;
   color: var(--pure-white);
@@ -210,7 +211,7 @@ img {
 
 .services {
   margin: 10px;
-  background: linear-gradient(to bottom right, white, lightblue);
+  background: linear-gradient(to bottom right, white, lightblue, #f4a460);
   /* background: linear-gradient(
     to right,
     var(--linkedin-colour) 50%,
@@ -240,6 +241,18 @@ img {
   font-size: large;
 }
 
+.btn__product--1 {
+  background-color: var(--instagram-colour);
+  border: none;
+}
+.btn__product--2 {
+  background-color: var(--brown-color);
+  border: none;
+}
+.btn__product--3 {
+  background-color: var(--linkedin-colour);
+  border: none;
+}
 span {
   padding-right: 10px;
 }
@@ -256,7 +269,7 @@ span {
   width: 80%;
   margin-top: 6rem;
   background: var(--pure-white);
-  border: var(--sea-green) solid 5px;
+
   border-radius: 20px;
   /* background: linear-gradient(to bottom right, white, lightblue); */
   /* background: linear-gradient(
@@ -341,19 +354,21 @@ span {
   grid-column: 2/3;
   grid-row: 1/2;
   padding: 0 3rem;
+  width: 100%;
 }
 
 .vision {
   grid-column: 2/3;
   grid-row: 2/3;
   padding: 0 3rem;
-  background: #f4a460;
+  background: var(--brown-color);
 }
 
 .vision_image {
   grid-column: 1/2;
   grid-row: 2/3;
   padding: 5rem 3rem;
+  width: 100%;
 }
 
 /* FOOTER SECTION */
@@ -377,7 +392,7 @@ footer {
 form {
   display: flex;
   flex-direction: column;
-  border: #0dffb7 solid 5px;
+  border: var(--brown-color) solid 5px;
   background: var(--pure-white);
   padding: 0.5rem 4rem;
   border-radius: 15px;
@@ -405,6 +420,7 @@ form button {
   padding: 1rem;
   margin: 1rem;
 }
+
 .icon {
   width: 50px;
   height: 50px;
