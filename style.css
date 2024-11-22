@@ -111,6 +111,7 @@ img {
 }
 
 .welcome__header {
+  /* color: linear-gradient(45deg, var(--instagram-colour), #e3c099); */
   color: var(--pure-white);
   display: flex;
   align-items: center;
@@ -284,13 +285,66 @@ span {
 
 #Section--5 {
   height: 100vh;
+  margin: 10px;
+  background: linear-gradient(
+    to right,
+    var(--linkedin-colour) 50%,
+    rgb(240, 240, 240) 50%
+  );
+  box-shadow: 5px 10px 20px rgba(150, 150, 150);
+}
+
+.custom-shape-divider-bottom-1732230590 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1732230590 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 95px;
+}
+
+.custom-shape-divider-bottom-1732230590 .shape-fill {
+  fill: #ffffff;
 }
 
 /* MISSION AND VISION SECTION */
 
 #Section--6 {
   height: 100vh;
+  margin: 10px;
+  box-shadow: 5px 10px 20px rgba(150, 150, 150);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
 }
+
+.mission_img {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+
+.mission_write_up {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+.vision_write_up {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+.vision_img {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
 /* FOOTER SECTION */
 
 footer {
