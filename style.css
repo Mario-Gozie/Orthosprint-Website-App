@@ -296,36 +296,44 @@ span {
 
 /* MISSION AND VISION SECTION */
 
-#Section--6 {
-  height: 100vh;
+.mission__vision {
   margin: 10px;
+  background-color: #0dffb7;
+  height: 100vh;
   box-shadow: 5px 10px 20px rgba(150, 150, 150);
 }
-#section--6 .mission_vision_container {
-  /* padding: 10px; */
-  width: 100%;
-  height: 100%;
-  color: var(--sea-green);
-}
-/* .mission_img {
-  width: 50%;
-  grid-column: 2/3;
-  grid-row: 1/2;
+
+.mission__vision .mission__vision__wrapper {
+  height: 50%;
+  background-color: red;
+  height: 100vh;
+  width: 80%;
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 4px;
 }
 
-.mission_write_up {
+.mission {
   grid-column: 1/2;
   grid-row: 1/2;
 }
 
-.vision_write_up {
+.mission_img {
   grid-column: 2/3;
   grid-row: 1/2;
 }
-.vision_img {
+
+.vision {
   grid-column: 2/3;
   grid-row: 2/3;
-} */
+}
+
+.vision_image {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
 
 /* FOOTER SECTION */
 
