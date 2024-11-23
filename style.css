@@ -350,11 +350,11 @@ span {
   background: var(--linkedin-colour);
 }
 
-.mission_image {
+.mission__image {
   grid-column: 2/3;
   grid-row: 1/2;
-  padding: 0 3rem;
-  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .vision {
@@ -364,11 +364,16 @@ span {
   background: var(--brown-color);
 }
 
-.vision_image {
+.vision__image {
   grid-column: 1/2;
   grid-row: 2/3;
-  padding: 5rem 3rem;
-  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* width: 100%; */
+}
+
+.actual_image {
+  align-self: center;
 }
 
 /* FOOTER SECTION */
@@ -405,11 +410,16 @@ form input {
 }
 
 form textarea {
-  padding: 4rem;
+  width: 100%;
+  min-height: 5rem;
 }
 
 form .form__header {
   padding: 2rem;
+}
+
+form h4 {
+  padding: 15px 0;
 }
 
 .icons__container {
@@ -418,7 +428,9 @@ form .form__header {
 
 form button {
   padding: 1rem;
-  margin: 1rem;
+  margin: 1rem 0;
+  border-radius: 10px;
+  width: 40%;
 }
 
 .icon {
