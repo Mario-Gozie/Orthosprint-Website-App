@@ -17,6 +17,8 @@
   --sea-green: #0dffb7;
   --brown-color: #f4a460;
   --border-shadow: rgba(150, 150, 150);
+  --background--light--blue: #3498db;
+  --background--dark--blue: #2c3e50;
 }
 
 .section__header {
@@ -99,20 +101,9 @@ img {
   );
 
   box-shadow: 5px 10px 20px var(--border-shadow);
-
-  /* background-image: linear-gradient(
-      to top left,
-      transparent 50%,
-      var(--linkedin-colour) 50%
-    ),
-    url("img/myoelectric_prosthetic_hand.jpeg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;  */
 }
 
 .welcome__header {
-  /* color: linear-gradient(45deg, var(--instagram-colour), #e3c099); */
   color: var(--pure-white);
   display: flex;
   align-items: center;
@@ -212,11 +203,6 @@ img {
 .services {
   margin: 10px;
   background: linear-gradient(to bottom right, white, lightblue, #f4a460);
-  /* background: linear-gradient(
-    to right,
-    var(--linkedin-colour) 50%,
-    rgb(240, 240, 240) 50%
-  ); */
   position: relative;
   height: 100vh;
 }
@@ -271,13 +257,6 @@ span {
   background: var(--pure-white);
 
   border-radius: 20px;
-  /* background: linear-gradient(to bottom right, white, lightblue); */
-  /* background: linear-gradient(
-    to right,
-    rgb(240, 240, 240) 50%,
-    var(--linkedin-colour) 50%
-  );
-  box-shadow: 5px 10px 20px rgba(150, 150, 150); */
 }
 
 .service__active {
@@ -303,8 +282,6 @@ span {
   height: 100vh;
   margin: 10px;
   box-shadow: 5px 10px 20px rgba(150, 150, 150);
-  /* display: flex;
-  flex-direction: column; */
 }
 
 .founder {
@@ -313,6 +290,11 @@ span {
   flex-direction: column;
   padding: 4rem;
   align-items: center;
+  background: linear-gradient(
+    135deg,
+    var(--background--dark--blue) 0%,
+    var(--background--light--blue) 100%
+  );
 }
 
 .founder__picture--container {
