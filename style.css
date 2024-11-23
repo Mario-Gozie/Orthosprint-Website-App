@@ -302,14 +302,23 @@ span {
 #Section--5 {
   height: 100vh;
   margin: 10px;
-  background: linear-gradient(
-    to right,
-    var(--linkedin-colour) 50%,
-    rgb(240, 240, 240) 50%
-  );
   box-shadow: 5px 10px 20px rgba(150, 150, 150);
+  /* display: flex;
+  flex-direction: column; */
 }
 
+.founder {
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  padding: 4rem;
+  align-items: center;
+}
+
+.founder__picture--container {
+  max-width: 200px;
+  max-height: 200px;
+}
 /* MISSION AND VISION SECTION */
 
 .mission__vision {
