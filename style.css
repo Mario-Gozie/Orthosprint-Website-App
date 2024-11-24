@@ -202,7 +202,12 @@ img {
 
 .services {
   margin: 10px;
-  background: linear-gradient(to bottom right, white, lightblue, #f4a460);
+  background: linear-gradient(
+    135deg,
+    var(--background--dark--blue) 0%,
+    var(--background--light--blue) 100%
+  );
+
   position: relative;
   height: 100vh;
 }
@@ -282,24 +287,48 @@ span {
   height: 100vh;
   margin: 10px;
   box-shadow: 5px 10px 20px rgba(150, 150, 150);
+  border-radius: 15px;
 }
 
 .founder {
   height: 30vh;
   display: flex;
   flex-direction: column;
-  padding: 4rem;
+  top: 50px;
+  padding: 1rem;
   align-items: center;
   background: linear-gradient(
     135deg,
     var(--background--dark--blue) 0%,
     var(--background--light--blue) 100%
   );
+  border-radius: 15px;
 }
 
 .founder__picture--container {
-  max-width: 200px;
-  max-height: 200px;
+  width: 200px;
+  height: 12rem;
+  position: relative;
+  overflow: hidden;
+  border: 5px solid var(--pure-white);
+  border-radius: 50%;
+  /* background-image: url("img/Chigozirim\ Oguedoihu's\ picture.jpg");
+  background-position: center;
+  background-size: cover; */
+}
+
+.founder__name {
+  padding-top: 1rem;
+  color: var(--pure-white);
+}
+.founder__role {
+  padding-top: 0.5rem;
+  color: var(--pure-white);
+}
+.founder__actual--image {
+  width: inherit;
+  position: absolute;
+  object-fit: contain;
 }
 /* MISSION AND VISION SECTION */
 
