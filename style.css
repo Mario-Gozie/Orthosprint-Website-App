@@ -331,6 +331,16 @@ span {
   object-fit: contain;
 }
 
+.details__buttons {
+  padding: 4rem 6rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.details {
+  padding: 0rem 6rem;
+}
+
 .detail {
   display: none;
 }
