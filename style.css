@@ -312,9 +312,6 @@ span {
   overflow: hidden;
   border: 5px solid var(--pure-white);
   border-radius: 50%;
-  /* background-image: url("img/Chigozirim\ Oguedoihu's\ picture.jpg");
-  background-position: center;
-  background-size: cover; */
 }
 
 .founder__name {
@@ -346,7 +343,10 @@ span {
 }
 
 .details {
-  padding: 5rem 30rem;
+  margin: 0 20rem;
+  padding: 10rem 5rem;
+  border-radius: 20px;
+  border: solid rebeccapurple 2px;
 }
 
 .detail {
