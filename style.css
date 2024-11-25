@@ -338,13 +338,16 @@ span {
 .detail__button {
   padding: 1rem;
   width: 10rem;
+  border: none;
   border-radius: 3rem;
   margin: 20px;
+  background: var(--background--light--blue);
+  color: var(--pure-white);
 }
 
 .details {
   margin: 0 20rem;
-  padding: 10rem 5rem;
+  padding: 5rem 5rem;
   border-radius: 20px;
   border: solid rebeccapurple 2px;
 }
@@ -353,9 +356,14 @@ span {
   display: none;
 }
 
+.detail h3 {
+  padding-bottom: 2rem;
+}
+
 .detail__active {
   display: block;
 }
+
 /* MISSION AND VISION SECTION */
 
 .mission__vision {
