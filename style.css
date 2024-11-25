@@ -337,6 +337,11 @@ span {
   justify-content: space-between;
 }
 
+.detail__button {
+  padding: 1.5rem;
+  border-radius: 3rem;
+}
+
 .details {
   padding: 0rem 6rem;
 }
