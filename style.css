@@ -330,6 +330,14 @@ span {
   position: absolute;
   object-fit: contain;
 }
+
+.detail {
+  display: none;
+}
+
+.detail__active {
+  display: block;
+}
 /* MISSION AND VISION SECTION */
 
 .mission__vision {
