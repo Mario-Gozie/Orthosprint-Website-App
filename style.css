@@ -295,6 +295,25 @@ span {
   grid-template-rows: 90% 5%;
 }
 
+.slider__btn--left {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+.slider__btn--right {
+  grid-column: 3/4;
+  grid-row: 1/2;
+}
+
+.slider {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+
+.switch_dots {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
 /* FOUNDER SECTION */
 
 #Section--5 {
