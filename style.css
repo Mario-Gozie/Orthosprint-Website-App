@@ -281,6 +281,20 @@ span {
   height: 100vh;
 }
 
+/* TESTIMONIES */
+
+#Section--4 {
+  display: grid;
+  grid-template-rows: 0.5fr 6fr;
+}
+
+.Testimonies_container {
+  padding: 4rem;
+  display: grid;
+  grid-template-columns: 5%, 90% 5%;
+  grid-template-rows: 90% 5%;
+}
+
 /* FOUNDER SECTION */
 
 #Section--5 {
