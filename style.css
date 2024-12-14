@@ -317,6 +317,7 @@ span {
 .founder__name {
   padding-top: 1rem;
   color: var(--pure-white);
+  letter-spacing: 2px;
 }
 .founder__role {
   padding-top: 0.5rem;
@@ -330,7 +331,7 @@ span {
 
 .details__buttons {
   margin: 0 10rem;
-  /* padding: 4rem 10rem; */
+
   display: flex;
   justify-content: center;
 }
