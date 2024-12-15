@@ -285,6 +285,13 @@ span {
   grid-template-rows: 0.5fr 6fr;
 }
 
+.Testimonies_header {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  padding: 100px 0;
+}
+
 .Testimonies_container {
   padding: 4rem;
   display: grid;
