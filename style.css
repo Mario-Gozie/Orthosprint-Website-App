@@ -162,9 +162,6 @@ img {
   width: 50%;
 }
 
-/* .about_us-header {
-  color: var(--linkedin-colour);
-} */
 .about_us-header {
   background-color: var(--linkedin-colour);
   width: 100%;
@@ -291,8 +288,8 @@ span {
 .Testimonies_container {
   padding: 4rem;
   display: grid;
-  grid-template-columns: 5%, 90% 5%;
-  grid-template-rows: 90% 5%;
+  grid-template-columns: 10% 80% 10%;
+  grid-template-rows: 90% 10%;
 }
 
 .slider__btn--left {
@@ -313,7 +310,25 @@ span {
 .switch_dots {
   grid-column: 2/3;
   grid-row: 2/3;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
+
+.switch_dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.switch_dot:hover {
+  background-color: #888; /* Slightly darker on hover */
+}
+
 /* FOUNDER SECTION */
 
 #Section--5 {
