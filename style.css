@@ -363,10 +363,28 @@ span {
 
 .sliders {
   display: flex;
+  overflow: hidden;
+  gap: 50px;
 }
 
 .slider {
+  padding: 50% 40px;
   min-width: 100%;
+}
+
+.slider__btn--left {
+  position: absolute;
+  /* left: 5%; */
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.slider__btn--right {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+
+  transform: translate(-50%, -50%);
 }
 
 /* .slider__btn--left {
