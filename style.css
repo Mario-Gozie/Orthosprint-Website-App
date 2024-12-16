@@ -397,7 +397,12 @@ span {
   top: 30%;
   transform: translate(-50%, -50%);
 }
-
+blockquote {
+  font-style: italic;
+  border-left: 2px solid #ccc;
+  padding-left: 10px;
+  margin: 20px 0;
+}
 .slider__btn--right {
   position: absolute;
   top: 30%;
