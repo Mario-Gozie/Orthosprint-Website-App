@@ -353,36 +353,44 @@ span {
 #Section--4 {
   display: grid;
   grid-template-rows: 0.5fr 6fr;
+  /* height: 100vh; */
+}
+
+.Testimonies_header_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 100px;
 }
 
 .Testimonies_container {
-  width: 80%;
   position: relative;
   justify-self: center;
 }
 
 .sliders {
   display: flex;
+  /* height: 80vh; */
   overflow: hidden;
   gap: 50px;
 }
 
 .slider {
-  padding: 50% 40px;
+  padding: 100px 100px;
   min-width: 100%;
 }
 
 .slider__btn--left {
   position: absolute;
-  /* left: 5%; */
-  top: 50%;
+  left: 5%;
+  top: 20%;
   transform: translate(-50%, -50%);
 }
 
 .slider__btn--right {
   position: absolute;
-  top: 50%;
-  left: 100%;
+  top: 20%;
+  left: 95%;
 
   transform: translate(-50%, -50%);
 }
