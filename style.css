@@ -449,6 +449,18 @@ blockquote {
 
 /* FOUNDER SECTION */
 
+#Section--5 {
+  padding: 10px;
+  background-color: #e9f5ff;
+}
+
+#Section--5 main {
+  background-color: var(--pure-white);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
 /* #Section--5 {
   height: 100vh;
   margin: 10px;
