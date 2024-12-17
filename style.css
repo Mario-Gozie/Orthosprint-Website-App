@@ -138,18 +138,12 @@ img {
 
 /* ABOUT US SECTION */
 #section--2 {
-  /* background: linear-gradient(
-    to bottom,
-    var(--linkedin-colour) 30%,
-    var(--pure-white) 70%
-  ); */
   border-radius: 15px;
   box-shadow: 5px 10px 20px var(--border-shadow);
   margin: 10px;
 }
 
 .about__us--container {
-  /* padding-top: 10%; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -199,11 +193,7 @@ img {
 
 .services {
   margin: 10px;
-  background: linear-gradient(
-    135deg,
-    var(--background--dark--blue) 0%,
-    var(--background--light--blue) 100%
-  );
+  background-color: #e0e0e0;
 
   position: relative;
   height: 100vh;
@@ -257,12 +247,24 @@ span {
   width: 80%;
   margin-top: 6rem;
   background: var(--pure-white);
-
   border-radius: 20px;
+  box-shadow: 5px 10px 20px rgba(150, 150, 150);
+}
+
+.service .image_container {
+  min-width: 250px;
+  min-height: 250px;
+  border-right: #e0e0e0 solid 5px;
+}
+
+.service_image {
+  width: 100%;
+  object-fit: cover;
 }
 
 .service__active {
   display: flex;
+  gap: 50px;
 }
 
 .service_description {
@@ -274,12 +276,12 @@ span {
   padding-left: 4rem;
 }
 
+/* TESTIMONIES */
+
 #Section--4 {
   padding: 0 20%;
   height: 100vh;
 }
-
-/* TESTIMONIES */
 
 .section_header-container {
   width: 100%;
@@ -299,9 +301,20 @@ span {
 }
 
 .Testimonies {
+  width: 100%;
+  display: flex;
+  gap: 50px;
   background-color: #ccc;
   position: relative;
   padding: 5% 10%;
+}
+.Testimony {
+  min-width: 100%;
+  display: none;
+}
+
+.Testimony_active {
+  display: flex;
 }
 
 .sliders {
@@ -354,7 +367,7 @@ blockquote {
   quotes: "" " " "";
   font-style: italic;
   padding: 0 40px;
-  padding-bottom: 20px;
+  padding-bottom: 35px;
   padding-top: 40px;
   margin: 20px 0;
   position: relative;
@@ -436,7 +449,7 @@ blockquote {
 
 /* FOUNDER SECTION */
 
-#Section--5 {
+/* #Section--5 {
   height: 100vh;
   margin: 10px;
   box-shadow: 5px 10px 20px rgba(150, 150, 150);
@@ -516,7 +529,7 @@ blockquote {
 
 .detail__active {
   display: block;
-}
+} */
 
 /* MISSION AND VISION SECTION */
 

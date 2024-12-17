@@ -116,7 +116,11 @@
       <div class="services__description">
         <div class="service prosthetic__service service__active">
           <div class="image_container">
-            <img src="img/prosthesis.png" alt="Prosthetic product" />
+            <img
+              class="service_image"
+              src="img/prosthesis.png"
+              alt="Prosthetic product"
+            />
           </div>
           <div class="service_description">
             <p class="description prosthetic__description">
@@ -137,7 +141,11 @@
 
         <div class="service orthotic__service">
           <div class="image_container">
-            <img src="img/orthosis.png" alt="Orthotic product" />
+            <img
+              class="service_image"
+              src="img/orthosis.png"
+              alt="Orthotic product"
+            />
           </div>
           <div class="service_description">
             <p class="description orthotic__description">
@@ -158,7 +166,11 @@
 
         <div class="service maintenance__service">
           <div class="image_container">
-            <img src="img/maintenance.png" alt="Orthotic product" />
+            <img
+              class="service_image"
+              src="img/maintenance.png"
+              alt="Orthotic product"
+            />
           </div>
           <div class="service_description">
             <p class="description maintenance__description">
@@ -186,7 +198,7 @@
       <div class="Testimonies">
         <button class="slider__btn slider__btn--left">&larr;</button>
         <button class="slider__btn slider__btn--right">&rarr;</button>
-        <div class="Testimony">
+        <div class="Testimony Testimony_active">
           <h1 class="Testimony__header">Transformed My Athletic Journey</h1>
           <blockquote>
             After losing my leg in a motorcycle accident, I never thought I'd
@@ -209,6 +221,78 @@
             </div>
           </address>
         </div>
+        <div class="Testimony">
+          <h1 class="Testimony__header">Life-Changing Comfort</h1>
+          <blockquote>
+            The custom ankle-foot orthosis they designed for my daughter's
+            cerebral palsy has made an incredible difference. She walks more
+            confidently now, and for the first time, she can participate in
+            dance classes with her friends. Their attention to detail and care
+            for children is outstanding.
+          </blockquote>
+          <hr />
+          <address class="Testifier">
+            <div class="image_container">
+              <img
+                class="client_imgae"
+                src="img/Emma.jpeg"
+                alt="Marcus image"
+              />
+            </div>
+            <div class="Testifier_detail">
+              <h6 class="Testifier__name">Sarah O'Connor</h6>
+              <p class="Testifier__profession">Mother of Emma, age 8</p>
+            </div>
+          </address>
+        </div>
+        <div class="Testimony">
+          <h1 class="Testimony__header">Back to Work with Confidence</h1>
+          <blockquote>
+            The custom ankle-foot orthosis they designed for my daughter's
+            cerebral palsy has made an incredible difference. She walks more
+            confidently now, and for the first time, she can participate in
+            dance classes with her friends. Their attention to detail and care
+            for children is outstanding.
+          </blockquote>
+          <hr />
+          <address class="Testifier">
+            <div class="image_container">
+              <img
+                class="client_imgae"
+                src="img/James.jpeg"
+                alt="Marcus image"
+              />
+            </div>
+            <div class="Testifier_detail">
+              <h6 class="Testifier__name">James Rodriguez</h6>
+              <p class="Testifier__profession">Construction Supervisor</p>
+            </div>
+          </address>
+        </div>
+        <div class="Testimony">
+          <h1 class="Testimony__header">A Perfect Fit for Active Living</h1>
+          <blockquote>
+            The spinal orthosis they designed for my scoliosis is so comfortable
+            that I sometimes forget I'm wearing it. Unlike my previous braces,
+            this one allows me to maintain my active lifestyle while providing
+            the support I need. The team's expertise and compassionate approach
+            made all the difference.
+          </blockquote>
+          <hr />
+          <address class="Testifier">
+            <div class="image_container">
+              <img
+                class="client_imgae"
+                src="img/Lisa.jpeg"
+                alt="Marcus image"
+              />
+            </div>
+            <div class="Testifier_detail">
+              <h6 class="Testifier__name">Dr. Lisa Patel</h6>
+              <p class="Testifier__profession">University Professor</p>
+            </div>
+          </address>
+        </div>
         <div class="switch_dots">
           <button class="switch_dot switch_dot-active"></button>
           <button class="switch_dot"></button>
@@ -218,106 +302,81 @@
       </div>
     </section>
 
-    <!-- <section class="Testimonies" id="Section--4">
-      <div class="Testimonies_header_container">
-        <h2 class="Testimonies_header">Testimonies</h2>
-      </div>
-      <div class="Testimonies_container">
-        <button class="slider__btn slider__btn--left">&larr;</button>
-        <button class="slider__btn slider__btn--right">&rarr;</button>
-        <div class="sliders">
-          <div class="slider slider--1 slider--active">
-            <div class="testimonial">
-              <h1 class="testimonial__header">
-                Transformed My Athletic Journey
-              </h1>
-              <blockquote>
-                After losing my leg in a motorcycle accident, I never thought
-                I'd run again. The team crafted a running blade that not only
-                matched my athletic needs but exceeded my expectations. I've
-                since completed two marathons and feel more capable than ever.
-              </blockquote>
-              <hr />
-              <address>
-                <div class="image_container">
-                  <img
-                    class="client_image"
-                    src="img/Marcus.jpeg"
-                    alt="Marcus's picture"
-                  />
-                </div>
-                <h6 class="testimonial__name">Marcus Chen</h6>
-                <p class="testimonial__profession">Professional Athlete</p>
-              </address>
-            </div>
+    <section class="Founder__section" id="Section--5">
+      <main class="Founder__section_body">
+        <h1 class="section__header">Founder</h1>
+        <div class="Founder__image-container">
+          <img
+            class="Founder__image"
+            src="img/Chigozirim Oguedoihu's picture.jpg"
+            alt="Founder Image"
+          />
+          <div class="Background__container">
+            <button class="detail__button detail__button--active">
+              Background
+            </button>
+            <p>
+              Chigozirim Nwasinachi Oguedoihu is a dedicated
+              prosthetist-orthotist with extensive experience in human motion
+              rehabilitation. After earning a Bachelor of Technology in
+              Prosthetics and Orthotics from the Federal University of
+              Technology Owerri, Nigeria, Chigozirim worked at the Human Motion
+              Rehabilitation Centre and The Leprosy Mission Nigeria, where he
+              honed his skills in patient education, device management, and
+              collaborative rehabilitation. Currently pursuing a Bachelor of
+              Engineering in Information Technology with a focus on the Internet
+              of Things at Savonia University of Applied Sciences in Finland, he
+              is committed to advancing his expertise and integrating technology
+              into his practice.
+            </p>
           </div>
-          <div class="slider slider--2">
-            <div class="testimonial">
-              <h1 class="testimonial__header">Life-Changing Comfort</h1>
-              <blockquote>
-                The custom ankle-foot orthosis they designed for my daughter's
-                cerebral palsy has made an incredible difference. She walks more
-                confidently now, and for the first time, she can participate in
-                dance classes with her friends. Their attention to detail and
-                care for children is outstanding.
-              </blockquote>
-              <hr />
-              <address>
-                <img src="img/Emma.jpeg" alt="Emma's picture" />
-                <h6 class="testimonial__name">Sarah O'Connor</h6>
-                <p class="testimonial__profession">Mother of Emma, age 8</p>
-              </address>
-            </div>
+          <div class="Inspiration__container">
+            <button class="detail__button">Inspiration</button>
+            <p>
+              Chigozirim’s inspiration stems from witnessing the profound impact
+              that prosthetic and orthotic services can have on individuals’
+              lives. He is driven by a passion for enhancing mobility and
+              independence for those who have faced physical challenges. This
+              commitment to improving patient outcomes and fostering a
+              supportive environment motivates him to lead OrthSprint, where he
+              envisions a facility that not only provides high-quality care but
+              also embraces innovative solutions to empower clients in their
+              rehabilitation journeys.
+            </p>
           </div>
-          <div class="slider slider--3">
-            <div class="testimonial">
-              <h1 class="testimonial__header">Back to Work with Confidence</h1>
-              <blockquote>
-                As a construction worker, I needed a prosthetic leg that could
-                withstand demanding conditions. Their team understood my work
-                requirements perfectly and created a durable, comfortable
-                prosthesis that allows me to climb ladders and carry heavy loads
-                just like before. Their follow-up care is exceptional.
-              </blockquote>
-              <hr />
-              <address>
-                <img src="img/james.jpeg" alt="James's picture" />
-                <h6 class="testimonial__name">James Rodriguez</h6>
-                <p class="testimonial__profession">Construction Supervisor</p>
-              </address>
-            </div>
+          <div class="achievements__container">
+            <button class="detail__button">Achievements</button>
+            <p>
+              Throughout his career, Chigozirim has significantly improved the
+              lives of many individuals in Nigeria through his dedicated
+              services. By assessing clients’ needs and educating them on device
+              use, he has fostered a culture of self-care and rehabilitation.
+              His efforts have led to enhanced patient outcomes, contributing to
+              the overall health and well-being of the community. As a mentor to
+              interns, he has also played a crucial role in shaping the next
+              generation of prosthetists and orthotists, ensuring that quality
+              care continues to thrive.
+            </p>
           </div>
-          <div class="slider slider--4">
-            <div class="testimonial">
-              <h1 class="testimonial__header">
-                A Perfect Fit for Active Living
-              </h1>
-              <blockquote>
-                The spinal orthosis they designed for my scoliosis is so
-                comfortable that I sometimes forget I'm wearing it. Unlike my
-                previous braces, this one allows me to maintain my active
-                lifestyle while providing the support I need. The team's
-                expertise and compassionate approach made all the difference.
-              </blockquote>
-              <hr />
-              <address>
-                <img src="img/Lisa" alt="Lisa's picture" />
-                <h6 class="testimonial__name">Dr. Lisa Patel</h6>
-                <p class="testimonial__profession">University Professor</p>
-              </address>
-            </div>
+          <div class="Future__Plans__container">
+            <button class="detail__button">Future Plans</button>
+            <p>
+              Looking ahead, Chigozirim aims to incorporate cutting-edge
+              technology into OrthSprint, enhancing the effectiveness and
+              accessibility of services. His ongoing studies in Information
+              Technology will empower him to implement innovative solutions that
+              streamline processes and improve client experiences. By leveraging
+              technology, he aspires to set new standards in prosthetic and
+              orthotic care in Nigeria, making a lasting impact on the lives of
+              those he serves and expanding the reach of his rehabilitation
+              services.
+            </p>
           </div>
         </div>
-        <div class="switch_dots">
-          <button class="switch_dot"></button>
-          <button class="switch_dot"></button>
-          <button class="switch_dot"></button>
-          <button class="switch_dot"></button>
-        </div>
-      </div>
-    </section> -->
+      </main>
+    </section>
 
-    <section class="founder__section" id="Section--5">
+    <!-- <section class="founder__section" id="Section--5">
       <div class="founder">
         <div class="founder__picture--container">
           <img
@@ -428,7 +487,7 @@
           </p>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <footer>
       <div class="section__header">
