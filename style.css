@@ -295,6 +295,7 @@ span {
   padding: 20px;
   background-color: var(--pure-white);
   border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .Testimonies {
@@ -315,10 +316,14 @@ span {
   min-width: 100%;
 }
 
-.testimonial__header {
-  padding-bottom: 10px;
+.Testimony__header {
+  /* padding-bottom: 10px; */
   padding-top: 20px;
   justify-self: center;
+  font-size: 28px;
+  font-family: "Montserrat", san-serif;
+  font-weight: bold;
+  text-align: center;
 }
 
 .slider__btn {
