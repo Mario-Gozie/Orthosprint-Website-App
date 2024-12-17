@@ -293,11 +293,12 @@ span {
   flex-direction: column;
   width: 100%;
   padding: 20px;
-  background-color: #ccc;
+  background-color: var(--pure-white);
+  border-radius: 30px;
 }
 
 .Testimonies {
-  background-color: #0dffb7;
+  background-color: #ccc;
   position: relative;
   padding: 5% 10%;
 }
@@ -327,18 +328,19 @@ span {
   font-size: 20px;
   border-radius: 50%;
   text-align: center;
+  box-shadow: 5px 10px 20px rgba(150, 150, 150);
 }
 
 .slider__btn--left {
   position: absolute;
   left: 15%;
-  top: 30%;
+  top: 50%;
   transform: translate(-50%, -50%);
 }
 
 .slider__btn--right {
   position: absolute;
-  top: 30%;
+  top: 50%;
   left: 85%;
   transform: translate(-50%, -50%);
 }
@@ -346,8 +348,9 @@ span {
 blockquote {
   quotes: "" " " "";
   font-style: italic;
-  border-left: 2px solid #ccc;
-  padding: 40px 40px;
+  padding: 0 40px;
+  padding-bottom: 20px;
+  padding-top: 40px;
   margin: 20px 0;
   position: relative;
   &::before {
@@ -375,9 +378,15 @@ blockquote {
 
 .Testifier {
   display: flex;
+  padding: 30px;
   width: 100%;
   justify-items: flex-start;
   margin: 0;
+  gap: 40px;
+}
+
+.Testifier_detail {
+  align-self: last baseline;
 }
 
 .switch_dots {
@@ -397,11 +406,17 @@ blockquote {
   background-color: #e0e0e0;
   border: none;
   cursor: pointer;
+
+  box-shadow: 5px 10px 20px rgba(150, 150, 150);
   transition: background-color 0.3s ease;
 }
 
 .switch_dot:hover {
   background-color: #888;
+}
+
+.switch_dot-active {
+  background-color: var(--facebook-color);
 }
 .image_container {
   width: 100px;
