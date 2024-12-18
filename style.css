@@ -70,18 +70,26 @@ nav {
   font-size: 20px;
 }
 
-.login__button {
+.login__btn {
+  text-decoration: none;
+  justify-self: center;
   padding: 10px;
-  background: var(--linkedin-colour);
+  background: var(--facebook-color);
   color: var(--pure-white);
+  border: none;
   border-radius: 200px;
-  /* padding-down: 10px; */
   width: 100px;
   height: 50px;
   text-align: center;
-  border: var(--pure-white);
   box-shadow: 5px 10px 20px var(--border-shadow);
 }
+
+.login__link {
+  width: 100%;
+  text-decoration: none;
+  color: var(--pure-white);
+}
+
 img {
   width: 300px;
 }
@@ -552,7 +560,7 @@ blockquote {
   grid-column: 1/2;
   grid-row: 1/2;
   padding: 0 3rem;
-  background: var(--linkedin-colour);
+  background: var(--facebook-color);
 }
 
 .mission__image {
