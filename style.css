@@ -592,8 +592,21 @@ blockquote {
   background-color: #c8e8e9;
   height: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+}
+
+#Section--7 .Section__header-container {
+  text-align: center;
+  width: 100%;
+  height: 25%;
+  align-self: center;
+  justify-content: space-between;
+}
+
+#Section--7 .Section__header {
+  text-align: center;
+  padding-top: 100px;
 }
 
 .Contact__message-container {
