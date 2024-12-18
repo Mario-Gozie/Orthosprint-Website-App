@@ -116,7 +116,6 @@ img {
   padding-left: 3rem;
   padding-bottom: 50%;
   width: 50%;
-
   font-size: large;
   color: #ebeaff;
   grid-row: 2/3;
@@ -516,88 +515,6 @@ blockquote {
   display: none;
 }
 
-/* #Section--5 {
-  height: 100vh;
-  margin: 10px;
-  box-shadow: 5px 10px 20px rgba(150, 150, 150);
-  border-radius: 15px;
-}
-
-.founder {
-  height: 30vh;
-  display: flex;
-  flex-direction: column;
-  top: 50px;
-  padding: 1rem;
-  align-items: center;
-  background: linear-gradient(
-    135deg,
-    var(--background--dark--blue) 0%,
-    var(--background--light--blue) 100%
-  );
-  border-radius: 15px;
-}
-
-.founder__picture--container {
-  width: 200px;
-  height: 12rem;
-  position: relative;
-  overflow: hidden;
-  border: 5px solid var(--pure-white);
-  border-radius: 50%;
-}
-
-.founder__name {
-  padding-top: 1rem;
-  color: var(--pure-white);
-  letter-spacing: 2px;
-}
-.founder__role {
-  padding-top: 0.5rem;
-  color: var(--pure-white);
-}
-.founder__actual--image {
-  width: inherit;
-  position: absolute;
-  object-fit: contain;
-}
-
-.details__buttons {
-  margin: 0 10rem;
-
-  display: flex;
-  justify-content: center;
-}
-
-.detail__button {
-  padding: 1rem;
-  width: 10rem;
-  border: none;
-  border-radius: 3rem;
-  margin: 20px;
-  background: var(--background--light--blue);
-  color: var(--pure-white);
-}
-
-.details {
-  margin: 0 20rem;
-  padding: 5rem 5rem;
-  border-radius: 20px;
-  border: solid rebeccapurple 2px;
-}
-
-.detail {
-  display: none;
-}
-
-.detail h3 {
-  padding-bottom: 2rem;
-}
-
-.detail__active {
-  display: block;
-} */
-
 /* MISSION AND VISION SECTION */
 
 .mission__vision {
@@ -665,141 +582,24 @@ blockquote {
 
 /* FOOTER SECTION */
 
-footer {
+#Section--7 {
   width: 100%;
+  margin: 10px;
   height: 100vh;
-  padding-top: 40px;
+}
+
+.All__contact_info {
+  background-color: #c8e8e9;
+  height: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 4rem;
-  background: rgb(240, 240, 240);
 }
 
-.contact__form--container {
+.Contact__message-container {
+  width: 80%;
+  background-color: var(--pure-white);
   display: flex;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  border: var(--brown-color) solid 5px;
-  background: var(--pure-white);
-  padding: 0.5rem 4rem;
-  border-radius: 15px;
-  box-shadow: 5px 10px 20px rgba(150, 150, 150);
-}
-
-form input {
-  padding: 0.5rem;
-  margin: 0.2rem;
-}
-
-form textarea {
-  width: 100%;
-  min-height: 5rem;
-}
-
-form .form__header {
-  padding: 2rem;
-}
-
-form h4 {
-  padding: 15px 0;
-}
-
-.icons__container {
-  display: flex;
-}
-
-form button {
-  padding: 1rem;
-  margin: 1rem 0;
   border-radius: 10px;
-  width: 40%;
-}
-
-.icon {
-  width: 50px;
-  height: 50px;
-  border-radius: 100px;
-  margin: 10px;
-  background: #fff;
-  text-align: center;
-  font-size: 30px;
-  line-height: 50px;
-  font-family: sans-serif;
-  overflow: hidden;
-  box-shadow: 5px 10px 20px rgba(150, 150, 150, 0.3);
-  transition: all 3s ease-out;
-}
-
-.socials_name {
-  padding: 10px;
-}
-.icon:hover {
-  width: 200px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  color: #fff;
-}
-
-.icon:hover i {
-  color: #fff;
-}
-/*Facebook */
-.icon .fa-facebook {
-  color: var(--facebook-color);
-}
-
-.fb:hover {
-  background: var(--facebook-color);
-}
-
-/* Twitter */
-.icon .fa-x-twitter {
-  color: var(--X-twitter-color);
-}
-
-.x-twt:hover {
-  background: var(--X-twitter-color);
-}
-
-/* Instagram */
-.icon .fa-instagram {
-  color: var(--instagram-colour);
-}
-
-.inst:hover {
-  background: var(--instagram-colour);
-}
-
-/* linkedin*/
-.icon .fa-linkedin-in {
-  color: var(--linkedin-colour);
-}
-
-.lnk:hover {
-  background: var(--linkedin-colour);
-}
-
-/* Youtube */
-.icon .fa-youtube {
-  color: var(--youtube-color);
-}
-
-.ytb:hover {
-  background: var(--youtube-color);
-}
-
-/* Git hub */
-.icon .fa-github {
-  color: var(--github-color);
-}
-
-.git:hover {
-  background: var(--github-color);
+  padding: 20px 60px 40px 40px;
 }
