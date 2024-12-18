@@ -600,6 +600,67 @@ blockquote {
   width: 80%;
   background-color: var(--pure-white);
   display: flex;
+  justify-content: space-between;
   border-radius: 10px;
   padding: 20px 60px 40px 40px;
+  box-shadow: 5px 10px 20px rgba(150, 150, 150);
+}
+
+.Contact__container {
+  width: 35%;
+  height: 100%;
+  position: relative;
+}
+
+.Contact__container::before {
+  content: "";
+  position: absolute;
+  background-color: #afafb6;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 70%;
+  width: 5px;
+}
+
+.detail .fas {
+  font-size: 30px;
+  color: var(--facebook-color);
+  margin-bottom: 10px;
+}
+
+.detial .h3 {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.detail p {
+  font-size: 14px;
+  color: #666;
+}
+
+.Contact__container .detail {
+  margin: 14px;
+  text-align: center;
+}
+
+.Message__container {
+  width: 65%;
+  margin-left: 50px;
+}
+
+.Message__container h2 {
+  padding: 40px 0px 0px 0px;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--facebook-color);
+}
+.input__box {
+  width: 100%;
+  height: 30px;
+}
+.input__box input {
+  margin: 10px 0;
+  width: 100%;
+  height: 100%;
 }
