@@ -153,7 +153,40 @@ img {
 }
 
 /* ABOUT US SECTION */
-#section--2 {
+
+#Section--2 {
+  margin: 10px;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 100px 1fr;
+  gap: 50px;
+}
+.About__section--body {
+  padding: 20px;
+  display: flex;
+  align-content: center;
+}
+.About__image__container {
+  padding: 20px;
+  width: 40%;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+.About__image__container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.About__us__paragragh--Container {
+  width: 50%;
+  display: flex;
+  align-content: center;
+}
+/* ABOUT US SECTION */
+/* #section--2 {
   border-radius: 15px;
   box-shadow: 5px 10px 20px var(--border-shadow);
   margin: 10px;
@@ -193,11 +226,11 @@ img {
   position: absolute;
   top: 20%;
   left: 50%;
-  transform: translate(-50%); /* This moves the object 50% back of it's size*/
+  transform: translate(-50%); 
   border: var(--pure-white) solid 5px;
   border-radius: 5px;
   box-shadow: 5px 10px 20px var(--border-shadow);
-}
+} */
 
 /* OUR SERVICES SECTION */
 
