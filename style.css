@@ -126,7 +126,8 @@ img {
   align-items: center;
   padding-left: 3rem;
   font-size: 50px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .welcome__paragraph {
@@ -584,6 +585,9 @@ blockquote {
 
 .Detail__container p {
   padding: 20px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
 }
 
 .Founder__detail-container button {
@@ -636,13 +640,13 @@ blockquote {
 .mission h1,
 .vision h1 {
   padding: 20px 0;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .mission p,
 .vision p {
   font-size: 20px;
-  /* line-height: 1.4px; */
+  line-height: 1.6;
   padding-top: 1rem;
 }
 
