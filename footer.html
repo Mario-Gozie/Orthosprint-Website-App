@@ -1,0 +1,94 @@
+<footer>
+  <div class="section__header">
+    <h1>Contact with us</h1>
+    <p class="footer__paragraph">We would like to chat</p>
+  </div>
+  <div class="contact__form--container">
+    <form action="" class="actual__form">
+      <h1 class="form__header">Send us a mail</h1>
+      <input type="text" id="firstName" placeholder="First Name" required />
+      <input type="text" id="lastName" placeholder="Last Name" required />
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="text" id="mobile" placeholder="Mobile" required />
+      <h4>Message:</h4>
+      <textarea
+        name=""
+        id="email__message"
+        placeholder="Type your Message here ..."
+      ></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+  <!-- Icons -->
+  <div class="icons__container">
+    <!-- Facebook Icon -->
+
+    <div class="icon fb">
+      <i class="fa-brands fa-facebook"></i
+      ><span class="socials_name">Facebook</span>
+    </div>
+
+    <!-- X-Twitter icon  -->
+
+    <div class="icon x-twt">
+      <i class="fa-brands fa-x-twitter"></i><span class="socials_name">X</span>
+    </div>
+
+    <!-- instagram icon -->
+
+    <div class="icon inst">
+      <i class="fa-brands fa-instagram"></i
+      ><span class="socials_name">Instagram</span>
+    </div>
+
+    <!-- linkedin icon -->
+
+    <div class="icon lnk">
+      <i class="fa-brands fa-linkedin-in"></i
+      ><span class="socials_name">Linkedin</span>
+    </div>
+
+    <!-- Youtube icon -->
+
+    <div class="icon ytb">
+      <i class="fa-brands fa-youtube"></i
+      ><span class="socials_name">Youtube</span>
+    </div>
+
+    <!-- github icon -->
+
+    <div class="icon git">
+      <i class="fa-brands fa-github"></i
+      ><span class="socials_name">github</span>
+    </div>
+  </div>
+  <address>
+    No 10 Goddy Ebomuche Drive, World Bank Housing Esatate Aba, Nigeria.
+  </address>
+</footer>
+
+footer { width: 100%; height: 100vh; padding-top: 40px; display: flex;
+flex-direction: column; align-items: center; justify-content: center; gap: 4rem;
+background: rgb(240, 240, 240); } .contact__form--container { display: flex; }
+form { display: flex; flex-direction: column; border: var(--brown-color) solid
+5px; background: var(--pure-white); padding: 0.5rem 4rem; border-radius: 15px;
+box-shadow: 5px 10px 20px rgba(150, 150, 150); } form input { padding: 0.5rem;
+margin: 0.2rem; } form textarea { width: 100%; min-height: 5rem; } form
+.form__header { padding: 2rem; } form h4 { padding: 15px 0; } .icons__container
+{ display: flex; } form button { padding: 1rem; margin: 1rem 0; border-radius:
+10px; width: 40%; } .icon { width: 50px; height: 50px; border-radius: 100px;
+margin: 10px; background: #fff; text-align: center; font-size: 30px;
+line-height: 50px; font-family: sans-serif; overflow: hidden; box-shadow: 5px
+10px 20px rgba(150, 150, 150, 0.3); transition: all 3s ease-out; } .socials_name
+{ padding: 10px; } .icon:hover { width: 200px; cursor: pointer; display: flex;
+align-items: center; justify-content: space-evenly; color: #fff; } .icon:hover i
+{ color: #fff; } /*Facebook */ .icon .fa-facebook { color:
+var(--facebook-color); } .fb:hover { background: var(--facebook-color); } /*
+Twitter */ .icon .fa-x-twitter { color: var(--X-twitter-color); } .x-twt:hover {
+background: var(--X-twitter-color); } /* Instagram */ .icon .fa-instagram {
+color: var(--instagram-colour); } .inst:hover { background:
+var(--instagram-colour); } /* linkedin*/ .icon .fa-linkedin-in { color:
+var(--linkedin-colour); } .lnk:hover { background: var(--linkedin-colour); } /*
+Youtube */ .icon .fa-youtube { color: var(--youtube-color); } .ytb:hover {
+background: var(--youtube-color); } /* Git hub */ .icon .fa-github { color:
+var(--github-color); } .git:hover { background: var(--github-color); }
