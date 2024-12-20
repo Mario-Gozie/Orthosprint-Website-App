@@ -126,6 +126,7 @@ img {
   align-items: center;
   padding-left: 3rem;
   font-size: 50px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .welcome__paragraph {
@@ -358,6 +359,8 @@ span {
 }
 
 .description {
+  font-size: 20px;
+  line-height: 1.6;
   padding-left: 4rem;
 }
 
@@ -621,6 +624,7 @@ blockquote {
 .mission,
 .vision {
   display: flex;
+  font-weight: 500;
   flex-direction: column;
   justify-content: center;
   border: 3px solid var(--pure-white);
@@ -629,8 +633,16 @@ blockquote {
   color: var(--pure-white);
 }
 
+.mission h1,
+.vision h1 {
+  padding: 20px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
 .mission p,
 .vision p {
+  font-size: 20px;
+  /* line-height: 1.4px; */
   padding-top: 1rem;
 }
 
@@ -675,7 +687,7 @@ blockquote {
 }
 
 .All__contact_info {
-  background-color: #c8e8e9;
+  /* background-color: #c8e8e9; */
   background-color: #e0e0e0;
   height: 100%;
   display: flex;
