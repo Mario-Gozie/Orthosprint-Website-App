@@ -165,7 +165,20 @@ img {
   padding: 20px;
   display: flex;
   align-content: center;
+  position: relative;
 }
+.About__section--body::before {
+  content: "";
+  background-color: #c8e8e9;
+  position: absolute;
+  width: 500px;
+  height: 600px;
+  border-radius: 10px;
+  bottom: 50px; /* Adjust as needed */
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}
+
 .About__image__container {
   padding: 20px;
   width: 40%;
@@ -180,12 +193,12 @@ img {
   display: block;
   object-fit: cover;
   border-radius: 10px;
+  box-shadow: 5px 10px 20px rgba(150, 150, 150);
 }
 
 .About__image__container::before {
   content: "";
   inset: 0; /* This makes the psuedo element fit well with its parent element*/
-  background-color: #0dffb7;
   position: absolute;
   border-radius: 10px;
   background: linear-gradient(
@@ -201,6 +214,8 @@ img {
   width: 50%;
   display: flex;
   align-content: center;
+  text-align: center;
+  z-index: 20;
 }
 /* ABOUT US SECTION */
 /* #section--2 {
