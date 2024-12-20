@@ -10,17 +10,13 @@
 
 :root {
   --facebook-color: #1a6de8;
-  --X-twitter-color: #1b1c1e;
   --instagram-colour: #c13584;
   --linkedin-colour: #0077b5;
   --youtube-color: #ff0000;
-  --github-color: #24292e;
   --pure-white: #fff;
-  --sea-green: #0dffb7;
   --brown-color: #f4a460;
   --border-shadow: rgba(150, 150, 150);
-  --background--light--blue: #3498db;
-  --background--dark--blue: #2c3e50;
+  --offwhite-background: #e0e0e0;
 }
 
 .section__header {
@@ -111,11 +107,10 @@ img {
   padding-left: 10px;
   margin: 10px;
   position: relative;
-
   display: flex;
   background-image: linear-gradient(
     to bottom right,
-    #e0e0e0 50%,
+    var(--offwhite-background) 50%,
     var(--pure-white) 50%
   );
 
@@ -582,6 +577,7 @@ blockquote {
   width: 150px;
   height: 150px;
   object-fit: cover;
+  object-position: center top;
   border: 3px solid #003366;
 }
 
