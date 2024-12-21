@@ -202,12 +202,20 @@ img {
   justify-content: flex-end;
 }
 
+.About__us_sub-heading__container::after {
+  content: "";
+  width: 60%;
+  height: 5px;
+  background: var(--linkedin-colour);
+}
+
 .parabraph__container {
   grid-column: 1/2;
   grid-row: 3/4;
   padding: 0 70px;
-  display: flex;
-  align-items: center;
+  padding-top: 40px;
+  /* display: flex;
+  align-items: center; */
 }
 
 .parabraph__container p {
