@@ -227,6 +227,7 @@ img {
   font-family: "Roboto", serif;
   font-weight: 400;
   font-style: normal;
+  text-align: justify;
   /* display: flex;
   align-items: center; */
 }
@@ -471,15 +472,16 @@ span {
 
 .service__active {
   display: flex;
-  gap: 50px;
+  /* gap: 50px; */
 }
 
 .service_description {
-  width: 60%;
+  width: 100%;
   align-self: center;
 }
 
 .description {
+  text-align: justify;
   font-family: "Roboto", serif;
   font-weight: 400;
   font-style: normal;
@@ -766,6 +768,10 @@ blockquote {
 .vision h1 {
   padding: 20px 0;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 50px;
+  font-family: "Monsarat", serif;
+  font-weight: 600;
+  font-style: normal;
 }
 
 .mission p,
@@ -773,6 +779,7 @@ blockquote {
   font-size: 20px;
   line-height: 1.6;
   padding-top: 1rem;
+  text-align: justify;
 }
 
 .mission {
