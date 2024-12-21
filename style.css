@@ -168,7 +168,9 @@ img {
 /* ABOUT SECTION */
 
 #section--2 {
+  width: 100%;
   height: 100vh;
+  background-color: var(--offwhite-background);
   width: 100%;
   display: flex;
   align-items: center;
@@ -176,11 +178,14 @@ img {
 
 .content__container {
   padding: 100px 20px 0px 20px;
-  background-color: var(--offwhite-background);
+  background-color: var(--pure-white);
+  margin: 10px;
   height: inherit;
   display: grid;
   grid-template-columns: 1fr 0.4fr;
   grid-template-rows: 0.3fr 0.3fr 2fr 0.5fr;
+  box-shadow: 5px 10px 20px var(--border-shadow);
+  border-radius: 15px;
 }
 
 .section__header {
