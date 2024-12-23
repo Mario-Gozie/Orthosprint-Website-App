@@ -45,9 +45,12 @@ nav {
 .nav__link {
   margin: 10px;
   text-decoration: none;
-  font-family: "Montserrat", sans-serif;
+  /* font-family: "Montserrat", sans-serif;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 16px; */
+  font-family: "Roboto", serif;
+  font-weight: 500;
+  font-style: normal;
   color: var(--linkedin-colour);
   transition: transform 0.3s ease-in;
 }
@@ -91,6 +94,9 @@ nav {
   width: 100%;
   text-decoration: none;
   color: var(--pure-white);
+  font-family: "Roboto", serif;
+  font-weight: 500;
+  font-style: normal;
 }
 
 img {
@@ -106,7 +112,7 @@ img {
   display: flex;
   background-image: linear-gradient(
     to bottom right,
-    var(--offwhite-background) 50%,
+    var(--linkedin-colour) 50%,
     var(--pure-white) 50%
   );
 
@@ -120,16 +126,17 @@ img {
   font-family: "Montsarat", serif;
   font-weight: 600;
   font-style: normal;
+  color: var(--pure-white);
 
-  background: linear-gradient(
+  /* background: linear-gradient(
     90deg,
     var(--linkedin-colour),
     var(--instagram-colour),
     red
-  );
-  background-clip: text;
+  ); */
+  /* background-clip: text;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent; */
   align-items: center;
   padding-left: 3rem;
   font-size: 50px;
@@ -145,7 +152,9 @@ img {
   font-family: "Roboto", serif;
   font-weight: 400;
   font-style: normal;
-  color: rgb(68, 66, 66);
+  color: var(--pure-white);
+  text-align: justify;
+  /* color: rgb(68, 66, 66); */
   font-size: 20px;
   font-weight: 600;
   grid-row: 2/3;
@@ -154,16 +163,21 @@ img {
   overflow: hidden;
 }
 
-.welcome__image {
-  width: 50%;
+.welcome__image-container {
+  width: 45%;
   position: absolute;
   border: var(--pure-white) solid 5px;
-  bottom: 10%;
-  right: 5%;
+  bottom: 5%;
+  right: 2%;
   border-radius: 20px;
   /* border: var(--pure-white); */
   box-shadow: 5px 10px 20px var(--border-shadow);
   /* margin-right: 40px; */
+}
+
+.welcome__image {
+  width: 100%;
+  border-radius: 15px;
 }
 
 /* ABOUT SECTION */
@@ -204,7 +218,7 @@ img {
   padding: 0 70px;
   color: rgb(68, 66, 66);
   font-size: 30px;
-  font-family: "Festive", serif;
+  font-family: "Roboto", serif;
   font-weight: 500;
   font-style: normal;
   display: flex;
