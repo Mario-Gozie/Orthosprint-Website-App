@@ -28,7 +28,7 @@ header {
   box-shadow: 5px 10px 20px var(--border-shadow);
 }
 
-nav {
+.nav {
   height: 100px;
   display: flex;
   align-items: center;
@@ -101,6 +101,15 @@ nav {
 
 img {
   width: 300px;
+}
+
+.sidebar {
+  background-color: red;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  z-index: 999;
 }
 
 #section--1 {
