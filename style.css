@@ -99,7 +99,8 @@ header {
   z-index: 999;
   padding: 2rem;
   box-shadow: var(--border-shadow);
-  display: flex;
+  /* display: flex; */
+  display: none;
   flex-direction: column;
   align-items: flex-start;
   justify-items: flex-start;
@@ -134,6 +135,15 @@ header {
   padding: 1.1rem;
 }
 
+.menu {
+  display: none;
+  padding: 0.5rem;
+  border: 0.1rem var(--linkedin-colour) solid;
+}
+.menu:hover {
+  cursor: pointer;
+}
+
 #section--1 {
   height: 100vh;
   padding-top: 20vh;
@@ -159,20 +169,10 @@ header {
   font-style: normal;
   color: var(--pure-white);
 
-  /* background: linear-gradient(
-    90deg,
-    var(--linkedin-colour),
-    var(--instagram-colour),
-    red
-  ); */
-  /* background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
   align-items: center;
   padding-left: 3rem;
   font-size: 50px;
   position: relative;
-  /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
 }
 
 .welcome__paragraph {
@@ -185,7 +185,7 @@ header {
   font-style: normal;
   color: var(--pure-white);
   text-align: justify;
-  /* color: rgb(68, 66, 66); */
+
   font-size: 20px;
   font-weight: 600;
   grid-row: 2/3;
@@ -201,9 +201,7 @@ header {
   bottom: 5%;
   right: 2%;
   border-radius: 20px;
-  /* border: var(--pure-white); */
   box-shadow: 5px 10px 20px var(--border-shadow);
-  /* margin-right: 40px; */
 }
 
 .welcome__image {
@@ -273,8 +271,6 @@ header {
   font-weight: 400;
   font-style: normal;
   text-align: justify;
-  /* display: flex;
-  align-items: center; */
 }
 
 .parabraph__container p {
