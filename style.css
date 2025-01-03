@@ -781,19 +781,19 @@ blockquote {
 #Section--6 {
   height: 100vh;
   margin: 10px;
-  background-color: red;
+  /* background-color: red; */
   display: flex;
   flex-direction: column;
+  box-shadow: 5px 10px 20px rgba(150, 150, 150);
 }
 
 .mission__wrapper,
 .vision__wrapper {
-  margin: 0;
-  padding: 0;
   width: 100%;
   height: 50%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .vision__image,
@@ -801,12 +801,36 @@ blockquote {
 .vision,
 .mission {
   width: 50%;
+  padding: 2rem;
 }
-/* .actual_image {
-  width: 100%;
 
-  align-self: center;
-} */
+.mission,
+.vision {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.vision {
+  background: #003366;
+}
+
+.mission {
+  background: var(--facebook-color);
+}
+.vision__image,
+.mission__image {
+  display: flex;
+  justify-content: center;
+}
+
+.actual_image {
+  justify-self: center;
+
+  max-width: 10rem;
+  max-height: 10rem;
+}
 
 /* .mission__vision {
   margin: 10px;
@@ -890,7 +914,6 @@ blockquote {
 /* FOOTER SECTION */
 
 #Section--7 {
-  width: 100%;
   margin: 10px;
   height: 100vh;
 }
