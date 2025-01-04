@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --facebook-color: #1a6de8;
+  --instagram-colour: #c13584;
+  --linkedin-colour: #0077b5;
+  --youtube-color: #ff0000;
+  --pure-white: #fff;
+  --brown-color: #f4a460;
+  --border-shadow: rgba(150, 150, 150);
+  --offwhite-background: #e0e0e0;
+}
+
+/* Navigation Bar */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--pure-white);
+  align-items: center;
+  font-size: 1rem;
+  font-family: "Roboto", serif;
+  font-weight: 500;
+  border-bottom: red 2px solid;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+li {
+  margin: 1.5rem;
+  text-decoration: none;
+}
+
+li .nav__item {
+  text-decoration: none;
+  color: var(--linkedin-colour);
+}
+
+.login__button {
+  padding: 1rem;
+  border-radius: 25px;
+  color: var(--pure-white);
+  background-color: var(--linkedin-colour);
+  margin-right: 1rem;
+  text-decoration: none;
+}
+
+.logo {
+  max-height: 300px;
+  max-width: 300px;
+}
+
+.menu__button {
+  padding: 0.5rem;
+  display: none;
+}
+
+.sidebar {
+  height: 100vh;
+  width: 80%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: rgb(240, 240, 240);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar ul {
+  display: flex;
+  flex-direction: column;
+  width: 1rem;
+}
+
+.sidebar .login__button {
+  margin: 1rem;
+  max-width: 6rem;
+  text-align: center;
+}
+
+.sidebar {
+  display: none;
+}

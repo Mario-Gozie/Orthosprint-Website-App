@@ -29,7 +29,7 @@ header {
 }
 
 .nav {
-  height: 100px;
+  max-height: 6.3rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -39,22 +39,17 @@ header {
 
 .nav__links {
   display: flex;
-  /* display: none; */
   list-style: none;
 }
 
 .menu {
   display: none;
-  /* display: flex; */
+
   padding: 0.5rem;
   border: 0.1rem var(--linkedin-colour) solid;
 }
 .menu:hover {
   cursor: pointer;
-}
-
-.nav .Login__link {
-  display: none;
 }
 
 .nav__link {
@@ -111,7 +106,6 @@ header {
   z-index: 999;
   padding: 2rem;
   box-shadow: var(--border-shadow);
-  /* display: flex; */
   display: none;
   flex-direction: column;
   align-items: flex-start;
@@ -148,15 +142,43 @@ header {
   padding: 1.1rem;
 }
 
-@media (max-width: 1020px) {
+@media (max-width: 576px) {
+  /* Extra small devices (phones, 0px and up) */
+  .nav img {
+    width: 12rem;
+  }
+
+  .nav {
+    max-height: 3rem;
+    padding: 0.8rem 0.2rem;
+  }
+}
+@media (min-width: 576px) and (max-width: 768px) {
+  /* Small devices (tablets, 576px and up) */
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  /* Medium devices (desktops, 768px and up) */
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  /* Large devices (large desktops, 992px and up) */
+}
+@media (min-width: 1200px) {
+  /* Extra large devices (large desktops, 1200px and up) */
+}
+
+@media (max-width: 1040px) {
   /* .sidebar {
     display: flex;
   } */
   .menu {
-    display: flex;
+    display: block;
   }
 
   .nav__links {
+    display: none;
+  }
+
+  .nav_Login__link {
     display: none;
   }
 }
@@ -185,10 +207,9 @@ header {
   font-weight: 600;
   font-style: normal;
   color: var(--pure-white);
-
   align-items: center;
   padding-left: 3rem;
-  font-size: 50px;
+  font-size: 3rem;
   position: relative;
 }
 
@@ -196,23 +217,20 @@ header {
   padding-top: 5%;
   padding-left: 3rem;
   padding-bottom: 50%;
-  width: 50%;
+  width: 60%;
   font-family: "Roboto", serif;
-  font-weight: 400;
   font-style: normal;
   color: var(--pure-white);
   text-align: justify;
-
-  font-size: 20px;
+  font-size: 1.3rem;
   font-weight: 600;
-  grid-row: 2/3;
   align-content: center;
   line-height: 1.6;
-  overflow: hidden;
 }
 
 .welcome__image-container {
-  width: 45%;
+  width: 60%;
+  height: 50%;
   position: absolute;
   border: var(--pure-white) solid 5px;
   bottom: 5%;
@@ -223,6 +241,8 @@ header {
 
 .welcome__image {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 15px;
 }
 
@@ -246,8 +266,8 @@ header {
   font-weight: 500;
   font-style: normal;
   display: grid;
-  grid-template-columns: 1fr 0.4fr;
-  grid-template-rows: 0.3fr 0.3fr 2fr 0.5fr;
+  grid-template-columns: 0.6fr 0.4fr;
+  grid-template-rows: 0.3fr 0.3fr 1fr 0.5fr;
   box-shadow: 5px 10px 20px var(--border-shadow);
   border-radius: 15px;
 }
@@ -288,6 +308,8 @@ header {
   font-weight: 400;
   font-style: normal;
   text-align: justify;
+  display: flex;
+  align-items: center;
 }
 
 .parabraph__container p {
@@ -334,117 +356,6 @@ header {
 .fa-instagram {
   color: var(--instagram-colour);
 }
-/* ABOUT US SECTION */
-
-/* #Section--2 {
-  margin: 10px;
-  height: 100vh;
-  display: grid;
-  grid-template-rows: 100px 1fr;
-  gap: 50px;
-  box-shadow: 5px 10px 20px var(--border-shadow);
-}
-
-.About__header--contianer {
-  padding: 80px 0 0 0;
-  display: grid;
-  place-items: center;
-  color: #003366;
-}
-.About__section--body {
-  padding: 10px;
-  display: flex;
-  align-content: center;
-  position: relative;
-}
-.About__section--body::before {
-  content: "";
-  background-color: #e0e0e0;
-  position: absolute;
-  width: 500px;
-  height: 600px;
-  border-radius: 10px;
-  bottom: 100px; 
-  left: 50%;
-  transform: translateX(-50%) rotate(45deg);
-}
-
-.About__image__container {
-  padding: 20px;
-  width: 40%;
-  margin: 5px;
-  display: grid;
-  place-items: center;
-  border-radius: 10px;
-  position: relative;
-}
-
-.About__image__container img {
-  width: 100%;
-  height: 60%;
-  display: block;
-  align-self: center;
-  object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 5px 10px 20px rgba(150, 150, 150);
-}
-
-.About__us__paragragh--Container {
-  width: 50%;
-  display: grid;
-  place-items: center;
-  font-size: 20px;
-  padding: 0 20px;
-  font-weight: 400;
-  line-height: 1.6;
-  z-index: 5;
-} */
-/* ABOUT US SECTION */
-/* #section--2 {
-  border-radius: 15px;
-  box-shadow: 5px 10px 20px var(--border-shadow);
-  margin: 10px;
-}
-
-.about__us--container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
-  position: relative;
-}
-
-.write-us--container {
-  width: 50%;
-}
-
-.about_us-header {
-  background-color: var(--linkedin-colour);
-  width: 100%;
-  height: 30vh;
-  border-radius: 15px;
-  padding-top: 100px;
-}
-.section_header.about_us {
-  text-align: center;
-  color: var(--pure-white);
-}
-
-.about__us-paragraph {
-  padding-top: 200px;
-}
-
-.about__us-img {
-  width: 500px;
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%); 
-  border: var(--pure-white) solid 5px;
-  border-radius: 5px;
-  box-shadow: 5px 10px 20px var(--border-shadow);
-} */
 
 /* OUR SERVICES SECTION */
 
@@ -458,7 +369,6 @@ header {
 .services {
   margin: 10px;
   background-color: #e0e0e0;
-
   position: relative;
   height: 100vh;
 }
@@ -796,6 +706,54 @@ blockquote {
 
 .hidden {
   display: none;
+}
+
+@media (max-width: 600px) {
+  .Detail__container {
+    padding: 0.5rem;
+  }
+
+  .Detail__container p {
+    padding: 0.7rem;
+    font-size: 0.7rem;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+}
+
+/* Medium devices (tablets, 600px to 900px) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .Detail__container {
+    padding: 0.8rem;
+  }
+
+  .Detail__container p {
+    padding: 0.3rem;
+    font-size: 0.8rem;
+    line-height: 1.3;
+  }
+}
+
+/* Large devices (desktops, 900px and up) */
+@media (min-width: 901px) {
+  .Detail__container {
+    background: #f0f8ff;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 10px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .Detail__container p {
+    padding: 1.1rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+}
+
+/* Extra Large devices (large desktops, 1200px and up) */
+@media (min-width: 1201px) {
 }
 
 /* MISSION AND VISION SECTION */
