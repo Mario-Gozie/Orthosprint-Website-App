@@ -152,3 +152,17 @@ main {
   height: 100%;
   object-fit: cover;
 }
+
+/* Services */
+
+.service__container {
+  display: flex;
+  flex-direction: column;
+}
+.service__and__descripion--container {
+  display: flex;
+}
+
+.service__svg--container {
+  margin: 3rem;
+}
