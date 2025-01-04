@@ -126,15 +126,15 @@ main {
 
 /* About */
 
-.about,
-.services {
+.about {
   display: flex;
   justify-content: center;
   height: 100vh;
 }
 
 .about__wrapper,
-.services__wrapper {
+/* .services__wrapper, */
+.founder__wrapper {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -142,7 +142,7 @@ main {
   padding: 0.5rem;
 }
 
-.image__container {
+.about .image__container {
   width: 100%;
   height: 50%;
 }
@@ -154,15 +154,63 @@ main {
 }
 
 /* Services */
+/* .services {
+  display: flex;
+  justify-content: center;
+  height: 120vh;
+  background-color: purple;
+}
 
 .service__container {
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 .service__and__descripion--container {
   display: flex;
+  height: 50%;
 }
 
-.service__svg--container {
-  margin: 3rem;
+.services__wrapper.image__container {
+  height: 40%;
+}
+
+.services__image {
+  height: 100%;
+  display: none;
+} */
+
+/* .services__image {
+  height: 100%;
+} */
+
+/* Founder */
+
+.founder {
+  height: 100vh;
+  background-color: red;
+}
+
+.founder__wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.founder__header {
+  text-align: center;
+}
+
+.founder__image__and__description--container {
+  padding: 3rem 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.founder__btn {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 1rem 0;
+  background-color: var(--linkedin-colour);
+  color: var(--pure-white);
 }
