@@ -221,21 +221,88 @@ main {
   flex-direction: column;
 }
 
+.contact__header--container {
+  margin: 1.5rem 0 0.5rem 0;
+  text-align: center;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  padding: 0.5rem 2rem;
+}
+
+.contact {
+  width: 100%;
+  display: flex;
+  margin: 0.2rem 0;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  width: 20%;
+}
+
+.fa-solid {
+  font-size: 2rem;
+  color: var(--facebook-color);
+}
+.form__container {
+  margin: 0.2rem 0 0 0;
+  background-color: var(--offwhite-background);
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
 form {
   display: flex;
   flex-direction: column;
+  background-color: var(--pure-white);
+  padding: 1rem;
+  border-radius: 5px;
 }
 
 form label {
-  margin: 0.5rem 0 0.5rem 0;
+  margin: 0.5rem 0;
+}
+small {
+  margin: 0.4rem 0;
+  height: 0.2rem;
+  display: none;
 }
 
 form input,
 form textarea,
 form button {
   padding: 0.5rem;
+  border: none;
+  border-bottom: var(--offwhite-background) solid 1px;
+  outline: none;
+  border-radius: 5px;
+}
+
+input:focus,
+textarea:focus {
+  border-bottom: 1px solid var(--youtube-color);
+}
+
+textarea::-webkit-scrollbar {
+  width: 4px;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background-color: var(--youtube-color);
 }
 
 form button {
-  margin: 1rem 0 1rem 0;
+  margin: 2rem 0 0.5rem 0;
+  cursor: pointer;
+  max-width: 200px;
+  align-self: center;
+  border-radius: 3px;
+  background-color: var(--facebook-color);
+  color: var(--pure-white);
 }
