@@ -306,3 +306,13 @@ form button {
   background-color: var(--facebook-color);
   color: var(--pure-white);
 }
+
+/* footer */
+footer {
+  height: 100vh;
+}
+
+.footer__wrapper {
+  display: flex;
+  flex-direction: column;
+}
