@@ -133,8 +133,9 @@ main {
 }
 
 .about__wrapper,
-/* .services__wrapper, */
-.founder__wrapper {
+.services__wrapper,
+.founder__wrapper,
+.contact__wrapper {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -154,10 +155,10 @@ main {
 }
 
 /* Services */
-/* .services {
+.services {
   display: flex;
   justify-content: center;
-  height: 120vh;
+  height: 105vh;
   background-color: purple;
 }
 
@@ -177,12 +178,7 @@ main {
 
 .services__image {
   height: 100%;
-  display: none;
-} */
-
-/* .services__image {
-  height: 100%;
-} */
+}
 
 /* Founder */
 
@@ -213,4 +209,33 @@ main {
   margin: 1rem 0;
   background-color: var(--linkedin-colour);
   color: var(--pure-white);
+}
+
+/* Contact */
+.contact_us {
+  height: 100vh;
+}
+
+.contactInfo__and__form--container {
+  display: flex;
+  flex-direction: column;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+form input,
+form textarea,
+form button {
+  padding: 0.5rem;
+}
+
+form button {
+  margin: 1rem 0 1rem 0;
 }

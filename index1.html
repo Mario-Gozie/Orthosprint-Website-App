@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="style1.css" />
     <link
       rel="shortcut icon"
@@ -88,7 +95,7 @@
           </div>
 
           <div class="about__container">
-            <h2>ABOUT US</h>
+            <h2>ABOUT US</h2>
             <h3>What We Do</h3>
             <p>
               At Orthosprint, we believe in transforming lives through
@@ -112,9 +119,7 @@
         </div>
       </section>
 
-
-
-      <!-- <section class="services" id="services">
+      <section class="services" id="services">
         <div class="services__wrapper">
           <div class="services__container">
             <h2>SERVICES</h2>
@@ -219,28 +224,107 @@
             </div>
           </div>
           <div class="image__container">
-            <img class="services__image" src="img/services.jpeg" alt="services image" />
+            <img
+              class="services__image"
+              src="img/services.jpeg"
+              alt="services image"
+            />
           </div>
         </div>
-      </section> -->
+      </section>
 
       <section class="founder" id="founder">
         <div class="founder__wrapper">
-            <div class= "founder__header">
+          <div class="founder__header">
             <h2>Founder</h2>
             <h3>Meet The Visionary</h3>
-        </div>
+          </div>
           <div class="founder__image__and__description--container">
-            <div class="founder__image--container"><img src="" alt="founder's image"></div>
+            <div class="founder__image--container">
+              <img src="" alt="founder's image" />
+            </div>
             <h3>Chigozirim Oguedoihu</h3>
             <h4>CEO Orthosprint</h4>
             <div class="founders__descriptions">
-                <div class="founder__description">
-                    <button class="founder__btn">Achievements</button>
-                    <p>Chigozirim is a skilled Prosthetist and Orthotist who earned a degree in Prosthetics and Orthotics from the Federal University of Technology, Owerri. With four years of experience, he has worked at notable centers like The Leprosy Mission Nigeria (TLMN) and Human Motion Rehabilitation. In these roles, he provided important care to help people regain their mobility.
+              <div class="founder__description">
+                <button class="founder__btn">Achievements</button>
+                <p>
+                  Chigozirim is a skilled Prosthetist and Orthotist who earned a
+                  degree in Prosthetics and Orthotics from the Federal
+                  University of Technology, Owerri. With four years of
+                  experience, he has worked at notable centers like The Leprosy
+                  Mission Nigeria (TLMN) and Human Motion Rehabilitation. In
+                  these roles, he provided important care to help people regain
+                  their mobility. Chigozirim founded Orthosprint Nigeria to
+                  continue his mission of offering high-quality, customized
+                  prosthetic and orthotic services. His work reflects a strong
+                  commitment to improving the lives of individuals through
+                  better mobility and support.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-                    Chigozirim founded Orthosprint Nigeria to continue his mission of offering high-quality, customized prosthetic and orthotic services. His work reflects a strong commitment to improving the lives of individuals through better mobility and support.</p>
+      <section class="contact_us" id="contact_us">
+        <div class="contact__wrapper">
+          <div class="contact__header--container">
+            <h2>Contact Us</h2>
+            <p>Have questions? Get in touch!</p>
+          </div>
+          <div class="contactInfo__and__form--container">
+            <div class="contactInfo">
+              <div class="contact address">
+                <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="contact__text">
+                  <h3>Address</h3>
+                  <p>
+                    10 Goddy Ebomuche drive <br />WBHE Aba <br />
+                    Nigeria.
+                  </p>
                 </div>
+              </div>
+              <div class="contact phone">
+                <div class="icon">
+                  <i class="fa-solid fa-phone"></i>
+                </div>
+                <div class="contact__text">
+                  <h3>Phone No</h3>
+                  <p>+234 8163439017</p>
+                </div>
+              </div>
+              <div class="contact email">
+                <div class="icon">
+                  <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div class="contact__text">
+                  <h3>Email</h3>
+                  <p>oguedoihucg@gmail.com</p>
+                </div>
+              </div>
+            </div>
+            <div class="form__container">
+              <form action="">
+                <label for="name">Name</label>
+                <input type="text" placeholder="Your name" />
+                <small class="error"></small>
+
+                <label for="email">Email</label>
+                <input type="text" placeholder="Your Email Address" />
+                <small class="error"></small>
+
+                <label for="message">Message</label>
+                <textarea
+                  name=""
+                  id="message"
+                  placeholder="write your message here ..."
+                  rows="6"
+                ></textarea>
+                <small class="error"></small>
+
+                <button class="Message_button">Send Message</button>
+              </form>
             </div>
           </div>
         </div>
