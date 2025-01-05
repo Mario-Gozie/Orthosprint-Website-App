@@ -310,7 +310,7 @@ form button {
 
 /* footer */
 footer {
-  height: 200vh;
+  height: 100vh;
 }
 
 .quick__links--container {
@@ -321,11 +321,22 @@ footer {
 .quick__link a {
   text-decoration: none;
   color: red;
-  margin: 1rem;
+  margin: 1rem 0 0 0;
   padding: 0;
 }
 
 .quick__link {
   margin: 0;
   padding: none;
+}
+
+.newsletter {
+  padding: 0;
+}
+
+.newsletter__input {
+  border: var(--offwhite-background) 1px solid;
+  border-radius: 1.5rem;
+  padding: 1rem;
+  margin: 0;
 }
