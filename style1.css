@@ -283,10 +283,15 @@ main {
   color: var(--linkedin-colour);
 }
 
-.testimonial__contents {
+.testimonial__contents--container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  overflow: hidden;
+}
+
+.testimonial__content {
+  min-width: 100%;
+  margin: 0.5rem;
+  /* display: flex; */
 }
 
 .testimonial__message__detail p {
@@ -305,7 +310,7 @@ main {
   width: 10rem;
   height: 10rem;
   border-radius: 50%;
-  align-self: center;
+  justify-self: center;
   margin: 2rem 0;
   border: 0.4rem var(--pure-white) solid;
 }
