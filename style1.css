@@ -157,7 +157,7 @@ main {
 .about {
   display: flex;
   justify-content: center;
-  height: 100vh;
+  height: auto;
 }
 
 .about__wrapper,
@@ -208,7 +208,7 @@ main {
 .services {
   display: flex;
   justify-content: center;
-  height: 105vh;
+  height: auto;
 }
 
 .service__container {
@@ -332,7 +332,7 @@ main {
 /* Founder */
 
 .founder {
-  height: 100vh;
+  height: auto;
   background-color: var(--offwhite-background);
 }
 
@@ -394,14 +394,23 @@ main {
   font-size: 1.2rem;
 }
 
-.founder__btn {
+.founder__description {
   width: 100%;
+}
+
+.founder__btn {
+  width: inherit;
   padding: 0.5rem;
   font-size: 1rem;
   margin: 1rem 0;
   background-color: var(--linkedin-colour);
   color: var(--pure-white);
   border: 0;
+}
+
+.hidden {
+  display: none;
+  width: 100%;
 }
 
 /* Contact */
@@ -539,7 +548,7 @@ footer {
 }
 
 .quick__links--container {
-  margin: 0.5rem;
+  margin: 0.5rem 0;
   display: flex;
   flex-direction: column;
 }
@@ -552,8 +561,8 @@ footer {
 }
 
 .quick__link {
-  margin: 0;
-  padding: none;
+  margin: 0rem;
+  padding: 0rem;
 }
 
 .newsletter__container {
@@ -569,12 +578,13 @@ footer {
 .newsletter__input {
   border: var(--offwhite-background) 1px solid;
   border-radius: 1.5rem;
+  max-width: 20rem;
   padding: 1rem;
-  margin: 0;
+  margin: 0.5rem 0 0 0;
 }
 
 .newsletter__btn {
-  /* margin: 1rem 0; */
+  margin: 1rem 0;
   width: 8rem;
   padding: 1rem;
   border-radius: 1.5rem;
