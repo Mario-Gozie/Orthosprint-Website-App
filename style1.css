@@ -25,7 +25,7 @@ nav {
   font-size: 1rem;
   font-family: "Roboto", serif;
   font-weight: 500;
-  border-bottom: red 2px solid;
+  /* border-bottom: red 2px solid; */
 }
 
 ul {
@@ -108,20 +108,46 @@ li .nav__item {
 /* Home */
 main {
   height: 100%;
-  position: relative;
+  /* position: relative; */
 }
 
 .home {
   height: calc(100vh - 4.9rem);
+  background-image: url("img/Workshop-1.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .home__wrapper {
+  background-color: rgba(55, 54, 54, 0.1);
+  backdrop-filter: blur(20px);
+  font-family: "Roboto", serif;
+  color: var(--pure-white);
   height: 100%;
-  background-color: red;
+  /* background-color: red; */
   display: flex;
   flex-direction: column;
+
   align-items: center;
   justify-content: center;
+}
+
+.home__wrapper p {
+  margin: 0.5rem;
+}
+
+.home__wrapper p span {
+  color: var(--instagram-colour);
+}
+
+.registeration__link {
+  margin: 2rem 0;
+  color: var(--pure-white);
+  padding: 1rem;
+  background-color: var(--linkedin-colour);
+  border-radius: 15px;
+  text-decoration: none;
 }
 
 /* About */
@@ -221,7 +247,7 @@ main {
   margin: 0.5rem;
   width: 0.8rem;
   height: 0.8rem;
-  border: 0;
+  border: 0.1px solid rgb(180, 177, 177);
   border-radius: 50%;
 }
 /* Founder */
