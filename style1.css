@@ -406,7 +406,7 @@ main {
 
 /* Contact */
 .contact_us {
-  height: 100vh;
+  height: auto;
   background-color: var(--offwhite-background);
 }
 
@@ -416,8 +416,23 @@ main {
 }
 
 .contact__header--container {
-  margin: 1.5rem 0 0.5rem 0;
+  margin: 0.5rem 0 0.5rem 0;
   text-align: center;
+}
+
+.contact__header--container h2 {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: var(--header-colour);
+}
+
+.contact__header--container h3 {
+  font-size: 1.3rem;
+  margin: 0 0 0.1rem 0;
+}
+
+.contact__header--container h3 span {
+  color: var(--linkedin-colour);
 }
 
 .contactInfo {
@@ -425,7 +440,11 @@ main {
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  padding: 0.5rem 2rem;
+  padding: 0rem 2rem;
+}
+.contactInfo p {
+  font-size: 0.9rem;
+  margin: 0 0 0.5rem 0;
 }
 
 .contact {
@@ -442,7 +461,7 @@ main {
 
 .fa-solid {
   font-size: 2rem;
-  color: var(--facebook-color);
+  color: var(--linkedin-colour);
 }
 .form__container {
   margin: 0.2rem 0 0 0;
@@ -503,17 +522,31 @@ form button {
 
 /* footer */
 footer {
-  height: 100vh;
+  height: auto;
+  background-color: rgb(68, 65, 65);
+  color: var(--pure-white);
+}
+
+.footer__wrapper h2 {
+  font-size: 1rem;
+  color: var(--pure-white);
+}
+
+.footer__wrapper p {
+  color: rgb(191, 184, 184);
+  font-size: 0.9rem;
+  margin: 0 0 0.5rem 0;
 }
 
 .quick__links--container {
+  margin: 0.5rem;
   display: flex;
   flex-direction: column;
 }
 
 .quick__link a {
   text-decoration: none;
-  color: red;
+  color: rgb(191, 184, 184);
   margin: 1rem 0 0 0;
   padding: 0;
 }
@@ -529,6 +562,7 @@ footer {
 }
 
 .newsletter {
+  background-color: inherit;
   padding: 0;
 }
 
@@ -540,13 +574,14 @@ footer {
 }
 
 .newsletter__btn {
-  margin: 1rem 0;
+  /* margin: 1rem 0; */
   width: 8rem;
   padding: 1rem;
   border-radius: 1.5rem;
   align-self: flex-start;
+  border: 0;
 }
 
 .fa-brands {
-  color: var(--instagram-colour);
+  color: rgb(209, 207, 207);
 }
