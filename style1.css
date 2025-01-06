@@ -330,6 +330,11 @@ footer {
   padding: none;
 }
 
+.newsletter__container {
+  display: flex;
+  flex-direction: column;
+}
+
 .newsletter {
   padding: 0;
 }
@@ -339,4 +344,16 @@ footer {
   border-radius: 1.5rem;
   padding: 1rem;
   margin: 0;
+}
+
+.newsletter__btn {
+  margin: 1rem 0;
+  width: 8rem;
+  padding: 1rem;
+  border-radius: 1.5rem;
+  align-self: flex-start;
+}
+
+.fa-brands {
+  color: var(--instagram-colour);
 }
