@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Roboto", serif;
 }
 
 :root {
@@ -9,6 +10,7 @@
   --instagram-colour: #c13584;
   --linkedin-colour: #0077b5;
   --youtube-color: #ff0000;
+  --header-colour: rgb(104, 104, 104);
   --pure-white: #fff;
   --brown-color: #f4a460;
   --border-shadow: rgba(150, 150, 150);
@@ -176,6 +178,26 @@ main {
   height: 50%;
 }
 
+.about__container h2 {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: var(--header-colour);
+}
+
+.about__container h3 {
+  font-size: 1.3rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.about__container h3 span {
+  color: var(--linkedin-colour);
+}
+
+.about__container p {
+  font-size: 0.9rem;
+  margin: 0 0 0.5rem 0;
+}
+
 .image__container img {
   width: 100%;
   height: 100%;
@@ -187,34 +209,78 @@ main {
   display: flex;
   justify-content: center;
   height: 105vh;
-  background-color: purple;
 }
 
 .service__container {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 60%;
 }
+
+.services__container h2 {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: var(--header-colour);
+}
+
+.services__container h3 {
+  font-size: 1.3rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.services__container h3 span {
+  color: var(--linkedin-colour);
+}
+
+.services__container p {
+  font-size: 0.9rem;
+  margin: 0 0 0.5rem 0;
+}
+
 .service__and__descripion--container {
   display: flex;
   height: 50%;
 }
 
-.services__wrapper.image__container {
-  height: 40%;
+.services__wrapper .image__container {
+  height: 20%;
+}
+
+.service__desciption h3,
+.service__desciption p {
+  margin: 0.3rem;
+  padding: 0;
 }
 
 .services__image {
+  object-fit: cover;
   height: 100%;
+  /* display: none; */
 }
 
 /* Testimonials */
 .testimonials {
+  background-color: var(--offwhite-background);
   height: 100%;
 }
 
 .testimonial__header {
   text-align: center;
+}
+
+.testimonial__header h2 {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: var(--header-colour);
+}
+
+/* .testimonial__header h3 {
+  font-size: 1.3rem;
+  margin: 0 0 0.5rem 0;
+} */
+
+.testimonial__header h3 span {
+  color: var(--linkedin-colour);
 }
 
 .testimonial__contents {
@@ -223,12 +289,25 @@ main {
   justify-content: center;
 }
 
+.testimonial__message__detail p {
+  font-size: 1rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.testimony__personal--info p {
+  font-family: "Pacifico", serif;
+  color: var(--header-colour);
+  font-style: normal;
+  font-size: 1rem;
+}
+
 .testimonial__image--container {
   width: 10rem;
   height: 10rem;
   border-radius: 50%;
   align-self: center;
   margin: 2rem 0;
+  border: 0.4rem var(--pure-white) solid;
 }
 
 .testimonial__image--container img {
@@ -254,7 +333,7 @@ main {
 
 .founder {
   height: 100vh;
-  background-color: red;
+  background-color: var(--offwhite-background);
 }
 
 .founder__wrapper {
@@ -266,24 +345,69 @@ main {
   text-align: center;
 }
 
+.founder__header h2 {
+  margin: 0rem 0;
+  font-size: 1rem;
+  color: var(--header-colour);
+}
+
+.founder__header h3 {
+  font-size: 1.3rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.founder__header h3 span {
+  color: var(--linkedin-colour);
+}
+
+.founder__description p {
+  font-size: 0.9rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.founder__image--container {
+  height: 10rem;
+  width: 10rem;
+  border-radius: 50%;
+  border: 0.4rem var(--pure-white) solid;
+}
+
+.founder__image {
+  object-fit: cover;
+  object-position: left 30%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
 .founder__image__and__description--container {
-  padding: 3rem 0 0 0;
+  /* padding: 3rem 0 0 0; */
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+.founder__image__and__description--container h4 {
+  font-family: "Pacifico", serif;
+  color: rgb(77, 72, 72);
+  font-style: normal;
+  font-size: 1.2rem;
+}
+
 .founder__btn {
   width: 100%;
   padding: 0.5rem;
+  font-size: 1rem;
   margin: 1rem 0;
   background-color: var(--linkedin-colour);
   color: var(--pure-white);
+  border: 0;
 }
 
 /* Contact */
 .contact_us {
   height: 100vh;
+  background-color: var(--offwhite-background);
 }
 
 .contactInfo__and__form--container {
@@ -322,7 +446,7 @@ main {
 }
 .form__container {
   margin: 0.2rem 0 0 0;
-  background-color: var(--offwhite-background);
+  background-color: var(--pure-white);
   padding: 1rem;
   border-radius: 1rem;
 }
