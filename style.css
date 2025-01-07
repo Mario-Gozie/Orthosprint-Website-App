@@ -112,6 +112,10 @@ li .nav__item {
   display: none;
 }
 
+.close__botton {
+  background-color: red;
+}
+
 .sidebar__active {
   display: block;
 }
