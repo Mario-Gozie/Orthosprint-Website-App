@@ -71,27 +71,50 @@ li .nav__item {
   position: fixed;
   top: 0;
   right: 0;
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(138, 135, 135);
   backdrop-filter: blur(10px);
+  z-index: 999;
   display: flex;
   flex-direction: column;
+}
+
+.sidebar a {
+  width: 100%;
 }
 
 .sidebar ul {
   display: flex;
   flex-direction: column;
-  width: 1rem;
+  height: auto;
+  margin-bottom: 2rem;
 }
 
-.sidebar .login__button {
-  margin: 1rem;
-  max-width: 6rem;
+.sidebar__login__button {
+  margin-left: 1rem;
+
+  width: 20%;
   text-align: center;
+
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  color: var(--pure-white);
+  background-color: var(--linkedin-colour);
+
+  text-decoration: none;
+}
+
+.sidebar__login__button button {
+  margin: 1rem;
+  width: 100%;
 }
 
 .sidebar {
-  display: none;
+  display: block;
 }
+
+/* .sidebar__active {
+  display: block;
+} */
 
 @media (max-width: 1000px) {
   .menu__button {
