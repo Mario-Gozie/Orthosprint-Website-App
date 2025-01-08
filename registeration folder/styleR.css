@@ -56,16 +56,19 @@ main {
   flex-direction: column;
   align-items: center;
   border-radius: 1rem;
-  padding: 1rem;
+  padding: 1.5rem;
 }
 
 .title {
   height: 7%;
+  margin: 0 0 0.5rem 0;
   align-self: flex-start;
   color: var(--header-colour);
   font-weight: 500;
 }
 form {
+  display: flex;
+  flex-direction: column;
   font-size: 1rem;
   height: 75%;
   width: 100%;
@@ -82,7 +85,15 @@ form input {
 }
 
 .category {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  margin: 0 0 0.5rem 0;
+}
+
+button {
+  align-self: center;
+  padding: 0.7rem;
+  border: 0;
+  border-radius: 25px;
+  width: 8rem;
+  color: var(--pure-white);
+  background-color: var(--linkedin-colour);
 }
