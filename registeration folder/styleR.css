@@ -23,8 +23,19 @@ body {
 }
 
 nav {
-  height: 10%;
-  background-color: red;
+  max-height: 10%;
+  /* background-color: red; */
+}
+.logo-container {
+  max-height: 16rem;
+  max-width: 16rem;
+  /* display: flex;
+  align-content: center; */
+}
+
+.logo-container img {
+  height: 100%;
+  width: 100%;
 }
 
 main {
