@@ -5,3 +5,73 @@
   font-family: "Pacifico", serif;
   font-family: "Roboto", serif;
 }
+
+:root {
+  --facebook-color: #1a6de8;
+  --instagram-colour: #c13584;
+  --linkedin-colour: #0077b5;
+  --youtube-color: #ff0000;
+  --header-colour: rgb(104, 104, 104);
+  --pure-white: #fff;
+  --brown-color: #f4a460;
+  --border-shadow: rgba(150, 150, 150);
+  --offwhite-background: #e0e0e0;
+}
+
+body {
+  height: 100vh;
+}
+
+nav {
+  height: 10%;
+  background-color: red;
+}
+
+main {
+  width: 100%;
+  height: calc(100vh - 10%);
+  background-color: var(--offwhite-background);
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 95%;
+  height: 90%;
+  display: flex;
+  background-color: var(--pure-white);
+  flex-direction: column;
+  align-items: center;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.title {
+  height: 7%;
+  align-self: flex-start;
+  color: var(--header-colour);
+  font-weight: 500;
+}
+form {
+  font-size: 1rem;
+  height: 75%;
+  width: 100%;
+}
+
+form input {
+  padding: 0.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.input-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.category {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
