@@ -60,10 +60,7 @@ main {
   font-size: 1.5rem;
   font-weight: 500;
   position: relative;
-  /* justify-content: flex-start;
-  align-self: center;
-  padding: 0 0 0.5rem 0;
-  position: relative; */
+  padding-bottom: 0.5rem;
 }
 
 .title::before {
@@ -156,6 +153,36 @@ form button {
   form .user-details {
     max-height: 300px;
     overflow-y: scroll;
+  }
+}
+
+@media only screen and (width: 1024px) and (max-height: 600px) {
+  main {
+    /* height: 100vh; */
+    display: flex;
+    justify-content: center;
+  }
+
+  .container {
+    height: 90%;
+  }
+
+  form {
+    height: 80%;
+  }
+
+  /* form .user-details {
+    max-height: 300px;
+    overflow-y: scroll;
+  } */
+
+  form .user-details .input-box {
+    margin: 0.5rem 0 0.5rem 0;
+  }
+
+  form button {
+    height: 45px;
+    margin: 0.5rem 0;
   }
 }
 
