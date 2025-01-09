@@ -157,8 +157,13 @@ form button {
 }
 
 @media only screen and (width: 1024px) and (max-height: 600px) {
+  nav {
+    max-height: 12%;
+    /* background-color: red; */
+  }
   main {
     /* height: 100vh; */
+    height: calc(100vh - 12%);
     display: flex;
     justify-content: center;
   }
@@ -171,11 +176,6 @@ form button {
     height: 80%;
   }
 
-  /* form .user-details {
-    max-height: 300px;
-    overflow-y: scroll;
-  } */
-
   form .user-details .input-box {
     margin: 0.5rem 0 0.5rem 0;
   }
@@ -183,6 +183,22 @@ form button {
   form button {
     height: 45px;
     margin: 0.5rem 0;
+  }
+}
+
+@media only screen and (width: 344px) and (max-height: 920px) {
+  form .user-details {
+    max-height: 35rem;
+    overflow-y: scroll;
+    padding: 0 0.4rem;
+  }
+}
+
+@media only screen and (min-width: 412px) and (max-height: 940px) {
+  form .user-details {
+    max-height: 35rem;
+    overflow-y: scroll;
+    padding: 0 0.4rem;
   }
 }
 
