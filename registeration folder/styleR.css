@@ -49,6 +49,117 @@ main {
 }
 
 .container {
+  max-width: 700px;
+  width: 100%;
+  background-color: var(--pure-white);
+  padding: 2rem;
+  border-radius: 5px;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  position: relative;
+  /* justify-content: flex-start;
+  align-self: center;
+  padding: 0 0 0.5rem 0;
+  position: relative; */
+}
+
+.title::before {
+  content: "";
+  background: linear-gradient(
+    to left,
+    var(--linkedin-colour),
+    var(--offwhite-background)
+  );
+  position: absolute;
+  height: 0.3rem;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+form .user-details {
+  display: flex;
+  flex-wrap: wrap; /* flex wrap is used to wrap the content of a container in cases when the screen size increases */
+  justify-content: space-between;
+}
+
+form .user-details .input-box {
+  margin: 1.3rem 0 0.9rem 0;
+  width: calc(100% / 2 - 20px);
+}
+
+.detail {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+form .user-details .input-box input {
+  height: 2rem;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding-left: 15px;
+  font-size: 1rem;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+form .user-details .input-box input:focus {
+  border-color: var(--instagram-colour);
+}
+
+form .gender-details .gender-title {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+form .gender-details .category {
+  display: flex;
+  width: 80%;
+  /* background-color: red; */
+  margin: 1rem;
+  justify-content: space-between;
+}
+
+form button {
+  height: 45px;
+  margin: 1.5rem 0;
+  outline: none;
+  width: 100%;
+  color: var(--pure-white);
+  background-color: var(--linkedin-colour);
+  border: 0;
+  border-radius: 15px;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 584px) {
+  body {
+    height: auto;
+  }
+  .container {
+    max-width: 100%;
+  }
+  form .user-details .input-box {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  form .gender-details .category {
+    width: 100%;
+  }
+  form .user-details {
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+}
+
+/* .container {
   width: 95%;
   height: 90%;
   display: flex;
@@ -57,9 +168,14 @@ main {
   align-items: center;
   border-radius: 1rem;
   padding: 1.5rem;
-}
+} */
 
-.title-container {
+/* .input-box {
+  display: flex;
+  flex-direction: column;
+} */
+
+/* .title-container {
   height: 7%;
   width: 100%;
   color: var(--header-colour);
@@ -84,7 +200,7 @@ main {
     var(--offwhite-background)
   );
   position: absolute;
-  height: 0.2rem;
+  height: 0.3rem;
   width: 100%;
   bottom: 0;
   left: 0;
@@ -119,4 +235,4 @@ button {
   width: 8rem;
   color: var(--pure-white);
   background-color: var(--linkedin-colour);
-}
+} */
