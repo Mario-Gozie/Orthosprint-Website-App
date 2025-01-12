@@ -5,6 +5,10 @@
   font-family: "Roboto", serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --facebook-color: #1a6de8;
   --instagram-colour: #c13584;
