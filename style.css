@@ -231,6 +231,7 @@ main {
 .about__container p {
   font-size: 0.9rem;
   margin: 0 0 0.5rem 0;
+  text-align: justify;
 }
 
 .image__container img {
@@ -270,6 +271,7 @@ main {
 .services__container p {
   font-size: 0.9rem;
   margin: 0 0 0.5rem 0;
+  text-align: justify;
 }
 
 .service__and__descripion--container {
@@ -330,6 +332,7 @@ main {
 
 .testimonial__message__detail p {
   font-size: 1rem;
+
   margin: 0 0 0.5rem 0;
 }
 
@@ -403,6 +406,7 @@ main {
 .founder__description p {
   font-size: 0.9rem;
   margin: 0 0 0.5rem 0;
+  text-align: justify;
 }
 
 .founder__image--container {
@@ -592,6 +596,7 @@ footer {
   color: rgb(191, 184, 184);
   font-size: 0.9rem;
   margin: 0 0 0.5rem 0;
+  text-align: justify;
 }
 
 .quick__links--container {
@@ -739,21 +744,18 @@ footer {
     padding: 0 3rem;
   }
 
-  .about__container p {
+  .about__container p,
+  .services__container p,
+  .testimonial__message__detail p,
+  .testimony__personal--info p,
+  .founder__description p,
+  .contactInfo p,
+  .quick__link a {
     font-size: 1.4rem;
   }
 
-  .services__container p {
-    font-size: 1.4rem;
-  }
-
-  .testimonial__message__detail p {
-    font-size: 1.4rem;
-    /* margin: 0 0 0.5rem 0; */
-  }
-
-  .testimony__personal--info p {
-    font-size: 1.4rem;
+  .service__svg--container {
+    margin-right: 0.5rem;
   }
 
   .right__and__socials__container {
@@ -766,16 +768,8 @@ footer {
     font-size: 1.5rem;
   }
 
-  .contactInfo p {
-    font-size: 1.4rem;
-  }
-
   .footer__wrapper p {
     font-size: 1.3rem;
-  }
-
-  .quick__link a {
-    font-size: 1.4rem;
   }
 
   .about h2,
@@ -785,6 +779,10 @@ footer {
   .contact_us h2,
   .footer__wrapper h2 {
     font-size: 1.2rem;
+  }
+
+  .testimony__personal--info {
+    font-size: 1.3rem;
   }
 }
 
