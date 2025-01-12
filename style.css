@@ -309,6 +309,10 @@ main {
   color: var(--header-colour);
 }
 
+.testimonial__header h3 {
+  font-size: 1.3rem;
+}
+
 .testimonial__header h3 span {
   color: var(--linkedin-colour);
 }
@@ -580,6 +584,8 @@ footer {
 .footer__wrapper h2 {
   font-size: 1rem;
   color: var(--pure-white);
+  text-transform: uppercase;
+  margin: 0.5rem 0;
 }
 
 .footer__wrapper p {
@@ -634,6 +640,7 @@ footer {
 }
 
 .fa-brands {
+  margin: 0 0.3rem;
   color: rgb(209, 207, 207);
 }
 
@@ -742,6 +749,27 @@ footer {
 
   .founder__btn {
     font-size: 1.5rem;
+  }
+
+  .contactInfo p {
+    font-size: 1.4rem;
+  }
+
+  .footer__wrapper p {
+    font-size: 1.3rem;
+  }
+
+  .quick__link a {
+    font-size: 1.4rem;
+  }
+
+  .about h2,
+  .services h2,
+  .testimonials h2,
+  .founder h2,
+  .contact_us h2,
+  .footer__wrapper h2 {
+    font-size: 1.2rem;
   }
 }
 
