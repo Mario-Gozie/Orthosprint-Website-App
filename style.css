@@ -409,6 +409,13 @@ main {
   text-align: justify;
 }
 
+.image__title--container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .founder__image--container {
   height: 10rem;
   width: 10rem;
@@ -459,6 +466,10 @@ main {
 .hidden {
   display: none;
   width: 100%;
+}
+
+.active {
+  display: block;
 }
 
 /* Contact */
@@ -596,7 +607,6 @@ footer {
   color: rgb(191, 184, 184);
   font-size: 0.9rem;
   margin: 0 0 0.5rem 0;
-  text-align: justify;
 }
 
 .quick__links--container {
@@ -719,6 +729,17 @@ footer {
 
 @media (min-width: 768px) {
   /* Styles for medium screens and larger */
+  nav {
+    height: 6rem;
+  }
+  .logo {
+    max-height: 20rem;
+    max-width: 20rem;
+  }
+
+  .home {
+    height: calc(100vh - 6rem);
+  }
 
   .home__wrapper h1 {
     font-size: 5rem;
@@ -751,7 +772,7 @@ footer {
   .founder__description p,
   .contactInfo p,
   .quick__link a {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 
   .service__svg--container {
@@ -773,7 +794,7 @@ footer {
     font-size: 2rem;
   }
   .founder__image__and__description--container h4 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 
   .founder__btn {
@@ -790,7 +811,7 @@ footer {
   .founder__wrapper h2,
   .contact_us h2,
   .footer__wrapper h2 {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   .testimony__personal--info {
@@ -812,10 +833,51 @@ footer {
     font-size: 1.5rem;
     padding: 1rem;
   }
+
+  .newsletter__container {
+    margin: 0 0 0.5rem 0;
+  }
+
+  .newsletter__input {
+    border: var(--offwhite-background) 1px solid;
+    border-radius: 1.5rem;
+    max-width: 100%;
+    padding: 1.5rem;
+    margin: 0.5rem 0 0.5rem 0;
+  }
+
+  .newsletter__btn {
+    top: -9%;
+    right: 0%;
+    padding: 1.2rem;
+    width: 10rem;
+    border: 0.3rem solid var(--linkedin-colour);
+  }
+
+  .right__and__socials__container {
+    margin: 0.5rem 0 0 0;
+  }
+  .fa-brands {
+    font-size: 1.5rem;
+    margin: 0 0.3rem;
+    color: rgb(209, 207, 207);
+  }
 }
 
 @media (min-width: 992px) {
   /* Styles for large screens and larger */
+
+  .about__container p,
+  .services__container p,
+  .testimonial__message__detail p,
+  .testimony__personal--info p,
+  .founder__description p,
+  .contactInfo p,
+  .quick__link a {
+    font-size: 1.2rem;
+  }
+
+  /* THESE AREAS ARE FOR REVIEW */
 
   .about,
   .services,
@@ -823,7 +885,7 @@ footer {
   .founder,
   .contact_us,
   footer {
-    padding: 0 0.5rem;
+    padding: 0 1rem;
   }
   .about__wrapper {
     display: flex;
@@ -911,21 +973,11 @@ footer {
     margin-left: 3rem;
   }
 
-  /* I need to handle this area */
-
   .founders__descriptions {
     max-width: 400px;
     grid-column: 2/3;
     grid-row: span 3;
   }
-
-  /* .founder__btn {
-    max-width: 20rem;
-  } */
-
-  /* .founder__description {
-    width: 100%;
-  }*/
 
   .contactInfo__and__form--container {
     display: flex;
