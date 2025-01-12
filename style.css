@@ -739,12 +739,41 @@ footer {
 
   .about .image__container {
     width: 60%;
-    height: 30rem;
+    height: 35rem;
     margin: 0 1rem 0 0;
   }
 
   .about__container h3 {
     margin: 0 0 1.5rem 0;
+  }
+
+  .services__wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .services__container {
+    width: 40%;
+    margin: 0 1rem 0 0;
+  }
+  .services__wrapper .image__container {
+    height: 30rem;
+    width: 50%;
+  }
+
+  .testimonial__content {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 2.5fr;
+  }
+
+  .testimonial__image--container {
+    justify-self: center;
+  }
+  .testimonial__message__detail {
+    width: 100%;
+    align-self: center;
   }
 }
 
