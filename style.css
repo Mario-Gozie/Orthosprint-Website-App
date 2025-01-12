@@ -715,6 +715,21 @@ footer {
 @media (min-width: 768px) {
   /* Styles for medium screens and larger */
 
+  .home__wrapper h1 {
+    font-size: 5rem;
+  }
+
+  .home__wrapper p {
+    margin: 0.5rem;
+    font-size: 2rem;
+  }
+
+  .registeration__link {
+    padding: 1.5rem;
+    border-radius: 15px;
+    font-size: 2rem;
+  }
+
   .about,
   .services,
   .testimonials,
