@@ -791,7 +791,7 @@ footer {
 
   .founder__image__and__description--container h3 {
     margin-top: 1rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   .founder__image__and__description--container h4 {
     font-size: 1.2rem;
@@ -802,7 +802,7 @@ footer {
   }
 
   .footer__wrapper p {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .about h2,
@@ -830,7 +830,7 @@ footer {
   }
   form button {
     margin: 1rem 0 0 0;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     padding: 1rem;
   }
 
@@ -842,14 +842,14 @@ footer {
     border: var(--offwhite-background) 1px solid;
     border-radius: 1.5rem;
     max-width: 100%;
-    padding: 1.5rem;
+    padding: 0.8rem;
     margin: 0.5rem 0 0.5rem 0;
   }
 
   .newsletter__btn {
-    top: -9%;
+    top: -14%;
     right: 0%;
-    padding: 1.2rem;
+    padding: 0.6rem;
     width: 10rem;
     border: 0.3rem solid var(--linkedin-colour);
   }
@@ -939,29 +939,21 @@ footer {
   .founder__wrapper {
     display: flex;
     flex-direction: column;
-
     align-items: center;
   }
 
   .founder__image__and__description--container {
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 2fr 0.3fr 0.3fr;
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-rows: 1fr 1fr;
     place-items: center;
     margin: 2rem 0 0 0;
   }
 
-  .founder__image--container {
+  .image__title--container {
     grid-column: 1/2;
-    grid-row: 1/2;
-    justify-self: center;
-    margin-left: 3rem;
-  }
-
-  .founder__image__and__description--container h3 {
-    grid-column: 1/2;
-    grid-row: 2/3;
+    grid-row: span 2;
     justify-self: center;
     margin-left: 3rem;
   }
@@ -974,7 +966,7 @@ footer {
   }
 
   .founders__descriptions {
-    max-width: 400px;
+    max-width: 500px;
     grid-column: 2/3;
     grid-row: span 3;
   }
@@ -983,7 +975,6 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 1.5rem 0 0 0;
   }
 
   .contactInfo {
@@ -998,9 +989,15 @@ footer {
     align-self: center;
   }
 
+  form button {
+    margin: 1rem 0 0 0;
+    font-size: 1.2rem;
+    padding: 1rem;
+  }
+
   .footer__wrapper {
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 0.01fr 0.3fr;
+    grid-template-rows: 1fr 0.01fr 0.1fr;
     gap: 1rem;
   }
 
@@ -1040,6 +1037,10 @@ footer {
     position: static;
 
     border: 0.15rem solid var(--linkedin-colour);
+  }
+
+  .right__and__socials__container {
+    margin: 0.3rem 0;
   }
 }
 
