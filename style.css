@@ -382,6 +382,7 @@ main {
 
 .founder__header h2 {
   margin: 0rem 0;
+  text-transform: uppercase;
   font-size: 1rem;
   color: var(--header-colour);
 }
@@ -469,6 +470,7 @@ main {
 }
 
 .contact__header--container h2 {
+  text-transform: uppercase;
   margin: 0.5rem 0;
   font-size: 1rem;
   color: var(--header-colour);
@@ -715,10 +717,31 @@ footer {
     padding: 0 3rem;
   }
 
+  .about__container p {
+    font-size: 1.4rem;
+  }
+
+  .services__container p {
+    font-size: 1.4rem;
+  }
+
+  .testimonial__message__detail p {
+    font-size: 1.4rem;
+    /* margin: 0 0 0.5rem 0; */
+  }
+
+  .testimony__personal--info p {
+    font-size: 1.4rem;
+  }
+
   .right__and__socials__container {
     display: flex;
     justify-content: space-between;
     padding: 0.5rem 0 0 0;
+  }
+
+  .founder__btn {
+    font-size: 1.5rem;
   }
 }
 
