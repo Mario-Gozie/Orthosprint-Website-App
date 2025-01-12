@@ -764,6 +764,18 @@ footer {
     padding: 0.5rem 0 0 0;
   }
 
+  .founder__wrapper {
+    padding: 1.5rem 0;
+  }
+
+  .founder__image__and__description--container h3 {
+    margin-top: 1rem;
+    font-size: 2rem;
+  }
+  .founder__image__and__description--container h4 {
+    font-size: 1.5rem;
+  }
+
   .founder__btn {
     font-size: 1.5rem;
   }
@@ -775,7 +787,7 @@ footer {
   .about h2,
   .services h2,
   .testimonials h2,
-  .founder h2,
+  .founder__wrapper h2,
   .contact_us h2,
   .footer__wrapper h2 {
     font-size: 1.2rem;
@@ -783,6 +795,22 @@ footer {
 
   .testimony__personal--info {
     font-size: 1.3rem;
+  }
+
+  form label {
+    font-size: 1.3rem;
+  }
+
+  form input,
+  form textarea,
+  form button {
+    font-size: 1.2rem;
+    margin: 0 0 1rem 0;
+  }
+  form button {
+    margin: 1rem 0 0 0;
+    font-size: 1.5rem;
+    padding: 1rem;
   }
 }
 
