@@ -700,10 +700,52 @@ footer {
 
 @media (min-width: 768px) {
   /* Styles for medium screens and larger */
+
+  .about,
+  .services,
+  .testimonials,
+  .founder,
+  .contact_us,
+  footer {
+    padding: 0 3rem;
+  }
+
+  .right__and__socials__container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0 0 0;
+  }
 }
 
 @media (min-width: 992px) {
   /* Styles for large screens and larger */
+  .about,
+  .services,
+  .testimonials,
+  .founder,
+  .contact_us,
+  footer {
+    padding: 0 0.5rem;
+  }
+  .about__wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .about__container {
+    width: 40%;
+    margin: 1rem 0 0 1rem;
+  }
+
+  .about .image__container {
+    width: 60%;
+    height: 30rem;
+    margin: 0 1rem 0 0;
+  }
+
+  .about__container h3 {
+    margin: 0 0 1.5rem 0;
+  }
 }
 
 @media (min-width: 1200px) {
