@@ -149,8 +149,8 @@ main {
 }
 
 .home__wrapper {
-  background-color: rgba(55, 54, 54, 0.4);
-  backdrop-filter: blur(20px);
+  background-color: rgb(0, 0, 0, 0.6);
+  /* backdrop-filter: blur(10px); */
   font-family: "Roboto", serif;
   color: var(--pure-white);
   height: 100%;
@@ -165,6 +165,7 @@ main {
 .home__wrapper h1 {
   font-weight: 800;
   font-size: 2rem;
+  color: rgb(255, 249, 249);
 }
 
 .home__wrapper p {
@@ -173,7 +174,7 @@ main {
 }
 
 .home__wrapper p span {
-  color: rgb(38, 34, 79);
+  color: rgb(252, 252, 48);
 }
 
 .registeration__link {
@@ -182,7 +183,7 @@ main {
   padding: 1rem;
   background-color: var(--linkedin-colour);
   border-radius: 15px;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   text-decoration: none;
 }
 
@@ -723,6 +724,7 @@ footer {
 
 @media (min-width: 992px) {
   /* Styles for large screens and larger */
+
   .about,
   .services,
   .testimonials,
@@ -779,10 +781,20 @@ footer {
     width: 100%;
     align-self: center;
   }
+
+  .founder__wrapper {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+  }
+
   .founder__image__and__description--container {
+    width: 100%;
     display: grid;
-    grid-template-columns: 2fr 2.5fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 2fr 0.3fr 0.3fr;
+    place-items: center;
     margin: 2rem 0 0 0;
   }
 
@@ -790,29 +802,29 @@ footer {
     grid-column: 1/2;
     grid-row: 1/2;
     justify-self: center;
+    margin-left: 3rem;
   }
 
   .founder__image__and__description--container h3 {
     grid-column: 1/2;
     grid-row: 2/3;
     justify-self: center;
+    margin-left: 3rem;
   }
 
   .founder__image__and__description--container h4 {
     grid-column: 1/2;
     grid-row: 3/4;
     justify-self: center;
+    margin-left: 3rem;
   }
 
   /* I need to handle this area */
 
   .founders__descriptions {
-    width: 100%;
+    max-width: 400px;
     grid-column: 2/3;
     grid-row: span 3;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 
   /* .founder__btn {
