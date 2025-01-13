@@ -472,6 +472,10 @@ main {
   width: 100%;
 }
 
+.founder__active {
+  background-color: var(--instagram-colour);
+}
+
 .active {
   display: block;
 }

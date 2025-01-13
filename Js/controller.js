@@ -27,3 +27,35 @@ navbar.addEventListener("click", function (e) {
     document.querySelector(id).scrollIntoView({ behaviour: "smooth" });
   }
 });
+
+// implementing the click function for founder
+
+const founderBtn = document.querySelectorAll(".founder__btn");
+
+founderBtn.forEach((fb) => {
+  fb.addEventListener("click", function (e) {
+    e.preventDefault();
+    console.log(fb);
+    const targetData = fb.dataset.tab;
+    console.log(targetData);
+
+    founderBtn.forEach((fn) => fn.classList.remove("founder__active"));
+
+    document
+      .querySelectorAll(`.hidden`)
+      .forEach((hi) => hi.classList.remove("active"));
+
+    if (fb.classList.contains("founder__active")) {
+      fb.classList.remove("founder__active");
+      document
+        .querySelector(`.description__${targetData}`)
+        .classList.remove("active");
+    } else {
+      fb.classList.add("founder__active");
+
+      document
+        .querySelector(`.description__${targetData}`)
+        .classList.add("active");
+    }
+  });
+});
