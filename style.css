@@ -170,11 +170,17 @@ main {
   font-weight: 800;
   font-size: 2rem;
   color: rgb(255, 249, 249);
+  transform: translateX(-500px);
+  opacity: 0;
+  transition: opacity 1s ease, transform 1s ease;
 }
 
 .home__wrapper p {
   margin: 0.5rem;
   font-size: 1.3rem;
+  transform: translateX(-500px);
+  opacity: 0;
+  transition: opacity 1s ease, transform 1s ease;
 }
 
 .home__wrapper p span {
@@ -189,6 +195,9 @@ main {
   border-radius: 15px;
   font-size: 1.4rem;
   text-decoration: none;
+  transform: translateX(-500px);
+  opacity: 0;
+  transition: opacity 1s ease, transform 1s ease;
 }
 
 /* About */
