@@ -77,3 +77,9 @@ window.addEventListener("load", function () {
     la.style.transform = "translateX(0)";
   });
 });
+
+// WORK ON MODAL WINDOW
+
+const modal = document.querySelector(".modal");
+const overlay = document.querySelector(".overlay");
+const brnCloseModal = document.querySelector(".close__modal");
