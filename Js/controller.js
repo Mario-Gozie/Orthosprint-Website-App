@@ -82,4 +82,5 @@ window.addEventListener("load", function () {
 
 const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
-const brnCloseModal = document.querySelector(".close__modal");
+const btnCloseModal = document.querySelector(".close__modal");
+const submitNewsletter = document.querySelector(".newsletter__btn");
