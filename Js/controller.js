@@ -39,6 +39,7 @@ founderBtn.forEach((fb) => {
 
     // Check if the button was previously active
     const wasActive = fb.classList.contains("founder__active");
+    // console.log(wasActive);
 
     // Remove active classes from all buttons and descriptions
     founderBtn.forEach((fn) => fn.classList.remove("founder__active"));

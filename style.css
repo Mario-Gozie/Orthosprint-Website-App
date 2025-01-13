@@ -21,6 +21,23 @@ html {
   --offwhite-background: #e0e0e0;
 }
 
+/* .hidden__modal {
+  display: ;
+} */
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  background-color: var(--pure-white);
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
 /* Navigation Bar */
 
 nav {
@@ -170,17 +187,18 @@ main {
   font-weight: 800;
   font-size: 2rem;
   color: rgb(255, 249, 249);
-  transform: translateX(-500px);
-  opacity: 0;
-  transition: opacity 1s ease, transform 1s ease;
 }
 
 .home__wrapper p {
   margin: 0.5rem;
   font-size: 1.3rem;
+}
+.home__wrapper h1,
+.home__wrapper p,
+.registeration__link {
   transform: translateX(-500px);
   opacity: 0;
-  transition: opacity 1s ease, transform 1s ease;
+  transition: opacity 2s ease, transform 2s ease;
 }
 
 .home__wrapper p span {
@@ -195,9 +213,6 @@ main {
   border-radius: 15px;
   font-size: 1.4rem;
   text-decoration: none;
-  transform: translateX(-500px);
-  opacity: 0;
-  transition: opacity 1s ease, transform 1s ease;
 }
 
 /* About */
@@ -747,7 +762,7 @@ footer {
 @media (min-width: 768px) {
   /* Styles for medium screens and larger */
   nav {
-    height: 6rem;
+    height: 5rem;
   }
   .logo {
     max-height: 20rem;
@@ -755,7 +770,7 @@ footer {
   }
 
   .home {
-    height: calc(100vh - 6rem);
+    height: calc(100vh - 5rem);
   }
 
   .home__wrapper h1 {
