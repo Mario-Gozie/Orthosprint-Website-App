@@ -35,24 +35,26 @@ const founderBtn = document.querySelectorAll(".founder__btn");
 founderBtn.forEach((fb) => {
   fb.addEventListener("click", function (e) {
     e.preventDefault();
-    console.log(fb);
     const targetData = fb.dataset.tab;
-    console.log(targetData);
 
+    // Check if the button was previously active
+    const wasActive = fb.classList.contains("founder__active");
+
+    // Remove active classes from all buttons and descriptions
     founderBtn.forEach((fn) => fn.classList.remove("founder__active"));
-
     document
       .querySelectorAll(`.hidden`)
       .forEach((hi) => hi.classList.remove("active"));
 
-    if (fb.classList.contains("founder__active")) {
+    // If the button was previously active, remove both classes
+    if (wasActive) {
       fb.classList.remove("founder__active");
       document
         .querySelector(`.description__${targetData}`)
         .classList.remove("active");
     } else {
+      // If it was not active, add the active classes
       fb.classList.add("founder__active");
-
       document
         .querySelector(`.description__${targetData}`)
         .classList.add("active");
