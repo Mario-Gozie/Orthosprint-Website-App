@@ -915,7 +915,7 @@ footer {
   }
   .about__container {
     width: 40%;
-    margin: 4rem 0 0 1rem;
+    margin: 0.5rem 0 0 0.5rem;
   }
 
   .about .image__container {
@@ -1078,7 +1078,33 @@ footer {
     left: -30%; /* Position it to the left */
     top: 50%; /* Align it to the top of the container */
     width: 7rem; /* Width of the line */
-    height: 5px; /* Full height of the container */
+    height: 3px; /* Full height of the container */
     background-color: yellow; /* Color of the line */
   }
+
+  .about__wrapper {
+    position: relative;
+  }
+
+  .about__container {
+    width: 40%;
+    margin: 4rem 0 0 0.5rem;
+  }
+
+  .about__wrapper::before {
+    content: "";
+    height: 3px;
+    width: 20rem;
+    background-color: var(--linkedin-colour);
+    top: 26%;
+    left: 50%;
+    position: absolute;
+  }
+
+  .about__wrapper p {
+    padding: 1rem 0 0 0;
+  }
+}
+
+@media (min-width: 1300px) {
 }
