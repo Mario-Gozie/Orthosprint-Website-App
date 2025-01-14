@@ -97,6 +97,24 @@ newsletterForm.addEventListener("submit", function (e) {
   }
 });
 
-////// THIS IS FOR REGISTERATION PAGE.
+// MAKING ICONS MOVE
 
-// MODAL WINDOW
+const svg = document.querySelectorAll(".service-svg");
+
+const hoverBigScreen = function () {
+  if (window.innerWidth >= 600) {
+    svg.forEach((sv) =>
+      sv.addEventListener("mouseenter", function (e) {
+        setTimeout(() => sv.classList.add("moved"), 1000);
+      })
+    );
+
+    svg.forEach((sv) =>
+      sv.addEventListener("mouseleave", function (e) {
+        setTimeout(() => sv.classList.remove("moved"), 1000);
+      })
+    );
+  }
+};
+
+hoverBigScreen();

@@ -290,6 +290,14 @@ main {
   height: 50%;
 }
 
+.service-svg {
+  transition: transform 2s ease; /* Smooth transition */
+}
+
+.moved {
+  transform: translateY(70px);
+}
+
 .services__wrapper .image__container {
   height: 20%;
 }
@@ -892,8 +900,6 @@ footer {
     font-size: 1.2rem;
   }
 
-  /* THESE AREAS ARE FOR REVIEW */
-
   .about,
   .services,
   .testimonials,
@@ -1061,4 +1067,18 @@ footer {
 
 @media (min-width: 1200px) {
   /* Styles for extra-large screens */
+
+  .home__wrapper P {
+    position: relative;
+  }
+
+  .home__wrapper P::before {
+    content: "";
+    position: absolute;
+    left: -30%; /* Position it to the left */
+    top: 50%; /* Align it to the top of the container */
+    width: 7rem; /* Width of the line */
+    height: 5px; /* Full height of the container */
+    background-color: yellow; /* Color of the line */
+  }
 }
