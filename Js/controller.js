@@ -80,7 +80,20 @@ window.addEventListener("load", function () {
 
 // WORK ON MODAL WINDOW
 
-const modal = document.querySelector(".modal");
-const overlay = document.querySelector(".overlay");
-const btnCloseModal = document.querySelector(".close__modal");
+// const modal = document.querySelector(".modal");
+// const overlay = document.querySelector(".overlay");
+// const btnCloseModal = document.querySelector(".close__modal");
 const submitNewsletter = document.querySelector(".newsletter__btn");
+
+const newsletterInput = document.querySelector(".newsletter__input");
+
+const newsletterForm = document.getElementById("newsletterForm");
+
+// console.log(modal, overlay, btnCloseModal, submitNewsletter);
+
+newsletterForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+  newsletterInput.value.trim() === ""
+    ? alert("You have not given us any email")
+    : alert("We will now keep you updated with our latest offers");
+});
