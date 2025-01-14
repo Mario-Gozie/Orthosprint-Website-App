@@ -87,9 +87,14 @@ newsletterForm.addEventListener("submit", function (e) {
   e.preventDefault();
 
   // Checking if the input value is Empty.
-  newsletterInput.value.trim() === ""
-    ? alert("You have not given us any email")
-    : alert("We will now keep you updated with our latest offers");
+
+  if (newsletterInput.value.trim() === "") {
+    newsletterInput.value = "";
+    alert("You have not given us any email");
+  } else {
+    newsletterInput.value = "";
+    alert("We will now keep you updated with our latest offers");
+  }
 });
 
 ////// THIS IS FOR REGISTERATION PAGE.
