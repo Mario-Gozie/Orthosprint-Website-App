@@ -983,7 +983,7 @@ footer {
     grid-column: 1/2;
     grid-row: 3/4;
     justify-self: center;
-    margin-left: 3rem;
+    /* margin-left: 3rem; */
   }
 
   .founders__descriptions {
@@ -1078,7 +1078,7 @@ footer {
     left: -30%; /* Position it to the left */
     top: 50%; /* Align it to the top of the container */
     width: 7rem; /* Width of the line */
-    height: 3px; /* Full height of the container */
+    height: 4px; /* Full height of the container */
     background-color: yellow; /* Color of the line */
   }
 
@@ -1093,10 +1093,10 @@ footer {
 
   .about__wrapper::before {
     content: "";
-    height: 3px;
+    height: 4px;
     width: 20rem;
     background-color: var(--linkedin-colour);
-    top: 26%;
+    top: 25%;
     left: 50%;
     position: absolute;
   }
