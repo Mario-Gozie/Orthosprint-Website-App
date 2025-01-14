@@ -78,22 +78,20 @@ window.addEventListener("load", function () {
   });
 });
 
-// WORK ON MODAL WINDOW
-
-// const modal = document.querySelector(".modal");
-// const overlay = document.querySelector(".overlay");
-// const btnCloseModal = document.querySelector(".close__modal");
-const submitNewsletter = document.querySelector(".newsletter__btn");
+// NEWSLETTER SUBMISSION
 
 const newsletterInput = document.querySelector(".newsletter__input");
-
 const newsletterForm = document.getElementById("newsletterForm");
-
-// console.log(modal, overlay, btnCloseModal, submitNewsletter);
 
 newsletterForm.addEventListener("submit", function (e) {
   e.preventDefault();
+
+  // Checking if the input value is Empty.
   newsletterInput.value.trim() === ""
     ? alert("You have not given us any email")
     : alert("We will now keep you updated with our latest offers");
 });
+
+////// THIS IS FOR REGISTERATION PAGE.
+
+// MODAL WINDOW
