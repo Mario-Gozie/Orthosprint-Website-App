@@ -355,6 +355,10 @@ main {
   margin: 0 0 0.5rem 0;
 }
 
+.testimony__personal--info {
+  margin: 2rem 0 0 0;
+}
+
 .testimony__personal--info p {
   font-family: "Pacifico", serif;
   color: var(--header-colour);
@@ -976,7 +980,7 @@ footer {
     grid-column: 1/2;
     grid-row: span 2;
     justify-self: center;
-    margin-left: 3rem;
+    margin-left: 1rem;
   }
 
   .founder__image__and__description--container h4 {
@@ -1103,6 +1107,20 @@ footer {
 
   .about__wrapper p {
     padding: 1rem 0 0 0;
+  }
+
+  .testimony__personal--info {
+    position: relative;
+    padding: 0 0 0 7rem;
+  }
+  .testimony__personal--info::before {
+    content: "";
+    position: absolute;
+    height: 4px;
+    width: 6rem;
+    top: 20%;
+    left: 0%;
+    background-color: var(--linkedin-colour);
   }
 }
 
