@@ -118,3 +118,59 @@ const hoverBigScreen = function () {
 };
 
 hoverBigScreen();
+
+// Code logic for slider, use data to get the sliders to show
+
+// SLIDERS
+
+const sliders = document.querySelectorAll(".testimonial__content");
+
+let currentSlide = 1;
+const maxLength = sliders.length;
+
+console.log(currentSlide, maxLength);
+
+const slider = function () {
+  sliders.forEach((slide, i) => {
+    slide.style.transform = `translateX(${100 * i}%)`;
+  });
+};
+
+slider();
+
+/// WORKING ON THE SLIDER
+
+const mainSlider = function () {
+  if (currentSlide === -maxLength) {
+    currentSlide = 1;
+  } else {
+    slider.forEach(
+      (sl, i) =>
+        (sl.style.transform = `translateX(${100 * (i - currentSlide)}%)`)
+    );
+  }
+};
+
+mainSlider();
+
+// const sliders = document.querySelectorAll(".testimonial__content");
+// let currentIndex = 0;
+
+// function showNextSlide() {
+//   // Move all slides off-screen
+//   sliders.forEach((slide) => {
+//     slide.style.transform = "translateX(100%)"; // Move off-screen
+//   });
+
+//   // Show the current slide
+//   sliders[currentIndex].style.transform = "translateX(0)"; // Bring current slide into view
+
+//   // Update the index for the next slide
+//   currentIndex = (currentIndex + 1) % sliders.length; // Loop back to the first slide
+// }
+
+// // Initially show the first slide
+// showNextSlide();
+
+// // Change slides every 2 seconds
+// setInterval(showNextSlide, 2000);

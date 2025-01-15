@@ -317,7 +317,8 @@ main {
 /* Testimonials */
 .testimonials {
   background-color: var(--offwhite-background);
-  height: 100%;
+  /* height: 100%; */
+  height: 80vh;
 }
 
 .testimonial__header {
@@ -339,14 +340,19 @@ main {
 }
 
 .testimonial__contents--container {
+  position: relative;
   display: flex;
-  overflow: hidden;
+  height: 100%;
+  /* overflow: hidden; */
 }
 
 .testimonial__content {
-  min-width: 100%;
+  width: 100%;
   margin: 0.5rem;
-  /* display: flex; */
+  position: absolute;
+  top: 0;
+  width: 100%;
+  /* transition: 1s ease; */
 }
 
 .testimonial__message__detail p {
@@ -945,6 +951,7 @@ footer {
   .services__wrapper .image__container {
     height: 30rem;
     width: 50%;
+    margin: 1rem 0 0 0;
   }
 
   .testimonial__content {
@@ -1137,6 +1144,30 @@ footer {
     flex-direction: column;
     justify-items: center;
     align-items: center;
+  }
+
+  .switch_dot {
+    position: relative;
+  }
+
+  /* WILL REVIEW THIS PART OF THE CODE */
+  .switch_dot::before {
+    content: "";
+    height: 4ox;
+    height: 1.5rem;
+    top: 0;
+    left: 0;
+    background-color: var(--linkedin-colour);
+    position: absolute;
+    z-index: 10;
+  }
+
+  .switch_dot::before {
+    content: "01";
+    color: #c13584;
+    top: -30%;
+    left: 200%;
+    position: absolute;
   }
 
   .testimony__personal--info {
