@@ -128,6 +128,7 @@ const sliders = document.querySelectorAll(".testimonial__content");
 let currentSlide = 0;
 const maxLength = sliders.length;
 
+const dots = document.querySelectorAll(".switch_dot");
 // console.log(currentSlide, maxLength);
 
 const arrangeSliders = function () {
@@ -138,18 +139,28 @@ const arrangeSliders = function () {
 
 arrangeSliders();
 
-console.log(sliders);
-
 /// WORKING ON THE SLIDER
 
 const autoSlide = function () {
+  const slidersArray = [...sliders];
   if (currentSlide < maxLength) {
-    sliders.forEach((sl, i) => {
-      sl.style.transform = `translateX(${100 * (i - currentSlide)}%)`;
-
-      // console.log(currentSlide);
-      // console.log(sl);
+    dots.forEach((dot) => {
+      dot.classList.remove("switch_dot-active");
     });
+
+    // if (sl.dataset.dot === 0) {
+    //   console.lod(sl);
+    // }
+    slidersArray.forEach((sl, i) => {
+      sl.style.transform = `translateX(${100 * (i - currentSlide)}% 
+
+      )`;
+    });
+
+    const currentDot = document.querySelector(`.switch_dot_${currentSlide}`);
+    if (currentDot) {
+      currentDot.classList.add("switch_dot-active");
+    }
   }
 
   currentSlide++;
@@ -160,27 +171,3 @@ const autoSlide = function () {
 };
 
 setInterval(autoSlide, 3000);
-
-// const dots = document.querySelectorAll(".switch_dot");
-
-// console.log(dots);
-const activateDots = function () {
-  sliders.forEach((sl, i) => {
-    if ((sl.style.transform = `translateX(0)%`)) {
-      let { dot } = sl.dataset;
-      // dt.classList.remove("switch_dot-active");
-
-      document
-        .querySelector(`.switch_dot_${dot}`)
-        .classList.add("switch_dot-active");
-    }
-  });
-};
-
-activateDots();
-
-// dots.forEach((dt, i) => {
-//   sliders.forEach((sl, i)=>{if(sl.style.transform = `translateX(0)`))
-
-// }
-// });
