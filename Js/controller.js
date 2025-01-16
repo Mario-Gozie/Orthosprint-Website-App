@@ -125,34 +125,40 @@ hoverBigScreen();
 
 const sliders = document.querySelectorAll(".testimonial__content");
 
-let currentSlide = 1;
+let currentSlide = 0;
 const maxLength = sliders.length;
 
 console.log(currentSlide, maxLength);
 
-const slider = function () {
+const arrangeSliders = function () {
   sliders.forEach((slide, i) => {
     slide.style.transform = `translateX(${100 * i}%)`;
   });
 };
 
-slider();
+arrangeSliders();
+
+console.log(sliders);
 
 /// WORKING ON THE SLIDER
 
-const mainSlider = function () {
-  if (currentSlide === -maxLength) {
-    currentSlide = 1;
+const autoSlide = function () {
+  if (currentSlide < maxLength) {
+    currentSlide++;
+    sliders.forEach((sl, i) => {
+      sl.style.transform = `translateX(${100 * (i - currentSlide)}%)`;
+
+      console.log(currentSlide);
+      console.log(sl);
+    });
   } else {
-    slider.forEach(
-      (sl, i) =>
-        (sl.style.transform = `translateX(${100 * (i - currentSlide)}%)`)
-    );
+    currentSlide = 0;
   }
 };
 
-mainSlider();
+const sliding = setInterval(autoSlide, 3000);
 
+sliding();
 // const sliders = document.querySelectorAll(".testimonial__content");
 // let currentIndex = 0;
 
