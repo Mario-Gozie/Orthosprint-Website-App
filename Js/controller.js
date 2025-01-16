@@ -128,7 +128,7 @@ const sliders = document.querySelectorAll(".testimonial__content");
 let currentSlide = 0;
 const maxLength = sliders.length;
 
-console.log(currentSlide, maxLength);
+// console.log(currentSlide, maxLength);
 
 const arrangeSliders = function () {
   sliders.forEach((slide, i) => {
@@ -144,14 +144,17 @@ console.log(sliders);
 
 const autoSlide = function () {
   if (currentSlide < maxLength) {
-    currentSlide++;
     sliders.forEach((sl, i) => {
       sl.style.transform = `translateX(${100 * (i - currentSlide)}%)`;
 
       console.log(currentSlide);
       console.log(sl);
     });
-  } else {
+  }
+
+  currentSlide++;
+
+  if (currentSlide >= maxLength) {
     currentSlide = 0;
   }
 };

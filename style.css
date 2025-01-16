@@ -343,7 +343,7 @@ main {
   position: relative;
   display: flex;
   height: 100%;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 .testimonial__content {
@@ -352,7 +352,7 @@ main {
   position: absolute;
   top: 0;
   width: 100%;
-  /* transition: 1s ease; */
+  transition: 1s ease;
 }
 
 .testimonial__message__detail p {
