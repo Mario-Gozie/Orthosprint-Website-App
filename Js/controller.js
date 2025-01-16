@@ -147,8 +147,8 @@ const autoSlide = function () {
     sliders.forEach((sl, i) => {
       sl.style.transform = `translateX(${100 * (i - currentSlide)}%)`;
 
-      console.log(currentSlide);
-      console.log(sl);
+      // console.log(currentSlide);
+      // console.log(sl);
     });
   }
 
@@ -159,27 +159,28 @@ const autoSlide = function () {
   }
 };
 
-const sliding = setInterval(autoSlide, 3000);
+setInterval(autoSlide, 3000);
 
-sliding();
-// const sliders = document.querySelectorAll(".testimonial__content");
-// let currentIndex = 0;
+// const dots = document.querySelectorAll(".switch_dot");
 
-// function showNextSlide() {
-//   // Move all slides off-screen
-//   sliders.forEach((slide) => {
-//     slide.style.transform = "translateX(100%)"; // Move off-screen
-//   });
+// console.log(dots);
+const activateDots = function () {
+  sliders.forEach((sl, i) => {
+    if ((sl.style.transform = `translateX(0)%`)) {
+      let { dot } = sl.dataset;
+      // dt.classList.remove("switch_dot-active");
 
-//   // Show the current slide
-//   sliders[currentIndex].style.transform = "translateX(0)"; // Bring current slide into view
+      document
+        .querySelector(`.switch_dot_${dot}`)
+        .classList.add("switch_dot-active");
+    }
+  });
+};
 
-//   // Update the index for the next slide
-//   currentIndex = (currentIndex + 1) % sliders.length; // Loop back to the first slide
+activateDots();
+
+// dots.forEach((dt, i) => {
+//   sliders.forEach((sl, i)=>{if(sl.style.transform = `translateX(0)`))
+
 // }
-
-// // Initially show the first slide
-// showNextSlide();
-
-// // Change slides every 2 seconds
-// setInterval(showNextSlide, 2000);
+// });
