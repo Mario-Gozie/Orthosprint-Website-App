@@ -99,75 +99,87 @@ newsletterForm.addEventListener("submit", function (e) {
 
 // MAKING ICONS MOVE
 
-const svg = document.querySelectorAll(".service-svg");
+const AllServicesContainer = document.querySelectorAll(
+  ".service__and__descripion--container"
+);
 
-const hoverBigScreen = function () {
-  if (window.innerWidth >= 600) {
-    svg.forEach((sv) =>
-      sv.addEventListener("mouseenter", function (e) {
-        setTimeout(() => sv.classList.add("moved"), 1000);
-      })
-    );
+AllServicesContainer.forEach((AS) =>
+  AS.addEventListener("mouseenter", function () {
+    const image = AS.querySelector(".service-svg");
 
-    svg.forEach((sv) =>
-      sv.addEventListener("mouseleave", function (e) {
-        setTimeout(() => sv.classList.remove("moved"), 1000);
-      })
-    );
-  }
-};
+    setInterval(() => (image.style.transform = `translateX(-30px)`), 3);
+  })
+);
 
-hoverBigScreen();
+// const svg = document.querySelectorAll(".service-svg");
+
+// const hoverBigScreen = function () {
+//   if (window.innerWidth >= 600) {
+//     svg.forEach((sv) =>
+//       sv.addEventListener("mouseenter", function (e) {
+//         setTimeout(() => sv.classList.add("moved"), 1000);
+//       })
+//     );
+
+//     svg.forEach((sv) =>
+//       sv.addEventListener("mouseleave", function (e) {
+//         setTimeout(() => sv.classList.remove("moved"), 1000);
+//       })
+//     );
+//   }
+// };
+
+// hoverBigScreen();
 
 // Code logic for slider, use data to get the sliders to show
 
 // SLIDERS
 
 const sliders = document.querySelectorAll(".testimonial__content");
+const dots = document.querySelectorAll(".switch_dot");
 
 let currentSlide = 0;
 const maxLength = sliders.length;
 
-const dots = document.querySelectorAll(".switch_dot");
-// console.log(currentSlide, maxLength);
-
 const arrangeSliders = function () {
   sliders.forEach((slide, i) => {
-    slide.style.transform = `translateX(${100 * i}%)`;
+    slide.style.transform = `translateX(${100 * (i - currentSlide)}%)`; // Adjust based on currentSlide
+  });
+  updateDots(); // Update dots after arranging sliders
+};
+
+const updateDots = function () {
+  dots.forEach((dt, index) => {
+    // dt.classList.toggle("switch_dot-active", index === currentSlide); // Active dot management
+    if (index === currentSlide) {
+      dt.classList.add("switch_dot-active"); // Add class if it's the current slide
+    } else {
+      dt.classList.remove("switch_dot-active"); // Remove class if it's not the current slide
+    }
   });
 };
 
-arrangeSliders();
-
-/// WORKING ON THE SLIDER
-
 const autoSlide = function () {
-  const slidersArray = [...sliders];
-  if (currentSlide < maxLength) {
-    dots.forEach((dot) => {
-      dot.classList.remove("switch_dot-active");
-    });
-
-    // if (sl.dataset.dot === 0) {
-    //   console.lod(sl);
-    // }
-    slidersArray.forEach((sl, i) => {
-      sl.style.transform = `translateX(${100 * (i - currentSlide)}% 
-
-      )`;
-    });
-
-    const currentDot = document.querySelector(`.switch_dot_${currentSlide}`);
-    if (currentDot) {
-      currentDot.classList.add("switch_dot-active");
-    }
-  }
-
-  currentSlide++;
-
-  if (currentSlide >= maxLength) {
-    currentSlide = 0;
-  }
+  currentSlide = (currentSlide + 1) % maxLength; // Loop back to the first slide
+  arrangeSliders(); // Rearrange slides based on new currentSlide
 };
 
+// Initial setup
+arrangeSliders();
+// gettingSlideData();
+
+// Set interval for auto sliding
 setInterval(autoSlide, 3000);
+
+// Function to go to specific slide based on dot click
+const goToSlide = function (index) {
+  currentSlide = index; // Set currentSlide to the clicked dot index
+  arrangeSliders(); // Arrange slides based on the new currentSlide
+};
+
+// Adding event listeners to dots
+dots.forEach((dot, index) => {
+  dot.addEventListener("click", () => {
+    goToSlide(index); // Navigate to the corresponding slide when a dot is clicked
+  });
+});
