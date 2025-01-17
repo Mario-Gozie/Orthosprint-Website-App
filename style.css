@@ -317,8 +317,7 @@ main {
 /* Testimonials */
 .testimonials {
   background-color: var(--offwhite-background);
-  /* height: 100%; */
-  height: 80vh;
+  height: auto;
 }
 
 .testimonial__header {
@@ -344,6 +343,7 @@ main {
   display: flex;
   height: 100%;
   overflow: hidden;
+  height: 450px;
 }
 
 .testimonial__content {
