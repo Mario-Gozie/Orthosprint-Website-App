@@ -295,7 +295,7 @@ main {
 }
 
 .moved {
-  transform: translateY(70px);
+  transform: translateY(50px);
 }
 
 .services__wrapper .image__container {

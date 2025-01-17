@@ -106,8 +106,9 @@ const AllServicesContainer = document.querySelectorAll(
 AllServicesContainer.forEach((AS) =>
   AS.addEventListener("mouseenter", function () {
     const image = AS.querySelector(".service-svg");
+    image.classList.add("moved");
 
-    setInterval(() => (image.style.transform = `translateX(-30px)`), 3);
+    setInterval(() => image.classList.remove("moved"), 3000);
   })
 );
 
