@@ -36,7 +36,11 @@ nav {
 
 .nav-sticky {
   position: sticky;
-  background-color: transparent;
+  top: 0;
+  background-color: var(--pure-white);
+  /* backdrop-filter: blur(10px); */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+  z-index: 11;
 }
 
 ul {
@@ -925,7 +929,7 @@ footer {
   .founder,
   .contact_us,
   footer {
-    padding: 0 1rem;
+    padding: 0 1.5rem;
   }
   .about__wrapper {
     display: flex;
@@ -961,6 +965,10 @@ footer {
     height: 30rem;
     width: 50%;
     margin: 1rem 0 0 0;
+  }
+
+  .testimonial__contents--container {
+    height: 350px;
   }
 
   .testimonial__content {
@@ -1130,7 +1138,7 @@ footer {
   .testimonial__wrapper {
     display: grid;
     grid-template-columns: 1fr 1.5fr 0.5fr;
-    grid-template-rows: 1fr 2fr;
+    grid-template-rows: 0.5fr 2fr;
     /* place-items: center; */
     width: 100%;
   }
@@ -1148,11 +1156,11 @@ footer {
   .switch_dots {
     grid-column: 3/4;
     grid-row: 2/3;
-    margin: 0;
+    margin: 0 0 5rem 3rem;
     display: flex;
     flex-direction: column;
     justify-items: center;
-    align-items: center;
+    justify-content: center;
   }
 
   .switch_dot {

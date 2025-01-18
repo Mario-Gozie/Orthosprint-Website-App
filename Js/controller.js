@@ -4,6 +4,7 @@ const menuOpen = document.querySelector(".menu__button");
 const menuClose = document.querySelector(".close__button");
 const sidebar = document.querySelector(".sidebar");
 const navbar = document.querySelector(".nav__bar");
+// const navAndLogo = document.getElementById("nav");
 
 // IMPLEMENTING REVEALING OF HOME PAGE
 
@@ -33,13 +34,18 @@ menuClose.addEventListener("click", function (e) {
 });
 
 // IMPLEMENTING THE SCROLL STICKY
-
+const navAndLogo = document.getElementById("nav");
 const section1 = document.getElementById("about");
 const initialCords = section1.getBoundingClientRect();
-console.log(initialCords);
+// console.log(initialCords);
 
 window.addEventListener("scroll", function (e) {
-  console.log(e);
+  // console.log(window.scrollY);
+  if (window.scrollY > initialCords.top) {
+    navAndLogo.classList.add("nav-sticky");
+  } else {
+    navAndLogo.classList.remove("nav-sticky");
+  }
 });
 
 // Activating Smooth Scrolling this is done with event bubbling
@@ -64,7 +70,7 @@ AllServicesContainer.forEach((AS) =>
     const image = AS.querySelector(".service-svg");
     image.classList.add("moved");
 
-    setInterval(() => image.classList.remove("moved"), 3000);
+    setInterval(() => image.classList.remove("moved"), 1000);
   })
 );
 
