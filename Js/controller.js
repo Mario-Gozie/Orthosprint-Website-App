@@ -5,6 +5,21 @@ const menuClose = document.querySelector(".close__button");
 const sidebar = document.querySelector(".sidebar");
 const navbar = document.querySelector(".nav__bar");
 
+// IMPLEMENTING REVEALING OF HOME PAGE
+
+const home = document.querySelector(".home__wrapper");
+const homeP = home.getElementsByTagName("p");
+const homeH = home.getElementsByTagName("h1");
+const homeA = home.getElementsByTagName("a");
+
+window.addEventListener("load", function () {
+  const loadArray = [...homeP, ...homeH, ...homeA];
+  loadArray.forEach((la) => {
+    la.style.opacity = 1;
+    la.style.transform = "translateX(0)";
+  });
+});
+
 // Opeining Menu
 menuOpen.addEventListener("click", function (e) {
   e.preventDefault();
@@ -17,6 +32,16 @@ menuClose.addEventListener("click", function (e) {
   sidebar.classList.remove("sidebar__active");
 });
 
+// IMPLEMENTING THE SCROLL STICKY
+
+const section1 = document.getElementById("about");
+const initialCords = section1.getBoundingClientRect();
+console.log(initialCords);
+
+window.addEventListener("scroll", function (e) {
+  console.log(e);
+});
+
 // Activating Smooth Scrolling this is done with event bubbling
 
 navbar.addEventListener("click", function (e) {
@@ -27,6 +52,21 @@ navbar.addEventListener("click", function (e) {
     document.querySelector(id).scrollIntoView({ behaviour: "smooth" });
   }
 });
+
+// MAKING ICONS MOVE
+
+const AllServicesContainer = document.querySelectorAll(
+  ".service__and__descripion--container"
+);
+
+AllServicesContainer.forEach((AS) =>
+  AS.addEventListener("mouseenter", function () {
+    const image = AS.querySelector(".service-svg");
+    image.classList.add("moved");
+
+    setInterval(() => image.classList.remove("moved"), 3000);
+  })
+);
 
 // implementing the click function for founder
 
@@ -62,75 +102,6 @@ founderBtn.forEach((fb) => {
     }
   });
 });
-
-// IMPLEMENTING REVEALING OF HOME PAGE
-
-const home = document.querySelector(".home__wrapper");
-const homeP = home.getElementsByTagName("p");
-const homeH = home.getElementsByTagName("h1");
-const homeA = home.getElementsByTagName("a");
-
-window.addEventListener("load", function () {
-  const loadArray = [...homeP, ...homeH, ...homeA];
-  loadArray.forEach((la) => {
-    la.style.opacity = 1;
-    la.style.transform = "translateX(0)";
-  });
-});
-
-// NEWSLETTER SUBMISSION
-
-const newsletterInput = document.querySelector(".newsletter__input");
-const newsletterForm = document.getElementById("newsletterForm");
-
-newsletterForm.addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  // Checking if the input value is Empty.
-
-  if (newsletterInput.value.trim() === "") {
-    newsletterInput.value = "";
-    alert("You have not given us any email");
-  } else {
-    newsletterInput.value = "";
-    alert("We will now keep you updated with our latest offers");
-  }
-});
-
-// MAKING ICONS MOVE
-
-const AllServicesContainer = document.querySelectorAll(
-  ".service__and__descripion--container"
-);
-
-AllServicesContainer.forEach((AS) =>
-  AS.addEventListener("mouseenter", function () {
-    const image = AS.querySelector(".service-svg");
-    image.classList.add("moved");
-
-    setInterval(() => image.classList.remove("moved"), 3000);
-  })
-);
-
-// const svg = document.querySelectorAll(".service-svg");
-
-// const hoverBigScreen = function () {
-//   if (window.innerWidth >= 600) {
-//     svg.forEach((sv) =>
-//       sv.addEventListener("mouseenter", function (e) {
-//         setTimeout(() => sv.classList.add("moved"), 1000);
-//       })
-//     );
-
-//     svg.forEach((sv) =>
-//       sv.addEventListener("mouseleave", function (e) {
-//         setTimeout(() => sv.classList.remove("moved"), 1000);
-//       })
-//     );
-//   }
-// };
-
-// hoverBigScreen();
 
 // Code logic for slider, use data to get the sliders to show
 
@@ -183,4 +154,23 @@ dots.forEach((dot, index) => {
   dot.addEventListener("click", () => {
     goToSlide(index); // Navigate to the corresponding slide when a dot is clicked
   });
+});
+
+// NEWSLETTER SUBMISSION
+
+const newsletterInput = document.querySelector(".newsletter__input");
+const newsletterForm = document.getElementById("newsletterForm");
+
+newsletterForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  // Checking if the input value is Empty.
+
+  if (newsletterInput.value.trim() === "") {
+    newsletterInput.value = "";
+    alert("You have not given us any email");
+  } else {
+    newsletterInput.value = "";
+    alert("We will now keep you updated with our latest offers");
+  }
 });

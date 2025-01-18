@@ -34,6 +34,11 @@ nav {
   /* border-bottom: red 2px solid; */
 }
 
+.nav-sticky {
+  position: sticky;
+  background-color: transparent;
+}
+
 ul {
   display: flex;
   justify-content: space-between;
