@@ -179,8 +179,7 @@ form button {
     width: 100%;
   }
   form .user-details {
-    max-height: 300px;
-    overflow-y: scroll;
+    height: auto;
   }
 }
 
@@ -213,97 +212,3 @@ form button {
     margin: 0.5rem 0;
   }
 }
-
-@media only screen and (width: 344px) and (max-height: 920px) {
-  form .user-details {
-    max-height: 35rem;
-    overflow-y: scroll;
-    padding: 0 0.4rem;
-  }
-}
-
-@media only screen and (min-width: 412px) and (max-height: 940px) {
-  form .user-details {
-    max-height: 35rem;
-    overflow-y: scroll;
-    padding: 0 0.4rem;
-  }
-}
-
-/* .container {
-  width: 95%;
-  height: 90%;
-  display: flex;
-  background-color: var(--pure-white);
-  flex-direction: column;
-  align-items: center;
-  border-radius: 1rem;
-  padding: 1.5rem;
-} */
-
-/* .input-box {
-  display: flex;
-  flex-direction: column;
-} */
-
-/* .title-container {
-  height: 7%;
-  width: 100%;
-  color: var(--header-colour);
-  margin: 0 0 0.5rem 0;
-  font-weight: 500;
-  display: flex;
-}
-
-.title {
-  font-size: 1rem;
-  justify-content: flex-start;
-  align-self: center;
-  padding: 0 0 0.5rem 0;
-  position: relative;
-}
-
-.title::after {
-  content: "";
-  background: linear-gradient(
-    to left,
-    var(--linkedin-colour),
-    var(--offwhite-background)
-  );
-  position: absolute;
-  height: 0.3rem;
-  width: 100%;
-  bottom: 0;
-  left: 0;
-}
-form {
-  display: flex;
-  flex-direction: column;
-  font-size: 1rem;
-  height: 75%;
-  width: 100%;
-}
-
-form input {
-  padding: 0.3rem;
-  margin-bottom: 0.5rem;
-}
-
-.input-box {
-  display: flex;
-  justify-content: space-between;
-}
-
-.category {
-  margin: 0 0 0.5rem 0;
-}
-
-button {
-  align-self: center;
-  padding: 0.7rem;
-  border: 0;
-  border-radius: 25px;
-  width: 8rem;
-  color: var(--pure-white);
-  background-color: var(--linkedin-colour);
-} */
