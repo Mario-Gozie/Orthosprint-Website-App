@@ -45,6 +45,7 @@ section {
   align-items: center;
   height: calc(100vh - 10%);
   background-color: var(--offwhite-background);
+  /* display: none; */
 }
 
 .login-box {
