@@ -166,17 +166,29 @@ dots.forEach((dot, index) => {
 
 const newsletterInput = document.querySelector(".newsletter__input");
 const newsletterForm = document.getElementById("newsletterForm");
+const modalWindow = document.getElementById("modal-container");
+const modalBtn = document.querySelector(".modal-button"); // Fixed selector
+
+const form = document.querySelector(".contact_form");
+
+const openPopup = function () {
+  modalWindow.classList.add("open-popup"); // Fixed class name
+};
 
 newsletterForm.addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  // Checking if the input value is Empty.
+  e.preventDefault(); // Checking if the input value is Empty.
 
   if (newsletterInput.value.trim() === "") {
-    newsletterInput.value = "";
     alert("You have not given us any email");
   } else {
-    newsletterInput.value = "";
-    alert("We will now keep you updated with our latest offers");
+    // newsletterInput.value = "";
+    openPopup();
   }
 });
+
+// Close modal on button click
+modalBtn.addEventListener("click", function () {
+  modalWindow.classList.remove("open-popup");
+});
+
+///// ACTIVATING MODAL WINDOW
