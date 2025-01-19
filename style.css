@@ -527,6 +527,7 @@ main {
 .contactInfo__and__form--container {
   display: flex;
   flex-direction: column;
+  margin: 1rem 0;
 }
 
 .contact__header--container {
@@ -1107,7 +1108,7 @@ footer {
     top: 50%; /* Align it to the top of the container */
     width: 7rem; /* Width of the line */
     height: 4px; /* Full height of the container */
-    background-color: yellow; /* Color of the line */
+    background-color: #ffff00; /* Color of the line */
   }
 
   .about__wrapper {
@@ -1200,7 +1201,25 @@ footer {
     left: 0%;
     background-color: var(--linkedin-colour);
   }
-}
 
-@media (min-width: 1300px) {
+  /* MAKING THE RESPONSIVENESS BETTER */
+  footer,
+  .contact_us,
+  .founder,
+  .testimonials,
+  .services,
+  .about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer__wrapper,
+  .contact__wrapper,
+  .founder__wrapper,
+  .testimonial__wrapper,
+  .services__wrapper,
+  .about__wrapper {
+    max-width: 1600px;
+  }
 }
