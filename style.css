@@ -9,6 +9,11 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  height: 100%;
+  position: relative;
+}
+
 :root {
   --facebook-color: #1a6de8;
   --instagram-colour: #c13584;
@@ -704,6 +709,51 @@ footer {
 .fa-brands {
   margin: 0 0.3rem;
   color: rgb(209, 207, 207);
+}
+
+.modal-container {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  /* display: flex; */
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup {
+  width: 400px;
+  background-color: var(--pure-white);
+  border-radius: 6px;
+  height: 30%;
+  text-align: center;
+  padding: 1rem 0.5rem;
+  position: relative;
+}
+
+.popup .fa-solid {
+  font-size: 4rem;
+}
+
+.popup h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 1rem;
+}
+
+.popup button {
+  width: 100px;
+  height: 2rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  margin: 2rem 0;
+  cursor: pointer;
+  border: 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  /* background-color: var(--linkedin-colour); */
 }
 
 @media (min-width: 576px) {
