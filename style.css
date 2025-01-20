@@ -168,11 +168,11 @@ main {
 
 .home__wrapper {
   background-color: rgb(0, 0, 0, 0.6);
-  /* backdrop-filter: blur(10px); */
+
   font-family: "Roboto", serif;
   color: var(--pure-white);
   height: 100%;
-  /* background-color: red; */
+
   display: flex;
   flex-direction: column;
 
@@ -448,10 +448,7 @@ main {
 .switch_dot-active {
   background-color: var(--linkedin-colour);
 }
-/* Founder */
-/* .founder__wrapper {
-  height: 100vh;
-} */
+
 .founder__image--container {
   width: 300px;
   height: 400px;
@@ -475,8 +472,8 @@ main {
   height: 5%;
   position: absolute;
   right: -40%;
-  top: 40%;
-  /* bottom: 40%; */
+  top: 36%;
+  border-radius: 5px;
   z-index: 3;
   padding: 3rem 0;
   transform: translateX(-50%, -50%);
@@ -484,19 +481,25 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* margin-bottom: 0.5rem; */
 }
 
-/* .founder_title h2 {
-  justify-self: center;
-} */
-/* Contact */
+.Personal__detail h3 {
+  font-size: 1.5rem;
+  font-family: "Roboto", serif;
+  margin: 1rem 0 0 0;
+}
+
+.Personal__detail h4 {
+  font-family: "Pacifico", serif;
+  color: var(--header-colour);
+  font-style: normal;
+  font-size: 1.2rem;
+  margin: 0.3rem 0;
+}
 
 /* ///////////////////// */
 
 .contact {
-  /* display: flex;
-  flex-direction: column; */
   height: 100%;
 }
 
@@ -514,11 +517,16 @@ main {
   width: 100%;
 }
 
-.contact__detail h3 {
+.contact__detail h3,
+.contact__form h3 {
   margin: 0.5rem 0;
+  text-transform: uppercase;
+  color: var(--header-colour);
+  font-size: 1rem;
 }
 
-.contact__detail p {
+.contact__detail p,
+.contact__form p {
   padding: 0.5rem 0;
 }
 
@@ -994,22 +1002,28 @@ footer {
     align-self: center;
   }
 
-  .contactInfo__and__form--container {
+  .founder__wrapper {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
   }
 
-  .contactInfo {
-    width: 40%;
-    justify-self: center;
-    align-self: center;
+  .founder__image--container {
+    margin: 0 6rem 0 0;
   }
 
-  .form__container {
+  .founders__descriptions {
     width: 50%;
-    justify-self: center;
-    align-self: center;
+  }
+
+  .contact__detail__and__form {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    align-items: stretch;
+  }
+
+  .contact__detail {
+    height: 599px;
   }
 
   form button {
