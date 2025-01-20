@@ -310,7 +310,7 @@ main {
   align-items: center;
   height: 50%;
   margin: 1rem;
-  width: 15rem;
+  width: 20rem;
   height: 20rem;
   padding: 1rem;
   background-color: var(--offwhite-background);
@@ -326,7 +326,7 @@ main {
   background-color: var(--pure-white);
   border-radius: 5px;
   align-self: flex-start;
-  height: 30%;
+  height: 5rem;
 }
 
 .service__desciption {
@@ -921,6 +921,10 @@ footer {
     font-size: 1.2rem;
   }
 
+  .service__and__descripion--container {
+    height: 25rem;
+  }
+
   .service__svg--container {
     margin-right: 0.5rem;
   }
@@ -1069,10 +1073,11 @@ footer {
     width: 60%;
     margin: 0 1rem 0 0;
   }
+
   .services__wrapper .image__container {
     height: 30rem;
-    width: 50%;
-    margin: 1rem 0 0 0;
+    width: 40%;
+    margin: 1rem 0.5rem;
   }
 
   .testimonial__contents--container {
@@ -1329,5 +1334,21 @@ footer {
   .services__wrapper,
   .about__wrapper {
     max-width: 1600px;
+  }
+}
+
+@media (min-width: 1324px) {
+  .services__container .first-H3 {
+    position: relative;
+  }
+
+  .services__container .first-H3::before {
+    content: "";
+    height: 4px;
+    width: 20rem;
+    background-color: var(--linkedin-colour);
+    top: 50%;
+    left: -38%;
+    position: absolute;
   }
 }
