@@ -1,5 +1,5 @@
 const state = {
-  customers: [],
+  clients: [],
   newsletter: [],
 };
 
@@ -48,3 +48,7 @@ export const client = new Client(
   password,
   gender
 );
+
+export const RegisterNewCustomer = function (newCustomer) {
+  state.customers.push(newCustomer);
+};
