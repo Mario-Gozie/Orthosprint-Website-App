@@ -1,5 +1,7 @@
 import view from "./view.js";
-import { openNewsletterWindow, closeNewsletterWindow } from "./modalWindow.js";
+import { openNewsletterWindow, closeNewsletterWindow } from "./WebNewsModal.js";
+
+import { updateNewsletterList } from "./model.js";
 
 const menuOpen = document.querySelector(".menu__button");
 const menuClose = document.querySelector(".close__button");
@@ -194,9 +196,14 @@ dots.forEach((dot, index) => {
 
 ///// ACTIVATING MODAL WINDOW
 
+const NewsletterController = function () {
+  openNewsletterWindow();
+  updateNewsletterList(NewsletterEmail);
+};
+
 const init = function () {
   console.log("hello");
-  openNewsletterWindow();
+  NewsletterController();
   closeNewsletterWindow();
 };
 
