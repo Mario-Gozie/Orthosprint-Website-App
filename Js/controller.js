@@ -1,4 +1,5 @@
 import view from "./view.js";
+import { openNewsletterWindow, closeNewsletterWindow } from "./modalWindow.js";
 
 const menuOpen = document.querySelector(".menu__button");
 const menuClose = document.querySelector(".close__button");
@@ -164,31 +165,39 @@ dots.forEach((dot, index) => {
 
 // NEWSLETTER SUBMISSION
 
-const newsletterInput = document.querySelector(".newsletter__input");
-const newsletterForm = document.getElementById("newsletterForm");
-const modalWindow = document.getElementById("modal-container");
-const modalBtn = document.querySelector(".modal-button"); // Fixed selector
+// const newsletterInput = document.querySelector(".newsletter__input");
+// const newsletterForm = document.getElementById("newsletterForm");
+// const modalWindow = document.getElementById("modal-container");
+// const modalBtn = document.querySelector(".modal-button"); // Fixed selector
 
-const form = document.querySelector(".contact_form");
+// const form = document.querySelector(".contact_form");
 
-const openPopup = function () {
-  modalWindow.classList.add("open-popup"); // Fixed class name
-};
+// const openPopup = function () {
+//   modalWindow.classList.add("open-popup"); // Fixed class name
+// };
 
-newsletterForm.addEventListener("submit", function (e) {
-  e.preventDefault(); // Checking if the input value is Empty.
+// newsletterForm.addEventListener("submit", function (e) {
+//   e.preventDefault(); // Checking if the input value is Empty.
 
-  if (newsletterInput.value.trim() === "") {
-    alert("You have not given us any email");
-  } else {
-    // newsletterInput.value = "";
-    openPopup();
-  }
-});
+//   if (newsletterInput.value.trim() === "") {
+//     alert("You have not given us any email");
+//   } else {
+//     // newsletterInput.value = "";
+//     openPopup();
+//   }
+// });
 
-// Close modal on button click
-modalBtn.addEventListener("click", function () {
-  modalWindow.classList.remove("open-popup");
-});
+// // Close modal on button click
+// modalBtn.addEventListener("click", function () {
+//   modalWindow.classList.remove("open-popup");
+// });
 
 ///// ACTIVATING MODAL WINDOW
+
+const init = function () {
+  console.log("hello");
+  openNewsletterWindow();
+  closeNewsletterWindow();
+};
+
+init();

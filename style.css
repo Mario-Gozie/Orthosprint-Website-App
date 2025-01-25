@@ -697,7 +697,7 @@ footer {
   justify-content: center;
   align-items: center;
   z-index: 13;
-  /* visibility: hidden; */
+  visibility: hidden;
 }
 
 .open-popup {
@@ -731,6 +731,12 @@ footer {
 .popup p {
   color: black;
   height: 20%;
+  font-size: 1.22rem;
+}
+
+.popup span {
+  font-weight: 600;
+  color: var(--linkedin-colour);
 }
 
 .popup button {
