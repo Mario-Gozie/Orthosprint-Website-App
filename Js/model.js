@@ -1,6 +1,17 @@
 const state = {
-  clients: [],
+  // This will contain all client details including password.
+  clientsDetail: [],
+
+  // This will contain basic detail of registered clients as an object. which are their id, first name and last name,  gender and address.
+  client: [],
+
+  // This will contain email of all the people that subscribed for news letter
   newsletter: [],
+
+  // this will contain objects which is booking id and booking date and time.
+  bookingDetail: [],
+  //This array will have dates as key and booked times as array. I will use it to access if a particular time is booked. as well as is a date is booked.
+  bookings: [],
 };
 
 // MAIN DATA WEBSITE CODE
@@ -50,5 +61,5 @@ export const client = new Client(
 );
 
 export const RegisterNewCustomer = function (newCustomer) {
-  state.customers.push(newCustomer);
+  state.clientsDetail.push(newCustomer);
 };
