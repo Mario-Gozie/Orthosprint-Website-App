@@ -18,7 +18,10 @@ export const openNewsletterWindow = function () {
     if (newsletterInput.value.trim() === "") {
       alert("You have not given us any email");
     } else {
-      // newsletterInput.value = "";
+      const NewsletterEmail = newsletterInput.value;
+      console.log(NewsletterEmail);
+
+      newsletterInput.value = "";
       openPopup();
     }
   });
