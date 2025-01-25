@@ -9,10 +9,10 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
+/* body {
   height: 100%;
   position: relative;
-}
+} */
 
 :root {
   --facebook-color: #1a6de8;
@@ -618,6 +618,7 @@ footer {
   height: auto;
   background-color: rgb(68, 65, 65);
   color: var(--pure-white);
+  position: relative;
 }
 
 .footer__wrapper h2 {
@@ -684,17 +685,19 @@ footer {
 }
 
 .modal-container {
-  position: absolute;
+  position: fixed;
   top: 0;
+
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   background-color: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(8px);
   display: flex;
-
+  /* background-color: red; */
   justify-content: center;
   align-items: center;
-  visibility: hidden;
+  z-index: 13;
+  /* visibility: hidden; */
 }
 
 .open-popup {
@@ -702,23 +705,32 @@ footer {
 }
 
 .popup {
-  width: 400px;
+  max-width: 40rem;
+  max-height: 20rem;
   background-color: var(--pure-white);
   border-radius: 6px;
-  height: 30%;
+  height: 40%;
   text-align: center;
-  padding: 1rem 0.5rem;
-  position: relative;
+  padding: 2rem 1rem;
 }
 
 .popup .fa-solid {
-  font-size: 4rem;
+  height: 10%;
+  font-size: 3rem;
+  color: green;
 }
 
 .popup h2 {
+  height: 20%;
   font-size: 2rem;
   font-weight: 500;
-  margin: 1rem;
+  margin: 0.5rem;
+  color: black;
+}
+
+.popup p {
+  color: black;
+  height: 20%;
 }
 
 .popup button {
@@ -726,11 +738,11 @@ footer {
   height: 2rem;
   font-size: 1rem;
   border-radius: 5px;
-  margin: 2rem 0;
+  margin: 0.3rem 0 0 0;
   cursor: pointer;
   border: 0;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  /* background-color: var(--linkedin-colour); */
+  margin: 1.5rem 0 0 0;
 }
 
 @media (min-width: 576px) {
