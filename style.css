@@ -686,6 +686,7 @@ footer {
 
 .modal-container {
   position: fixed;
+  pointer-events: auto;
   top: 0;
 
   height: 100vh;
@@ -712,6 +713,7 @@ footer {
   height: 40%;
   text-align: center;
   padding: 2rem 1rem;
+  z-index: 15;
 }
 
 .popup .fa-solid {
@@ -749,6 +751,8 @@ footer {
   border: 0;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   margin: 1.5rem 0 0 0;
+  position: relative;
+  z-index: 100;
 }
 
 @media (min-width: 576px) {

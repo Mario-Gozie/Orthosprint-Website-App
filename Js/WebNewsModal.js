@@ -10,48 +10,45 @@ class NewsletterView {
     return this.emailInput.value;
   }
 
-  openPopup() {
-    modalWindow.classList.add("open-popup"); // Fixed class name
+  openPopup(value) {
+    this.modalWindow.innerHTML = this._generateMarkup(value);
+    this.modalWindow.classList.add("open-popup"); // Fixed class name
   }
 
   closeNewsletterWindow() {
-    modalBtn.addEventListener("click", function () {
-      modalWindow.classList.remove("open-popup");
+    this.modalBtn.addEventListener("click", (e) => {
+      e.preventDefault(); // Checking if the input value is Empty.
+      this.modalWindow.classList.remove("open-popup");
+    });
+  }
+
+  _generateMarkup(value) {
+    return `
+           <div class="popup">
+            <i class="fa-solid fa-check"></i>
+            <h2>Thank You!</h2>
+            <p>
+              We will now keep <span>${value}</span> updated with our latest
+              offers
+            </p>
+            <button type="submit" class="modal-button">Ok</button>
+          </div>
+          `;
+  }
+
+  addHandlerRender(handler) {
+    newsletterForm.addEventListener("submit", (e) => {
+      e.preventDefault(); // Checking if the input value is Empty.
+      const email = this.getEmail();
+      this.emailInput.value = "";
+      if (email.trim() === "") {
+        alert("You have not given us any email");
+      } else {
+        this.openPopup(email);
+        handler(email); //This handler is simply the controller function
+      }
     });
   }
 }
 
-const newsletterInput = document.querySelector(".newsletter__input");
-const newsletterForm = document.getElementById("newsletterForm");
-const modalWindow = document.getElementById("modal-container");
-const modalBtn = document.querySelector(".modal-button"); // Fixed selector
-
-// console.log(newsletterForm);
-
-export const NewsletterEmail = () => newsletterInput.value; // Capturing Email
-
-const openPopup = function () {
-  modalWindow.classList.add("open-popup"); // Fixed class name
-};
-
-export const openNewsletterWindow = function () {
-  newsletterForm.addEventListener("submit", function (e) {
-    e.preventDefault(); // Checking if the input value is Empty.
-
-    if (newsletterInput.value.trim() === "") {
-      alert("You have not given us any email");
-    } else {
-      console.log(NewsletterEmail);
-
-      newsletterInput.value = "";
-      openPopup();
-    }
-  });
-};
-
-// Close modal on button click
-export const closeNewsletterWindow = function () {
-  modalBtn.addEventListener("click", function () {
-    modalWindow.classList.remove("open-popup");
-  });
-};
+export default new NewsletterView();

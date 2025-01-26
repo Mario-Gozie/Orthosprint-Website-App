@@ -1,4 +1,4 @@
-const state = {
+export const state = {
   // This will contain all client details including password.
   clientsDetail: [],
 
