@@ -4,6 +4,9 @@ class NewsletterView {
     this.newsletterForm = document.getElementById("newsletterForm");
     this.modalWindow = document.getElementById("modal-container");
     this.modalBtn = document.querySelector(".modal-button");
+    this.popupMesageContainer = document.querySelector(
+      ".popup-message-container"
+    );
   }
 
   getEmail() {
@@ -11,28 +14,27 @@ class NewsletterView {
   }
 
   openPopup(value) {
-    this.modalWindow.innerHTML = this._generateMarkup(value);
+    // this.modalWindow.innerHTML = "";
+    this.popupMesageContainer.innerHTML = this._generateMarkup(value);
     this.modalWindow.classList.add("open-popup"); // Fixed class name
   }
 
   closeNewsletterWindow() {
     this.modalBtn.addEventListener("click", (e) => {
       e.preventDefault(); // Checking if the input value is Empty.
+      // console.log(e.target);
       this.modalWindow.classList.remove("open-popup");
     });
   }
 
   _generateMarkup(value) {
     return `
-           <div class="popup">
             <i class="fa-solid fa-check"></i>
             <h2>Thank You!</h2>
             <p>
               We will now keep <span>${value}</span> updated with our latest
               offers
             </p>
-            <button type="submit" class="modal-button">Ok</button>
-          </div>
           `;
   }
 

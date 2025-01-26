@@ -208,6 +208,12 @@ const newsletterModalOpen = function (data) {
   console.log(state.newsletter);
 };
 
+// const modalBtn = document.querySelector(".modal-button");
+// modalBtn.addEventListener("click", function (e) {
+//   e.preventDefault();
+//   console.log(e.target);
+// });
+
 const init = function () {
   console.log("hello");
   // NewsletterController();
