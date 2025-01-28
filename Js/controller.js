@@ -2,8 +2,9 @@ import view from "./view.js";
 // import { openNewsletterWindow, closeNewsletterWindow } from "./WebNewsModal.js";
 
 import WebNewsModal from "./WebNewsModal.js";
+import regView from "../registeration folder/regView.js";
 
-import { updateNewsletterList, state } from "./model.js";
+import { updateNewsletterList, state, getLastID, newclient } from "./model.js";
 
 const menuOpen = document.querySelector(".menu__button");
 const menuClose = document.querySelector(".close__button");
@@ -169,59 +170,44 @@ dots.forEach((dot, index) => {
 
 // NEWSLETTER SUBMISSION
 
-// const newsletterInput = document.querySelector(".newsletter__input");
-// const newsletterForm = document.getElementById("newsletterForm");
-// const modalWindow = document.getElementById("modal-container");
-// const modalBtn = document.querySelector(".modal-button"); // Fixed selector
-
-// const form = document.querySelector(".contact_form");
-
-// const openPopup = function () {
-//   modalWindow.classList.add("open-popup"); // Fixed class name
-// };
-
-// newsletterForm.addEventListener("submit", function (e) {
-//   e.preventDefault(); // Checking if the input value is Empty.
-
-//   if (newsletterInput.value.trim() === "") {
-//     alert("You have not given us any email");
-//   } else {
-//     // newsletterInput.value = "";
-//     openPopup();
-//   }
-// });
-
-// // Close modal on button click
-// modalBtn.addEventListener("click", function () {
-//   modalWindow.classList.remove("open-popup");
-// });
-
-///// ACTIVATING MODAL WINDOW
-
-// const NewsletterController = function () {
-//   openNewsletterWindow();
-//   updateNewsletterList(NewsletterEmail);
-// };
-
 const newsletterModalOpen = function (data) {
   updateNewsletterList(data);
   console.log(state.newsletter);
 };
 
-// const modalBtn = document.querySelector(".modal-button");
-// modalBtn.addEventListener("click", function (e) {
-//   e.preventDefault();
-//   console.log(e.target);
-// });
+const regNewClient = function (
+  firstName,
+  lastName,
+  address,
+  phoneNumber,
+  username,
+  email,
+  password,
+  gender
+) {
+  const data = getLastID();
+
+  newclient(
+    data,
+    firstName,
+    lastName,
+    address,
+    phoneNumber,
+    username,
+    email,
+    password,
+    gender
+  );
+};
+
+registerationForm = document.getElementById("Registeration__form");
+
+console.log(registerationForm);
 
 const init = function () {
-  console.log("hello");
-  // NewsletterController();
-  // closeNewsletterWindow();
-
-  // console.log(WebNewsModal.modalBtn);
-  WebNewsModal.addHandlerRender(newsletterModalOpen);
-  WebNewsModal.closeNewsletterWindow();
+  WebNewsModal.addHandlerRender(newsletterModalOpen); // OpeningNewsletterModal
+  WebNewsModal.closeNewsletterWindow(); // Closing Newsletter Modal
+  regView.regClient(regNewClient);
 };
 
 init();

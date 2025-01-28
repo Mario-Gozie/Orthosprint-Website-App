@@ -3,7 +3,7 @@ export const state = {
   clientsDetail: [],
 
   // This will contain basic detail of registered clients as an object. which are their id, first name and last name,  gender and address.
-  client: [],
+  clients: [],
 
   // This will contain email of all the people that subscribed for news letter
   newsletter: [],
@@ -23,7 +23,7 @@ export function updateNewsletterList(item) {
 
 // // PORTAL DATA CODE
 
-class Client {
+class newClient {
   constructor(
     id,
     firstName,
@@ -49,7 +49,7 @@ class Client {
 }
 
 // exporting client Data
-export const client = new Client(
+export const newclient = new newClient(
   id,
   firstName,
   lastName,
@@ -61,6 +61,14 @@ export const client = new Client(
   gender
 );
 
+export const getLastID = function () {
+  if (state.clients === "") {
+    return 100;
+  } else {
+    return state.clients.at(-1).id;
+  }
+};
+
 export const RegisterNewCustomer = function (newCustomer) {
-  state.clientsDetail.push(newCustomer);
+  state.clients.push(newCustomer);
 };
