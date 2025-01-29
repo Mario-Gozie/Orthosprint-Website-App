@@ -2,9 +2,9 @@ import view from "./view.js";
 // import { openNewsletterWindow, closeNewsletterWindow } from "./WebNewsModal.js";
 
 import WebNewsModal from "./WebNewsModal.js";
-import regView from "../registeration folder/regView.js";
+// import regView from "../registeration folder/regView.js";
 
-import { updateNewsletterList, state, getLastID, newclient } from "./model.js";
+import { updateNewsletterList, state, getLastID } from "./model.js";
 
 const menuOpen = document.querySelector(".menu__button");
 const menuClose = document.querySelector(".close__button");
@@ -200,14 +200,9 @@ const regNewClient = function (
   );
 };
 
-registerationForm = document.getElementById("Registeration__form");
-
-console.log(registerationForm);
-
 const init = function () {
   WebNewsModal.addHandlerRender(newsletterModalOpen); // OpeningNewsletterModal
   WebNewsModal.closeNewsletterWindow(); // Closing Newsletter Modal
-  regView.regClient(regNewClient);
 };
 
 init();

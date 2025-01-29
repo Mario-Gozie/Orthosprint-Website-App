@@ -11,7 +11,6 @@
       href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
-    <!-- <script type="module" src="reg.js"></script> -->
   </head>
   <body>
     <!-- MODAL WINDOW ELEMENTS -->
@@ -29,7 +28,7 @@
     <main>
       <div class="container">
         <div class="title-container"><h1 class="title">Registeration</h1></div>
-        <form action="#" id="Registeration__form">
+        <form class="RegisterationForm" id="RegisterationForm">
           <div class="user-details">
             <div class="input-box">
               <span class="detail">First Name</span>
@@ -128,9 +127,52 @@
               </div>
             </div>
           </div>
-          <button type="button">Submit</button>
+          <button type="submit">Submit</button>
         </form>
       </div>
     </main>
+    <script>
+      const registerationForm = document.querySelector(".RegisterationForm");
+      const input = document.querySelector(".input-box");
+      console.log(input);
+      console.log(registerationForm);
+
+      const customers = [];
+
+      console.log(customers);
+      registerationForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const data = new FormData(this);
+        console.log(data);
+
+        const firstName = data.get("firstName");
+        const lastName = data.get("lastName");
+        const address = data.get("address");
+        const phoneNumber = data.get("phoneNumber");
+        const username = data.get("username");
+        const email = data.get("email");
+        const password = data.get("password");
+        const confirmPassword = data.get("confirmPassword");
+
+        const gender = data.get("gender");
+
+        if (password !== confirmPassword) {
+          alert("Passwords do not match. Please try again");
+          return;
+        }
+
+        customers.push({
+          firstName,
+          lastName,
+          address,
+          phoneNumber,
+          username,
+          email,
+          password,
+        });
+
+        console.log(customers);
+      });
+    </script>
   </body>
 </html>

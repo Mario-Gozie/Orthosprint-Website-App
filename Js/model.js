@@ -49,17 +49,17 @@ class newClient {
 }
 
 // exporting client Data
-export const newclient = new newClient(
-  id,
-  firstName,
-  lastName,
-  address,
-  phoneNumber,
-  username,
-  email,
-  password,
-  gender
-);
+// export const newclient = new newClient(
+//   id,
+//   firstName,
+//   lastName,
+//   address,
+//   phoneNumber,
+//   username,
+//   email,
+//   password,
+//   gender
+// );
 
 export const getLastID = function () {
   if (state.clients === "") {
