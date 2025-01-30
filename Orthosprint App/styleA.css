@@ -215,6 +215,7 @@ main {
   margin: 0.5rem 0;
   padding: 0.5rem;
   border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .kpi-container h3 {
@@ -261,9 +262,10 @@ main {
   display: flex;
   justify-content: space-between;
   margin: 0.5rem 0;
-  background-color: hsla(120, 31%, 58%, 0.704);
+  background-color: hsla(120, 96%, 81%, 0.927);
   padding: 1rem;
   border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .cancel-btn {
@@ -274,6 +276,28 @@ main {
   width: 4rem;
   border-radius: 15px;
 }
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+}
+
+.pagination-container p,
+.pagination-container button {
+  margin: 0 0.5rem;
+}
+
+.pagination-container button {
+  width: 5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 15px;
+}
+
+.pagination-container p {
+  align-self: center;
+}
+
 @media (max-width: 430px) {
   .login-box {
     width: 100%;
