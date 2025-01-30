@@ -14,12 +14,7 @@
   </head>
   <body>
     <!-- MODAL WINDOW ELEMENTS -->
-    <div class="modal hidden__modal">
-      <button class="close__modal">&times</button>
-      <p>You are a modal window</p>
-    </div>
 
-    <div class="overlay hidden__overlay"></div>
     <nav>
       <div class="logo-container">
         <img src="../img/orthosprint_logo.png" alt="" />
@@ -131,11 +126,44 @@
         </form>
       </div>
     </main>
+    <div class="popup-container">
+      <div class="pop-up">
+        <img src="../img/success_blue_tick.png" alt="" />
+        <div class="message-container">
+          <h2>Thank You!</h2>
+          <p>
+            We now have your details <span>Chigozirim</span>. You can now login.
+          </p>
+        </div>
+        <button type="button" class="closeModal">Ok</button>
+      </div>
+    </div>
+
     <script>
       const registerationForm = document.querySelector(".RegisterationForm");
-      const input = document.querySelector(".input-box");
-      console.log(input);
+      const popUpContainer = document.querySelector(".popup-container");
+      const CloseRegModal = document.querySelector(".closeModal");
+      const messageContainer = document.querySelector(".message-container");
+      console.log(CloseRegModal);
+
       console.log(registerationForm);
+
+      const generateHTML = function (name) {
+        return `
+        <h2>Thank You!</h2>
+          <p>
+            We now have your details <span>${name}</span>. You can now login.
+          </p>`;
+      };
+
+      const closePopup = function () {
+        CloseRegModal.addEventListener("click", function (e) {
+          e.preventDefault();
+          popUpContainer.classList.remove("Open-popup");
+        });
+      };
+
+      closePopup();
 
       const customers = [];
 
@@ -171,6 +199,8 @@
           password,
         });
 
+        messageContainer.innerHTML = generateHTML(firstName);
+        popUpContainer.classList.add("Open-popup");
         console.log(customers);
       });
     </script>
