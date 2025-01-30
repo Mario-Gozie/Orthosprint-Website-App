@@ -244,6 +244,36 @@ main {
   color: red;
 }
 
+/* Rendering Section */
+
+.appointments-section {
+  width: 100%;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.appointments-section h3 {
+  margin: 0.5rem 0;
+}
+
+.appointment-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem 0;
+  background-color: hsla(120, 31%, 58%, 0.704);
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.cancel-btn {
+  padding: 0.3rem;
+  background-color: red;
+  color: var(--pure-white);
+  border: none;
+  width: 4rem;
+  border-radius: 15px;
+}
 @media (max-width: 430px) {
   .login-box {
     width: 100%;
