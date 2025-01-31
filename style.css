@@ -500,12 +500,9 @@ main {
 /* ///////////////////// */
 
 .contact {
-  height: 100%;
-  background: linear-gradient(
-    to right,
-    var(--offwhite-background) 50%,
-    var(--pure-white) 50%
-  );
+  height: auto;
+
+  background-color: var(--offwhite-background);
   display: flex;
   justify-content: center;
 }
@@ -517,7 +514,7 @@ main {
   grid-template-rows: 0.9fr 1fr;
   flex-direction: column;
   width: 100%;
-  height: 100%;
+  height: inherit;
 }
 
 .contact__detail {
@@ -525,13 +522,24 @@ main {
   grid-row: 1/2;
   background-color: inherit;
   padding: 0.5rem;
-  width: 100%;
+
   height: 100%;
 }
 
-.contact__detail h3,
-.contact__form h3 {
+.contact__form {
+  padding: 0 0.5rem;
+  height: auto;
+}
+
+.contact__detail h3 {
   margin: 0.5rem 0;
+  text-transform: uppercase;
+  color: var(--header-colour);
+  font-size: 1rem;
+}
+
+.contact__form h3 {
+  margin: 1rem 0 0 0;
   text-transform: uppercase;
   color: var(--header-colour);
   font-size: 1rem;
@@ -539,7 +547,7 @@ main {
 
 .contact__detail p,
 .contact__form p {
-  padding: 0.5rem 0 0 0;
+  padding: 0.5rem 0;
 }
 
 .thick {
@@ -604,7 +612,7 @@ textarea::-webkit-scrollbar-thumb {
 }
 
 form button {
-  margin: 2rem 0 0.5rem 0;
+  margin: 1.5rem 0 1rem 0;
   cursor: pointer;
   max-width: 200px;
   align-self: center;

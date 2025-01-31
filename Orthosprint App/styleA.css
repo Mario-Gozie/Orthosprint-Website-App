@@ -24,15 +24,13 @@ body {
 
 nav {
   max-height: 10%;
-  /* background-color: red; */
+
   border-bottom: rgb(205, 201, 201) solid 0.1px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 .logo-container {
   max-height: 16rem;
   max-width: 16rem;
-  /* display: flex;
-    align-content: center; */
 }
 
 .logo-container img {
