@@ -501,6 +501,7 @@ main {
 
 .contact {
   height: auto;
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr, 1fr;
@@ -906,7 +907,7 @@ footer {
 
   .right__and__socials__container {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     padding: 0.5rem 0 0 0;
   }
 
@@ -1007,7 +1008,6 @@ footer {
   .services,
   .testimonials,
   .founder,
-  .contact_us,
   footer {
     padding: 0 1.5rem;
   }
@@ -1081,7 +1081,7 @@ footer {
   }
 
   .contact {
-    width: 100vw;
+    width: auto;
     background-color: linear-gradient(
       to right,
       var(--offwhite-background) 50%,
@@ -1094,8 +1094,8 @@ footer {
   .contact__detail__and__form {
     display: flex;
     flex-direction: row;
-    height: 100%;
-    background-color: var(--offwhite-background);
+    height: auto;
+    background-color: inherit;
   }
 
   .contact__detail {
@@ -1201,7 +1201,7 @@ footer {
     display: grid;
     grid-template-columns: 1fr 1.5fr 0.5fr;
     grid-template-rows: 0.5fr 2fr;
-    /* place-items: center; */
+
     width: 100%;
   }
 
@@ -1263,15 +1263,8 @@ footer {
     background-color: var(--linkedin-colour);
   }
 
-  /* .contact__detail__and__form {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  } */
-
   /* MAKING THE RESPONSIVENESS BETTER */
   footer,
-  .contact_us,
   .founder,
   .testimonials,
   .services,
