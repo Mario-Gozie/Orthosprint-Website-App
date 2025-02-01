@@ -1,9 +1,13 @@
 const datePicker = document.querySelector(".datepicker");
 const dateInput = document.querySelector(".date-input");
+const yearInput = document.querySelector(".year-input");
+const monthInput = document.querySelector(".month-input");
 
 const cancelDateBtn = document.querySelector(".cancel");
 const applyBtn = document.querySelector(".apply");
-const dates = document.querySelector(".dates");
+const dates = datePicker.querySelector(".dates");
+const dateNextBtn = datePicker.querySelector(".next");
+const datePrevBtn = document.querySelector(".prev");
 
 let selectedDate = new Date();
 let year = selectedDate.getFullYear();
@@ -30,6 +34,26 @@ applyBtn.addEventListener(
     (datePicker.hidden = true)
 );
 
+// Handle next month nav
+
+dateNextBtn.addEventListener("click", () => {
+  if (month === 11) year++;
+  month = (month + 1) % 12;
+  displayDates();
+});
+
+// Handle next month nav
+
+datePrevBtn.addEventListener("click", () => {
+  if (month === 11) year--;
+  month = (month - 1 + 12) % 12;
+  displayDates();
+});
+
+const updateYearMonth = (e) => {
+  monthInput.selectedIndex = month; //adjusting the index of a drop down element.
+  yearInput.value = year;
+};
 // Practicing with dates
 
 // console.log(new Date().toDateString());
@@ -63,6 +87,9 @@ const handleDateClick = (e) => {
 // render the dates in the calendar
 
 const displayDates = () => {
+  // update year month
+  updateYearMonth();
+
   //clear he dates content
 
   dates.innerHTML = "";
