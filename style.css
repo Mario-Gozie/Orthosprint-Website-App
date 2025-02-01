@@ -501,8 +501,14 @@ main {
 
 .contact {
   height: auto;
-
-  background-color: var(--offwhite-background);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr, 1fr;
+  background-color: linear-gradient(
+    to bottom,
+    var(--offwhite-background) 50%,
+    var(--pure-white) 50%
+  );
   display: flex;
   justify-content: center;
 }
@@ -511,8 +517,13 @@ main {
   display: grid;
   grid-template-columns: 1fr;
 
-  grid-template-rows: 0.9fr 1fr;
+  grid-template-rows: 1fr 1fr;
   flex-direction: column;
+  background-color: linear-gradient(
+    to bottom,
+    var(--offwhite-background) 50%,
+    var(--pure-white) 50%
+  );
   width: 100%;
   height: inherit;
 }
@@ -520,9 +531,8 @@ main {
 .contact__detail {
   grid-column: 1/2;
   grid-row: 1/2;
-  background-color: inherit;
+  background-color: var(--offwhite-background);
   padding: 0.5rem;
-
   height: 100%;
 }
 
@@ -568,14 +578,13 @@ main {
   grid-row: 2/3;
   background-color: var(--pure-white);
   width: 100%;
-  /* padding: 0.5rem; */
 }
 
 form {
   display: flex;
   flex-direction: column;
   background-color: var(--pure-white);
-  /* padding: 1rem; */
+
   border-radius: 5px;
 }
 
@@ -722,7 +731,6 @@ footer {
   text-align: center;
   padding: 2rem 1rem;
   color: black;
-  /* z-index: 15; */
 }
 
 .popup .fa-solid {
@@ -762,76 +770,6 @@ footer {
   margin: 1.5rem 0 0 0;
   position: relative;
 }
-
-/* .modal-container {
-  position: fixed;
-  pointer-events: auto;
-  top: 0;
-  height: 100vh;
-  width: 100vw;
-  background-color: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(8px);
-  display: flex;
- 
-  justify-content: center;
-  align-items: center;
-  z-index: 13;
-  visibility: hidden;
-}
-
-.open-popup {
-  visibility: visible;
-}
-
-.popup {
-  max-width: 40rem;
-  max-height: 20rem;
-  background-color: var(--pure-white);
-  border-radius: 6px;
-  height: 40%;
-  text-align: center;
-  padding: 2rem 1rem;
-  z-index: 15;
-}
-
-.popup .fa-solid {
-  height: 10%;
-  font-size: 3rem;
-  color: green;
-}
-
-.popup h2 {
-  height: 20%;
-  font-size: 2rem;
-  font-weight: 500;
-  margin: 0.5rem;
-  color: black;
-}
-
-.popup p {
-  color: black;
-  height: 20%;
-  font-size: 1.22rem;
-}
-
-.popup span {
-  font-weight: 600;
-  color: var(--linkedin-colour);
-}
-
-.popup button {
-  width: 100px;
-  height: 2rem;
-  font-size: 1rem;
-  border-radius: 5px;
-  margin: 0.3rem 0 0 0;
-  cursor: pointer;
-  border: 0;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  margin: 1.5rem 0 0 0;
-  position: relative;
-  z-index: 100;
-} */
 
 @media (min-width: 576px) {
   /* Styles for medium screens and larger */
@@ -1142,10 +1080,20 @@ footer {
     width: 50%;
   }
 
+  /* .contact {
+    width: 100%;
+    background-color: linear-gradient(
+      to right,
+      var(--offwhite-background) 50%,
+      var(--pure-white) 50%
+    );
+  }
+
   .contact__detail__and__form {
     display: flex;
     flex-direction: row;
     height: 100%;
+    background-color: var(--offwhite-background);
   }
 
   .contact__detail {
@@ -1154,13 +1102,7 @@ footer {
 
   .contact__form {
     width: 50%;
-  }
-
-  form button {
-    margin: 1rem 0 0 0;
-    font-size: 1.2rem;
-    padding: 1rem;
-  }
+  } */
 
   .footer__wrapper {
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -1319,11 +1261,11 @@ footer {
     background-color: var(--linkedin-colour);
   }
 
-  .contact__detail__and__form {
+  /* .contact__detail__and__form {
     display: flex;
     flex-direction: row;
     justify-content: center;
-  }
+  } */
 
   /* MAKING THE RESPONSIVENESS BETTER */
   footer,
