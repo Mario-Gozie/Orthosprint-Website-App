@@ -373,6 +373,11 @@ main {
   aspect-ratio: 1;
 }
 
+.dates button:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  user-select: none;
+}
 .dates button:hover {
   background-color: rgba(119, 136, 153, 0.1);
 }
@@ -382,7 +387,7 @@ main {
   color: white;
 }
 
-.dates button.selected {
+.dates button .selected {
   background-color: var(--linkedin-colour);
   color: var(--pure-white);
 }
