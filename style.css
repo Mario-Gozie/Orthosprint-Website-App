@@ -1080,20 +1080,21 @@ footer {
     width: 50%;
   }
 
-  /* .contact {
-    width: 100%;
+  .contact {
+    width: 100vw;
     background-color: linear-gradient(
       to right,
       var(--offwhite-background) 50%,
       var(--pure-white) 50%
     );
+    display: grid;
   }
 
   .contact__detail__and__form {
     display: flex;
     flex-direction: row;
     height: 100%;
-    background-color: var(--offwhite-background);
+    /* background-color: var(--offwhite-background); */
   }
 
   .contact__detail {
@@ -1102,7 +1103,7 @@ footer {
 
   .contact__form {
     width: 50%;
-  } */
+  }
 
   .footer__wrapper {
     grid-template-columns: 1fr 1fr 1fr 1fr;
