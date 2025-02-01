@@ -386,6 +386,43 @@ main {
   color: var(--pure-white);
 }
 
+.datepicker-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.datepicker-header input {
+  max-width: 64px;
+}
+
+.datepicker-header button {
+  color: slategray;
+}
+
+.datepicker-header button:hover {
+  background-color: rgba(119, 136, 153, 0.1);
+}
+
+.datepicker-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+}
+
+.datepicker-footer button {
+  background-color: rgba(119, 136, 153, 0.1);
+  padding: 3px 10px;
+}
+
+.datepicker-footer button.apply {
+  background-color: var(--linkedin-colour);
+  color: var(--pure-white);
+}
+
 @media (max-width: 430px) {
   .login-box {
     width: 100%;
