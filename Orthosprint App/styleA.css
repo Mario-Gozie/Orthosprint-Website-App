@@ -387,7 +387,7 @@ main {
   color: white;
 }
 
-.dates button .selected {
+.dates button.selected {
   background-color: var(--linkedin-colour);
   color: var(--pure-white);
 }

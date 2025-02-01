@@ -77,7 +77,6 @@ const displayDates = () => {
       lastofPreviousMonth.getDate() - lastofPreviousMonth.getDay() + i;
     const button = createButton(text, true, false);
 
-    button.addEventListener("click", () => {});
     dates.appendChild(button);
   }
 
@@ -93,6 +92,7 @@ const displayDates = () => {
       selectedDate.getFullYear() === year &&
       selectedDate.getMonth() === month;
     const button = createButton(i, false, isToday);
+    button.addEventListener("click", handleDateClick);
     dates.appendChild(button);
   }
 
