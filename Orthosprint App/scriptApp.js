@@ -27,12 +27,17 @@ cancelDateBtn.addEventListener("click", () => (datePicker.hidden = true));
 
 // Apply button commmands
 
-applyBtn.addEventListener(
-  "click",
-  () =>
-    // Set up the whole apply functionality later
-    (datePicker.hidden = true)
-);
+applyBtn.addEventListener("click", () => {
+  // Set up the whole apply functionality later
+  // setting date to US standard
+  dateInput.value = selectedDate.toLocaleDateString("en-Us", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  });
+  //hide datepicker
+  datePicker.hidden = true;
+});
 
 // Handle next month nav
 
@@ -47,6 +52,19 @@ dateNextBtn.addEventListener("click", () => {
 datePrevBtn.addEventListener("click", () => {
   if (month === 11) year--;
   month = (month - 1 + 12) % 12;
+  displayDates();
+});
+
+//handling month input change
+
+monthInput.addEventListener("change", () => {
+  month = monthInput.selectedIndex;
+  displayDates();
+});
+
+// Handling year input change.
+yearInput.addEventListener("change", () => {
+  year = yearInput.value;
   displayDates();
 });
 
