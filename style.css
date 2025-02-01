@@ -1087,14 +1087,15 @@ footer {
       var(--offwhite-background) 50%,
       var(--pure-white) 50%
     );
-    display: grid;
+    display: flex;
+    justify-content: center;
   }
 
   .contact__detail__and__form {
     display: flex;
     flex-direction: row;
     height: 100%;
-    /* background-color: var(--offwhite-background); */
+    background-color: var(--offwhite-background);
   }
 
   .contact__detail {
