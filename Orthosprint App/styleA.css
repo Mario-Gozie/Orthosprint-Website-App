@@ -314,6 +314,78 @@ main {
   background-color: var(--linkedin-colour);
 }
 
+.datepicker-section {
+  display: flex;
+  justify-content: center;
+}
+
+.date-input {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #eee;
+}
+
+/* DatePicker styles */
+
+.datepicker-container {
+  position: relative;
+}
+
+.datepicker {
+  display: absolute;
+  top: 100%;
+  z-index: 4;
+  margin: 2px;
+  background-color: var(--pure-white);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.datepicker button {
+  cursor: pointer;
+  border: none;
+  border-radius: 3px;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.days,
+.dates {
+  display: grid;
+  grid-template-columns: repeat(7, 32px);
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.days span {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.dates button {
+  color: slategray;
+  aspect-ratio: 1;
+}
+
+.dates button:hover {
+  background-color: rgba(119, 136, 153, 0.1);
+}
+
+.dates button.today {
+  background-color: rgb(71, 192, 71);
+  color: white;
+}
+
+.dates button.selected {
+  background-color: var(--linkedin-colour);
+  color: var(--pure-white);
+}
+
 @media (max-width: 430px) {
   .login-box {
     width: 100%;
