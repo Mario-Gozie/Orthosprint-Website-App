@@ -443,6 +443,7 @@ main {
   border-radius: 5px;
   background-color: var(--linkedin-colour);
   color: var(--pure-white);
+  cursor: pointer;
 }
 
 @media (max-width: 430px) {
