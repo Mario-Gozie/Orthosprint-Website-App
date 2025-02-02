@@ -21,9 +21,9 @@ class RegView {
   };
 
   submitReg(handler) {
-    registerationForm.addEventListener("submit", (e) => {
+    this.registerationForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      const data = new FormData(this);
+      const data = new FormData(this.registerationForm);
       console.log(data);
 
       const firstName = data.get("firstName");
@@ -42,7 +42,7 @@ class RegView {
         return;
       }
 
-      customers.push({
+      handler({
         firstName,
         lastName,
         address,
@@ -53,11 +53,10 @@ class RegView {
         gender,
       });
 
-      this.reset(); //clearing all contentents in the form
+      this.registerationForm.reset(); //clearing all contentents in the form
 
-      this.messageContainer.innerHTML = generateHTML(firstName);
+      this.messageContainer.innerHTML = this.generateHTML(firstName);
       this.popUpContainer.classList.add("Open-popup");
-      console.log(customers);
     });
   }
 }
