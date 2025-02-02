@@ -471,6 +471,7 @@ main {
   width: 80%;
   height: 5%;
   position: absolute;
+  letter-spacing: 0.5rem;
   right: -40%;
   top: 36%;
   border-radius: 5px;
@@ -1082,7 +1083,7 @@ footer {
 
   .contact {
     width: auto;
-    background-color: linear-gradient(
+    background: linear-gradient(
       to right,
       var(--offwhite-background) 50%,
       var(--pure-white) 50%
