@@ -437,7 +437,7 @@ main {
   color: var(--pure-white);
 }
 
-.appointment-submit-button {
+.appointment-booking-button {
   padding: 0.5rem 2rem;
   border: none;
   border-radius: 5px;
