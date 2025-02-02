@@ -1,8 +1,6 @@
 import view from "./view.js";
-// import { openNewsletterWindow, closeNewsletterWindow } from "./WebNewsModal.js";
 
 import WebNewsModal from "./WebNewsModal.js";
-// import regView from "../registeration folder/regView.js";
 
 import { updateNewsletterList, state, getLastID } from "./model.js";
 
