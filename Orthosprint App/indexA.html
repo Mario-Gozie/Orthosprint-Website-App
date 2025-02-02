@@ -120,8 +120,20 @@
 
       <section class="datepicker-section">
         <div class="datepicker-container">
+          <h3>Shedule an Appointment</h3>
+          <select
+            name=""
+            id=""
+            class="service-input"
+            placeholder="select a service"
+          >
+            <option value="">prosthetic</option>
+            <option value="">Orthotics</option>
+            <option value="">Maintainance</option>
+            <option value="">Procurement</option>
+          </select>
           <input type="text" class="date-input" placeholder="select date" />
-          <div class="datepicker">
+          <div class="datepicker" hidden>
             <div class="datepicker-header">
               <button class="prev">prev</button>
               <div>
@@ -139,7 +151,7 @@
                   <option>November</option>
                   <option>December</option>
                 </select>
-                <input type="number" class="year-input" value="2024" />
+                <input type="number" class="year-input" />
               </div>
               <button class="next">next</button>
             </div>
@@ -195,6 +207,7 @@
               <button class="apply">Apply</button>
             </div>
           </div>
+          <button class="appointment-submit-button">Submit</button>
         </div>
       </section>
     </main>

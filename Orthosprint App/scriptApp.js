@@ -1,13 +1,12 @@
 const datePicker = document.querySelector(".datepicker");
 const dateInput = document.querySelector(".date-input");
-const yearInput = document.querySelector(".year-input");
-const monthInput = document.querySelector(".month-input");
-
-const cancelDateBtn = document.querySelector(".cancel");
-const applyBtn = document.querySelector(".apply");
+const yearInput = datePicker.querySelector(".year-input");
+const monthInput = datePicker.querySelector(".month-input");
+const cancelDateBtn = datePicker.querySelector(".cancel");
+const applyBtn = datePicker.querySelector(".apply");
 const dates = datePicker.querySelector(".dates");
 const dateNextBtn = datePicker.querySelector(".next");
-const datePrevBtn = document.querySelector(".prev");
+const datePrevBtn = datePicker.querySelector(".prev");
 
 let selectedDate = new Date();
 let year = selectedDate.getFullYear();
@@ -50,7 +49,7 @@ dateNextBtn.addEventListener("click", () => {
 // Handle next month nav
 
 datePrevBtn.addEventListener("click", () => {
-  if (month === 11) year--;
+  if (month === 0) year--;
   month = (month - 1 + 12) % 12;
   displayDates();
 });
@@ -120,7 +119,7 @@ const displayDates = () => {
   for (let i = 0; i <= lastofPreviousMonth.getDay(); i++) {
     const text =
       lastofPreviousMonth.getDate() - lastofPreviousMonth.getDay() + i;
-    const button = createButton(text, true, false);
+    const button = createButton(text, true, -1);
 
     dates.appendChild(button);
   }
@@ -132,11 +131,7 @@ const displayDates = () => {
   console.log(lastOfMonth.toDateString());
 
   for (let i = 1; i <= lastOfMonth.getDate(); i++) {
-    const isToday =
-      selectedDate.getDate() === i &&
-      selectedDate.getFullYear() === year &&
-      selectedDate.getMonth() === month;
-    const button = createButton(i, false, isToday);
+    const button = createButton(i, false);
     button.addEventListener("click", handleDateClick);
     dates.appendChild(button);
   }
@@ -147,17 +142,34 @@ const displayDates = () => {
 
   for (let i = firstOfNextMonth.getDay(); i < 7; i++) {
     const text = firstOfNextMonth.getDate() - firstOfNextMonth.getDay() + i;
-    const button = createButton(text, true, false);
+    const button = createButton(text, true, 1);
     dates.appendChild(button);
   }
 };
 
-const createButton = (text, isDisabled = false, isToday = false) => {
+const createButton = (text, isDisabled = false, type = 0) => {
+  const currentDate = new Date();
+
+  // deternube the date to compare based on the button type
+
+  let comparisonDate = new Date(year, month + type, text);
+
+  // checking if the current date is the date today
+  const isToday =
+    currentDate.getDate() === text &&
+    currentDate.getFullYear() === year &&
+    currentDate.getMonth() === month;
+
+  // Checking if the current button is selelcted
+
+  const selected = selectedDate.getTime() === comparisonDate.getTime();
+
   const button = document.createElement("button");
   button.textContent = text;
   button.disabled = isDisabled;
-  button.classList.toggle("today", isToday);
+  button.classList.toggle("today", isToday && !isDisabled);
+  button.classList.toggle("selected", selected);
   return button;
 };
 
-displayDates();
+console.log(displayDates());
