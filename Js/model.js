@@ -23,9 +23,9 @@ export function updateNewsletterList(item) {
 
 // // PORTAL DATA CODE
 
-class newClient {
+export class NewClient {
   constructor(
-    id,
+    // id,
     firstName,
     lastName,
     address,
@@ -35,7 +35,7 @@ class newClient {
     password,
     gender
   ) {
-    this.id = id;
+    // this.id = id;
     this.firstname = firstName;
     this.lastName = lastName;
     this.address = address;
@@ -44,22 +44,8 @@ class newClient {
     this.email = email;
     this.password = password;
     this.gender = gender;
-    this.orders = [];
   }
 }
-
-// exporting client Data
-// export const newclient = new newClient(
-//   id,
-//   firstName,
-//   lastName,
-//   address,
-//   phoneNumber,
-//   username,
-//   email,
-//   password,
-//   gender
-// );
 
 export const getLastID = function () {
   if (state.clients === "") {

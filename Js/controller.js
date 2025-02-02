@@ -2,7 +2,7 @@ import view from "./view.js";
 
 import WebNewsModal from "./WebNewsModal.js";
 
-import { updateNewsletterList, state, getLastID } from "./model.js";
+import { updateNewsletterList, state } from "./model.js";
 
 const menuOpen = document.querySelector(".menu__button");
 const menuClose = document.querySelector(".close__button");
@@ -171,31 +171,6 @@ dots.forEach((dot, index) => {
 const newsletterModalOpen = function (data) {
   updateNewsletterList(data);
   console.log(state.newsletter);
-};
-
-const regNewClient = function (
-  firstName,
-  lastName,
-  address,
-  phoneNumber,
-  username,
-  email,
-  password,
-  gender
-) {
-  const data = getLastID();
-
-  newclient(
-    data,
-    firstName,
-    lastName,
-    address,
-    phoneNumber,
-    username,
-    email,
-    password,
-    gender
-  );
 };
 
 const init = function () {
