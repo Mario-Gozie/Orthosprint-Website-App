@@ -42,7 +42,7 @@ class RegView {
         return;
       }
 
-      handler({
+      handler(
         firstName,
         lastName,
         address,
@@ -50,8 +50,8 @@ class RegView {
         username,
         email,
         password,
-        gender,
-      });
+        gender
+      );
 
       this.registerationForm.reset(); //clearing all contentents in the form
 
