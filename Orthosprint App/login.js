@@ -5,11 +5,30 @@ class Login {
 
   mainSection = document.querySelector("main");
   password = document.querySelector(".password");
+  togglePasswordIcon = document.querySelector(".toggle-password");
 
   loginForm = document.querySelector(".login-form");
 
   constructor() {
     this.OnloginEvent();
+    this.showPassword();
+  }
+
+  showPassword() {
+    document.addEventListener("DOMContentLoaded", () => {
+      this.togglePasswordIcon.addEventListener("click", () => {
+        // Toggle the input type
+        const type =
+          this.password.getAttribute("type") === "password"
+            ? "text"
+            : "password";
+        this.password.setAttribute("type", type);
+
+        // Toggle the icon classes
+        this.togglePasswordIcon.classList.toggle("fa-eye"); // Show open eye
+        this.togglePasswordIcon.classList.toggle("fa-eye-slash"); // Show closed eye
+      });
+    });
   }
 
   OnloginEvent() {
@@ -35,7 +54,7 @@ class Login {
       setTimeout(() => {
         this.loginSection.style.display = "none"; // Remove from layout
         this.mainSection.style.opacity = "1"; // Fade in main section
-      }, 500); // Match this timeout with the transition duration
+      }, 1000); // Match this timeout with the transition duration
     });
   }
 }
