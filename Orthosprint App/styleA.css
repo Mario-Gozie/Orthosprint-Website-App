@@ -46,6 +46,9 @@ nav {
   justify-content: center;
   align-items: center;
   background: var(--offwhite-background);
+  position: relative; /* Positioning context for z-index */
+  z-index: 2; /* Higher z-index to stay above main section */
+  transition: opacity 0.5s ease; /* Smooth fade-out */
 }
 
 .login-wrapper {
@@ -147,12 +150,25 @@ nav {
 .register-link p a:hover {
   text-decoration: underline;
 }
+
+/* HIDDING INTERFACE */
+
+/* .hidden {
+  opacity: 0;
+  display: none;
+} */
+
 /* Main App layout */
 
 main {
   background-color: #f5f5f5;
   height: auto;
   padding: 0.5rem;
+  opacity: 0; /* Initially hidden */
+  z-index: 1; /* Lower z-index than login section */
+  position: absolute; /* Allows layering */
+  width: 100%; /* Full width */
+  transition: opacity 0.5s ease; /* Smooth fade-in */
 }
 
 /* Welcome Section */
