@@ -71,3 +71,20 @@ export const getLastID = function () {
 export const RegisterNewCustomer = function (newCustomer) {
   state.clients.push(newCustomer);
 };
+
+// SAVING DATA
+
+class DataModel {
+  saveData(key, value) {
+    localStorage.setItem(key, JSON.stringify(value));
+  }
+
+  getData(key) {
+    const data = localStorage.getItem(key);
+    return data ? JSON.parse(data) : null;
+  }
+
+  removeData(key) {
+    localStorage.removeItem(key);
+  }
+}
