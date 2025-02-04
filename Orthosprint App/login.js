@@ -15,11 +15,13 @@ class Login {
       console.log(this.loginForm);
 
       const formData = new FormData(this.loginForm);
-      console.log(formData);
 
-      //   formData.forEach((value, key) => {
-      //     console.log(`${key}:${value}`);
-      //   });
+      console.log(formData.get("usernameEmail"));
+      console.log(formData.get("password"));
+
+      formData.forEach((value, key) => {
+        console.log(`${key}:${value}`);
+      });
     });
   }
 }
