@@ -24,6 +24,14 @@ export function updateNewsletterList(item) {
 // // PORTAL DATA CODE
 
 export class NewClient {
+  firstName;
+  lastName;
+  address;
+  phoneNumber;
+  username;
+  email;
+  #password;
+  gender;
   constructor(
     // id,
     firstName,
@@ -42,8 +50,13 @@ export class NewClient {
     this.phone_Number = phoneNumber;
     this.username = username;
     this.email = email;
-    this.password = password;
+    this.#password = password;
     this.gender = gender;
+  }
+
+  // Reset Password
+  resetPassword(newPassword) {
+    this.#password = newPassword;
   }
 }
 
