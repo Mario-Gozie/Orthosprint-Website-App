@@ -49,9 +49,9 @@ nav {
 }
 
 .login-wrapper {
-  /* width: 400px; */
+  max-width: 600px;
   background: var(--pure-white);
-  background-color: purple;
+
   border-radius: 12px;
   padding: 1.5rem 2rem;
 }
@@ -129,6 +129,8 @@ nav {
   font-size: 1rem;
   font-weight: 600;
   margin: 1rem 0 0 0;
+  color: var(--pure-white);
+  background: var(--linkedin-colour);
 }
 
 .register-link {
