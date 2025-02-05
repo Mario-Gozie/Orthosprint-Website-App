@@ -44,10 +44,10 @@ export class NewClient {
     gender
   ) {
     // this.id = id;
-    this.firstname = firstName;
+    this.firstName = firstName;
     this.lastName = lastName;
     this.address = address;
-    this.phone_Number = phoneNumber;
+    this.phoneNumber = phoneNumber;
     this.username = username;
     this.email = email;
     this.#password = password;

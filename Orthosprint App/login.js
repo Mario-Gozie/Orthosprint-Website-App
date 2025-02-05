@@ -54,6 +54,7 @@ class Login {
       setTimeout(() => {
         this.loginSection.style.display = "none"; // Remove from layout
         this.mainSection.style.opacity = "1"; // Fade in main section
+        this.mainSection.style.display = "block";
       }, 1000); // Match this timeout with the transition duration
     });
   }

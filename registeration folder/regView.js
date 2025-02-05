@@ -24,7 +24,7 @@ class RegView {
     this.registerationForm.addEventListener("submit", (e) => {
       e.preventDefault();
       const data = new FormData(this.registerationForm);
-      console.log(data);
+      console.log("Form Data Entries: ", Array.from(data.entries())); // Debugging line
 
       const firstName = data.get("firstName");
       const lastName = data.get("lastName");
@@ -36,6 +36,7 @@ class RegView {
       const confirmPassword = data.get("confirmPassword");
 
       const gender = data.get("gender");
+      console.log(firstName);
 
       if (password !== confirmPassword) {
         alert("Passwords do not match. Please try again");
