@@ -63,15 +63,15 @@ export class NewClient {
   // GETTING CURRRENT DATE YYYYMMDD format
   getDate() {
     const today = new Date();
-    const day = string(today.getDate()).padStart(2, "0"); // The padding is used to make sure the day is in two digits.
-    const month = string(today.getMonth() + 1).padStart(2, "0"); // Months are Zero based
+    const day = String(today.getDate()).padStart(2, "0"); // The padding is used to make sure the day is in two digits.
+    const month = String(today.getMonth() + 1).padStart(2, "0"); // Months are Zero based.
     const year = today.getFullYear();
 
     return `${year}${month}${day}`;
   }
 
   generateCustomerID(CustomersArray) {
-    if (CustomersArray === "") {
+    if (!CustomersArray || CustomersArray.length === 0) {
       return `CUST-${this.getDate()}-0001`;
     } else {
       const lastCustomerID = CustomersArray.at(-1).clientId; // getting the number part of the customerID
@@ -85,13 +85,13 @@ export class NewClient {
   }
 }
 
-export const getLastID = function () {
-  if (state.clients === "") {
-    return 100;
-  } else {
-    return state.clients.at(-1).id;
-  }
-};
+// export const getLastID = function () {
+//   if (state.clients === "") {
+//     return 100;
+//   } else {
+//     return state.clients.at(-1).id;
+//   }
+// };
 
 export const RegisterNewCustomer = function (newCustomer) {
   state.clients.push(newCustomer);

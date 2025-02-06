@@ -17,6 +17,7 @@ const saveCustomerRegInfo = (
 ) => {
   state.clients.push(
     new NewClient(
+      state.clients,
       firstName,
       lastName,
       address,
