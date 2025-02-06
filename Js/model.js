@@ -87,7 +87,7 @@ export class NewClient {
 
 // SAVING DATA
 
-export class DataModel {
+class DataModel {
   saveData(key, value) {
     try {
       localStorage.setItem(key, JSON.stringify(value));
@@ -109,3 +109,5 @@ export class DataModel {
     localStorage.removeItem(key);
   }
 }
+
+export const dataModel = new DataModel();
