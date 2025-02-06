@@ -24,8 +24,8 @@ class RegView {
     this.registerationForm.addEventListener("submit", (e) => {
       e.preventDefault();
       const data = new FormData(this.registerationForm);
-      console.log("Form Data Entries: ", Array.from(data.entries())); // Debugging line
 
+      // const clientId = `CUST-`;
       const firstName = data.get("firstName");
       const lastName = data.get("lastName");
       const address = data.get("address");

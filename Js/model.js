@@ -24,6 +24,7 @@ export function updateNewsletterList(item) {
 // // PORTAL DATA CODE
 
 export class NewClient {
+  clientId;
   firstName;
   lastName;
   address;
@@ -33,7 +34,7 @@ export class NewClient {
   #password;
   gender;
   constructor(
-    // id,
+    CustomersArray,
     firstName,
     lastName,
     address,
@@ -43,7 +44,7 @@ export class NewClient {
     password,
     gender
   ) {
-    // this.id = id;
+    this.clientId = this.generateCustomerID(CustomersArray);
     this.firstName = firstName;
     this.lastName = lastName;
     this.address = address;
@@ -57,6 +58,30 @@ export class NewClient {
   // Reset Password
   resetPassword(newPassword) {
     this.#password = newPassword;
+  }
+
+  // GETTING CURRRENT DATE YYYYMMDD format
+  getDate() {
+    const today = new Date();
+    const day = string(today.getDate()).padStart(2, "0"); // The padding is used to make sure the day is in two digits.
+    const month = string(today.getMonth() + 1).padStart(2, "0"); // Months are Zero based
+    const year = today.getFullYear();
+
+    return `${year}${month}${day}`;
+  }
+
+  generateCustomerID(CustomersArray) {
+    if (CustomersArray === "") {
+      return `CUST-${this.getDate()}-0001`;
+    } else {
+      const lastCustomerID = CustomersArray.at(-1).clientId; // getting the number part of the customerID
+      const lastNumberPartOfID = parseInt(lastCustomerID.split("-").pop(), 10); // Here, I splited to create an array, popped to take the last part then converted the last part which is a string number to a number to Number in base 10
+
+      return `CUST-${this.getDate()}-${string(ConvertToNumber + 1).padStart(
+        4,
+        "0"
+      )}`; // here I said I want to make it a total of 4 numbers and I want to make fill in the spaces in front with zero if it is not up to 4
+    }
   }
 }
 
