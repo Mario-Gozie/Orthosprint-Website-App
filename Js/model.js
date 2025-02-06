@@ -85,28 +85,24 @@ export class NewClient {
   }
 }
 
-// export const getLastID = function () {
-//   if (state.clients === "") {
-//     return 100;
-//   } else {
-//     return state.clients.at(-1).id;
-//   }
-// };
-
-export const RegisterNewCustomer = function (newCustomer) {
-  state.clients.push(newCustomer);
-};
-
 // SAVING DATA
 
-class DataModel {
+export class DataModel {
   saveData(key, value) {
-    localStorage.setItem(key, JSON.stringify(value));
+    try {
+      localStorage.setItem(key, JSON.stringify(value));
+    } catch (error) {
+      console.log(`Error saving data for key "${key}":`, error);
+    }
   }
 
   getData(key) {
-    const data = localStorage.getItem(key);
-    return data ? JSON.parse(data) : null;
+    try {
+      const data = localStorage.getItem(key);
+      return data ? JSON.parse(data) : null;
+    } catch (error) {
+      console.log(`Error retrieveing the data for key "${key}":`, error);
+    }
   }
 
   removeData(key) {
