@@ -1,14 +1,28 @@
-import { state, currentUserDetail } from "../Js/model.js";
+import { state, dataModel } from "../Js/model.js";
 import login from "./login.js";
 
-login.OnloginEvent();
+const identifyUser = (identifier) => {
+  return state.clients.find((client) => {
+    return client.username === identifier || client.email === identifier;
+  });
+};
 
-const identifyUser = (custommerArray = state.clients, username) => {
-  // currentUserDetail();
+const gettingSavedDataController = () => {
+  const savedData = dataModel.getData("State");
+
+  if (savedData) {
+    Object.assign(state, savedData); //updating the state object with the savedData property. all the properties of savedData will be giving to state.
+
+    // state = { ...savedData };
+  } else {
+    console.log("No saved state found in localStorage");
+  }
 };
 
 const init = () => {
-  identifyUser();
+  // identifyUser();
+  gettingSavedDataController();
+  login.OnloginEvent(identifyUser);
 };
 
 init();

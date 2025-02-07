@@ -114,8 +114,8 @@ export const dataModel = new DataModel();
 
 // GETTING CURRENT USER
 
-export const currentUserDetail = (ClientsArray, username) => {
-  return ClientsArray.find(
-    (client) => client.username === username || client.email === username
-  );
-};
+// export const currentUserDetail = (ClientsArray, username) => {
+//   return ClientsArray.find(
+//     (client) => client.username === username || client.email === username
+//   );
+// };
