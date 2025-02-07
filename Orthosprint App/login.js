@@ -1,63 +1,46 @@
 class Login {
   usernameEmailContainer = document.querySelector(".username");
-
   loginSection = document.querySelector(".login-section");
-
   mainSection = document.querySelector("main");
   password = document.querySelector(".password");
   togglePasswordIcon = document.querySelector(".toggle-password");
-
   loginForm = document.querySelector(".login-form");
-
-  // curentUserData = this.getCurrentUser();
+  currentUser;
 
   constructor() {
-    // this.OnloginEvent(handler);
     this.showPassword();
   }
-
-  // Authentication(){
-
-  // }
 
   OnloginEvent(handler) {
     this.loginForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      // this.getCurrentUser().password.value
-      console.log(this.loginForm);
 
       const formData = new FormData(this.loginForm);
-
-      console.log(formData.get("usernameEmail"));
-      console.log(formData.get("password"));
 
       const identifier = formData.get("usernameEmail");
       const IdentifierPassword = formData.get("password");
       const user = handler(identifier, IdentifierPassword);
 
+      // Fully Implementing login process.
       if (user) {
-        console.log(`user found`, user);
+        this.currentUser = user;
+        console.log("Current User", this.currentUser);
+
+        this.loginForm.reset();
+
+        // Fade out the login section
+        this.loginSection.style.opacity = "0";
+
+        // After the fade-out, hide the login section and show the main section
+        setTimeout(() => {
+          this.loginSection.style.display = "none"; // Remove from layout
+          this.mainSection.style.opacity = "1"; // Fade in main section
+          this.mainSection.style.display = "block";
+        }, 1000); // Match this timeout with the transition duration
       } else {
         alert("User not found");
         return;
       }
-      // console.log(user);
-
-      // formData.forEach((value, key) => {
-      //   console.log(`${key}:${value}`);
-      // });
-
-      this.loginForm.reset();
-
-      // Fade out the login section
-      this.loginSection.style.opacity = "0";
-
-      // After the fade-out, hide the login section and show the main section
-      setTimeout(() => {
-        this.loginSection.style.display = "none"; // Remove from layout
-        this.mainSection.style.opacity = "1"; // Fade in main section
-        this.mainSection.style.display = "block";
-      }, 1000); // Match this timeout with the transition duration
     });
   }
 
