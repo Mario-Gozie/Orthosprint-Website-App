@@ -16,7 +16,7 @@ export const state = {
 
 // MAIN DATA WEBSITE CODE
 
-// exporting the newsletter updater
+// EXPORTING NEWSPAPER UPDATER
 export function updateNewsletterList(item) {
   state.newsletter.push(item);
 }
@@ -77,7 +77,7 @@ export class NewClient {
       const lastCustomerID = CustomersArray.at(-1).clientId; // getting the number part of the customerID
       const lastNumberPartOfID = parseInt(lastCustomerID.split("-").pop(), 10); // Here, I splited to create an array, popped to take the last part then converted the last part which is a string number to a number to Number in base 10
 
-      return `CUST-${this.getDate()}-${string(ConvertToNumber + 1).padStart(
+      return `CUST-${this.getDate()}-${string(lastNumberPartOfID + 1).padStart(
         4,
         "0"
       )}`; // here I said I want to make it a total of 4 numbers and I want to make fill in the spaces in front with zero if it is not up to 4
@@ -111,3 +111,11 @@ class DataModel {
 }
 
 export const dataModel = new DataModel();
+
+// GETTING CURRENT USER
+
+export const currentUserDetail = (ClientsArray, username) => {
+  return ClientsArray.find(
+    (client) => client.username === username || client.email === username
+  );
+};
