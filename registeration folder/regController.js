@@ -13,9 +13,9 @@ const gettingSavedDataController = () => {
   const savedData = dataModel.getData("State");
 
   if (savedData) {
-    // Object.assign(state, savedData); //updating the state object with the savedData property. all the properties of savedData will be giving to state.
+    Object.assign(state, savedData); //updating the state object with the savedData property. all the properties of savedData will be giving to state.
 
-    state = { ...savedData };
+    // state = { ...savedData };
   } else {
     console.log("No saved state found in localStorage");
   }
@@ -52,5 +52,6 @@ const init = () => {
   regView.submitReg(saveCustomerRegInfo);
   regView.closePopup();
   gettingSavedDataController();
+  // dataModel.removeData("State");
 };
 init();

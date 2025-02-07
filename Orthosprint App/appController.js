@@ -1,9 +1,12 @@
-import { state, dataModel } from "../Js/model.js";
+import { state, dataModel, NewClient } from "../Js/model.js";
 import login from "./login.js";
 
-const identifyUser = (identifier) => {
+const identifyUser = (identifier, password) => {
   return state.clients.find((client) => {
-    return client.username === identifier || client.email === identifier;
+    return (
+      client.username === identifier ||
+      (client.email === identifier && password === client.password)
+    );
   });
 };
 

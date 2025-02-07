@@ -33,8 +33,15 @@ class Login {
 
       const identifier = formData.get("usernameEmail");
       const IdentifierPassword = formData.get("password");
-      const user = handler(identifier);
-      console.log(user);
+      const user = handler(identifier, IdentifierPassword);
+
+      if (user) {
+        console.log(`user found`, user);
+      } else {
+        alert("User not found");
+        return;
+      }
+      // console.log(user);
 
       // formData.forEach((value, key) => {
       //   console.log(`${key}:${value}`);

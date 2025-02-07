@@ -31,7 +31,7 @@ export class NewClient {
   phoneNumber;
   username;
   email;
-  #password;
+  password;
   gender;
   constructor(
     CustomersArray,
@@ -51,13 +51,13 @@ export class NewClient {
     this.phoneNumber = phoneNumber;
     this.username = username;
     this.email = email;
-    this.#password = password;
+    this.password = password;
     this.gender = gender;
   }
 
   // Reset Password
   resetPassword(newPassword) {
-    this.#password = newPassword;
+    this.password = newPassword;
   }
 
   // GETTING CURRRENT DATE YYYYMMDD format
@@ -77,7 +77,7 @@ export class NewClient {
       const lastCustomerID = CustomersArray.at(-1).clientId; // getting the number part of the customerID
       const lastNumberPartOfID = parseInt(lastCustomerID.split("-").pop(), 10); // Here, I splited to create an array, popped to take the last part then converted the last part which is a string number to a number to Number in base 10
 
-      return `CUST-${this.getDate()}-${string(lastNumberPartOfID + 1).padStart(
+      return `CUST-${this.getDate()}-${String(lastNumberPartOfID + 1).padStart(
         4,
         "0"
       )}`; // here I said I want to make it a total of 4 numbers and I want to make fill in the spaces in front with zero if it is not up to 4
