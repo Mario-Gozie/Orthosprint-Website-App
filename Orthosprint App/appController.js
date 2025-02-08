@@ -1,4 +1,4 @@
-import { state, dataModel, today } from "../Js/model.js";
+import { state, dataModel, today, getLocation } from "../Js/model.js";
 import Login from "./login.js";
 import WelcomePane from "./welcomePane.js";
 
@@ -23,6 +23,8 @@ const gettingSavedDataController = () => {
   }
 };
 
+getLocation();
+
 const init = () => {
   // identifyUser();
   gettingSavedDataController();
@@ -32,6 +34,7 @@ const init = () => {
   // console.log(WelcomePane.date);
   console.log(welcomePaneInstance.renderWelcomeDate());
   console.log(welcomePaneInstance.generateGreetingMarkup());
+  console.log(navigator.geolocation);
 };
 
 init();

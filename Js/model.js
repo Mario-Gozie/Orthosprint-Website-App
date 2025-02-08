@@ -114,3 +114,20 @@ export const dataModel = new DataModel();
 
 // DATE MANAGEMENT
 export const today = new Date();
+
+// GETTING USERS LOCATION
+export const getLocation = () => {
+  const success = (position) => {
+    const location = {
+      latitude: position.coords.latitude,
+      longitude: position.coords.longitude,
+    };
+
+    // Log the location object
+    console.log(location);
+  };
+  const error = () => {
+    return `unable to retrieve your location`;
+  };
+  navigator.geolocation.getCurrentPosition(success, error);
+};
