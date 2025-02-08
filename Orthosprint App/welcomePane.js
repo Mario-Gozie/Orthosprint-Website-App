@@ -2,39 +2,28 @@ import AppViewParent from "./appViewParent.js";
 
 export default class WelcomePane extends AppViewParent {
   constructor(date) {
-    super(date); // passing date to parent
+    super(date); // passing Date to Parent
     this.personalGreeting = this.mainSection.querySelector(".Personal-welcome");
-    this.date = date;
+    // this.date = this.date;
+    console.log(this.date);
     this.hour = null;
-
-    this.setDateAndHour(date);
-    console.log(this.hour);
-  }
-
-  setDateAndHour(date) {
-    this.date = date; // Store the date
-    this.updateHour(); // Set the initial hour
-
-    // Update hour every second
-    setInterval(() => {
-      this.updateHour(); // Update the hour every second
-    }, 1000);
+    console.log(this.personalGreeting);
   }
 
   updateHour() {
-    this.hour = this.date.getHours(); // Get the current hour
-    // console.log(this.hour); // Log updated hour
-
-    // Call makeDecision whenever the hour is updated
-    this.makeDecision();
+    setInterval(() => {
+      this.hour = this.date.getHours();
+    }, 1000);
   }
 
-  makeDecision() {
-    const greeting = this._getGreeting(this.hour);
-    console.log(greeting); // Log the greeting based on the hour
+  generateGreetingMarkup() {
+    return `${this._greetingDecision()} ${this.currentUser.firstName}`;
+  }
 
-    // You can also update the view or UI component here
-    // this.personalGreeting.textContent = greeting; // Example to set greeting in the UI
+  _greetingDecision() {
+    this.updateHour();
+    const greeting = this._getGreeting(this.hour);
+    return greeting;
   }
 
   _getGreeting(hour) {
@@ -68,26 +57,12 @@ export default class WelcomePane extends AppViewParent {
     };
   }
 
-  //   _generateWelcome(currentUser) {
-  //     return `${this._getGreeting(this.hour)} ${currentUser.firstname}`;
-  //   }
+  renderWelcomeDate() {
+    const dateString = this._extractDateParts(this.date);
+    return this._generateWelcomeDate(dateString);
+  }
 
   _generateWelcomeDate(stringDate) {
     return `<p>${stringDate.dayString}, ${stringDate.monthString} ${stringDate.dayNumber}, ${stringDate.yearNumber}</p>`;
   }
-
-  //   RenderNameAndGreeting() {
-  //     // this._generateWelcome(this.currentUser);
-  //     this._generateWelcomeDate();
-  //   }
-
-  //   // Example usage
-  //   // const today = new Date();
-  //   console.log(today);
-  //   const dateParts = extractDateParts(today);
-  //   console.log(dateParts);
-
-  //   extractDateParts() {}
 }
-
-// export default new WelcomePane();

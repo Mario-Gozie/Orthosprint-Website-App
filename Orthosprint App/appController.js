@@ -1,9 +1,6 @@
 import { state, dataModel, today } from "../Js/model.js";
 import Login from "./login.js";
-// import welcomePane from "./welcomePane.js";
 import WelcomePane from "./welcomePane.js";
-
-// import WelcomePane from "./welcomePane.js";
 
 const identifyUser = (identifier, password) => {
   return state.clients.find((client) => {
@@ -26,15 +23,15 @@ const gettingSavedDataController = () => {
   }
 };
 
-const dateControl = (today) => {
-  const WelcomeDate = new WelcomePane(today);
-};
-
 const init = () => {
   // identifyUser();
   gettingSavedDataController();
   Login.OnloginEvent(identifyUser);
-  dateControl(today);
+
+  const welcomePaneInstance = new WelcomePane(today);
+  // console.log(WelcomePane.date);
+  console.log(welcomePaneInstance.renderWelcomeDate());
+  console.log(welcomePaneInstance.generateGreetingMarkup());
 };
 
 init();

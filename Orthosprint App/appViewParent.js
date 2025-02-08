@@ -4,4 +4,8 @@ export default class AppViewParent {
   constructor(date) {
     this.date = date;
   }
+
+  setCurrentUser(user) {
+    this.currentUser = user; // Method to set currentUser
+  }
 }
