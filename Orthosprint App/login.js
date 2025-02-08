@@ -1,13 +1,18 @@
-class Login {
+import AppViewParent from "./appViewParent.js";
+
+export class LoginDetail extends AppViewParent {
+  //I exported this class because I want another function to inherit the data in it.
   usernameEmailContainer = document.querySelector(".username");
   loginSection = document.querySelector(".login-section");
   mainSection = document.querySelector("main");
   password = document.querySelector(".password");
   togglePasswordIcon = document.querySelector(".toggle-password");
   loginForm = document.querySelector(".login-form");
-  currentUser;
+  // currentUser;
 
   constructor() {
+    super();
+    this.OnloginEvent();
     this.showPassword();
   }
 
@@ -20,6 +25,7 @@ class Login {
       const identifier = formData.get("usernameEmail");
       const IdentifierPassword = formData.get("password");
       const user = handler(identifier, IdentifierPassword);
+      console.log(`user`, user);
 
       // Fully Implementing login process.
       if (user) {
@@ -62,4 +68,4 @@ class Login {
   }
 }
 
-export default new Login();
+export const LoginInstance = new LoginDetail(); // I exported this instance because I want to run the code within it in the constructor.
