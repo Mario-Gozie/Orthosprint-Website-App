@@ -112,4 +112,5 @@ class DataModel {
 
 export const dataModel = new DataModel();
 
-export const getToday = new Date();
+// DATE MANAGEMENT
+export const today = new Date();

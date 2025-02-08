@@ -1,10 +1,9 @@
 import AppViewParent from "./appViewParent.js";
 
-export class LoginDetail extends AppViewParent {
+class Login extends AppViewParent {
   //I exported this class because I want another function to inherit the data in it.
   usernameEmailContainer = document.querySelector(".username");
   loginSection = document.querySelector(".login-section");
-  mainSection = document.querySelector("main");
   password = document.querySelector(".password");
   togglePasswordIcon = document.querySelector(".toggle-password");
   loginForm = document.querySelector(".login-form");
@@ -68,4 +67,4 @@ export class LoginDetail extends AppViewParent {
   }
 }
 
-export const LoginInstance = new LoginDetail(); // I exported this instance because I want to run the code within it in the constructor.
+export default new Login(); // I exported this instance because I want to run the code within it in the constructor.

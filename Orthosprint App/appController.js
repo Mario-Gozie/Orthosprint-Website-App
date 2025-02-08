@@ -1,5 +1,7 @@
-import { state, dataModel, getToday } from "../Js/model.js";
-import { LoginInstance } from "./login.js";
+import { state, dataModel, today } from "../Js/model.js";
+import Login from "./login.js";
+// import welcomePane from "./welcomePane.js";
+import WelcomePane from "./welcomePane.js";
 
 // import WelcomePane from "./welcomePane.js";
 
@@ -24,35 +26,15 @@ const gettingSavedDataController = () => {
   }
 };
 
-function extractDateParts(date) {
-  const optionsDay = { weekday: "long" }; // String part of the day
-  const optionsMonth = { month: "long" }; // String part of the month
-  const optionsDate = { day: "numeric" }; // Numeric part of the day
-  const optionsYear = { year: "numeric" }; // Year
-
-  const dayString = date.toLocaleDateString("en-US", optionsDay);
-  const monthString = date.toLocaleDateString("en-US", optionsMonth);
-  const dayNumber = date.toLocaleDateString("en-US", optionsDate);
-  const yearNumber = date.toLocaleDateString("en-US", optionsYear);
-
-  return {
-    dayString,
-    monthString,
-    dayNumber,
-    yearNumber,
-  };
-}
-
-// Example usage
-const today = new Date();
-const dateParts = extractDateParts(today);
-console.log(dateParts);
+const dateControl = (today) => {
+  const WelcomeDate = new WelcomePane(today);
+};
 
 const init = () => {
   // identifyUser();
   gettingSavedDataController();
-  LoginInstance.OnloginEvent(identifyUser);
-  extractDateParts(getToday);
+  Login.OnloginEvent(identifyUser);
+  dateControl(today);
 };
 
 init();
