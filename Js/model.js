@@ -85,6 +85,31 @@ export class NewClient {
   }
 }
 
+// CURRENT USER
+export class currentUser {
+  constructor(
+    address,
+    clientId,
+    email,
+    firstName,
+    gender,
+    lastName,
+    password,
+    phoneNumber,
+    username
+  ) {
+    this.address = address;
+    this.clientId = clientId;
+    this.email = email;
+    this.firstName = firstName;
+    this.gender = gender;
+    this.lastName = lastName;
+    this.password = password;
+    this.phoneNumber = phoneNumber;
+    this.username = username;
+  }
+}
+
 // SAVING DATA
 
 class DataModel {

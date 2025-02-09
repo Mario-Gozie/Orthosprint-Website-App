@@ -11,7 +11,7 @@ class Login extends AppViewParent {
 
   constructor() {
     super();
-    this.OnloginEvent();
+    // this.OnloginEvent(identifyUser);
     this.showPassword();
   }
 
@@ -28,11 +28,6 @@ class Login extends AppViewParent {
 
       // Fully Implementing login process.
       if (user) {
-        this.setCurrentUser(user); // Set currentUser in AppViewParent
-        console.log("Current User", this.currentUser);
-        // this.currentUser = user;
-        // console.log("Current User", this.currentUser);
-
         this.loginForm.reset();
 
         // Fade out the login section
@@ -44,8 +39,6 @@ class Login extends AppViewParent {
           this.mainSection.style.opacity = "1"; // Fade in main section
           this.mainSection.style.display = "block";
         }, 1000); // Match this timeout with the transition duration
-
-        console.log(this.currentUser);
       } else {
         alert("User not found");
         return;

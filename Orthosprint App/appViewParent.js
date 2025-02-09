@@ -1,11 +1,8 @@
 export default class AppViewParent {
   mainSection = document.querySelector("main");
   currentUser;
-  constructor(date) {
+  constructor(currentUser, date) {
     this.date = date;
-  }
-
-  setCurrentUser(user) {
-    this.currentUser = user; // Method to set currentUser
+    this.currentUser = currentUser;
   }
 }
