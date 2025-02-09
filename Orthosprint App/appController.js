@@ -23,18 +23,29 @@ const gettingSavedDataController = () => {
   }
 };
 
-getLocation();
+let welcomePaneInstance; // Declaring an empty instance
 
-const init = () => {
-  // identifyUser();
+const initializeWelcomePane = async () => {
+  try {
+    const location = await getLocation(); // Wait for the location to be fetched
+    welcomePaneInstance = new WelcomePane(today, location);
+
+    console.log(welcomePaneInstance.location);
+  } catch (error) {
+    console.error(`Error getting location: ${error.message}`);
+  }
+};
+
+// Call the function to initialize the WelcomePane
+
+const init = async () => {
   gettingSavedDataController();
   Login.OnloginEvent(identifyUser);
-
-  const welcomePaneInstance = new WelcomePane(today);
-  // console.log(WelcomePane.date);
+  // The await function below is will retrun a promise. and I want the init function to be called only when the result is out.
+  await initializeWelcomePane();
   console.log(welcomePaneInstance.renderWelcomeDate());
   console.log(welcomePaneInstance.generateGreetingMarkup());
-  console.log(navigator.geolocation);
+  console.log(welcomePaneInstance.location);
 };
 
 init();

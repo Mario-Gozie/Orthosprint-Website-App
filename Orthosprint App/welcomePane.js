@@ -1,10 +1,11 @@
 import AppViewParent from "./appViewParent.js";
 
 export default class WelcomePane extends AppViewParent {
-  constructor(date) {
+  constructor(date, location) {
     super(date); // passing Date to Parent
     this.personalGreeting = this.mainSection.querySelector(".Personal-welcome");
-    // this.date = this.date;
+
+    this.location = location;
     console.log(this.date);
     this.hour = null;
     console.log(this.personalGreeting);
