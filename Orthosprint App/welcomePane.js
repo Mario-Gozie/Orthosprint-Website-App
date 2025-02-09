@@ -4,27 +4,29 @@ export default class WelcomePane extends AppViewParent {
   constructor(date, location) {
     super(date); // passing Date to Parent
     this.personalGreeting = this.mainSection.querySelector(".Personal-welcome");
+    // console.log(this.personalGreeting);
 
     this.location = location;
-    console.log(this.date);
+
     this.hour = null;
-    console.log(this.personalGreeting);
+    this.updateHour();
+    this.renderWelcomeGreeting();
   }
 
   updateHour() {
     setInterval(() => {
-      this.hour = this.date.getHours();
+      this.hour = new Date().getHours();
+
+      this.renderWelcomeGreeting();
     }, 1000);
   }
 
-  generateGreetingMarkup() {
-    return `${this._greetingDecision()} ${this.currentUser.firstName}`;
-  }
+  // generateGreetingMarkup() {
+  //   return `${this._greetingDecision()} ${this.currentUser.firstName}`;
+  // }
 
   _greetingDecision() {
-    this.updateHour();
-    const greeting = this._getGreeting(this.hour);
-    return greeting;
+    return this._getGreeting(this.hour);
   }
 
   _getGreeting(hour) {
@@ -58,12 +60,23 @@ export default class WelcomePane extends AppViewParent {
     };
   }
 
-  renderWelcomeDate() {
-    const dateString = this._extractDateParts(this.date);
-    return this._generateWelcomeDate(dateString);
+  // renderWelcomeDate() {
+  //   const dateString = this._extractDateParts(this.date);
+  //   return this._generateWelcomeDate(dateString);
+  // }
+
+  renderWelcomeGreeting() {
+    this.personalGreeting.innerHTML = this.gernerateWelcomeGreeting();
   }
 
-  _generateWelcomeDate(stringDate) {
-    return `<p>${stringDate.dayString}, ${stringDate.monthString} ${stringDate.dayNumber}, ${stringDate.yearNumber}</p>`;
+  gernerateWelcomeGreeting() {
+    // Generate the greeting and update the personalGreeting element
+    const stringDate = this._extractDateParts(this.date); // Extract date parts
+    this.personalGreeting.innerHTML = `
+       <h1>${this._greetingDecision()} ${this.currentUser.firstName}</h1>
+       <p>${stringDate.dayString}, ${stringDate.monthString} ${
+      stringDate.dayNumber
+    }, ${stringDate.yearNumber}</p>
+     `;
   }
 }

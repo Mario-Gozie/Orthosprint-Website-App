@@ -1,3 +1,167 @@
+// import AppViewParent from "./appViewParent.js";
+
+// export default class AppBooking extends AppViewParent {
+//   constructor() {
+//     super();
+//     this.datePicker = this.mainSection.querySelector(".datepicker");
+//     this.dateInput = this.mainSection.querySelector(".date-input");
+//     this.yearInput = this.datePicker.querySelector(".year-input");
+//     this.monthInput = this.datePicker.querySelector(".month-input");
+//     this.cancelDateBtn = this.datePicker.querySelector(".cancel");
+//     this.applyBtn = this.datePicker.querySelector(".apply");
+//     this.dates = this.datePicker.querySelector(".dates");
+//     this.dateNextBtn = this.datePicker.querySelector(".next");
+//     this.datePrevBtn = this.datePicker.querySelector(".prev");
+//     this.date;
+//     this.month = this.getMonth();
+//     this.year = this.getYear();
+//     this.openDatePane();
+//     this.closeDatePane();
+//     this.applyDate();
+//     this.nextButtonClick();
+//     this.previousButtonClick();
+//   }
+
+//   getYear() {
+//     return this.date.getFullYear(); // Extract the year from the inherited date
+//   }
+
+//   getMonth() {
+//     return this.date.getMonth();
+//   }
+
+//   openDatePane() {
+//     this.dateInput.addEventListener("click", () => {
+//       this.datePicker.hidden = false;
+//     });
+//   }
+
+//   closeDatePane() {
+//     this.cancelDateBtn.addEventListener(
+//       "click",
+//       () => (this.datePicker.hidden = true)
+//     );
+//   }
+
+//   applyDate() {
+//     this.applyBtn.addEventListener("click", () => {
+//       // Set up the whole apply functionality later
+//       // setting date to US standard
+//       this.dateInput.value = selectedDate.toLocaleDateString("en-Us", {
+//         year: "numeric",
+//         month: "2-digit",
+//         day: "2-digit",
+//       });
+//       //hide datepicker
+//       this.datePicker.hidden = true;
+//     });
+//   }
+
+//   nextButtonClick() {
+//     this.dateNextBtn.addEventListener("click", () => {
+//       if (month === 11) year++;
+//       month = (month + 1) % 12;
+//       this.displayDates();
+//     });
+//   }
+
+//   previousButtonClick() {
+//     this.datePrevBtn.addEventListener("click", () => {
+//       if (this.month === 0) this.year--;
+//       this.month = (this.month - 1 + 12) % 12;
+//       this.displayDates();
+//     });
+//   }
+
+//   monthChange() {
+//     this.monthInput.addEventListener("change", () => {
+//       this.month = monthInput.selectedIndex;
+//       this.displayDates();
+//     });
+//   }
+
+//   yearChange() {
+//     yearInput.addEventListener("change", () => {
+//       this.year = yearInput.value;
+//       displayDates();
+//     });
+//   }
+
+//   updateYearMonth = (e) => {
+//     this.monthInput.selectedIndex = this.month; //adjusting the index of a drop down element.
+//     this.yearInput.value = this.year;
+//   };
+
+//   displayDates = () => {
+//     // update year month
+//     this.updateYearMonth();
+
+//     //clear he dates content
+
+//     this.dates.innerHTML = "";
+
+//     // display the last week of the previous month
+
+//     // get the last date of previous
+//     const lastofPreviousMonth = new Date(this.year, this.month, 0);
+
+//     for (let i = 0; i <= lastofPreviousMonth.getDay(); i++) {
+//       const text =
+//         lastofPreviousMonth.getDate() - lastofPreviousMonth.getDay() + i;
+//       const button = createButton(text, true, -1);
+
+//       dates.appendChild(button);
+//     }
+
+//     // display the current month
+
+//     // get last day of the month
+//     const lastOfMonth = new Date(year, month + 1, 0);
+//     console.log(lastOfMonth.toDateString());
+
+//     for (let i = 1; i <= lastOfMonth.getDate(); i++) {
+//       const button = this.createButton(i, false);
+//       button.addEventListener("click", handleDateClick);
+//       this.dates.appendChild(button);
+//     }
+
+//     // display the first week of next month
+
+//     const firstOfNextMonth = new Date(year, month + 1, 1);
+
+//     for (let i = firstOfNextMonth.getDay(); i < 7; i++) {
+//       const text = firstOfNextMonth.getDate() - firstOfNextMonth.getDay() + i;
+//       const button = this.createButton(text, true, 1);
+//       this.dates.appendChild(button);
+//     }
+//   };
+
+//   createButton = (text, isDisabled = false, type = 0) => {
+//     const currentDate = new Date();
+
+//     // deternube the date to compare based on the button type
+
+//     let comparisonDate = new Date(this.year, this.month + type, text);
+
+//     // checking if the current date is the date today
+//     const isToday =
+//       currentDate.getDate() === text &&
+//       currentDate.getFullYear() === year &&
+//       currentDate.getMonth() === month;
+
+//     // Checking if the current button is selelcted
+
+//     const selected = this.date.getTime() === comparisonDate.getTime();
+
+//     const button = document.createElement("button");
+//     button.textContent = text;
+//     button.disabled = isDisabled;
+//     button.classList.toggle("today", isToday && !isDisabled);
+//     button.classList.toggle("selected", selected);
+//     return button;
+//   };
+// }
+
 const datePicker = document.querySelector(".datepicker");
 const dateInput = document.querySelector(".date-input");
 const yearInput = datePicker.querySelector(".year-input");

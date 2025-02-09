@@ -1,6 +1,7 @@
 import { state, dataModel, today, getLocation } from "../Js/model.js";
 import Login from "./login.js";
 import WelcomePane from "./welcomePane.js";
+// import AppBooking from "./AppBooking.js";
 
 const identifyUser = (identifier, password) => {
   return state.clients.find((client) => {
@@ -23,13 +24,16 @@ const gettingSavedDataController = () => {
   }
 };
 
+// new AppBooking();
+
 let welcomePaneInstance; // Declaring an empty instance
 
 const initializeWelcomePane = async () => {
   try {
     const location = await getLocation(); // Wait for the location to be fetched
     welcomePaneInstance = new WelcomePane(today, location);
-
+    welcomePaneInstance.updateHour();
+    welcomePaneInstance.renderWelcomeGreeting();
     console.log(welcomePaneInstance.location);
   } catch (error) {
     console.error(`Error getting location: ${error.message}`);
@@ -43,9 +47,6 @@ const init = async () => {
   Login.OnloginEvent(identifyUser);
   // The await function below is will retrun a promise. and I want the init function to be called only when the result is out.
   await initializeWelcomePane();
-  console.log(welcomePaneInstance.renderWelcomeDate());
-  console.log(welcomePaneInstance.generateGreetingMarkup());
-  console.log(welcomePaneInstance.location);
 };
 
 init();
