@@ -2,7 +2,7 @@ import {
   state,
   dataModel,
   today,
-  getLocation,
+  // getLocation,
   currentUser,
 } from "../Js/model.js";
 
@@ -10,9 +10,10 @@ import AppViewParent from "./appViewParent.js";
 import Login from "./login.js";
 
 // import WelcomePane from "./welcomePane.js";
+
 // import AppBooking from "./AppBooking.js";
 
-let AppViewParentInstance;
+// let AppViewParentInstance;
 
 const identifyUser = (identifier, password) => {
   const currentRetrievedData = state.clients.find((client) => {
@@ -38,6 +39,7 @@ const identifyUser = (identifier, password) => {
   );
 
   // passing on the daata to the AppView Parent.
+  console.log(currentUserInstance);
   return new AppViewParent(currentUserInstance, today);
 };
 

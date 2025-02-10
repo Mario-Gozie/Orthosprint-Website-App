@@ -28,6 +28,7 @@ class Login extends AppViewParent {
 
       // Fully Implementing login process.
       if (user) {
+        console.log(user); // Ensure that this returns a valid AppViewParent instance
         this.loginForm.reset();
 
         // Fade out the login section

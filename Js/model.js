@@ -108,6 +108,10 @@ export class currentUser {
     this.phoneNumber = phoneNumber;
     this.username = username;
   }
+
+  getFirstName() {
+    return this.firstName;
+  }
 }
 
 // SAVING DATA
@@ -141,46 +145,46 @@ export const dataModel = new DataModel();
 export const today = new Date();
 
 // GETTING USERS LOCATION
-export const getLocation = () => {
-  return new Promise((resolve, reject) => {
-    const success = async (position) => {
-      const location = {
-        latitude: position.coords.latitude,
-        longitude: position.coords.longitude,
-      };
+// export const getLocation = () => {
+//   return new Promise((resolve, reject) => {
+//     const success = async (position) => {
+//       const location = {
+//         latitude: position.coords.latitude,
+//         longitude: position.coords.longitude,
+//       };
 
-      const nominatimLocationFetch = `https://nominatim.openstreetmap.org/reverse?lat=${location.latitude}&lon=${location.longitude}&format=json`;
+//       const nominatimLocationFetch = `https://nominatim.openstreetmap.org/reverse?lat=${location.latitude}&lon=${location.longitude}&format=json`;
 
-      try {
-        const response = await fetch(nominatimLocationFetch);
-        console.log("Response status:", response.status); // Log response status
+//       try {
+//         const response = await fetch(nominatimLocationFetch);
+//         console.log("Response status:", response.status); // Log response status
 
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
+//         if (!response.ok) {
+//           throw new Error("Network response was not ok");
+//         }
 
-        const data = await response.json();
+//         const data = await response.json();
 
-        if (data && data.address && data.address.country) {
-          resolve(`${data.address.city}, ${data.address.country}`); // Resolve the location
-        } else {
-          reject(new Error("Country information not found"));
-        }
-      } catch (err) {
-        console.error("Error fetching location details", err);
-        reject(err); // Reject on error
-      }
-    };
+//         if (data && data.address && data.address.country) {
+//           resolve(`${data.address.city}, ${data.address.country}`); // Resolve the location
+//         } else {
+//           reject(new Error("Country information not found"));
+//         }
+//       } catch (err) {
+//         console.error("Error fetching location details", err);
+//         reject(err); // Reject on error
+//       }
+//     };
 
-    const error = (err) => {
-      console.error("Unable to retrieve your location", err);
-      reject(new Error("Unable to retrieve your location")); // Reject on error
-    };
+//     const error = (err) => {
+//       console.error("Unable to retrieve your location", err);
+//       reject(new Error("Unable to retrieve your location")); // Reject on error
+//     };
 
-    if ("geolocation" in navigator) {
-      navigator.geolocation.getCurrentPosition(success, error);
-    } else {
-      reject(new Error("Geolocation not available")); // Reject if geolocation is not supported
-    }
-  });
-};
+//     if ("geolocation" in navigator) {
+//       navigator.geolocation.getCurrentPosition(success, error);
+//     } else {
+//       reject(new Error("Geolocation not available")); // Reject if geolocation is not supported
+//     }
+//   });
+// };

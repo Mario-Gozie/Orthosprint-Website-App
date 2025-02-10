@@ -1,16 +1,16 @@
 // import AppViewParent from "./appViewParent.js";
-
-// export default class WelcomePane extends AppViewParent {
-//   constructor(date, location) {
-//     super(date); // passing Date to Parent
+// class WelcomePane extends AppViewParent {
+//   constructor(currentUser) {
+//     super(currentUser); // passing Date to Parent
 //     this.personalGreeting = this.mainSection.querySelector(".Personal-welcome");
 //     // console.log(this.personalGreeting);
 
-//     this.location = location;
-
+//     // this.location = location;
+//     this.date = new Date(); // Initialize independently if needed
 //     this.hour = null;
 //     this.updateHour();
 //     this.renderWelcomeGreeting();
+//     console.log(this.currentUser);
 //   }
 
 //   updateHour() {
@@ -20,10 +20,6 @@
 //       this.renderWelcomeGreeting();
 //     }, 1000);
 //   }
-
-//   // generateGreetingMarkup() {
-//   //   return `${this._greetingDecision()} ${this.currentUser.firstName}`;
-//   // }
 
 //   _greetingDecision() {
 //     return this._getGreeting(this.hour);
@@ -60,11 +56,6 @@
 //     };
 //   }
 
-//   // renderWelcomeDate() {
-//   //   const dateString = this._extractDateParts(this.date);
-//   //   return this._generateWelcomeDate(dateString);
-//   // }
-
 //   renderWelcomeGreeting() {
 //     this.personalGreeting.innerHTML = this.gernerateWelcomeGreeting();
 //   }
@@ -80,3 +71,5 @@
 //      `;
 //   }
 // }
+
+// export default new WelcomePane();
