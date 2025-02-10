@@ -6,26 +6,15 @@ import {
   // getLocation,
   // currentUser,
 } from "../Js/model.js";
-// import AppViewWelcome from "./appViewWelcome.js";
 
-console.log(state);
-
-// const gettingSavedDataController = () => {
-//   const savedData = dataModel.getData("State");
-
-//   if (savedData) {
-//     Object.assign(state, savedData); //updating the state object with the savedData property. all the properties of savedData will be giving to state.
-//     console.log(state);
-//     // state = { ...savedData };
-//   } else {
-//     console.log("No saved state found in localStorage");
-//   }
-// };
-
-// gettingSavedDataController();
+import MainView from "./mainView.js"; // Adjust the path as necessary
+import WelcomeView from "./welcomeView.js";
 
 export default class appController {
   constructor() {
+    this.mainView = new MainView(); // Instantiate main view
+    this.WelcomeView = new WelcomeView();
+
     this.usernameEmailContainer = document.querySelector(".username");
     this.loginSection = document.querySelector(".login-section");
     this.password = document.querySelector(".password");
@@ -68,6 +57,8 @@ export default class appController {
 
     // Fully Implementing login process.
     if (user) {
+      console.log(user.firstName);
+      this.WelcomeView.generateWelcomeMarkup(user);
       this.loginForm.reset();
 
       // Fade out the login section
@@ -76,15 +67,33 @@ export default class appController {
       // After the fade-out, hide the login section and show the main section
       setTimeout(() => {
         this.loginSection.style.display = "none"; // Remove from layout
-        this.mainSection.style.opacity = "1"; // Fade in main section
-        this.mainSection.style.display = "block";
+        this.mainView.show(); // Use main view to show the main section
       }, 1000); // Match this timeout with the transition duration
+      // this.WelcomeView.renderWelcomeView();
     } else {
       alert("User not found");
       return;
     }
   }
 }
+
+// import AppViewWelcome from "./appViewWelcome.js";
+
+console.log(state);
+
+// const gettingSavedDataController = () => {
+//   const savedData = dataModel.getData("State");
+
+//   if (savedData) {
+//     Object.assign(state, savedData); //updating the state object with the savedData property. all the properties of savedData will be giving to state.
+//     console.log(state);
+//     // state = { ...savedData };
+//   } else {
+//     console.log("No saved state found in localStorage");
+//   }
+// };
+
+// gettingSavedDataController();
 
 // // import Login from "./login.js";
 

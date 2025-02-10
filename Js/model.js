@@ -88,11 +88,12 @@ export class NewClient {
 // CURRENT USER
 export const getUser = (identifier, password) => {
   console.log("just a check", identifier, password);
-  return state.clients.find(
+  const user = state.clients.find(
     (client) =>
       (client.username === identifier || client.email === identifier) &&
       client.password === password
   );
+  return user;
 };
 // SAVING DATA
 
