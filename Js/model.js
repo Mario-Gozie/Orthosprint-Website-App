@@ -86,16 +86,14 @@ export class NewClient {
 }
 
 // CURRENT USER
-export class currentUser {
-  constructor(currentUserData) {
-    this.currentUserData = currentUserData;
-  }
-
-  getCurrentUserData() {
-    return this.currentUserData;
-  }
-}
-
+export const getUser = (identifier, password) => {
+  console.log("just a check", identifier, password);
+  return state.clients.find(
+    (client) =>
+      (client.username === identifier || client.email === identifier) &&
+      client.password === password
+  );
+};
 // SAVING DATA
 
 class DataModel {
@@ -125,48 +123,3 @@ export const dataModel = new DataModel();
 
 // DATE MANAGEMENT
 export const today = new Date();
-
-// GETTING USERS LOCATION
-// export const getLocation = () => {
-//   return new Promise((resolve, reject) => {
-//     const success = async (position) => {
-//       const location = {
-//         latitude: position.coords.latitude,
-//         longitude: position.coords.longitude,
-//       };
-
-//       const nominatimLocationFetch = `https://nominatim.openstreetmap.org/reverse?lat=${location.latitude}&lon=${location.longitude}&format=json`;
-
-//       try {
-//         const response = await fetch(nominatimLocationFetch);
-//         console.log("Response status:", response.status); // Log response status
-
-//         if (!response.ok) {
-//           throw new Error("Network response was not ok");
-//         }
-
-//         const data = await response.json();
-
-//         if (data && data.address && data.address.country) {
-//           resolve(`${data.address.city}, ${data.address.country}`); // Resolve the location
-//         } else {
-//           reject(new Error("Country information not found"));
-//         }
-//       } catch (err) {
-//         console.error("Error fetching location details", err);
-//         reject(err); // Reject on error
-//       }
-//     };
-
-//     const error = (err) => {
-//       console.error("Unable to retrieve your location", err);
-//       reject(new Error("Unable to retrieve your location")); // Reject on error
-//     };
-
-//     if ("geolocation" in navigator) {
-//       navigator.geolocation.getCurrentPosition(success, error);
-//     } else {
-//       reject(new Error("Geolocation not available")); // Reject if geolocation is not supported
-//     }
-//   });
-// };
