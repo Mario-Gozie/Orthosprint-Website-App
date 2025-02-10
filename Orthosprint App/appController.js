@@ -2,7 +2,6 @@ import {
   state,
   dataModel,
   getUser,
-  today,
   // getLocation,
   // currentUser,
 } from "../Js/model.js";
@@ -15,6 +14,8 @@ export default class appController {
     this.mainView = new MainView(); // Instantiate main view
     this.WelcomeView = new WelcomeView();
 
+    /// WORK IN PROGRESS
+
     this.usernameEmailContainer = document.querySelector(".username");
     this.loginSection = document.querySelector(".login-section");
     this.password = document.querySelector(".password");
@@ -24,6 +25,8 @@ export default class appController {
     this.loadSavedData();
     this.logall();
   }
+
+  // LOADING THE DATA FROM THE BROWSER DATABASE.
 
   loadSavedData() {
     const savedData = dataModel.getData("State");
@@ -36,9 +39,7 @@ export default class appController {
     }
   }
 
-  logall() {
-    console.log(this.usernameEmailContainer, this.password);
-  }
+  // LOGIN ACTIONS
 
   loginEvent(event) {
     event.preventDefault();
@@ -58,6 +59,8 @@ export default class appController {
     // Fully Implementing login process.
     if (user) {
       console.log(user.firstName);
+
+      // RENDERING WELCOME PANE VIEW
       this.WelcomeView.generateWelcomeMarkup(user);
       this.loginForm.reset();
 
