@@ -23,7 +23,6 @@ export default class appController {
     this.loginForm = document.querySelector(".login-form");
     this.loginForm.addEventListener("submit", (e) => this.loginEvent(e));
     this.loadSavedData();
-    this.logall();
   }
 
   // LOADING THE DATA FROM THE BROWSER DATABASE.

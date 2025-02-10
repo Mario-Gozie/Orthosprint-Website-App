@@ -10,7 +10,7 @@ export default class WelcomeView {
     setInterval(() => {
       this.hour = new Date().getHours();
 
-      this.renderWelcomeGreeting();
+      //   this.renderWelcomeGreeting();
     }, 1000);
   }
 
@@ -30,11 +30,34 @@ export default class WelcomeView {
     }
   }
 
+  _extractDateParts(date) {
+    const optionsDay = { weekday: "long" }; // String part of the day
+    const optionsMonth = { month: "long" }; // String part of the month
+    const optionsDate = { day: "numeric" }; // Numeric part of the day
+    const optionsYear = { year: "numeric" }; // Year
+
+    const dayString = date.toLocaleDateString("en-US", optionsDay);
+    const monthString = date.toLocaleDateString("en-US", optionsMonth);
+    const dayNumber = date.toLocaleDateString("en-US", optionsDate);
+    const yearNumber = date.toLocaleDateString("en-US", optionsYear);
+
+    return {
+      dayString,
+      monthString,
+      dayNumber,
+      yearNumber,
+    };
+  }
+
   generateWelcomeMarkup(currentUser) {
+    const welcomeDate = this._extractDateParts(this.date);
+
     this.WelcomeSection.innerHTML = `<div class="welcome-section-wrapper">
           <div class="Personal-welcome">
             <h1>${this._greetingDecision()}, ${currentUser.firstName}</h1>
-            <p>Thursday, January 30, 2025</p>
+            <p>${welcomeDate.dayString}, ${welcomeDate.monthString} ${
+      welcomeDate.dayNumber
+    }, ${welcomeDate.yearNumber}</p>
           </div>
           <div class="Appointment-welcome">
             <div class="location-img-container">
