@@ -6,6 +6,8 @@ export default class WelcomeView {
     this.WelcomeSection = document.querySelector(".welcome-section");
   }
 
+  // GETTING GEOLOCATION AND LOCATION
+
   _updateHour() {
     setInterval(() => {
       this.hour = new Date().getHours();
@@ -23,7 +25,7 @@ export default class WelcomeView {
       return `Good Morning`;
     } else if (hour >= 12 && hour < 16) {
       return `Good Afternoon`;
-    } else if (hour >= 16 && hour < 20) {
+    } else if (hour >= 16 && hour < 22) {
       return `Good Evening`;
     } else {
       return `Good Night`;
@@ -49,7 +51,7 @@ export default class WelcomeView {
     };
   }
 
-  generateWelcomeMarkup(currentUser) {
+  generateWelcomeMarkup(currentUser, location) {
     const welcomeDate = this._extractDateParts(this.date);
 
     this.WelcomeSection.innerHTML = `<div class="welcome-section-wrapper">
@@ -61,10 +63,10 @@ export default class WelcomeView {
           </div>
           <div class="Appointment-welcome">
             <div class="location-img-container">
-              <i class="fa-solid fa-location-pin-lock"></i>
               <i class="fa-solid fa-location-dot"></i>
+              <p>${location}<p>
             </div>
-            <p>Welcome back to your appointments</p>
+            <p>Let's begin appointments</p>
           </div>
         </div>`;
   }

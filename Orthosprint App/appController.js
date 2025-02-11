@@ -23,6 +23,42 @@ export default class appController {
     this.loginForm = document.querySelector(".login-form");
     this.loginForm.addEventListener("submit", (e) => this.loginEvent(e));
     this.loadSavedData();
+    this.location;
+    this._getGeoPoints();
+  }
+
+  _getGeoPoints() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+        this._getLocation(latitude, longitude);
+      });
+    }
+  }
+
+  async _getLocation(lat, long) {
+    try {
+      const response = await fetch(
+        `https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${long}&format=json`
+      );
+
+      if (!response.ok) {
+        throw new Error(`http Erro! ${locationFetch.status}`);
+      }
+
+      const data = await response.json();
+
+      if (data) {
+        const city = data.address.city;
+        const country = data.address.country;
+        this.location = `${city}, ${country}`;
+      } else {
+        console.log("Location not found.");
+      }
+    } catch (error) {
+      console.error("Error fetching location:", error.message);
+    }
   }
 
   // LOADING THE DATA FROM THE BROWSER DATABASE.
@@ -60,7 +96,7 @@ export default class appController {
       console.log(user.firstName);
 
       // RENDERING WELCOME PANE VIEW
-      this.WelcomeView.generateWelcomeMarkup(user);
+      this.WelcomeView.generateWelcomeMarkup(user, this.location);
       this.loginForm.reset();
 
       // Fade out the login section
