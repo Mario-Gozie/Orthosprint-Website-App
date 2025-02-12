@@ -356,7 +356,9 @@ input[type="date"]:invalid {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, auto);
   gap: 10px;
-  /* transition: 1s ease opacity; */
+  /* visibility: hidden;
+  opacity: 0; */
+  transition: 5s ease; /* Delay visibility change */
 }
 
 .time-button {

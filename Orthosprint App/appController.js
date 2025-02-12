@@ -31,10 +31,11 @@ export default class appController {
 
     // Event Listerners
     this.loginForm.addEventListener("submit", (e) => this._loginEvent(e));
-    // this.dateInput.addEventListener("click", this._revealDateInput());
+    this.dateInput.addEventListener("click", this._revealDateInput());
 
     // Event listerner for times. to be improved.
-    this.dateInput.addEventListener("change", this._displayTimes());
+    this.dateInput.addEventListener("change", () => this._displayTimes());
+    console.log(this.dateInput);
 
     // Functions
 
@@ -133,6 +134,8 @@ export default class appController {
     }
   }
 
+  // SHOW PASSWORD
+
   _showPassword() {
     this.togglePasswordIcon.addEventListener("click", () => {
       // Toggle the input type
@@ -160,10 +163,12 @@ export default class appController {
   _displayTimes() {
     if (this.dateInput.value === "") {
       this.timeContainer.innerHTML = "";
-      this.timeContainer.style.hidden = true;
+      this.timeContainer.hidden = true;
+      console.log("money");
     } else {
-      this.timeContainer.hidden = false;
       this.timeContainer.innerHTML = dateTimeView.rendertimes();
+      this.timeContainer.hidden = false;
+      console.log("Hello");
     }
   }
 }
