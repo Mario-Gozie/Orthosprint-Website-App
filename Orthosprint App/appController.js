@@ -14,6 +14,9 @@ export default class appController {
     this.mainView = new MainView(); // Instantiate main view
     this.WelcomeView = new WelcomeView();
 
+    this.date = new Date();
+    this.dateInput = document.getElementById("dateInput");
+
     /// WORK IN PROGRESS
 
     this.usernameEmailContainer = document.querySelector(".username");
@@ -26,6 +29,8 @@ export default class appController {
     this.location;
     this._getGeoPoints();
   }
+
+  _DateL;
 
   _getGeoPoints() {
     if (navigator.geolocation) {
