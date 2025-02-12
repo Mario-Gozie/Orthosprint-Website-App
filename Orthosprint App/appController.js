@@ -8,8 +8,6 @@ import {
 
 import MainView from "./mainView.js"; // Adjust the path as necessary
 import WelcomeView from "./welcomeView.js";
-// import DatePicker from "./datePickerView.js";
-// import datePickerView from "./datePickerView.js";
 
 export default class appController {
   constructor() {
@@ -17,7 +15,6 @@ export default class appController {
 
     this.mainView = new MainView(); // Instantiate main view
     this.WelcomeView = new WelcomeView();
-    // this.datePicker = new DatePicker(); // Initialize here
 
     /// Variables
     this.dateInput = document.getElementById("dateInput");
@@ -32,24 +29,21 @@ export default class appController {
     this.loginForm = document.querySelector(".login-form");
 
     // Event Listerners
-    this.loginForm.addEventListener("submit", (e) => this.loginEvent(e));
-    this.dateInput.addEventListener("click", () => {
-      const today = new Date();
+    this.loginForm.addEventListener("submit", (e) => this._loginEvent(e));
+    this.dateInput.addEventListener("click", this._revealDateInput());
 
-      const tomorrow = new Date(today);
-
-      tomorrow.setDate(today.getDate() + 1); // setting tommorrow
-
-      const minDate = tomorrow.toISOString().split("T")[0];
-      this.dateInput.setAttribute("min", minDate);
+    this.dateInput.addEventListener("change", () => {
+      console.log("Money");
     });
 
     // Functions
 
     this.loadSavedData();
-    this.showPassword();
+    this._showPassword();
     this._getGeoPoints();
   }
+
+  // METHODS
 
   _getGeoPoints() {
     if (navigator.geolocation) {
@@ -100,7 +94,7 @@ export default class appController {
 
   // LOGIN ACTIONS
 
-  loginEvent(event) {
+  _loginEvent(event) {
     event.preventDefault();
 
     const formData = new FormData(this.loginForm);
@@ -139,7 +133,7 @@ export default class appController {
     }
   }
 
-  showPassword() {
+  _showPassword() {
     this.togglePasswordIcon.addEventListener("click", () => {
       // Toggle the input type
       const type =
@@ -150,6 +144,17 @@ export default class appController {
       this.togglePasswordIcon.classList.toggle("fa-eye"); // Show open eye
       this.togglePasswordIcon.classList.toggle("fa-eye-slash"); // Show closed eye
     });
+  }
+
+  _revealDateInput() {
+    const today = new Date();
+
+    const tomorrow = new Date(today);
+
+    tomorrow.setDate(today.getDate() + 1); // setting tommorrow
+
+    const minDate = tomorrow.toISOString().split("T")[0];
+    this.dateInput.setAttribute("min", minDate);
   }
 }
 
