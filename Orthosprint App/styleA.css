@@ -351,17 +351,18 @@ input[type="date"]:invalid {
 
 /* Times Container and display */
 .times-container {
-  margin: 5px 0;
-  /* display: none; */
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  margin: 10px 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 10px;
+  /* transition: 1s ease opacity; */
 }
 
 .time-button {
   width: 4rem;
   padding: 0.3rem;
-  margin: 5px;
+  /* margin: 5px; */
   border-radius: 15px;
   border: none;
   background: var(--pure-white);

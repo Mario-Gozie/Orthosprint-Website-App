@@ -33,10 +33,16 @@ export default class appController {
     this.loginForm.addEventListener("submit", (e) => this._loginEvent(e));
     this.dateInput.addEventListener("click", this._revealDateInput());
 
+    // Event listerner for times. to be improved.
     this.dateInput.addEventListener("change", () => {
-      console.log("Money");
-      this.timeContainer.hidden = false;
-      this.timeContainer.innerHTML = dateTimeView.rendertimes();
+      // console.log("Money");
+      if (this.dateInput.value === "") {
+        this.timeContainer.innerHTML = "";
+        this.timeContainer.style.hidden = true;
+      } else {
+        this.timeContainer.hidden = false;
+        this.timeContainer.innerHTML = dateTimeView.rendertimes();
+      }
     });
 
     // Functions
