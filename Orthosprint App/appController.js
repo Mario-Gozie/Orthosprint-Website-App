@@ -8,14 +8,14 @@ import {
 
 import MainView from "./mainView.js"; // Adjust the path as necessary
 import WelcomeView from "./welcomeView.js";
+import { DatePicker } from "./datePickerView.js";
 
 export default class appController {
   constructor() {
     this.mainView = new MainView(); // Instantiate main view
     this.WelcomeView = new WelcomeView();
-
+    this.datePickerView = new DatePicker(this.date);
     this.date = new Date();
-    this.dateInput = document.getElementById("dateInput");
 
     /// WORK IN PROGRESS
 
@@ -27,10 +27,9 @@ export default class appController {
     this.loginForm.addEventListener("submit", (e) => this.loginEvent(e));
     this.loadSavedData();
     this.location;
+    this.showPassword();
     this._getGeoPoints();
   }
-
-  _DateL;
 
   _getGeoPoints() {
     if (navigator.geolocation) {
@@ -117,6 +116,19 @@ export default class appController {
       alert("User not found");
       return;
     }
+  }
+
+  showPassword() {
+    this.togglePasswordIcon.addEventListener("click", () => {
+      // Toggle the input type
+      const type =
+        this.password.getAttribute("type") === "password" ? "text" : "password";
+      this.password.setAttribute("type", type);
+
+      // Toggle the icon classes
+      this.togglePasswordIcon.classList.toggle("fa-eye"); // Show open eye
+      this.togglePasswordIcon.classList.toggle("fa-eye-slash"); // Show closed eye
+    });
   }
 }
 

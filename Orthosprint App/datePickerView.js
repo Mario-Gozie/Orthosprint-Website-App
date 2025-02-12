@@ -2,9 +2,10 @@ export class DatePicker {
   controller(date) {
     this.date = date;
     this.dateInput = document.getElementById("dateInput");
+    this.settingMinimumDate();
   }
 
-  settingMinimuDate() {
+  settingMinimumDate() {
     // The date will be current date
     const tomorrow = new Date(this.date);
 
