@@ -336,6 +336,18 @@ main {
   margin: 0.5rem 0;
 }
 
+/* Working on another date picker */
+input[type="date"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 100%;
+}
+
+input[type="date"]:invalid {
+  border-radius: red; /* red color for invalid dates*/
+}
 /* DatePicker styles */
 
 .datepicker-container {
