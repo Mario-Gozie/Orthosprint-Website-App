@@ -8,25 +8,45 @@ import {
 
 import MainView from "./mainView.js"; // Adjust the path as necessary
 import WelcomeView from "./welcomeView.js";
-import { DatePicker } from "./datePickerView.js";
+// import DatePicker from "./datePickerView.js";
+// import datePickerView from "./datePickerView.js";
 
 export default class appController {
   constructor() {
+    // Instances
+
     this.mainView = new MainView(); // Instantiate main view
     this.WelcomeView = new WelcomeView();
-    this.datePickerView = new DatePicker(this.date);
-    this.date = new Date();
+    // this.datePicker = new DatePicker(); // Initialize here
 
-    /// WORK IN PROGRESS
+    /// Variables
+    this.dateInput = document.getElementById("dateInput");
+    console.log(this.dateInput);
+    this.location;
 
+    // Element Variables
     this.usernameEmailContainer = document.querySelector(".username");
     this.loginSection = document.querySelector(".login-section");
     this.password = document.querySelector(".password");
     this.togglePasswordIcon = document.querySelector(".toggle-password");
     this.loginForm = document.querySelector(".login-form");
+
+    // Event Listerners
     this.loginForm.addEventListener("submit", (e) => this.loginEvent(e));
+    this.dateInput.addEventListener("click", () => {
+      const today = new Date();
+
+      const tomorrow = new Date(today);
+
+      tomorrow.setDate(today.getDate() + 1); // setting tommorrow
+
+      const minDate = tomorrow.toISOString().split("T")[0];
+      this.dateInput.setAttribute("min", minDate);
+    });
+
+    // Functions
+
     this.loadSavedData();
-    this.location;
     this.showPassword();
     this._getGeoPoints();
   }
@@ -110,6 +130,7 @@ export default class appController {
       setTimeout(() => {
         this.loginSection.style.display = "none"; // Remove from layout
         this.mainView.show(); // Use main view to show the main section
+        // DatePicker.settingMinimumDate();
       }, 1000); // Match this timeout with the transition duration
       // this.WelcomeView.renderWelcomeView();
     } else {
