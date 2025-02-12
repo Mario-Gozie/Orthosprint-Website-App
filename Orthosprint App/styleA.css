@@ -348,6 +348,23 @@ input[type="date"] {
 input[type="date"]:invalid {
   border-radius: red; /* red color for invalid dates*/
 }
+
+/* Times Container and display */
+.times-container {
+  margin: 5px 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.time-button {
+  width: 4rem;
+  padding: 0.3rem;
+  margin: 5px;
+  border-radius: 15px;
+  border: none;
+  background: var(--pure-white);
+}
 /* DatePicker styles */
 
 .datepicker-container {

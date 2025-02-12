@@ -8,6 +8,7 @@ import {
 
 import MainView from "./mainView.js"; // Adjust the path as necessary
 import WelcomeView from "./welcomeView.js";
+import dateTimeView from "./dateTimeView.js";
 
 export default class appController {
   constructor() {
