@@ -19,7 +19,7 @@ export default class appController {
 
     /// Variables
     this.dateInput = document.getElementById("dateInput");
-    console.log(this.dateInput);
+    this.timeContainer = document.querySelector(".times-container");
     this.location;
 
     // Element Variables
@@ -35,6 +35,8 @@ export default class appController {
 
     this.dateInput.addEventListener("change", () => {
       console.log("Money");
+      this.timeContainer.hidden = false;
+      this.timeContainer.innerHTML = dateTimeView.rendertimes();
     });
 
     // Functions
