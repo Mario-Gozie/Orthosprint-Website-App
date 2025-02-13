@@ -2,6 +2,7 @@ import {
   state,
   dataModel,
   getUser,
+  ActiveUser,
   // getLocation,
   // currentUser,
 } from "../Js/model.js";
@@ -107,15 +108,18 @@ export default class appController {
 
     // GET USER IS A MODEL FUNCTION.
     console.log(identifier, identifier);
-    const user = getUser(identifier, IdentifierPassword);
-    console.log(`user`, user);
+    getUser(identifier, IdentifierPassword);
+
+    // REMEMBER THAT THE ACTIVE USER IS COMING FROM THE MODEL.
+    // The active user is set by the get User function.
+    console.log(`user`, ActiveUser);
 
     // Fully Implementing login process.
-    if (user) {
-      console.log(user.firstName);
+    if (ActiveUser) {
+      console.log(ActiveUser.firstName);
 
       // RENDERING WELCOME PANE VIEW
-      this.WelcomeView.generateWelcomeMarkup(user, this.location);
+      this.WelcomeView.generateWelcomeMarkup(ActiveUser, this.location);
       this.loginForm.reset();
 
       // Fade out the login section
