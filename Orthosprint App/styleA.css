@@ -381,7 +381,9 @@ input[type="date"]:invalid {
   display: flex;
   justify-content: center;
 }
-
+.chosen {
+  background: red;
+}
 .appointment-booking-form h3 {
   margin: 1rem 0;
 }

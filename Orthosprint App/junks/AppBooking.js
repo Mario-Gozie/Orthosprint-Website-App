@@ -162,6 +162,81 @@
 //   };
 // }
 
+//get the input
+// let checkedDate = "2025-02-26";
+// const timeArray = ["8AM", "9AM", "10AM", "11AM", "12AM", "1PM", "2PM", "3PM"];
+
+// customerArray = [
+//   { "2025-02-26": ["8AM", "9AM", "10AM"] },
+//   { "2025-02-18": ["11AM", "10AM", "12PM"] },
+// ];
+
+// let matchingDayArray = [];
+
+// if (customerArray[checkedDate]) {
+//   matchingDayArray = [...customerArray[checkedDate]];
+// }
+
+// const generatedHtml = timeArray
+//   .map((time) => {
+//     if (matchingDayArray.includes(time)) {
+//       `<button class="time-button chosen" value="8AM">
+//       8AM
+//     </button>;`;
+//     } else
+//       `<button class="time-button" value="3PM">
+//       3PM
+//     </button>;`;
+//   })
+//   .join(" ");
+
+// THIS CODE WILL TACKLE AVAILABLE DATES ISSUE
+
+let checkedDate = "2025-02-26";
+const timeArray = ["8AM", "9AM", "10AM", "11AM", "12AM", "1PM", "2PM", "3PM"];
+
+const customerArray = [
+  { "2025-02-26": ["8AM", "9AM", "10AM"] },
+  { "2025-02-18": ["11AM", "10AM", "12PM"] },
+];
+
+let matchingDayArray = [];
+
+// Find the matching day array for the checked date
+customerArray.forEach((customer) => {
+  // Check if the current customer object contains the checked date
+  if (customer[checkedDate]) {
+    // Assign the available times to matchingDayArray
+    matchingDayArray = customer[checkedDate];
+  }
+});
+
+// Generate HTML buttons based on availability
+const generatedHtml = timeArray
+  .map((time) => {
+    // Check if the current time is in the matchingDayArray
+    if (matchingDayArray.includes(time)) {
+      // Return button with 'chosen' class if available
+      return `<button class="time-button chosen" value="${time}">
+          ${time}
+        </button>`;
+    } else {
+      // Return button without 'chosen' class if not available
+      return `<button class="time-button" value="${time}">
+          ${time}
+        </button>`;
+    }
+  })
+  .join(" ");
+
+// Output the generated HTML
+console.log(generatedHtml);
+
+////// AVAILABLE DATE ISSUES SETTLED ABOVE.
+
+// const selectedDateObject = customerArray.find((cus) => checkedDate in cus);
+// timeArray.forEach(()=>)
+
 const datePicker = document.querySelector(".datepicker");
 const dateInput = document.querySelector(".date-input");
 const yearInput = datePicker.querySelector(".year-input");
