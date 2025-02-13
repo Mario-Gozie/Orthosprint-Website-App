@@ -369,7 +369,7 @@ input[type="date"]:invalid {
 }
 /* DatePicker styles */
 
-.appointment-booking-container {
+.appointment-booking-form {
   position: relative;
   display: flex;
   width: 80%;
@@ -382,7 +382,7 @@ input[type="date"]:invalid {
   justify-content: center;
 }
 
-.appointment-booking-container h3 {
+.appointment-booking-form h3 {
   margin: 1rem 0;
 }
 

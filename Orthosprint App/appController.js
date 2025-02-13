@@ -10,6 +10,7 @@ import {
 import MainView from "./mainView.js"; // Adjust the path as necessary
 import WelcomeView from "./welcomeView.js";
 import dateTimeView from "./dateTimeView.js";
+import appointmentBookingView from "./appointmentBookingView.js";
 
 export default class appController {
   constructor() {
@@ -21,6 +22,8 @@ export default class appController {
     /// Variables
     this.dateInput = document.getElementById("dateInput");
     this.timeContainer = document.querySelector(".times-container");
+    this.appointmentForm = document.querySelector(".appointment-booking-form");
+    console.log(this.appointmentForm);
     this.location;
 
     // Element Variables
@@ -36,7 +39,9 @@ export default class appController {
 
     // Event listerner for times. to be improved.
     this.dateInput.addEventListener("change", () => this._displayTimes());
-    console.log(this.dateInput);
+    this.appointmentForm.addEventListener("submit", (e) => {
+      this._bookingAppointments(e);
+    });
 
     // Functions
 
@@ -164,6 +169,7 @@ export default class appController {
     this.dateInput.setAttribute("min", minDate);
   }
 
+  // THIS CODE DISPLAYS APPOINTMENT TIMES.
   _displayTimes() {
     if (this.dateInput.value === "") {
       this.timeContainer.innerHTML = "";
@@ -174,6 +180,13 @@ export default class appController {
       this.timeContainer.hidden = false;
       console.log("Hello");
     }
+  }
+
+  // HAMDLING APPOINTMENTS
+
+  _bookingAppointments(Event) {
+    Event.preventDefault();
+    appointmentBookingView.checkAppointmentDetail(this.appointmentForm);
   }
 }
 

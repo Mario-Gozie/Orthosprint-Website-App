@@ -132,14 +132,14 @@
       </section>
 
       <section class="appointment-booking-section">
-        <div class="appointment-booking-container">
+        <form class="appointment-booking-form">
           <h3>Schedule an Appointment</h3>
           <input
             type="date"
+            name="date"
             class="dateInput"
             id="dateInput"
-            placeholder="
-          Choose a date"
+            required
           />
 
           <div class="times-container" hidden>
@@ -153,19 +153,26 @@
             ><button class="time-button" value="3PM">3PM</button> -->
           </div>
           <select
-            name=""
-            id=""
+            name="service"
+            id="service"
             class="service-input"
             placeholder="select a service"
           >
-            <option value="">Prosthetic</option>
-            <option value="">Orthotics</option>
-            <option value="">Maintainance</option>
-            <option value="">Procurement</option>
+            <option value="" disabled selected>Select a service</option>
+            <option value="Prosthetics">Prosthetics</option>
+            <option value="Orthotics">Orthotics</option>
+            <option value="Maintainance">Maintainance</option>
+            <option value="Procurement">Procurement</option>
           </select>
 
-          <button type="button" class="appointment-booking-button">Book</button>
-        </div>
+          <button
+            type="submit"
+            name="submit"
+            class="appointment-booking-button"
+          >
+            Book
+          </button>
+        </form>
       </section>
     </main>
   </body>
