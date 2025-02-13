@@ -192,7 +192,7 @@
 
 // THIS CODE WILL TACKLE AVAILABLE DATES ISSUE
 
-let checkedDate = "2025-02-26";
+let checkedDate = "2025-02-26"; // get selected date.
 const timeArray = ["8AM", "9AM", "10AM", "11AM", "12AM", "1PM", "2PM", "3PM"];
 
 const customerArray = [

@@ -100,6 +100,32 @@ export const getUser = (identifier, password) => {
   ActiveUser = { ...user };
   // return user;
 };
+
+//  TAKING CARE OF BOOKINGS
+
+class Booking extends NewClient {
+  constructor(date, service, time) {
+    super();
+    this.date = date;
+    this.bookingID = this.generateBookingID();
+    this.service = service;
+    this.time = time;
+  }
+
+  generateBookingID(bookingArray) {
+    if (!bookingArray || bookingArray.length === 0) {
+      return `APPT-${this.getDate}-0001`;
+    } else {
+      const lastBookingID = bookingArray.at(-1).clientId; // getting the number part of the customerID
+      const lastNumberPartBookID = parseInt(lastBookingID.split("-").pop(), 10); // Here, I splited to create an array, popped to take the last part then converted the last part which is a string number to a number to Number in base 10
+
+      return `APPT-${this.getDate()}-${String(
+        lastNumberPartBookID + 1
+      ).padStart(4, "0")}`;
+    }
+  }
+}
+
 // SAVING DATA
 
 class DataModel {
