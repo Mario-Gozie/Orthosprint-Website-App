@@ -23,6 +23,7 @@ export default class appController {
     this.dateInput = document.getElementById("dateInput");
     this.timeContainer = document.querySelector(".times-container");
     this.appointmentForm = document.querySelector(".appointment-booking-form");
+    this.DateErrorContainer = document.querySelector(".dateErrMsg");
     console.log(this.appointmentForm);
     this.location;
 
@@ -170,17 +171,42 @@ export default class appController {
   }
 
   // THIS CODE DISPLAYS APPOINTMENT TIMES.
+
   _displayTimes() {
     if (this.dateInput.value === "") {
       this.timeContainer.innerHTML = "";
       this.timeContainer.hidden = true;
       console.log("money");
     } else {
-      this.timeContainer.innerHTML = dateTimeView.rendertimes();
-      this.timeContainer.hidden = false;
-      console.log("Hello");
+      const selectedDate = new Date(this.dateInput.value);
+      const dateToCheck = selectedDate.getUTCDay(); // 0 = sunday, 6 = saturday
+      if (dateToCheck === 0 || dateToCheck === 6) {
+        this.DateErrorContainer.textContent =
+          "Please we dont work on weekends, Choose a weekday*";
+        this.dateInput.value = "";
+        this.timeContainer.innerHTML = ""; // Clear time container
+        this.timeContainer.hidden = true; // Hide time container
+      } // Clear Input
+      else {
+        this.DateErrorContainer.textContent = ""; //Clearing the error Message container
+        this.timeContainer.innerHTML = dateTimeView.rendertimes();
+        this.timeContainer.hidden = false;
+        console.log("Hello");
+      }
     }
   }
+
+  // _displayTimes() {
+  //   if (this.dateInput.value === "") {
+  //     this.timeContainer.innerHTML = "";
+  //     this.timeContainer.hidden = true;
+  //     console.log("money");
+  //   } else {
+  //     this.timeContainer.innerHTML = dateTimeView.rendertimes();
+  //     this.timeContainer.hidden = false;
+  //     console.log("Hello");
+  //   }
+  // }
 
   // HAMDLING APPOINTMENTS
 

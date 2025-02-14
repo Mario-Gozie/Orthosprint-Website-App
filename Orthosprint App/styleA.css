@@ -345,8 +345,10 @@ input[type="date"] {
   width: 100%;
 }
 
-input[type="date"]:invalid {
-  border-radius: red; /* red color for invalid dates*/
+/*Error Message*/
+.dateErrMsg {
+  margin: 10px 0;
+  color: hsla(0, 100%, 65%, 0.749);
 }
 
 /* Times Container and display */
