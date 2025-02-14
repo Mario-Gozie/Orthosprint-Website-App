@@ -12,7 +12,7 @@ class DateTimeView {
             ><button class="time-button" value="11AM">11AM</button
             ><button class="time-button chosen" value="12PM">12AM</button
             ><button class="time-button" value="1PM">1PM</button
-            ><button class="time-button" value="2PM">2PM</button
+            ><button class="time-button selected-time" value="2PM">2PM</button
             ><button class="time-button" value="3PM">3PM</button>`;
   }
 }
