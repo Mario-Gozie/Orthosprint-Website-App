@@ -152,7 +152,13 @@ export const bookingReg = function (date, bookedDate, bookedTime, service) {
 
   // Saving to all Order Array
 
-  const addToAllOrders = function () {};
+  const addToAllOrders = function (date, time) {
+    if (state.bookings[date]) {
+      state.bookings[date].push(time);
+    } else {
+      state.bookings[date] = [time];
+    }
+  };
 };
 
 // SAVING DATA
