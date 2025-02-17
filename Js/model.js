@@ -149,6 +149,10 @@ export const bookingReg = function (date, bookedDate, bookedTime, service) {
       user[orders].push(UserNewBooking);
     }
   };
+
+  // Saving to all Order Array
+
+  const addToAllOrders = function () {};
 };
 
 // SAVING DATA
