@@ -104,12 +104,14 @@ export const getUser = (identifier, password) => {
 //  TAKING CARE OF BOOKINGS
 
 class Booking extends NewClient {
-  constructor(date, service, time) {
+  constructor(date, bookedDate, service, bookedTime) {
+    // date, bookedDate, service, bookedTime
     super();
     this.date = date;
     this.bookingID = this.generateBookingID();
     this.service = service;
-    this.time = time;
+    this.bookedDate = bookedDate;
+    this.BookedTime = bookedTime;
   }
 
   generateBookingID(bookingArray) {
@@ -125,6 +127,15 @@ class Booking extends NewClient {
     }
   }
 }
+
+// Clicked Booking button
+
+export const bookingReg = function (date, bookedDate, bookedTime, service) {
+  // Please Make sure that this returns an object YOU CAN PUT IT INTO A FUNCTION.
+  const newBooking = new Booking(date, bookedDate, service, bookedTime);
+
+  //Adding to the
+};
 
 // SAVING DATA
 
