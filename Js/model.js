@@ -139,7 +139,16 @@ export const bookingReg = function (date, bookedDate, bookedTime, service) {
     return newBooking;
   };
 
-  //Adding to the
+  // Pushing Value to current User Array
+
+  const updatingUserOrder = function () {
+    if (!user[orders]) {
+      user[orders] = [];
+      user[orders].push(UserNewBooking);
+    } else {
+      user[orders].push(UserNewBooking);
+    }
+  };
 };
 
 // SAVING DATA
