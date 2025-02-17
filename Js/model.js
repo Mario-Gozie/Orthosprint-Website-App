@@ -106,6 +106,8 @@ export const getUser = (identifier, password) => {
 class Booking extends NewClient {
   constructor(date, bookedDate, service, bookedTime) {
     // date, bookedDate, service, bookedTime
+
+    // This function will inherit the get date function in NewClient so that it can be able to generate the bookingID
     super();
     this.date = date;
     this.bookingID = this.generateBookingID();
@@ -132,7 +134,10 @@ class Booking extends NewClient {
 
 export const bookingReg = function (date, bookedDate, bookedTime, service) {
   // Please Make sure that this returns an object YOU CAN PUT IT INTO A FUNCTION.
-  const newBooking = new Booking(date, bookedDate, service, bookedTime);
+  const UserNewBooking = function () {
+    const newBooking = new Booking(date, bookedDate, service, bookedTime);
+    return newBooking;
+  };
 
   //Adding to the
 };
