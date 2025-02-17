@@ -196,18 +196,6 @@ export default class appController {
     }
   }
 
-  // _displayTimes() {
-  //   if (this.dateInput.value === "") {
-  //     this.timeContainer.innerHTML = "";
-  //     this.timeContainer.hidden = true;
-  //     console.log("money");
-  //   } else {
-  //     this.timeContainer.innerHTML = dateTimeView.rendertimes();
-  //     this.timeContainer.hidden = false;
-  //     console.log("Hello");
-  //   }
-  // }
-
   // HAMDLING APPOINTMENTS
 
   _bookingAppointments(Event) {
