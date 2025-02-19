@@ -182,6 +182,12 @@ export const bookingReg = function (date, bookedDate, bookedTime, service) {
       status,
     });
   };
+
+  const cancelAppointment = function () {
+    // Remove Change the status of the client for both Appointmentdetail status needs to be changed.
+    // use the date value to search for the bookings array, and remove the time
+    // go to the Users array and change the status to cancelled.
+  };
 };
 
 // SAVING DATA
