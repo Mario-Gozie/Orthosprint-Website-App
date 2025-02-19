@@ -131,92 +131,103 @@ class Booking extends NewClient {
   }
 }
 
-
 const newBooking = new Booking(date, bookedDate, service, bookedTime);
-
-
 
 // Clicked Booking button
 
 export class ManageBooking {
-  constructor(user, newBooking, state, date, bookedDate, bookedTime, service){
-    this.newBooking = newBooking
-    this.state = state
-    this.user = user
-    this.updatingUserOrder(this.user, this.newBooking)
+  constructor(user, newBooking, state, date, bookedDate, bookedTime, service) {
+    this.newBooking = newBooking;
+    this.state = state;
+    this.user = user;
+    this.updatingUserOrder(this.user, this.newBooking);
+    this.addToAllOrders(this.newBooking, this.state);
   }
-  updatingUserOrder(user, UserNewBooking){
+  updatingUserOrder(user, userNewBooking) {
     if (!user[orders]) {
       user[orders] = [];
-      user[orders].push(UserNewBooking);
+      user[orders].push(userNewBooking);
     } else {
-      user[orders].push(UserNewBooking);
+      user[orders].push(userNewBooking);
     }
-  };
+  }
 
-
-
-  addToAllOrders(UserNewBooking, state, date, time) {
-    if (state.bookings[UserNewBooking.date]) {
-      state.bookings[UserNewBooking.date].push(time);
+  addToAllOrders(userNewBooking, state) {
+    if (state.bookings[userNewBooking.date]) {
+      state.bookings[userNewBooking.date].push(userNewBooking.bookedTime);
     } else {
-      state.bookings[UserNewBooking.date] = [time];
+      state.bookings[userNewBooking.date] = [userNewBooking.bookedTime];
     }
-  };
-}= function () {
-  // Please Make sure that this returns an object YOU CAN PUT IT INTO A FUNCTION.
+  }
 
-
-  // Pushing Value to current User Array
-
-  const updatingUserOrder = function () {
-    if (!user[orders]) {
-      user[orders] = [];
-      user[orders].push(UserNewBooking);
-    } else {
-      user[orders].push(UserNewBooking);
-    }
-  };
-
-  // Saving to all Order Array
-
-  const addToAllOrders = function (date, time) {
-    if (state.bookings[date]) {
-      state.bookings[date].push(time);
-    } else {
-      state.bookings[date] = [time];
-    }
-  };
-
-  const orderDetail = function (
-    bookingDate,
-    orderID,
-    customerID,
-    userFirstName,
-    UserLastName,
-    bookedDate,
-    bookedTime,
-    status
-  ) {
+  orderDetail(user, userNewBooking, state) {
     state.bookingDetail.append({
-      bookingDate,
-      orderID,
-      customerID,
-      userFirstName,
-      UserLastName,
-      bookedDate,
-      bookedTime,
-      status,
+      bookingDate: userNewBooking.bookingDate,
+      orderID: userNewBooking.orderID,
+      customerID: user.customerID,
+      userFirstName: user.userFirstName,
+      userLastName: user.userLastName,
+      bookedDate: userNewBooking.bookedDate,
+      bookedTime: userNewBooking.bookedTime,
+      service: userNewBooking.service,
+      status: userNewBooking.status,
     });
-  };
+  }
+}
 
-  const cancelAppointment = function () {
-    // Remove Change the status of the client for both Appointmentdetail status needs to be changed.
+// = function () {
+//   // Please Make sure that this returns an object YOU CAN PUT IT INTO A FUNCTION.
 
-    // use the date value to search for the bookings array, and remove the time
-    // go to the Users array and change the status to cancelled.
-  };
-};
+//   // Pushing Value to current User Array
+
+//   const updatingUserOrder = function () {
+//     if (!user[orders]) {
+//       user[orders] = [];
+//       user[orders].push(UserNewBooking);
+//     } else {
+//       user[orders].push(UserNewBooking);
+//     }
+//   };
+
+//   // Saving to all Order Array
+
+//   const addToAllOrders = function (date, time) {
+//     if (state.bookings[date]) {
+//       state.bookings[date].push(time);
+//     } else {
+//       state.bookings[date] = [time];
+//     }
+//   };
+
+//   const orderDetail = function (
+//     bookingDate,
+//     orderID,
+//     customerID,
+//     userFirstName,
+//     UserLastName,
+//     bookedDate,
+//     bookedTime,
+//     status
+//   ) {
+//     state.bookingDetail.append({
+//       bookingDate,
+//       orderID,
+//       customerID,
+//       userFirstName,
+//       UserLastName,
+//       bookedDate,
+//       bookedTime,
+//       status,
+//     });
+//   };
+
+//   const cancelAppointment = function () {
+//     // Remove Change the status of the client for both Appointmentdetail status needs to be changed.
+
+//     // use the date value to search for the bookings array, and remove the time
+//     // go to the Users array and change the status to cancelled.
+//   };
+// };
 
 // SAVING DATA
 
