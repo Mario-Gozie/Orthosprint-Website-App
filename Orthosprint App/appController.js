@@ -189,7 +189,10 @@ export default class appController {
       } // Clear Input
       else {
         this.DateErrorContainer.textContent = ""; //Clearing the error Message container
-        this.timeContainer.innerHTML = dateTimeView.rendertimes();
+        this.timeContainer.innerHTML = dateTimeView.rendertimes(
+          state,
+          this.dateInput
+        );
         this.timeContainer.hidden = false;
         console.log("Hello");
       }

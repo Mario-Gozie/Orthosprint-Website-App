@@ -9,6 +9,8 @@ class BookingAppointmentView {
     console.log(appointmentDate);
     console.log(appointmentService);
   }
+
+  bookingAppointment() {}
 }
 
 export default new BookingAppointmentView();

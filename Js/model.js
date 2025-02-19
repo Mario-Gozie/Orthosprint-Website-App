@@ -131,7 +131,7 @@ class Booking extends NewClient {
   }
 }
 
-const newBooking = new Booking(date, bookedDate, service, bookedTime);
+// const newBooking = new Booking(date, bookedDate, service, bookedTime);
 
 // Clicked Booking button
 

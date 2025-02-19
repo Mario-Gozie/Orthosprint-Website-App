@@ -357,6 +357,11 @@ input[type="date"] {
   border-radius: 4px;
   font-size: 16px;
   width: 100%;
+  border-radius: 5px; /* Rounded corners */
+}
+
+input[type="date"]:focus {
+  outline: none;
 }
 
 /*Error Message*/
