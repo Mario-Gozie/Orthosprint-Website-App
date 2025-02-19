@@ -131,14 +131,41 @@ class Booking extends NewClient {
   }
 }
 
+
+const newBooking = new Booking(date, bookedDate, service, bookedTime);
+
+
+
 // Clicked Booking button
 
-export const bookingReg = function (date, bookedDate, bookedTime, service) {
-  // Please Make sure that this returns an object YOU CAN PUT IT INTO A FUNCTION.
-  const UserNewBooking = function () {
-    const newBooking = new Booking(date, bookedDate, service, bookedTime);
-    return newBooking;
+export class ManageBooking {
+  constructor(user, newBooking, state, date, bookedDate, bookedTime, service){
+    this.newBooking = newBooking
+    this.state = state
+    this.user = user
+    this.updatingUserOrder(this.user, this.newBooking)
+  }
+  updatingUserOrder(user, UserNewBooking){
+    if (!user[orders]) {
+      user[orders] = [];
+      user[orders].push(UserNewBooking);
+    } else {
+      user[orders].push(UserNewBooking);
+    }
   };
+
+
+
+  addToAllOrders(UserNewBooking, state, date, time) {
+    if (state.bookings[UserNewBooking.date]) {
+      state.bookings[UserNewBooking.date].push(time);
+    } else {
+      state.bookings[UserNewBooking.date] = [time];
+    }
+  };
+}= function () {
+  // Please Make sure that this returns an object YOU CAN PUT IT INTO A FUNCTION.
+
 
   // Pushing Value to current User Array
 
@@ -185,6 +212,7 @@ export const bookingReg = function (date, bookedDate, bookedTime, service) {
 
   const cancelAppointment = function () {
     // Remove Change the status of the client for both Appointmentdetail status needs to be changed.
+
     // use the date value to search for the bookings array, and remove the time
     // go to the Users array and change the status to cancelled.
   };
