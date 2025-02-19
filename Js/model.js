@@ -104,13 +104,13 @@ export const getUser = (identifier, password) => {
 //  TAKING CARE OF BOOKINGS
 
 class Booking extends NewClient {
-  constructor(date, bookedDate, service, bookedTime) {
+  constructor(date, bookedDate, service, bookedTime, state) {
     // date, bookedDate, service, bookedTime
 
     // This function will inherit the get date function in NewClient so that it can be able to generate the bookingID
     super();
     this.date = date;
-    this.bookingID = this.generateBookingID();
+    this.bookingID = this.generateBookingID(state.bookingDetail);
     this.service = service;
     this.bookedDate = bookedDate;
     this.BookedTime = bookedTime;
@@ -121,7 +121,7 @@ class Booking extends NewClient {
     if (!bookingArray || bookingArray.length === 0) {
       return `APPT-${this.getDate}-0001`;
     } else {
-      const lastBookingID = bookingArray.at(-1).clientId; // getting the number part of the customerID
+      const lastBookingID = bookingArray.at(-1).orderID; // getting the number part of the customerID
       const lastNumberPartBookID = parseInt(lastBookingID.split("-").pop(), 10); // Here, I splited to create an array, popped to take the last part then converted the last part which is a string number to a number to Number in base 10
 
       return `APPT-${this.getDate()}-${String(
@@ -174,61 +174,14 @@ export class ManageBooking {
       status: userNewBooking.status,
     });
   }
+
+  cancelAppointment() {
+    // Remove Change the status of the client for both Appointmentdetail status needs to be changed.
+    // This can be achieved by setting the Data Attribute of all rendered Data to the order ID. with this Unique
+    // use the date value to search for the bookings array, and remove the time
+    // go to the Users array and change the status to cancelled.
+  }
 }
-
-// = function () {
-//   // Please Make sure that this returns an object YOU CAN PUT IT INTO A FUNCTION.
-
-//   // Pushing Value to current User Array
-
-//   const updatingUserOrder = function () {
-//     if (!user[orders]) {
-//       user[orders] = [];
-//       user[orders].push(UserNewBooking);
-//     } else {
-//       user[orders].push(UserNewBooking);
-//     }
-//   };
-
-//   // Saving to all Order Array
-
-//   const addToAllOrders = function (date, time) {
-//     if (state.bookings[date]) {
-//       state.bookings[date].push(time);
-//     } else {
-//       state.bookings[date] = [time];
-//     }
-//   };
-
-//   const orderDetail = function (
-//     bookingDate,
-//     orderID,
-//     customerID,
-//     userFirstName,
-//     UserLastName,
-//     bookedDate,
-//     bookedTime,
-//     status
-//   ) {
-//     state.bookingDetail.append({
-//       bookingDate,
-//       orderID,
-//       customerID,
-//       userFirstName,
-//       UserLastName,
-//       bookedDate,
-//       bookedTime,
-//       status,
-//     });
-//   };
-
-//   const cancelAppointment = function () {
-//     // Remove Change the status of the client for both Appointmentdetail status needs to be changed.
-
-//     // use the date value to search for the bookings array, and remove the time
-//     // go to the Users array and change the status to cancelled.
-//   };
-// };
 
 // SAVING DATA
 
