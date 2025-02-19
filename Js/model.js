@@ -114,6 +114,7 @@ class Booking extends NewClient {
     this.service = service;
     this.bookedDate = bookedDate;
     this.BookedTime = bookedTime;
+    this.status = "pending";
   }
 
   generateBookingID(bookingArray) {
