@@ -136,12 +136,13 @@ const newBooking = new Booking(date, bookedDate, service, bookedTime);
 // Clicked Booking button
 
 export class ManageBooking {
-  constructor(user, newBooking, state, date, bookedDate, bookedTime, service) {
+  constructor(user, newBooking, state) {
     this.newBooking = newBooking;
     this.state = state;
     this.user = user;
     this.updatingUserOrder(this.user, this.newBooking);
     this.addToAllOrders(this.newBooking, this.state);
+    this.AddToOrderDetail(this.user, this.newBooking, this.state);
   }
   updatingUserOrder(user, userNewBooking) {
     if (!user[orders]) {
@@ -160,7 +161,7 @@ export class ManageBooking {
     }
   }
 
-  orderDetail(user, userNewBooking, state) {
+  AddToOrderDetail(user, userNewBooking, state) {
     state.bookingDetail.append({
       bookingDate: userNewBooking.bookingDate,
       orderID: userNewBooking.orderID,
