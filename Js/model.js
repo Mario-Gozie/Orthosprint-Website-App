@@ -160,6 +160,28 @@ export const bookingReg = function (date, bookedDate, bookedTime, service) {
       state.bookings[date] = [time];
     }
   };
+
+  const orderDetail = function (
+    bookingDate,
+    orderID,
+    customerID,
+    userFirstName,
+    UserLastName,
+    bookedDate,
+    bookedTime,
+    status
+  ) {
+    state.bookingDetail.append({
+      bookingDate,
+      orderID,
+      customerID,
+      userFirstName,
+      UserLastName,
+      bookedDate,
+      bookedTime,
+      status,
+    });
+  };
 };
 
 // SAVING DATA
