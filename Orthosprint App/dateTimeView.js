@@ -3,23 +3,7 @@ class DateTimeView {
     this.rendertimes();
   }
 
-  // chosenDate, BookingsArray
-
-  // rendertimes() {
-  //   return `<button class="time-button chosen" value="8AM">8AM</button
-  //           ><button class="time-button " value="9AM">9AM</button
-  //           ><button class="time-button" value="10AM">10AM</button
-  //           ><button class="time-button" value="11AM">11AM</button
-  //           ><button class="time-button chosen" value="12PM">12AM</button
-  //           ><button class="time-button" value="1PM">1PM</button
-  //           ><button class="time-button selected-time" value="2PM">2PM</button
-  //           ><button class="time-button" value="3PM">3PM</button>`;
-  // }
-
   rendertimes(state, Element) {
-    // DateTimeArray.map(()=>
-    //   if
-    // )
     let selectedDate = Element.value;
 
     const timeArray = [
@@ -32,11 +16,6 @@ class DateTimeView {
       "2PM",
       "3PM",
     ];
-
-    // const customerArray = [
-    //   { "2025-02-26": ["8AM", "9AM", "10AM"] },
-    //   { "2025-02-18": ["11AM", "10AM", "12PM"] },
-    // ];
 
     let matchingDayArray = [];
 
@@ -55,12 +34,12 @@ class DateTimeView {
         // Check if the current time is in the matchingDayArray
         if (matchingDayArray.includes(time)) {
           // Return button with 'chosen' class if available
-          return `<button class="time-button chosen" value="${time}">
+          return `<button type="button" class="time-button chosen" value="${time}">
           ${time}
         </button>`;
         } else {
           // Return button without 'chosen' class if not available
-          return `<button class="time-button" value="${time}">
+          return `<button type ="button" class="time-button" value="${time}">
           ${time}
         </button>`;
         }
@@ -68,17 +47,6 @@ class DateTimeView {
       .join(" ");
 
     return generatedHtml;
-
-    // Output the generated HTML
-    console.log(generatedHtml);
-    // return `<button class="time-button chosen" value="8AM">8AM</button
-    //         ><button class="time-button " value="9AM">9AM</button
-    //         ><button class="time-button" value="10AM">10AM</button
-    //         ><button class="time-button" value="11AM">11AM</button
-    //         ><button class="time-button chosen" value="12PM">12AM</button
-    //         ><button class="time-button" value="1PM">1PM</button
-    //         ><button class="time-button selected-time" value="2PM">2PM</button
-    //         ><button class="time-button" value="3PM">3PM</button>`;
   }
 }
 

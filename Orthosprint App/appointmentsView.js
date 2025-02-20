@@ -1,4 +1,4 @@
-class AppointmentView {
+class AppointmentsView {
   constructor() {}
 
   renderAppointments(appoinmentArray, Element) {

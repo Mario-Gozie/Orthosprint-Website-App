@@ -24,6 +24,8 @@ export default class appController {
     this.timeContainer = document.querySelector(".times-container");
     this.appointmentForm = document.querySelector(".appointment-booking-form");
     this.DateErrorContainer = document.querySelector(".dateErrMsg");
+    this.timeButtons = document.querySelectorAll(".time-button");
+    console.log(this.timeButtons);
     console.log(this.appointmentForm);
     this.location;
 
@@ -199,10 +201,33 @@ export default class appController {
     }
   }
 
+  // timeButtonSelection() {
+  //   return new Promise((resolve) =>
+  //     this.timeButtons.forEach((button) => {
+  //       button.addEventListener("click", () => {
+  //         this.timeButtons.forEach((btn) =>
+  //           btn.classList.remove("selected-time")
+  //         );
+
+  //         button.classList.add("selected-time");
+  //         resolve(button.value);
+
+  //         // return selectedTime;
+  //       });
+  //     })
+  //   );
+  // }
+
   // HAMDLING APPOINTMENTS
 
   _bookingAppointments(Event) {
     Event.preventDefault();
+
+    // this.timeButtonSelection().then((selectedTime) => {
+    //   const time = selectedTime;
+    //   console.log(time);
+    // });
+
     appointmentBookingView.checkAppointmentDetail(this.appointmentForm);
   }
 }
