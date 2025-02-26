@@ -4,7 +4,6 @@ import MainView from "./mainView.js"; // Adjust the path as necessary
 import WelcomeView from "./welcomeView.js";
 import dateTimeView from "./dateTimeView.js";
 import AppointmentBookingView from "./appointmentBookingView.js";
-import Practice from "./practice.js";
 
 export default class appController {
   constructor() {
@@ -12,7 +11,6 @@ export default class appController {
     this.AppointmentBookingView = new AppointmentBookingView();
     this.mainView = new MainView(); // Instantiate main view
     this.WelcomeView = new WelcomeView();
-    this.Practice = new Practice();
 
     /// Variables
     this.dateInput = document.getElementById("dateInput");
