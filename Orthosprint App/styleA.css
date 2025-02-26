@@ -413,6 +413,11 @@ input[type="date"]:focus {
   color: var(--pure-white);
 }
 
+.time-button.selected-time:hover {
+  background-color: inherit; /* Disable hover effect by inheriting the default background */
+  /* You can also set other properties to maintain the selected state appearance */
+}
+
 .appointment-booking-form {
   position: relative;
   display: flex;
