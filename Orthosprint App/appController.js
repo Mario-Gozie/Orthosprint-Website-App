@@ -36,12 +36,6 @@ export default class appController {
 
     // Event listerner for times. to be improved.
     this.dateInput.addEventListener("change", () => this._displayTimes());
-    // this.appointmentForm.addEventListener("submit", (e) => {
-    //   this._bookingAppointments(e);
-    // });
-    // this.timeContainer.addEventListener("click", (e) =>
-    //   this.handleTimeClick(e)
-    // );
 
     // Functions
 
@@ -198,39 +192,6 @@ export default class appController {
       }
     }
   }
-
-  // handleTimeClick(event) {
-  //   if (event.target.classList.contains("time-button")) {
-  //     event.preventDefault();
-  //     if (event.target.classList.contains("selected-time")) {
-  //       event.target.classList.remove("selected-time");
-  //       this.selectedTime = null;
-  //       console.log(this.selectedTime);
-  //     } else {
-  //       const allTimeButtons =
-  //         this.timeContainer.querySelectorAll(".time-button");
-  //       allTimeButtons.forEach((btn) => btn.classList.remove("selected-time"));
-
-  //       console.log("button clicked", event.target);
-  //       event.target.classList.add("selected-time");
-  //       this.selectedTime = event.target.value;
-  //       console.log(this.selectedTime);
-  //     }
-  //   }
-  // }
-
-  // HAMDLING APPOINTMENTS
-
-  // _bookingAppointments(event) {
-  //   event.preventDefault();
-
-  //   // appointmentBookingView.checkAppointmentDetail(
-  //   //   this.appointmentForm,
-  //   //   this.selectedTime
-  //   // );
-  // }
 }
-
-// import AppViewWelcome from "./appViewWelcome.js";
 
 console.log(state);
