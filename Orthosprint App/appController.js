@@ -25,6 +25,7 @@ export default class appController {
     this.appointmentForm = document.querySelector(".appointment-booking-form");
     this.DateErrorContainer = document.querySelector(".dateErrMsg");
     this.timeButtons = document.querySelectorAll(".time-button");
+    this.selectedTime = null;
     console.log(this.timeButtons);
     console.log(this.appointmentForm);
     this.location;
@@ -51,6 +52,7 @@ export default class appController {
     this.loadSavedData();
     this._showPassword();
     this._getGeoPoints();
+    this.BookingTimeSelection();
   }
 
   // METHODS
@@ -202,19 +204,19 @@ export default class appController {
   }
 
   BookingTimeSelection() {
-    let selectedTime = null;
     this.timeButtons.forEach((button) =>
       button.addEventListener("click", (e) => {
         e.preventDefault();
         if (selectedTime === button) {
-          this.timeButtons.classList.remove("selected-time");
-          return (selectedTime = null);
+          button.classList.remove("selected-time");
         } else {
           // remove the class from all buttons
           this.timeButtons.forEach((btn) => {
-            btn.classList.add("selecte-time");
-            return (selectedTime = button); // storing the button
+            btn.classList.remove("selected-time");
           });
+          button.classList.add("selected-time");
+
+          this.selectedTime = button; // storing the button
         }
       })
     );
@@ -227,7 +229,7 @@ export default class appController {
 
     appointmentBookingView.checkAppointmentDetail(
       this.appointmentForm,
-      this.BookingTimeSelection()
+      this.selectedTime
     );
   }
 }
