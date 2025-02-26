@@ -208,45 +208,27 @@ export default class appController {
         e.preventDefault();
         if (selectedTime === button) {
           this.timeButtons.classList.remove("selected-time");
-          selectedTime = null;
+          return (selectedTime = null);
         } else {
           // remove the class from all buttons
           this.timeButtons.forEach((btn) => {
             btn.classList.add("selecte-time");
-            selectedTime = button;
+            return (selectedTime = button); // storing the button
           });
         }
       })
     );
   }
-  // timeButtonSelection() {
-  //   return new Promise((resolve) =>
-  //     this.timeButtons.forEach((button) => {
-  //       button.addEventListener("click", () => {
-  //         this.timeButtons.forEach((btn) =>
-  //           btn.classList.remove("selected-time")
-  //         );
-
-  //         button.classList.add("selected-time");
-  //         resolve(button.value);
-
-  //         // return selectedTime;
-  //       });
-  //     })
-  //   );
-  // }
 
   // HAMDLING APPOINTMENTS
 
   _bookingAppointments(Event) {
     Event.preventDefault();
 
-    // this.timeButtonSelection().then((selectedTime) => {
-    //   const time = selectedTime;
-    //   console.log(time);
-    // });
-
-    appointmentBookingView.checkAppointmentDetail(this.appointmentForm);
+    appointmentBookingView.checkAppointmentDetail(
+      this.appointmentForm,
+      this.BookingTimeSelection()
+    );
   }
 }
 
