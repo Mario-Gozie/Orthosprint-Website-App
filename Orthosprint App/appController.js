@@ -24,7 +24,7 @@ export default class appController {
     this.timeContainer = document.querySelector(".times-container");
     this.appointmentForm = document.querySelector(".appointment-booking-form");
     this.DateErrorContainer = document.querySelector(".dateErrMsg");
-    this.timeButtons = document.querySelectorAll(".time-button");
+    // this.timeButtons = document.querySelectorAll(".time-button");
     this.selectedTime = null;
     console.log(this.timeButtons);
     console.log(this.appointmentForm);
@@ -46,13 +46,16 @@ export default class appController {
     this.appointmentForm.addEventListener("submit", (e) => {
       this._bookingAppointments(e);
     });
+    this.timeContainer.addEventListener("click", (e) =>
+      this.handleTimeClick(e)
+    );
 
     // Functions
 
     this.loadSavedData();
     this._showPassword();
     this._getGeoPoints();
-    this.BookingTimeSelection();
+    // this.BookingTimeSelection();
   }
 
   // METHODS
@@ -74,7 +77,7 @@ export default class appController {
       );
 
       if (!response.ok) {
-        throw new Error(`http Erro! ${locationFetch.status}`);
+        throw new Error(`http Error! ${locationFetch.status}`);
       }
 
       const data = await response.json();
@@ -198,34 +201,45 @@ export default class appController {
           this.dateInput
         );
         this.timeContainer.hidden = false;
-        console.log("Hello");
+        console.log(this.timeContainer);
       }
     }
   }
 
-  BookingTimeSelection() {
-    this.timeButtons.forEach((button) =>
-      button.addEventListener("click", (e) => {
-        e.preventDefault();
-        if (selectedTime === button) {
-          button.classList.remove("selected-time");
-        } else {
-          // remove the class from all buttons
-          this.timeButtons.forEach((btn) => {
-            btn.classList.remove("selected-time");
-          });
-          button.classList.add("selected-time");
-
-          this.selectedTime = button; // storing the button
-        }
-      })
-    );
+  handleTimeClick(event) {
+    if (event.target.classList.contains("time-button")) {
+      event.preventDefault();
+      console.log("button clicked", event.target);
+      event.target.classList.add("selected-time");
+    }
   }
+
+  // BookingTimeSelection() {
+  //   this.timeButtons.forEach((button) =>
+  //     button.addEventListener("click", (e) => {
+  //       e.preventDefault();
+
+  //       if (this.selectedTime === button) {
+  //         button.classList.remove("selected-time");
+  //         this.selectedTime = null;
+  //       } else {
+  //         // remove the class from all buttons
+  //         this.timeButtons.forEach((btn) => {
+  //           btn.classList.remove("selected-time");
+  //         });
+  //         button.classList.add("selected-time");
+
+  //         this.selectedTime = button; // storing the button
+  //         console.log(this.selectedTime.value);
+  //       }
+  //     })
+  //   );
+  // }
 
   // HAMDLING APPOINTMENTS
 
-  _bookingAppointments(Event) {
-    Event.preventDefault();
+  _bookingAppointments(event) {
+    event.preventDefault();
 
     appointmentBookingView.checkAppointmentDetail(
       this.appointmentForm,
