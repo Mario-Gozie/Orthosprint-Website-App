@@ -9,10 +9,10 @@ class BookingAppointmentView {
 
     const appointmentDate = appointmentInfo.get("date");
     const appointmentService = appointmentInfo.get("service");
-    const appointmentTime = appointmentInfo.get("selectedTime");
+    const ChosenAppointmentTime = appointmentInfo.get("selectedTime");
     console.log(appointmentDate);
     console.log(appointmentService);
-    console.log(appointmentTime);
+    console.log(ChosenAppointmentTime);
   }
 
   bookingAppointment() {}
