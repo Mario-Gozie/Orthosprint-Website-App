@@ -201,6 +201,24 @@ export default class appController {
     }
   }
 
+  BookingTimeSelection() {
+    let selectedTime = null;
+    this.timeButtons.forEach((button) =>
+      button.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (selectedTime === button) {
+          this.timeButtons.classList.remove("selected-time");
+          selectedTime = null;
+        } else {
+          // remove the class from all buttons
+          this.timeButtons.forEach((btn) => {
+            btn.classList.add("selecte-time");
+            selectedTime = button;
+          });
+        }
+      })
+    );
+  }
   // timeButtonSelection() {
   //   return new Promise((resolve) =>
   //     this.timeButtons.forEach((button) => {
