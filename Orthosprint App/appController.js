@@ -1,11 +1,4 @@
-import {
-  state,
-  dataModel,
-  getUser,
-  ActiveUser,
-  // getLocation,
-  // currentUser,
-} from "../Js/model.js";
+import { state, dataModel, getUser, ActiveUser } from "../Js/model.js";
 
 import MainView from "./mainView.js"; // Adjust the path as necessary
 import WelcomeView from "./welcomeView.js";
@@ -225,28 +218,6 @@ export default class appController {
       }
     }
   }
-
-  // BookingTimeSelection() {
-  //   this.timeButtons.forEach((button) =>
-  //     button.addEventListener("click", (e) => {
-  //       e.preventDefault();
-
-  //       if (this.selectedTime === button) {
-  //         button.classList.remove("selected-time");
-  //         this.selectedTime = null;
-  //       } else {
-  //         // remove the class from all buttons
-  //         this.timeButtons.forEach((btn) => {
-  //           btn.classList.remove("selected-time");
-  //         });
-  //         button.classList.add("selected-time");
-
-  //         this.selectedTime = button; // storing the button
-  //         console.log(this.selectedTime.value);
-  //       }
-  //     })
-  //   );
-  // }
 
   // HAMDLING APPOINTMENTS
 
