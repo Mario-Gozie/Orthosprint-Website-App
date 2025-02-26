@@ -17,12 +17,10 @@ export default class appController {
     /// Variables
     this.dateInput = document.getElementById("dateInput");
     this.timeContainer = document.querySelector(".times-container");
-    this.appointmentForm = document.querySelector(".appointment-booking-form");
+    // this.appointmentForm = document.querySelector(".appointment-booking-form");
     this.DateErrorContainer = document.querySelector(".dateErrMsg");
     // this.timeButtons = document.querySelectorAll(".time-button");
-    this.selectedTime = null;
-    console.log(this.timeButtons);
-    console.log(this.appointmentForm);
+
     this.location;
 
     // Element Variables
@@ -38,9 +36,9 @@ export default class appController {
 
     // Event listerner for times. to be improved.
     this.dateInput.addEventListener("change", () => this._displayTimes());
-    this.appointmentForm.addEventListener("submit", (e) => {
-      this._bookingAppointments(e);
-    });
+    // this.appointmentForm.addEventListener("submit", (e) => {
+    //   this._bookingAppointments(e);
+    // });
     // this.timeContainer.addEventListener("click", (e) =>
     //   this.handleTimeClick(e)
     // );
@@ -223,14 +221,14 @@ export default class appController {
 
   // HAMDLING APPOINTMENTS
 
-  _bookingAppointments(event) {
-    event.preventDefault();
+  // _bookingAppointments(event) {
+  //   event.preventDefault();
 
-    // appointmentBookingView.checkAppointmentDetail(
-    //   this.appointmentForm,
-    //   this.selectedTime
-    // );
-  }
+  //   // appointmentBookingView.checkAppointmentDetail(
+  //   //   this.appointmentForm,
+  //   //   this.selectedTime
+  //   // );
+  // }
 }
 
 // import AppViewWelcome from "./appViewWelcome.js";

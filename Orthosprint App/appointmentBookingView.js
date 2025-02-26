@@ -1,9 +1,14 @@
 export default class AppointmentBookingView {
   constructor() {
+    this.selectedTime = null;
     this.timeContainer = document.querySelector(".times-container");
+    this.appointmentForm = document.querySelector(".appointment-booking-form");
     this.timeContainer.addEventListener("click", (e) =>
       this.handleTimeClick(e)
     );
+    this.appointmentForm.addEventListener("submit", (e) => {
+      this._bookingAppointments(e);
+    });
   }
 
   handleTimeClick(event) {
@@ -26,21 +31,38 @@ export default class AppointmentBookingView {
     }
   }
 
-  checkAppointmentDetail(AppointmentForm, appointmentTime) {
+  getAppointmentDetail(AppointmentForm) {
     const appointmentInfo = new FormData(AppointmentForm);
-    if (appointmentTime) {
-      appointmentInfo.append("selectedTime", appointmentTime.value);
-    }
 
     const appointmentDate = appointmentInfo.get("date");
     const appointmentService = appointmentInfo.get("service");
-    const ChosenAppointmentTime = appointmentInfo.get("selectedTime");
-    console.log(appointmentDate);
-    console.log(appointmentService);
-    console.log(ChosenAppointmentTime);
+
+    return {
+      appointmentDate,
+      appointmentService,
+      chosenAppointmentTime: this.selectedTime, // Directly selection time
+    };
   }
 
-  bookingAppointment() {}
+  validateAppointmentDetails(appointmentDetails) {
+    const { appointmentDate, appointmentService, chosenAppointmentTime } =
+      appointmentDetails;
+    return appointmentDate && appointmentService && chosenAppointmentTime;
+  }
+
+  _bookingAppointments(event) {
+    event.preventDefault();
+    const appointmentDetails = this.getAppointmentDetail(this.appointmentForm);
+    console.log(appointmentDetails);
+    if (!this.validateAppointmentDetails(appointmentDetails)) {
+      alert("All field is required to book an Appointment");
+      return;
+    } else {
+      console.log(appointmentDetails);
+    }
+
+    console.log("money");
+  }
 }
 
 // export default new BookingAppointmentView();
