@@ -11,9 +11,8 @@ class LoginView {
     this._showPassword();
   }
 
-  gettingLoginValue(event) {
-    event.preventDefault();
-    const formData = new FormData(this.loginForm);
+  gettingLoginValue(form) {
+    const formData = new FormData(form);
 
     const identifier = formData.get("usernameEmail");
     const IdentifierPassword = formData.get("password");
@@ -25,6 +24,8 @@ class LoginView {
 
     return identifier && IdentifierPassword;
   }
+
+  _loginEvent(event) {}
 
   // LOGIN ACTIONS
 
