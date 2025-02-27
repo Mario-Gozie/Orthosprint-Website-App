@@ -135,6 +135,11 @@ class Booking extends NewClient {
 
 // Clicked Booking button
 
+export const availableTimeChecker = (date) => {
+  const booking = state.bookings.find((b) => b[date]);
+  return booking ? booking[date] : [];
+};
+
 export class ManageBooking {
   constructor(user, newBooking, state) {
     this.newBooking = newBooking;
@@ -144,6 +149,7 @@ export class ManageBooking {
     this.addToAllOrders(this.newBooking, this.state);
     this.AddToOrderDetail(this.user, this.newBooking, this.state);
   }
+
   updatingUserOrder(user, userNewBooking) {
     if (!user[orders]) {
       user[orders] = [];

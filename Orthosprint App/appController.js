@@ -1,23 +1,26 @@
-import { state, dataModel, getUser, ActiveUser } from "../Js/model.js";
+import {
+  state,
+  dataModel,
+  getUser,
+  ActiveUser,
+  availableTimeChecker,
+} from "../Js/model.js";
 
 import MainView from "./mainView.js"; // Adjust the path as necessary
 import WelcomeView from "./welcomeView.js";
-import dateTimeView from "./dateTimeView.js";
+import DateTimeView from "./dateTimeView.js";
+
 import AppointmentBookingView from "./appointmentBookingView.js";
 
 export default class appController {
   constructor() {
+    const getAvailablebookingTimes = (date) => availableTimeChecker(date);
     // Instances
     this.AppointmentBookingView = new AppointmentBookingView();
+    this.dateTimeView = new DateTimeView();
+    this.dateTimeView.controller(getAvailablebookingTimes); // Call the controller method. This is done because there are some event listeners in it.
     this.mainView = new MainView(); // Instantiate main view
     this.WelcomeView = new WelcomeView();
-
-    /// Variables
-    this.dateInput = document.getElementById("dateInput");
-    this.timeContainer = document.querySelector(".times-container");
-    // this.appointmentForm = document.querySelector(".appointment-booking-form");
-    this.DateErrorContainer = document.querySelector(".dateErrMsg");
-    // this.timeButtons = document.querySelectorAll(".time-button");
 
     this.location;
 
@@ -30,10 +33,6 @@ export default class appController {
 
     // Event Listerners
     this.loginForm.addEventListener("submit", (e) => this._loginEvent(e));
-    this.dateInput.addEventListener("click", this._revealDateInput());
-
-    // Event listerner for times. to be improved.
-    this.dateInput.addEventListener("change", () => this._displayTimes());
 
     // Functions
 
@@ -149,46 +148,6 @@ export default class appController {
       this.togglePasswordIcon.classList.toggle("fa-eye"); // Show open eye
       this.togglePasswordIcon.classList.toggle("fa-eye-slash"); // Show closed eye
     });
-  }
-
-  _revealDateInput() {
-    const today = new Date();
-
-    const tomorrow = new Date(today);
-
-    tomorrow.setDate(today.getDate() + 1); // setting tommorrow
-
-    const minDate = tomorrow.toISOString().split("T")[0];
-    this.dateInput.setAttribute("min", minDate);
-  }
-
-  // THIS CODE DISPLAYS APPOINTMENT TIMES.
-
-  _displayTimes() {
-    if (this.dateInput.value === "") {
-      this.timeContainer.innerHTML = "";
-      this.timeContainer.hidden = true;
-      console.log("money");
-    } else {
-      const selectedDate = new Date(this.dateInput.value);
-      const dateToCheck = selectedDate.getUTCDay(); // 0 = sunday, 6 = saturday
-      if (dateToCheck === 0 || dateToCheck === 6) {
-        this.DateErrorContainer.textContent =
-          "Please we dont work on weekends, Choose a weekday*";
-        this.dateInput.value = "";
-        this.timeContainer.innerHTML = ""; // Clear time container
-        this.timeContainer.hidden = true; // Hide time container
-      } // Clear Input
-      else {
-        this.DateErrorContainer.textContent = ""; //Clearing the error Message container
-        this.timeContainer.innerHTML = dateTimeView.rendertimes(
-          state,
-          this.dateInput
-        );
-        this.timeContainer.hidden = false;
-        console.log(this.timeContainer);
-      }
-    }
   }
 }
 
