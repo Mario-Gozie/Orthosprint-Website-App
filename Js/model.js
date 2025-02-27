@@ -87,7 +87,7 @@ export class NewClient {
 
 // CURRENT USER
 
-export let ActiveUser = {};
+let ActiveUser = {};
 
 export const getUser = (identifier, password) => {
   console.log("just a check", identifier, password);
@@ -97,9 +97,14 @@ export const getUser = (identifier, password) => {
       client.password === password
   );
 
-  ActiveUser = { ...user };
-  // return user;
+  if (user) {
+    ActiveUser = { ...user };
+  }
+
+  return user;
 };
+
+export const getActiveUser = () => ActiveUser;
 
 //  TAKING CARE OF BOOKINGS
 

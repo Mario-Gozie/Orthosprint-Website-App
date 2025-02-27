@@ -2,7 +2,7 @@ import {
   state,
   dataModel,
   getUser,
-  ActiveUser,
+  getActiveUser,
   availableTimeChecker,
 } from "../Js/model.js";
 
@@ -88,6 +88,20 @@ export default class appController {
       console.log("Loaded saved state:", state);
     } else {
       console.log("No saved state found in localStorage");
+    }
+  }
+
+  loginController(loginDetail) {
+    const user = getUser(
+      loginDetail.identifier,
+      loginDetail.IdentifierPassword
+    );
+
+    if (user) {
+      const ActiveUser = getActiveUser();
+      this.loginForm.reset();
+    } else {
+      alert("Invalid login Details");
     }
   }
 
