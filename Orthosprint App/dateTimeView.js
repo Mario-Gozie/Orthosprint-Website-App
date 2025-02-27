@@ -1,6 +1,7 @@
 export default class DateTimeView {
-  controller(checkAvailableTimeHandler) {
+  constructor(controller) {
     // ELEMENTS
+    this.controller = controller;
     this.dateInput = document.getElementById("dateInput");
     this.timeContainer = document.querySelector(".times-container");
     this.DateErrorContainer = document.querySelector(".dateErrMsg");
@@ -9,9 +10,7 @@ export default class DateTimeView {
     // EVENT LISTENERS
 
     this.dateInput.addEventListener("click", () => this._revealDateInput());
-    this.dateInput.addEventListener("change", () =>
-      this._handleDateChange(checkAvailableTimeHandler)
-    );
+    this.dateInput.addEventListener("change", () => this._handleDateChange());
   }
 
   _revealDateInput() {
@@ -25,12 +24,14 @@ export default class DateTimeView {
     this.dateInput.setAttribute("min", minDate);
   }
 
-  _handleDateChange(checkAvailableTimeHandler) {
+  _handleDateChange() {
     const selectedDate = this.dateInput.value;
-    this._displayTimes(selectedDate, checkAvailableTimeHandler);
+    const availableTimes =
+      this.controller.getAvailablebookingTimes(selectedDate); // CALL THE CONTROLLER METHOD
+    this._displayTimes(selectedDate, availableTimes);
   }
 
-  _displayTimes(date, checkAvailableTimeHandler) {
+  _displayTimes(date, availableTimes) {
     if (!date) {
       this.timeContainer.innerHTML = "";
       this.timeContainer.hidden = true;
@@ -48,8 +49,6 @@ export default class DateTimeView {
     else {
       this.DateErrorContainer.textContent = ""; //Clearing the error Message container
 
-      // Using the handler to get available times
-      const availableTimes = checkAvailableTimeHandler(date);
       this.timeContainer.innerHTML = this.rendertimes(availableTimes);
       this.timeContainer.hidden = false;
     }

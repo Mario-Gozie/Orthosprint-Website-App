@@ -17,11 +17,10 @@ export default class appController {
     this.ActiveUser;
     this.LoginView = new LoginView(this);
 
-    const getAvailablebookingTimes = (date) => availableTimeChecker(date);
     // Instances
     this.AppointmentBookingView = new AppointmentBookingView();
-    this.dateTimeView = new DateTimeView();
-    this.dateTimeView.controller(getAvailablebookingTimes); // Call the controller method. This is done because there are some event listeners in it.
+    this.dateTimeView = new DateTimeView(this);
+
     this.mainView = new MainView(); // Instantiate main view
     this.WelcomeView = new WelcomeView();
 
@@ -98,6 +97,10 @@ export default class appController {
     } else {
       alert("Invalid login Details");
     }
+  }
+
+  getAvailablebookingTimes(date) {
+    return availableTimeChecker(date);
   }
 }
 
