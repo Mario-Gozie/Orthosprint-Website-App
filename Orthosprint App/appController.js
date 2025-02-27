@@ -88,8 +88,9 @@ export default class appController {
     if (user) {
       this.ActiveUser = getActiveUser();
 
-      console.log("hello");
+      console.log(user);
       setTimeout(() => {
+        this.WelcomeView.generateWelcomeMarkup(this.ActiveUser, this.location);
         this.LoginView.hideLoginView(); // Remove from layout
         this.mainView.show(); // Use main view to show the main section
         // DatePicker.settingMinimumDate();
