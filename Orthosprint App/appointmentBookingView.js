@@ -53,7 +53,7 @@ export default class AppointmentBookingView {
   _bookingAppointments(event) {
     event.preventDefault();
     const appointmentDetails = this.getAppointmentDetail(this.appointmentForm);
-    console.log(appointmentDetails);
+
     if (!this.validateAppointmentDetails(appointmentDetails)) {
       alert("All field is required to book an Appointment");
       return;
