@@ -59,6 +59,9 @@ export default class AppointmentBookingView {
       return;
     } else {
       console.log(appointmentDetails);
+      this.appointmentForm.reset();
+
+      // you will need to remove the selected class and also hide the time frame. becuase clearing the form alone cannot do that.
     }
 
     console.log("money");
