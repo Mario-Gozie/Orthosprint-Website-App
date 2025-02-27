@@ -9,8 +9,6 @@ export default class LoginView {
 
     this.loginForm.addEventListener("submit", (e) => this.loginEvent(e));
 
-    // this.resetLoginOpacity();
-    // this.hideLoginView();
     this._showPassword();
   }
 
@@ -40,56 +38,9 @@ export default class LoginView {
     }
   }
 
-  // LOGIN ACTIONS
-
-  //   _loginEvent(event) {
-  //     event.preventDefault();
-
-  //     const formData = new FormData(this.loginForm);
-
-  //     const identifier = formData.get("usernameEmail");
-  //     const IdentifierPassword = formData.get("password");
-  //     console.log(state.clients);
-  //     console.log(identifier, IdentifierPassword);
-
-  //     // GET USER IS A MODEL FUNCTION.
-  //     console.log(identifier, identifier);
-  //     getUser(identifier, IdentifierPassword);
-
-  //     // REMEMBER THAT THE ACTIVE USER IS COMING FROM THE MODEL.
-  //     // The active user is set by the get User function.
-  //     console.log(`user`, ActiveUser);
-
-  //     // Fully Implementing login process.
-  //     if (ActiveUser) {
-  //       console.log(ActiveUser.firstName);
-
-  //       // RENDERING WELCOME PANE VIEW
-  //       this.WelcomeView.generateWelcomeMarkup(ActiveUser, this.location);
-  //       this.loginForm.reset();
-
-  //       // Fade out the login section
-  //       this.loginSection.style.opacity = "0";
-
-  //       // After the fade-out, hide the login section and show the main section
-  //       setTimeout(() => {
-  //         this.loginSection.style.display = "none"; // Remove from layout
-  //         this.mainView.show(); // Use main view to show the main section
-  //         // DatePicker.settingMinimumDate();
-  //       }, 1000); // Match this timeout with the transition duration
-  //       // this.WelcomeView.renderWelcomeView();
-  //     } else {
-  //       alert("User not found");
-  //       return;
-  //     }
-  //   }
-
-  resetLoginOpacity() {
+  hideLoginView() {
     this.loginForm.reset();
     this.loginSection.style.opacity = "0";
-  }
-
-  hideLoginView() {
     this.loginSection.style.display = "none";
   }
 
