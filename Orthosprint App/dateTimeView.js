@@ -83,5 +83,3 @@ export default class DateTimeView {
     return generatedHtml;
   }
 }
-
-// export default new DateTimeView();
