@@ -16,7 +16,6 @@ export default class appController {
   constructor() {
     this.ActiveUser;
     this.LoginView = new LoginView(this);
-
     // Instances
     this.AppointmentBookingView = new AppointmentBookingView();
     this.dateTimeView = new DateTimeView(this);
@@ -28,7 +27,6 @@ export default class appController {
 
     // Functions
     this.loadSavedData();
-
     this._getGeoPoints();
   }
 
