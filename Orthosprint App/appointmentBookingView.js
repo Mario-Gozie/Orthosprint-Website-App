@@ -35,20 +35,19 @@ export default class AppointmentBookingView {
   _getAppointmentDetail(AppointmentForm) {
     const appointmentInfo = new FormData(AppointmentForm);
 
-    const appointmentDate = appointmentInfo.get("date");
-    const appointmentService = appointmentInfo.get("service");
+    const BookedDate = appointmentInfo.get("date");
+    const service = appointmentInfo.get("service");
 
     return {
-      appointmentDate,
-      appointmentService,
-      chosenAppointmentTime: this.selectedTime, // Directly selection time
+      BookedDate,
+      service,
+      BookedTime: this.selectedTime, // Directly selection time
     };
   }
 
   _validateAppointmentDetails(appointmentDetails) {
-    const { appointmentDate, appointmentService, chosenAppointmentTime } =
-      appointmentDetails;
-    return appointmentDate && appointmentService && chosenAppointmentTime;
+    const { BookedDate, service, BookedTime } = appointmentDetails;
+    return BookedDate && service && BookedTime;
   }
 
   _bookingAppointments(event) {
@@ -59,6 +58,11 @@ export default class AppointmentBookingView {
       alert("All field is required to book an Appointment");
       return;
     } else {
+      const today = new Date();
+      const day = String(today.getDate()).padStart(2, "0"); // The padding is used to make sure the day is in two digits.
+      const month = String(today.getMonth() + 1).padStart(2, "0"); // Months are Zero based.
+      const year = today.getFullYear();
+      appointmentDetails["BookingDay"] = `${year}-${month}-${day}`;
       console.log(appointmentDetails);
 
       // bookings will have TODAYS DATE, BOOKINGDATE, SERVICE, BOOKINGTIME, STATE
