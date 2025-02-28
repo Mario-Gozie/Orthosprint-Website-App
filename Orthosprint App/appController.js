@@ -12,6 +12,7 @@ import DateTimeView from "./dateTimeView.js";
 import LoginView from "./loginView.js";
 import AppointmentBookingView from "./appointmentBookingView.js";
 import AppointmentsView from "./appointmentsView.js";
+import KPIpane from "./kpiPane.js";
 
 export default class appController {
   constructor() {
@@ -25,6 +26,7 @@ export default class appController {
     this.AppointmentsView = new AppointmentsView();
     this.AppointmentBookingView = new AppointmentBookingView();
     this.dateTimeView = new DateTimeView(this);
+    this.KPIpane = new KPIpane();
 
     this.location;
 
@@ -95,6 +97,7 @@ export default class appController {
         this.AppointmentsView.renderAppointments(
           this.getUserAppointments(this.ActiveUser)
         );
+        this.KPIpane.renderKPIs(this.getUserAppointments(this.ActiveUser));
         this.mainView.show(); // Use main view to show the main section
       }, 1000);
     } else {
