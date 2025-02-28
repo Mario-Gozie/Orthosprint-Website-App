@@ -5,14 +5,14 @@ export default class AppointmentBookingView {
     this.timeContainer = document.querySelector(".times-container");
     this.appointmentForm = document.querySelector(".appointment-booking-form");
     this.timeContainer.addEventListener("click", (e) =>
-      this.handleTimeClick(e)
+      this._handleTimeClick(e)
     );
     this.appointmentForm.addEventListener("submit", (e) => {
       this._bookingAppointments(e);
     });
   }
 
-  handleTimeClick(event) {
+  _handleTimeClick(event) {
     if (event.target.classList.contains("time-button")) {
       event.preventDefault();
       if (event.target.classList.contains("selected-time")) {
@@ -32,7 +32,7 @@ export default class AppointmentBookingView {
     }
   }
 
-  getAppointmentDetail(AppointmentForm) {
+  _getAppointmentDetail(AppointmentForm) {
     const appointmentInfo = new FormData(AppointmentForm);
 
     const appointmentDate = appointmentInfo.get("date");
@@ -45,7 +45,7 @@ export default class AppointmentBookingView {
     };
   }
 
-  validateAppointmentDetails(appointmentDetails) {
+  _validateAppointmentDetails(appointmentDetails) {
     const { appointmentDate, appointmentService, chosenAppointmentTime } =
       appointmentDetails;
     return appointmentDate && appointmentService && chosenAppointmentTime;
@@ -53,16 +53,16 @@ export default class AppointmentBookingView {
 
   _bookingAppointments(event) {
     event.preventDefault();
-    const appointmentDetails = this.getAppointmentDetail(this.appointmentForm);
+    const appointmentDetails = this._getAppointmentDetail(this.appointmentForm);
 
-    if (!this.validateAppointmentDetails(appointmentDetails)) {
+    if (!this._validateAppointmentDetails(appointmentDetails)) {
       alert("All field is required to book an Appointment");
       return;
     } else {
       console.log(appointmentDetails);
-      this.appointmentForm.reset();
-      // bookings will have TODAYS DATE, BOOKINGDATE, SERVICE, BOOKINGTIME, STATE
 
+      // bookings will have TODAYS DATE, BOOKINGDATE, SERVICE, BOOKINGTIME, STATE
+      this.appointmentForm.reset();
       // you will need to remove the selected class and also hide the time frame. becuase clearing the form alone cannot do that.
     }
 

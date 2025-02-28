@@ -408,21 +408,25 @@ input[type="date"]:focus {
   transform: scale(0.9);
 }
 
-.chosen {
+/* .chosen {
   background: hsla(0, 100%, 65%, 0.749);
   color: var(--pure-white);
   pointer-events: none;
   cursor: not-allowed;
-}
+} */
 
-.selected-time {
+.time-button.selected-time {
   background: hsl(197, 94%, 34%);
   color: var(--pure-white);
 }
 
 .time-button.selected-time:hover {
-  background-color: inherit; /* Disable hover effect by inheriting the default background */
-  /* You can also set other properties to maintain the selected state appearance */
+  background: hsl(
+    197,
+    94%,
+    34%
+  ); /* setting the hover effect of the selected item such that it wont behave like the unselected ones */
+  color: var(--pure-white);
 }
 
 .appointment-booking-form {
