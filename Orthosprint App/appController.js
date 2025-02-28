@@ -11,17 +11,20 @@ import WelcomeView from "./welcomeView.js";
 import DateTimeView from "./dateTimeView.js";
 import LoginView from "./loginView.js";
 import AppointmentBookingView from "./appointmentBookingView.js";
+import AppointmentsView from "./appointmentsView.js";
 
 export default class appController {
   constructor() {
     this.ActiveUser;
-    this.LoginView = new LoginView(this);
-    // Instances
-    this.AppointmentBookingView = new AppointmentBookingView();
-    this.dateTimeView = new DateTimeView(this);
 
+    // Instances
+
+    this.LoginView = new LoginView(this);
     this.mainView = new MainView(); // Instantiate main view
     this.WelcomeView = new WelcomeView();
+    this.AppointmentsView = new AppointmentsView();
+    this.AppointmentBookingView = new AppointmentBookingView();
+    this.dateTimeView = new DateTimeView(this);
 
     this.location;
 
@@ -89,12 +92,16 @@ export default class appController {
       setTimeout(() => {
         this.WelcomeView.generateWelcomeMarkup(this.ActiveUser, this.location);
         this.LoginView.hideLoginView(); // Remove from layout
+
         this.mainView.show(); // Use main view to show the main section
-        // DatePicker.settingMinimumDate();
       }, 1000);
     } else {
       alert("Invalid login Details");
     }
+  }
+
+  getUserAppointments(user) {
+    return user.bookings;
   }
 
   getAvailablebookingTimes(date) {

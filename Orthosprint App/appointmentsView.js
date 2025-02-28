@@ -1,5 +1,10 @@
-class AppointmentsView {
-  constructor() {}
+export default class AppointmentsView {
+  constructor() {
+    this.allApointmentsContainer = document.querySelector(
+      ".all-appointment-container"
+    );
+    console.log(this.allApointmentsContainer);
+  }
 
   renderAppointments(appoinmentArray, Element) {
     if (appoinmentArray.length === 0 || !appoinmentArray) {

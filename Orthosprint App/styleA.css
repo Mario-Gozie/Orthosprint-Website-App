@@ -266,7 +266,7 @@ main {
   color: red;
 }
 
-/* Rendering Section */
+/* Appointments Section*/
 
 .appointments-section {
   width: 100%;
@@ -279,11 +279,16 @@ main {
   margin: 0.5rem 0;
 }
 
+.all-appointment-container {
+  height: 300px;
+}
+
 .appointment-container {
   display: flex;
   justify-content: space-between;
   margin: 0.5rem 0;
-  background-color: hsla(120, 96%, 81%, 0.927);
+  background-color: hsl(120, 100%, 90%); /* Very faint green */
+  /* background-color: hsla(120, 96%, 81%, 0.927); */
   padding: 1rem;
   cursor: pointer;
   border-radius: 5px;

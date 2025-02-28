@@ -11,7 +11,7 @@ export const state = {
   // this will contain objects which is booking id and booking date and time.
   bookingDetail: [],
   //This array will have dates as key and booked times as array. I will use it to access if a particular time is booked. as well as is a date is booked.
-  bookings: [],
+  AllBookingDateTime: [],
 };
 
 // MAIN DATA WEBSITE CODE
@@ -53,6 +53,7 @@ export class NewClient {
     this.email = email;
     this.password = password;
     this.gender = gender;
+    this.bookings = [];
   }
 
   // Reset Password
@@ -141,7 +142,7 @@ class Booking extends NewClient {
 // Clicked Booking button
 
 export const availableTimeChecker = (date) => {
-  const booking = state.bookings.find((b) => b[date]);
+  const booking = state.AllBookingDateTime.find((b) => b[date]);
   return booking ? booking[date] : [];
 };
 
