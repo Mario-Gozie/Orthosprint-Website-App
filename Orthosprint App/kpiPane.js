@@ -24,4 +24,10 @@ export default class KPIpane {
       this.kpiWrapper.innerHTML = html;
     }
   }
+
+  renderBasedOnStatus(userBookingArray, type) {
+    return userBookingArray.reduce((count, booking) => {
+      return booking.status === type ? count + 1 : count;
+    }, 0); // So the count is appearing twice because I want to return the same count without adding to it if the condition does not match
+  }
 }
