@@ -11,7 +11,7 @@ export const state = {
   // this will contain objects which is booking id and booking date and time.
   bookingDetail: [],
   //This array will have dates as key and booked times as array. I will use it to access if a particular time is booked. as well as is a date is booked.
-  AllBookingDateTime: [],
+  AllBookingDateTime: {},
 };
 
 // MAIN DATA WEBSITE CODE
@@ -116,18 +116,18 @@ export class Booking extends NewClient {
     // This function will inherit the get date function in NewClient so that it can be able to generate the bookingID
     super();
     this.date = date;
-    this.bookingID = this.generateBookingID(state.bookingDetail);
     this.service = service;
     this.bookedDate = bookedDate;
     this.bookedTime = bookedTime;
     this.status = "pending";
+    this.bookingID = this.generateBookingID(state.bookingDetail);
   }
 
   generateBookingID(bookingArray) {
     if (!bookingArray || bookingArray.length === 0) {
-      return `APPT-${this.getDate}-0001`;
+      return `APPT-${this.getDate()}-0001`;
     } else {
-      const lastBookingID = bookingArray.at(-1).orderID; // getting the number part of the customerID
+      const lastBookingID = bookingArray.at(-1).bookingID; // getting the number part of the customerID
       const lastNumberPartBookID = parseInt(lastBookingID.split("-").pop(), 10); // Here, I splited to create an array, popped to take the last part then converted the last part which is a string number to a number to Number in base 10
 
       return `APPT-${this.getDate()}-${String(
@@ -171,11 +171,11 @@ export class ManageBookingApointments {
   }
 
   AddToOrderDetail(user, newBooking, state) {
-    state.bookingDetail.append({
+    state.bookingDetail.push({
       bookingDate: newBooking.bookingDate,
       bookingID: newBooking.bookingID,
       clientID: user.clientID,
-      lirstName: user.firstName,
+      firstName: user.firstName,
       lastName: user.lastName,
       bookedDate: newBooking.bookedDate,
       bookedTime: newBooking.bookedTime,

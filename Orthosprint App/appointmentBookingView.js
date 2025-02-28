@@ -35,7 +35,7 @@ export default class AppointmentBookingView {
   _getAppointmentDetail(AppointmentForm) {
     const appointmentInfo = new FormData(AppointmentForm);
 
-    const BookedDate = appointmentInfo.get("date");
+    const bookedDate = appointmentInfo.get("date");
     const service = appointmentInfo.get("service");
 
     return {

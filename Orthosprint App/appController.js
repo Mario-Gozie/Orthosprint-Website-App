@@ -116,14 +116,18 @@ export default class appController {
   }
 
   HandlingBookings({ bookingDate, bookedDate, service, bookedTime }) {
-    const latestBooking = Booking(
+    const latestBooking = new Booking(
       bookingDate,
       bookedDate,
       service,
       bookedTime,
       state
     );
-    ManageBookingApointments(this.ActiveUser, latestBooking, state);
+    new ManageBookingApointments(this.ActiveUser, latestBooking, state);
+
+    console.log(state.AllBookingDateTime);
+    console.log(this.ActiveUser.bookings);
+    console.log(state.bookingDetail);
   }
 }
 
