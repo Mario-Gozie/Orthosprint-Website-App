@@ -3,13 +3,17 @@ export default class AppointmentsView {
     this.allApointmentsContainer = document.querySelector(
       ".all-appointment-container"
     );
+
+    this.paginationContainer = document.querySelector(".pagination-container");
     console.log(this.allApointmentsContainer);
   }
 
   renderAppointments(appoinmentArray) {
     if (appoinmentArray.length === 0 || !appoinmentArray) {
-      const html = `<div style= "background: lightblue; border-radius: 15px; height: 100%;  display:flex; justify-content: center; align-items: center"><strong style="text-align: center;" > All appointment will be here, lets get started </strong></div>`;
+      this.a;
+      const html = `<div style= "background: #e0e0e0; border-radius: 15px; height: 100%;  display:flex; justify-content: center; align-items: center"><strong style="text-align: center;" > All appointment will be here, lets get started </strong></div>`;
       this.allApointmentsContainer.innerHTML = html;
+      this.paginationContainer.style.display = "none";
       return;
     }
 
