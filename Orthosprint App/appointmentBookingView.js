@@ -1,5 +1,6 @@
 export default class AppointmentBookingView {
-  constructor() {
+  constructor(controller) {
+    this.controller = controller;
     this.selectedTime = null;
     this.timeContainer = document.querySelector(".times-container");
     this.appointmentForm = document.querySelector(".appointment-booking-form");
