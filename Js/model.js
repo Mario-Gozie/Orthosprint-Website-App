@@ -156,29 +156,31 @@ export class ManageBookingApointments {
     this.AddToOrderDetail(this.user, this.newBooking, this.state);
   }
 
-  AddingToUserOrder(user, userNewBooking) {
-    user["bookings"].push(userNewBooking);
+  AddingToUserOrder(user, newBooking) {
+    user["bookings"].push(newBooking);
   }
 
-  addToAllOrders(userNewBooking, state) {
-    if (state.bookings[userNewBooking.date]) {
-      state.bookings[userNewBooking.date].push(userNewBooking.bookedTime);
+  addToAllOrders(newBooking, state) {
+    if (state.AllBookingDateTime[newBooking.bookedDate]) {
+      state.AllBookingDateTime[newBooking.bookedDate].push(
+        newBooking.bookedTime
+      );
     } else {
-      state.bookings[userNewBooking.date] = [userNewBooking.bookedTime];
+      state.AllBookingDateTime[newBooking.bookedDate] = [newBooking.bookedTime];
     }
   }
 
-  AddToOrderDetail(user, userNewBooking, state) {
+  AddToOrderDetail(user, newBooking, state) {
     state.bookingDetail.append({
-      bookingDate: userNewBooking.bookingDate,
-      orderID: userNewBooking.orderID,
-      customerID: user.customerID,
-      userFirstName: user.userFirstName,
-      userLastName: user.userLastName,
-      bookedDate: userNewBooking.bookedDate,
-      bookedTime: userNewBooking.bookedTime,
-      service: userNewBooking.service,
-      status: userNewBooking.status,
+      bookingDate: newBooking.bookingDate,
+      bookingID: newBooking.bookingID,
+      clientID: user.clientID,
+      lirstName: user.firstName,
+      lastName: user.lastName,
+      bookedDate: newBooking.bookedDate,
+      bookedTime: newBooking.bookedTime,
+      service: newBooking.service,
+      status: newBooking.status,
     });
   }
 }

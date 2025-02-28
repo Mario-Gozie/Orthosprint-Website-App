@@ -62,12 +62,12 @@ export default class AppointmentBookingView {
       const day = String(today.getDate()).padStart(2, "0"); // The padding is used to make sure the day is in two digits.
       const month = String(today.getMonth() + 1).padStart(2, "0"); // Months are Zero based.
       const year = today.getFullYear();
-      appointmentDetails["BookingDay"] = `${year}-${month}-${day}`;
+      appointmentDetails["bookingDate"] = `${year}-${month}-${day}`;
       console.log(appointmentDetails);
 
       // THE CONTROLLER FUNCTION IS CALLED HERE.
       this.controller.HandlingBookings({
-        bookingDay: appointmentDetails.bookingDay,
+        bookingDate: appointmentDetails.bookingDate,
         bookedDate: appointmentDetails.bookedDate,
         service: appointmentDetails.service,
         bookedTime: appointmentDetails.bookedTime,
