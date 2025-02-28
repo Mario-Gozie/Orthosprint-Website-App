@@ -142,8 +142,8 @@ export class Booking extends NewClient {
 // Clicked Booking button
 
 export const availableTimeChecker = (date) => {
-  const booking = state.AllBookingDateTime.find((b) => b[date]);
-  return booking ? booking[date] : [];
+  const booking = state.AllBookingDateTime[date];
+  return booking ? booking : [];
 };
 
 export class ManageBookingApointments {
