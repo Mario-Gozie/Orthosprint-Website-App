@@ -4,6 +4,8 @@ import {
   getUser,
   getActiveUser,
   availableTimeChecker,
+  Booking,
+  ManageBookingApointments,
 } from "../Js/model.js";
 
 import MainView from "./mainView.js"; // Adjust the path as necessary
@@ -111,6 +113,17 @@ export default class appController {
 
   getAvailablebookingTimes(date) {
     return availableTimeChecker(date);
+  }
+
+  HandlingBookings(BookingDay, bookedDate, service, BookedTime) {
+    const latestBooking = Booking(
+      BookingDay,
+      bookedDate,
+      service,
+      BookedTime,
+      state
+    );
+    ManageBookingApointments(this.ActiveUser, latestBooking, state);
   }
 }
 

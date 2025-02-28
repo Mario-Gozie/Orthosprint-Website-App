@@ -109,7 +109,7 @@ export const getActiveUser = () => ActiveUser;
 
 //  TAKING CARE OF BOOKINGS
 
-class Booking extends NewClient {
+export class Booking extends NewClient {
   constructor(date, bookedDate, service, bookedTime, state) {
     // date, bookedDate, service, bookedTime
 
@@ -146,23 +146,18 @@ export const availableTimeChecker = (date) => {
   return booking ? booking[date] : [];
 };
 
-export class ManageBooking {
+export class ManageBookingApointments {
   constructor(user, newBooking, state) {
     this.newBooking = newBooking;
     this.state = state;
     this.user = user;
-    this.updatingUserOrder(this.user, this.newBooking);
+    this.AddingToUserOrder(this.user, this.newBooking);
     this.addToAllOrders(this.newBooking, this.state);
     this.AddToOrderDetail(this.user, this.newBooking, this.state);
   }
 
-  updatingUserOrder(user, userNewBooking) {
-    if (!user[orders]) {
-      user[orders] = [];
-      user[orders].push(userNewBooking);
-    } else {
-      user[orders].push(userNewBooking);
-    }
+  AddingToUserOrder(user, userNewBooking) {
+    user["bookings"].push(userNewBooking);
   }
 
   addToAllOrders(userNewBooking, state) {
@@ -186,14 +181,14 @@ export class ManageBooking {
       status: userNewBooking.status,
     });
   }
-
-  cancelAppointment() {
-    // Remove Change the status of the client for both Appointmentdetail status needs to be changed.
-    // This can be achieved by setting the Data Attribute of all rendered Data to the order ID. with this Unique
-    // use the date value to search for the bookings array, and remove the time
-    // go to the Users array and change the status to cancelled.
-  }
 }
+
+export const cancelAppointment = () => {
+  // Remove Change the status of the client for both Appointmentdetail status needs to be changed.
+  // This can be achieved by setting the Data Attribute of all rendered Data to the order ID. with this Unique
+  // use the date value to search for the bookings array, and remove the time
+  // go to the Users array and change the status to cancelled.
+};
 
 // SAVING DATA
 

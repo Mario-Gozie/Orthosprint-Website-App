@@ -60,6 +60,7 @@ export default class AppointmentBookingView {
     } else {
       console.log(appointmentDetails);
       this.appointmentForm.reset();
+      // bookings will have TODAYS DATE, BOOKINGDATE, SERVICE, BOOKINGTIME, STATE
 
       // you will need to remove the selected class and also hide the time frame. becuase clearing the form alone cannot do that.
     }
