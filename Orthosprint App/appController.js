@@ -123,6 +123,7 @@ export default class appController {
       bookedTime,
       state
     );
+    console.log(latestBooking.bookingDate);
     new ManageBookingApointments(this.ActiveUser, latestBooking, state);
 
     console.log(state.AllBookingDateTime);

@@ -174,7 +174,7 @@ export class ManageBookingApointments {
     state.bookingDetail.push({
       bookingDate: newBooking.bookingDate,
       bookingID: newBooking.bookingID,
-      clientID: user.clientID,
+      clientID: user.clientId,
       firstName: user.firstName,
       lastName: user.lastName,
       bookedDate: newBooking.bookedDate,
