@@ -281,6 +281,8 @@ main {
 
 .all-appointment-container {
   height: 300px;
+  display: flex;
+  flex-direction: column;
 }
 
 .appointment-container {

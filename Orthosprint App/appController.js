@@ -92,7 +92,9 @@ export default class appController {
       setTimeout(() => {
         this.WelcomeView.generateWelcomeMarkup(this.ActiveUser, this.location);
         this.LoginView.hideLoginView(); // Remove from layout
-
+        this.AppointmentsView.renderAppointments(
+          this.getUserAppointments(this.ActiveUser)
+        );
         this.mainView.show(); // Use main view to show the main section
       }, 1000);
     } else {
