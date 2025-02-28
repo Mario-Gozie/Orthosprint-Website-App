@@ -119,7 +119,7 @@ export class Booking extends NewClient {
     this.bookingID = this.generateBookingID(state.bookingDetail);
     this.service = service;
     this.bookedDate = bookedDate;
-    this.BookedTime = bookedTime;
+    this.bookedTime = bookedTime;
     this.status = "pending";
   }
 

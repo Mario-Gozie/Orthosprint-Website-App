@@ -115,12 +115,12 @@ export default class appController {
     return availableTimeChecker(date);
   }
 
-  HandlingBookings(BookingDay, bookedDate, service, BookedTime) {
+  HandlingBookings({ bookingDay, bookedDate, service, bookedTime }) {
     const latestBooking = Booking(
-      BookingDay,
+      bookingDay,
       bookedDate,
       service,
-      BookedTime,
+      bookedTime,
       state
     );
     ManageBookingApointments(this.ActiveUser, latestBooking, state);

@@ -39,15 +39,15 @@ export default class AppointmentBookingView {
     const service = appointmentInfo.get("service");
 
     return {
-      BookedDate,
+      bookedDate,
       service,
-      BookedTime: this.selectedTime, // Directly selection time
+      bookedTime: this.selectedTime, // Directly selection time
     };
   }
 
   _validateAppointmentDetails(appointmentDetails) {
-    const { BookedDate, service, BookedTime } = appointmentDetails;
-    return BookedDate && service && BookedTime;
+    const { bookedDate, service, bookedTime } = appointmentDetails;
+    return bookedDate && service && bookedTime;
   }
 
   _bookingAppointments(event) {
@@ -64,6 +64,14 @@ export default class AppointmentBookingView {
       const year = today.getFullYear();
       appointmentDetails["BookingDay"] = `${year}-${month}-${day}`;
       console.log(appointmentDetails);
+
+      // THE CONTROLLER FUNCTION IS CALLED HERE.
+      this.controller.HandlingBookings({
+        bookingDay: appointmentDetails.bookingDay,
+        bookedDate: appointmentDetails.bookedDate,
+        service: appointmentDetails.service,
+        bookedTime: appointmentDetails.bookedTime,
+      });
 
       // bookings will have TODAYS DATE, BOOKINGDATE, SERVICE, BOOKINGTIME, STATE
       this.appointmentForm.reset();
