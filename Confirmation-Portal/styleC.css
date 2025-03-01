@@ -64,12 +64,22 @@ section {
   border: none;
 }
 
-.choice-button:active {
-  transform: scale(0.85);
+.choice-button:hover {
+  background-color: var(
+    --linkedin-colour
+  ); /* Keep it the same as the normal state */
+  color: var(--pure-white);
 }
 
-.choice-button:hover {
-  background-color: var(--offwhite-background);
-  color: rgb(29, 28, 28);
-  cursor: pointer;
+.choice-button:active {
+  transform: scale(0.85);
+  background-color: var(--linkedin-colour);
+}
+
+@media (min-width: 768px) {
+  .choice-button:hover {
+    background-color: var(--offwhite-background);
+    color: rgb(29, 28, 28);
+    cursor: pointer;
+  }
 }
