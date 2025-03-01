@@ -86,6 +86,11 @@ export default class appController {
     }
   }
 
+  updateUI() {
+    this.AppointmentsView.renderAppointments(getActiveUserOrderArray());
+    this.KPIpane.renderKPIs(getActiveUserOrderArray());
+  }
+
   loginController(loginDetail) {
     const { identifier, IdentifierPassword } = loginDetail;
     const user = getUser(identifier, IdentifierPassword);
@@ -100,18 +105,13 @@ export default class appController {
           ActiveUserUsername(),
           this.location
         );
-        this.AppointmentsView.renderAppointments(getActiveUserOrderArray());
-        this.KPIpane.renderKPIs(getActiveUserOrderArray());
+        this.updateUI();
         this.mainView.show(); // Use main view to show the main section
       }, 1000);
     } else {
       alert("Invalid login Details");
     }
   }
-
-  // getUserAppointments(user) {
-  //   return user.bookings;
-  // }
 
   getAvailablebookingTimes(date) {
     return availableTimeChecker(date);
@@ -125,13 +125,11 @@ export default class appController {
       bookedTime,
       state
     );
-    console.log(latestBooking.bookingDate);
-    new ManageBookingApointments(this.ActiveUser, latestBooking, state);
-
-    console.log(state.AllBookingDateTime);
-    console.log(this.ActiveUser.bookings);
-    console.log(state.bookingDetail);
+    // console.log(latestBooking.bookingDate);
+    new ManageBookingApointments(latestBooking);
+    this.updateUI();
+    // console.log(state.AllBookingDateTime);
+    // console.log(this.ActiveUser.bookings);
+    // console.log(state.bookingDetail);
   }
 }
-
-console.log(state);

@@ -112,8 +112,6 @@ export const ActiveUserUsername = () => {
   return ActiveUser.username;
 };
 
-export const getActiveUser = () => ActiveUser;
-
 export const getActiveUserOrderArray = () => {
   return ActiveUser.bookings;
 };
@@ -121,7 +119,7 @@ export const getActiveUserOrderArray = () => {
 //  TAKING CARE OF BOOKINGS
 
 export class Booking {
-  constructor(bookingDate, bookedDate, service, bookedTime, state) {
+  constructor(bookingDate, bookedDate, service, bookedTime) {
     // date, bookedDate, service, bookedTime
     this.bookingDate = bookingDate; // Use lowercase to match
     this.service = service;
@@ -154,20 +152,20 @@ export const availableTimeChecker = (date) => {
 };
 
 export class ManageBookingApointments {
-  constructor(user, newBooking, state) {
+  constructor(newBooking, state) {
     this.newBooking = newBooking;
     this.state = state;
-    this.user = user;
-    this.AddingToUserOrder(this.user, this.newBooking);
+
+    this.AddingToUserOrder(this.newBooking);
     this.addToAllOrders(this.newBooking, this.state);
-    this.AddToOrderDetail(this.user, this.newBooking, this.state);
+    this.AddToOrderDetail(this.newBooking, this.state);
   }
 
-  AddingToUserOrder(user, newBooking) {
-    user["bookings"].push(newBooking);
+  AddingToUserOrder(newBooking) {
+    ActiveUser["bookings"].push(newBooking);
   }
 
-  addToAllOrders(newBooking, state) {
+  addToAllOrders(newBooking) {
     if (state.AllBookingDateTime[newBooking.bookedDate]) {
       state.AllBookingDateTime[newBooking.bookedDate].push(
         newBooking.bookedTime
@@ -177,13 +175,13 @@ export class ManageBookingApointments {
     }
   }
 
-  AddToOrderDetail(user, newBooking, state) {
+  AddToOrderDetail(newBooking) {
     state.bookingDetail.push({
       bookingDate: newBooking.bookingDate,
       bookingID: newBooking.bookingID,
-      clientID: user.clientId,
-      firstName: user.firstName,
-      lastName: user.lastName,
+      clientID: ActiveUser.clientId,
+      firstName: ActiveUser.firstName,
+      lastName: ActiveUser.lastName,
       bookedDate: newBooking.bookedDate,
       bookedTime: newBooking.bookedTime,
       service: newBooking.service,
