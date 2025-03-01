@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", serif;
+}
+
+:root {
+  --instagram-colour: #c13584;
+  --linkedin-colour: #0077b5;
+  --header-colour: rgb(104, 104, 104);
+  --pure-white: #fff;
+  --brown-color: #f4a460;
+  --border-shadow: rgba(150, 150, 150);
+  --offwhite-background: #e0e0e0;
+}
+
+body {
+  height: 100vh;
+}
+
+nav {
+  max-height: 10%;
+
+  border-bottom: rgb(205, 201, 201) solid 0.1px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.logo-container {
+  max-height: 16rem;
+  max-width: 16rem;
+}
+
+.logo-container img {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  height: calc(100% - 10%);
+}
+
+section {
+  height: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
