@@ -73,7 +73,6 @@ export default class AppointmentBookingView {
         bookedTime: appointmentDetails.bookedTime,
       });
 
-      // bookings will have TODAYS DATE, BOOKINGDATE, SERVICE, BOOKINGTIME, STATE
       this.appointmentForm.reset();
       // you will need to remove the selected class and also hide the time frame. becuase clearing the form alone cannot do that.
 
@@ -85,6 +84,7 @@ export default class AppointmentBookingView {
   _resetTimeSelection() {
     const allTimeButtons = this.timeContainer.querySelectorAll(".time-button");
     allTimeButtons.forEach((btn) => btn.classList.remove("selected-time"));
+
     this.selectedTime = null; // Resetting selected time
   }
 }
