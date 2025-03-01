@@ -21,6 +21,19 @@ export function updateNewsletterList(item) {
   state.newsletter.push(item);
 }
 
+// GETDATE CLASS.
+
+class GetDateClass {
+  getDate() {
+    const today = new Date();
+    const day = String(today.getDate()).padStart(2, "0"); // The padding is used to make sure the day is in two digits.
+    const month = String(today.getMonth() + 1).padStart(2, "0"); // Months are Zero based.
+    const year = today.getFullYear();
+
+    return `${year}${month}${day}`;
+  }
+}
+
 // // PORTAL DATA CODE
 
 export class NewClient {
@@ -61,27 +74,17 @@ export class NewClient {
     this.password = newPassword;
   }
 
-  // GETTING CURRRENT DATE YYYYMMDD format
-  getDate() {
-    const today = new Date();
-    const day = String(today.getDate()).padStart(2, "0"); // The padding is used to make sure the day is in two digits.
-    const month = String(today.getMonth() + 1).padStart(2, "0"); // Months are Zero based.
-    const year = today.getFullYear();
-
-    return `${year}${month}${day}`;
-  }
-
   generateCustomerID(CustomersArray) {
+    const dateInstance = new GetDateClass();
     if (!CustomersArray || CustomersArray.length === 0) {
-      return `CUST-${this.getDate()}-0001`;
+      return `CUST-${dateInstance.getDate()}-0001`;
     } else {
       const lastCustomerID = CustomersArray.at(-1).clientId; // getting the number part of the customerID
       const lastNumberPartOfID = parseInt(lastCustomerID.split("-").pop(), 10); // Here, I splited to create an array, popped to take the last part then converted the last part which is a string number to a number to Number in base 10
 
-      return `CUST-${this.getDate()}-${String(lastNumberPartOfID + 1).padStart(
-        4,
-        "0"
-      )}`; // here I said I want to make it a total of 4 numbers and I want to make fill in the spaces in front with zero if it is not up to 4
+      return `CUST-${dateInstance.getDate()}-${String(
+        lastNumberPartOfID + 1
+      ).padStart(4, "0")}`; // here I said I want to make it a total of 4 numbers and I want to make fill in the spaces in front with zero if it is not up to 4
     }
   }
 }
@@ -109,12 +112,9 @@ export const getActiveUser = () => ActiveUser;
 
 //  TAKING CARE OF BOOKINGS
 
-export class Booking extends NewClient {
+export class Booking {
   constructor(bookingDate, bookedDate, service, bookedTime, state) {
     // date, bookedDate, service, bookedTime
-
-    // This function will inherit the get date function in NewClient so that it can be able to generate the bookingID
-    super();
     this.bookingDate = bookingDate; // Use lowercase to match
     this.service = service;
     this.bookedDate = bookedDate;
@@ -124,20 +124,19 @@ export class Booking extends NewClient {
   }
 
   generateBookingID(bookingArray) {
+    const dateInstance = new GetDateClass();
     if (!bookingArray || bookingArray.length === 0) {
-      return `APPT-${this.getDate()}-0001`;
+      return `APPT-${dateInstance.getDate()}-0001`;
     } else {
       const lastBookingID = bookingArray.at(-1).bookingID; // getting the number part of the customerID
       const lastNumberPartBookID = parseInt(lastBookingID.split("-").pop(), 10); // Here, I splited to create an array, popped to take the last part then converted the last part which is a string number to a number to Number in base 10
 
-      return `APPT-${this.getDate()}-${String(
+      return `APPT-${dateInstance.getDate()}-${String(
         lastNumberPartBookID + 1
       ).padStart(4, "0")}`;
     }
   }
 }
-
-// const newBooking = new Booking(date, bookedDate, service, bookedTime);
 
 // Clicked Booking button
 
