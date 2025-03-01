@@ -110,6 +110,10 @@ export const getUser = (identifier, password) => {
 
 export const getActiveUser = () => ActiveUser;
 
+export const getActiveUserOrderArray = () => {
+  return ActiveUser.bookings;
+};
+
 //  TAKING CARE OF BOOKINGS
 
 export class Booking {

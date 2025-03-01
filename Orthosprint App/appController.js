@@ -6,6 +6,7 @@ import {
   availableTimeChecker,
   Booking,
   ManageBookingApointments,
+  getActiveUserOrderArray,
 } from "../Js/model.js";
 
 import MainView from "./mainView.js"; // Adjust the path as necessary
@@ -85,6 +86,11 @@ export default class appController {
     }
   }
 
+  updateUI() {
+    this.AppointmentsView.renderAppointments(getActiveUserOrderArray());
+    this.KPIpane.renderKPIs(getActiveUserOrderArray());
+  }
+
   loginController(loginDetail) {
     const { identifier, IdentifierPassword } = loginDetail;
     const user = getUser(identifier, IdentifierPassword);
@@ -96,19 +102,13 @@ export default class appController {
       setTimeout(() => {
         this.WelcomeView.generateWelcomeMarkup(this.ActiveUser, this.location);
         this.LoginView.hideLoginView(); // Remove from layout
-        this.AppointmentsView.renderAppointments(
-          this.getUserAppointments(this.ActiveUser)
-        );
-        this.KPIpane.renderKPIs(this.getUserAppointments(this.ActiveUser));
+        this.AppointmentsView.renderAppointments(getActiveUserOrderArray());
+        this.KPIpane.renderKPIs(getActiveUserOrderArray());
         this.mainView.show(); // Use main view to show the main section
       }, 1000);
     } else {
       alert("Invalid login Details");
     }
-  }
-
-  getUserAppointments(user) {
-    return user.bookings;
   }
 
   getAvailablebookingTimes(date) {
@@ -125,10 +125,11 @@ export default class appController {
     );
     console.log(latestBooking.bookingDate);
     new ManageBookingApointments(this.ActiveUser, latestBooking, state);
+    this.updateUI();
 
-    console.log(state.AllBookingDateTime);
-    console.log(this.ActiveUser.bookings);
-    console.log(state.bookingDetail);
+    // console.log(state.AllBookingDateTime);
+    // console.log(this.ActiveUser.bookings);
+    // console.log(state.bookingDetail);
   }
 }
 
