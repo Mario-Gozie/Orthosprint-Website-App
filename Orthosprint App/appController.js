@@ -2,7 +2,7 @@ import {
   state,
   dataModel,
   getUser,
-  getActiveUser,
+  ActiveUserUsername,
   availableTimeChecker,
   Booking,
   ManageBookingApointments,
@@ -19,7 +19,7 @@ import KPIpane from "./kpiPane.js";
 
 export default class appController {
   constructor() {
-    this.ActiveUser;
+    // this.ActiveUser;
 
     // Instances
 
@@ -86,22 +86,20 @@ export default class appController {
     }
   }
 
-  updateUI() {
-    this.AppointmentsView.renderAppointments(getActiveUserOrderArray());
-    this.KPIpane.renderKPIs(getActiveUserOrderArray());
-  }
-
   loginController(loginDetail) {
     const { identifier, IdentifierPassword } = loginDetail;
     const user = getUser(identifier, IdentifierPassword);
 
     if (user) {
-      this.ActiveUser = getActiveUser();
+      // this.ActiveUser = getActiveUser();
 
       console.log(user);
       setTimeout(() => {
-        this.WelcomeView.generateWelcomeMarkup(this.ActiveUser, this.location);
         this.LoginView.hideLoginView(); // Remove from layout
+        this.WelcomeView.generateWelcomeMarkup(
+          ActiveUserUsername(),
+          this.location
+        );
         this.AppointmentsView.renderAppointments(getActiveUserOrderArray());
         this.KPIpane.renderKPIs(getActiveUserOrderArray());
         this.mainView.show(); // Use main view to show the main section
@@ -110,6 +108,10 @@ export default class appController {
       alert("Invalid login Details");
     }
   }
+
+  // getUserAppointments(user) {
+  //   return user.bookings;
+  // }
 
   getAvailablebookingTimes(date) {
     return availableTimeChecker(date);
@@ -125,11 +127,10 @@ export default class appController {
     );
     console.log(latestBooking.bookingDate);
     new ManageBookingApointments(this.ActiveUser, latestBooking, state);
-    this.updateUI();
 
-    // console.log(state.AllBookingDateTime);
-    // console.log(this.ActiveUser.bookings);
-    // console.log(state.bookingDetail);
+    console.log(state.AllBookingDateTime);
+    console.log(this.ActiveUser.bookings);
+    console.log(state.bookingDetail);
   }
 }
 

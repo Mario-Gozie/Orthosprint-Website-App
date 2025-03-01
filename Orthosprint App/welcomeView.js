@@ -51,12 +51,12 @@ export default class WelcomeView {
     };
   }
 
-  generateWelcomeMarkup(currentUser, location) {
+  generateWelcomeMarkup(currentUserUsername, location) {
     const welcomeDate = this._extractDateParts(this.date);
 
     this.WelcomeSection.innerHTML = `<div class="welcome-section-wrapper">
           <div class="Personal-welcome">
-            <h1>${this._greetingDecision()}, ${currentUser.firstName}</h1>
+            <h1>${this._greetingDecision()}, ${currentUserUsername}</h1>
             <p>${welcomeDate.dayString}, ${welcomeDate.monthString} ${
       welcomeDate.dayNumber
     }, ${welcomeDate.yearNumber}</p>

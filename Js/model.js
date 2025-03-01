@@ -108,6 +108,10 @@ export const getUser = (identifier, password) => {
   return user;
 };
 
+export const ActiveUserUsername = () => {
+  return ActiveUser.username;
+};
+
 export const getActiveUser = () => ActiveUser;
 
 export const getActiveUserOrderArray = () => {
