@@ -110,12 +110,12 @@ export const getActiveUser = () => ActiveUser;
 //  TAKING CARE OF BOOKINGS
 
 export class Booking extends NewClient {
-  constructor(date, bookedDate, service, bookedTime, state) {
+  constructor(bookingDate, bookedDate, service, bookedTime, state) {
     // date, bookedDate, service, bookedTime
 
     // This function will inherit the get date function in NewClient so that it can be able to generate the bookingID
     super();
-    this.date = date;
+    this.bookingDate = bookingDate; // Use lowercase to match
     this.service = service;
     this.bookedDate = bookedDate;
     this.bookedTime = bookedTime;

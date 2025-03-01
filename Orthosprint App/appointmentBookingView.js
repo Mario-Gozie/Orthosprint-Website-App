@@ -63,7 +63,7 @@ export default class AppointmentBookingView {
       const month = String(today.getMonth() + 1).padStart(2, "0"); // Months are Zero based.
       const year = today.getFullYear();
       appointmentDetails["bookingDate"] = `${year}-${month}-${day}`;
-      console.log(appointmentDetails);
+      console.log(appointmentDetails.bookingDate);
 
       // THE CONTROLLER FUNCTION IS CALLED HERE.
       this.controller.HandlingBookings({
@@ -76,10 +76,15 @@ export default class AppointmentBookingView {
       // bookings will have TODAYS DATE, BOOKINGDATE, SERVICE, BOOKINGTIME, STATE
       this.appointmentForm.reset();
       // you will need to remove the selected class and also hide the time frame. becuase clearing the form alone cannot do that.
-    }
 
-    console.log("money");
+      this._resetTimeSelection();
+    }
+  }
+
+  // *NEW METHOD TO RESET TIME SELECTION*
+  _resetTimeSelection() {
+    const allTimeButtons = this.timeContainer.querySelectorAll(".time-button");
+    allTimeButtons.forEach((btn) => btn.classList.remove("selected-time"));
+    this.selectedTime = null; // Resetting selected time
   }
 }
-
-// export default new BookingAppointmentView();
