@@ -47,3 +47,16 @@ section {
   align-items: center;
   justify-content: center;
 }
+
+.choice-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.choice-button {
+  margin: 1rem 0.5rem;
+  padding: 0 0.5rem;
+  height: 2rem;
+  width: 6.5rem;
+  border-radius: 15px;
+}
