@@ -5,6 +5,10 @@ export default class AppointmentsView {
     );
 
     this.paginationContainer = document.querySelector(".pagination-container");
+    this.nextButton = this.paginationContainer.querySelector(".appt-next");
+    this.previousButton =
+      this.paginationContainer.querySelector(".appt-previous");
+    this.pageNo = this.paginationContainer.querySelector(".page-number");
     console.log(this.allApointmentsContainer);
   }
 

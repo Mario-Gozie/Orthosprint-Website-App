@@ -119,7 +119,7 @@ export default class appController {
   }
 
   updateUI() {
-    this.AppointmentsView.renderAppointments(getActiveUserAppointmentArray(1));
+    this.AppointmentsView.renderAppointments(getActiveUserAppointmentArray());
     this.KPIpane.renderKPIs(getActiveUserAppointmentArray());
   }
 
