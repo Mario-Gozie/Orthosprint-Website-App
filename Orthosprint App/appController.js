@@ -38,9 +38,9 @@ export default class appController {
 
     const array = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 
-    const MaxPageNumber = Math.ceil(array.length / 3);
+    const MaxPageNumber = Math.ceil(array.reverse().length / 3);
 
-    let page = 4;
+    let page = 1;
     console.log(page);
     const displayBasedOnPage = (page) => {
       if (page === 1) {
