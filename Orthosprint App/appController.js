@@ -38,12 +38,29 @@ export default class appController {
 
     const array = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 
-    let page = Math.ceil(array.length / 3);
+    const MaxPageNumber = Math.ceil(array.length / 3);
+
+    let page = 4;
     console.log(page);
     const displayBasedOnPage = (page) => {
-      const start = (page - 1) * 3;
-      const stop = page * 3;
-      console.log(array.slice(start, stop));
+      if (page === 1) {
+        const start = (page - 1) * 3;
+        const stop = page * 3;
+        console.log(array.slice(start, stop));
+        console.log("You just started");
+      }
+
+      if (page < MaxPageNumber && page > 1) {
+        const start = (page - 1) * 3;
+        const stop = page * 3;
+        console.log(array.slice(start, stop));
+      }
+      if (page === MaxPageNumber) {
+        const start = (page - 1) * 3;
+        const stop = page * 3;
+        console.log(array.slice(start, stop));
+        console.log("hide button");
+      }
     };
 
     displayBasedOnPage(page);
