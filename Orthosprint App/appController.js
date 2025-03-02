@@ -6,7 +6,8 @@ import {
   availableTimeChecker,
   Booking,
   ManageBookingApointments,
-  getActiveUserOrderArray,
+  getPartOfAppointmentArrayPage,
+  getActiveUserAppointmentArray,
 } from "../Js/model.js";
 
 import MainView from "./mainView.js"; // Adjust the path as necessary
@@ -32,6 +33,17 @@ export default class appController {
     this.KPIpane = new KPIpane();
 
     this.location;
+
+    // ROUGH WORK
+
+    const array = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+    const displayBasedOnPage = (page = 1) => {
+      const start = (page - 1) * 3;
+      const stop = page * 3;
+      console.log(array.slice(start, stop));
+    };
+
+    displayBasedOnPage(3);
 
     // Functions
     this.loadSavedData();
@@ -87,8 +99,8 @@ export default class appController {
   }
 
   updateUI() {
-    this.AppointmentsView.renderAppointments(getActiveUserOrderArray());
-    this.KPIpane.renderKPIs(getActiveUserOrderArray());
+    this.AppointmentsView.renderAppointments(getActiveUserAppointmentArray(1));
+    this.KPIpane.renderKPIs(getActiveUserAppointmentArray());
   }
 
   loginController(loginDetail) {

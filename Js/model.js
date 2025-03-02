@@ -112,7 +112,7 @@ export const ActiveUserUsername = () => {
   return ActiveUser.username;
 };
 
-export const getActiveUserOrderArray = () => {
+export const getActiveUserAppointmentArray = () => {
   return ActiveUser.bookings;
 };
 
@@ -223,3 +223,11 @@ class DataModel {
 }
 
 export const dataModel = new DataModel();
+
+// GETTING SEARCH RESULT BASED ON PAGE.
+export const getPartOfAppointmentArrayPage = (page) => {
+  const start = (page - 1) * 10;
+  const stop = page * 10;
+
+  return ActiveUser.bookings.slice(start, stop);
+};

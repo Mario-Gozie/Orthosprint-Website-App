@@ -24,7 +24,7 @@ export default class AppointmentsView {
           const html = `<div class="appointment-container">
                           <div class="appointment-detail">
                             <h4>${appt.bookedDate} - ${appt.bookedTime}</h4>
-                            <p>prosthetic</p>
+                            <p>${appt.service}</p>
                           </div>
                           <button class="cancel-btn">Cancel</button>
                         </div>`;
