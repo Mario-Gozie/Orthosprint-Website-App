@@ -8,7 +8,7 @@ export default class AppointmentsView {
     this.nextButton = this.paginationContainer.querySelector(".appt-next");
     this.previousButton =
       this.paginationContainer.querySelector(".appt-previous");
-    this.pageNo = this.paginationContainer.querySelector(".page-number");
+    this.pageNoElement = this.paginationContainer.querySelector(".page-number");
     console.log(this.allApointmentsContainer);
   }
 
@@ -18,6 +18,8 @@ export default class AppointmentsView {
     }
 
     if (appoinmentArray.length > 0) {
+      let pageNo = 3;
+      this.pageNoElement.textContent = `Page ${pageNo}`;
       this.allApointmentsContainer.innerHTML = ""; // Clear previous appointments
       appoinmentArray.forEach((appt) => {
         // Use forEach instead of map
