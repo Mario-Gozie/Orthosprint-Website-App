@@ -37,13 +37,16 @@ export default class appController {
     // ROUGH WORK
 
     const array = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
-    const displayBasedOnPage = (page = 1) => {
+
+    let page = Math.ceil(array.length / 3);
+    console.log(page);
+    const displayBasedOnPage = (page) => {
       const start = (page - 1) * 3;
       const stop = page * 3;
       console.log(array.slice(start, stop));
     };
 
-    displayBasedOnPage(3);
+    displayBasedOnPage(page);
 
     // Functions
     this.loadSavedData();
