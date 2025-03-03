@@ -6,6 +6,7 @@ import {
   availableTimeChecker,
   Booking,
   ManageBookingApointments,
+  getCurrentPageAppointment,
   getActiveUserAppointmentArray,
 } from "../Js/model.js";
 
@@ -137,6 +138,9 @@ export default class appController {
           this.location
         );
         this.updateUI();
+
+        // THIS AREA IS TO BE VETTED
+        this.getCurrentPageAppointment(this.AppointmentsView.getPage());
         this.mainView.show(); // Use main view to show the main section
       }, 1000);
     } else {
@@ -148,9 +152,21 @@ export default class appController {
     return availableTimeChecker(date);
   }
 
-  // PaginationAndAppointmentConstructor(){
-
-  // }
+  // This will return an Object.
+  getAppointmentDataOnLoad(pageNo) {
+    const MaxPageAndArray = getCurrentPageAppointment(pageNo);
+    MaxPageAndArray.MaxPageNumber;
+    MaxPageAndArray.arrayToRender;
+    if (
+      (MaxPageAndArray.MaxPageNumber === null ||
+        MaxPageAndArray.MaxPageNumber) &&
+      MaxPageAndArray.arrayToRender.length === 0
+    ) {
+      this.AppointmentsView.emptyAppointmentArray();
+    } else {
+      this.AppointmentsView.gettingButtonsToRender();
+    }
+  }
 
   HandlingBookings({ bookingDate, bookedDate, service, bookedTime }) {
     const latestBooking = new Booking(

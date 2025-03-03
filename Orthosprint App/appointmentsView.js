@@ -1,17 +1,47 @@
 export default class AppointmentsView {
   constructor() {
+    this.data;
+    this._page = 1;
+    this.paginationContainer = document.querySelector(".pagination-container");
+    this.nextButton = this.paginationContainer.querySelector(".appt-next");
+    this.previousButton =
+      this.paginationContainer.querySelector(".appt-previous");
+    this._pageNoElement =
+      this.paginationContainer.querySelector(".page-number");
+
     this.allApointmentsContainer = document.querySelector(
       ".all-appointment-container"
     );
+    console.log(this.allApointmentsContainer);
+    // Event Listeners for Pagination
 
-    // Events.
+    this.previousButton.addEventListener("click", (e) => this.decreasePageNo());
+    this.nextButton.addEventListener("click", (e) => this.increasePageNo());
+  }
+
+  gettingButtonsToRender(MaxPageNo) {
+    if (this._page === MaxPageNo && MaxPageNo > 1) {
+      this.previousButton.style.display = "flex";
+      this.nextButton.style.display = "none";
+    }
+    if (this._page === 1 && MaxPageNo === 1) {
+      this.previousButton.style.display = "none";
+      this.nextButton.style.display = "none";
+    }
+
+    if (this._page < MaxPageNo && this._page !== 1) {
+      this.previousButton.style.display = "flex";
+      this.nextButtonButton.style.display = "flex";
+    }
+
+    this._pageNoElement.textContent = this._page;
   }
 
   /* LOGIC I AM STILL WORKING ON */
 
   renderAppointments(appoinmentArray) {
     if (appoinmentArray.length === 0 || !appoinmentArray) {
-      this._emptyAppointmentArray();
+      this.emptyAppointmentArray();
     }
 
     if (appoinmentArray.length > 0) {
@@ -67,7 +97,7 @@ export default class AppointmentsView {
   //   }
   // }
 
-  _emptyAppointmentArray() {
+  emptyAppointmentArray() {
     const html = `<div style= "background: #e0e0e0; border-radius: 15px; height: 100%;  display:flex; flex-direction: column; justify-content: center; align-items: center"><i class="fa-regular fa-clock" style="margin: 1rem 0; font-size: 4rem; color: #0077b5;"></i><strong style="text-align: center; margin: 0.5rem 0 0 0" > All appointment will be here, lets get started </strong></div>`;
     this.allApointmentsContainer.innerHTML = html;
     this.paginationContainer.style.display = "none";
