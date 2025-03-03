@@ -225,9 +225,24 @@ class DataModel {
 export const dataModel = new DataModel();
 
 // GETTING SEARCH RESULT BASED ON PAGE.
-export const getPartOfAppointmentArrayPage = (page) => {
-  const start = (page - 1) * 10;
-  const stop = page * 10;
+// export const getPartOfAppointmentArrayPage = (page) => {
+//   const start = (page - 1) * 10;
+//   const stop = page * 10;
+//   const MaxPageNumber = Math.ceil(array.reverse().length / 3);
+// };
 
-  return ActiveUser.bookings.slice(start, stop);
-};
+export class ManageAppointmentRendering {
+  constructor() {
+    this.maxPageNumber = this._getMaxPageNo;
+  }
+
+  _getMaxPageNo() {
+    Math.ceil(ActiveUser.bookings.reverse().length / 3);
+  }
+
+  returningDataToRender(page) {
+    const start = (page - 1) * 3;
+    const stop = page * 3;
+    return ActiveUser.bookings.reverse().slice(start, stop);
+  }
+}

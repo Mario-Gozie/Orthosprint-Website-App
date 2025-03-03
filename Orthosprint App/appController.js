@@ -6,7 +6,6 @@ import {
   availableTimeChecker,
   Booking,
   ManageBookingApointments,
-  getPartOfAppointmentArrayPage,
   getActiveUserAppointmentArray,
 } from "../Js/model.js";
 
@@ -148,6 +147,10 @@ export default class appController {
   getAvailablebookingTimes(date) {
     return availableTimeChecker(date);
   }
+
+  // PaginationAndAppointmentConstructor(){
+
+  // }
 
   HandlingBookings({ bookingDate, bookedDate, service, bookedTime }) {
     const latestBooking = new Booking(
