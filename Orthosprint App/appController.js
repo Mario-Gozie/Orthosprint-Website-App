@@ -119,7 +119,7 @@ export default class appController {
   }
 
   updateUI() {
-    this.AppointmentsView.renderAppointments(getActiveUserAppointmentArray());
+    // this.AppointmentsView.renderAppointments(getActiveUserAppointmentArray());
     this.KPIpane.renderKPIs(getActiveUserAppointmentArray());
   }
 
@@ -140,7 +140,7 @@ export default class appController {
         this.updateUI();
 
         // THIS AREA IS TO BE VETTED
-        this.getCurrentPageAppointment(this.AppointmentsView.getPage());
+        this.getAppointmentDataOnLoad(this.AppointmentsView.getPage());
         this.mainView.show(); // Use main view to show the main section
       }, 1000);
     } else {
@@ -163,8 +163,12 @@ export default class appController {
       MaxPageAndArray.arrayToRender.length === 0
     ) {
       this.AppointmentsView.emptyAppointmentArray();
+      return;
     } else {
       this.AppointmentsView.gettingButtonsToRender();
+      this.AppointmentsView.filledAppointmentArray(
+        MaxPageAndArray.arrayToRender
+      );
     }
   }
 

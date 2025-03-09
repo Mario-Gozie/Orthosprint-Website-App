@@ -19,6 +19,10 @@ export default class AppointmentsView {
     this.nextButton.addEventListener("click", (e) => this.increasePageNo());
   }
 
+  getPage() {
+    return this._page;
+  }
+
   gettingButtonsToRender(MaxPageNo) {
     if (this._page === MaxPageNo && MaxPageNo > 1) {
       this.previousButton.style.display = "flex";
@@ -34,39 +38,27 @@ export default class AppointmentsView {
       this.nextButtonButton.style.display = "flex";
     }
 
-    this._pageNoElement.textContent = this._page;
+    this._pageNoElement.textContent = `Page ${this._page}`;
   }
 
   /* LOGIC I AM STILL WORKING ON */
 
-  renderAppointments(appoinmentArray) {
-    if (appoinmentArray.length === 0 || !appoinmentArray) {
-      this.emptyAppointmentArray();
-    }
+  filledAppointmentArray(appointmentArray) {
+    this.allApointmentsContainer.innerHTML = ""; // Clear previous appointments
 
-    if (appoinmentArray.length > 0) {
-      // SETTING PAGE NO
-      const MaxPageNo = 1;
-      let pageNo = 1;
-      this.pageNoElement.textContent = `Page ${pageNo}`;
-      this.pageNoChanging(pageNo, MaxPageNo);
-
-      this.allApointmentsContainer.innerHTML = ""; // Clear previous appointments
-      appoinmentArray.forEach((appt) => {
-        // Use forEach instead of map
-        if (appt.status === "pending") {
-          const html = `<div class="appointment-container">
-                          <div class="appointment-detail">
-                            <h4>${appt.bookedDate} - ${appt.bookedTime}</h4>
-                            <p>${appt.service}</p>
-                          </div>
-                          <button class="cancel-btn">Cancel</button>
-                        </div>`;
-          this.allApointmentsContainer.insertAdjacentHTML("beforeend", html); // Append the HTML to the container
-        }
-      });
-      this.paginationContainer.style.display = "flex"; // Show pagination if there are appointments
-    }
+    appointmentArray.forEach((appt) => {
+      // Use forEach instead of map
+      if (appt.status === "pending") {
+        const html = `<div class="appointment-container">
+                        <div class="appointment-detail">
+                          <h4>${appt.bookedDate} - ${appt.bookedTime}</h4>
+                          <p>${appt.service}</p>
+                        </div>
+                        <button class="cancel-btn">Cancel</button>
+                      </div>`;
+        this.allApointmentsContainer.insertAdjacentHTML("beforeend", html); // Append the HTML to the container
+      }
+    });
   }
 
   /* LOGIC I AM STILL WORKING ON ENDS HERE */
