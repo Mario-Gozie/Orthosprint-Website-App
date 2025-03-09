@@ -76,6 +76,10 @@ section {
   background-color: var(--linkedin-colour);
 }
 
+.fa-solid {
+  height: 20px;
+}
+
 @media (min-width: 768px) {
   .choice-button:hover {
     background-color: var(--offwhite-background);
