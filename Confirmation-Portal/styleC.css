@@ -93,13 +93,22 @@ main {
 .confirmed-container {
   width: 350px;
   height: 500px;
-  padding: 1rem 2rem;
   border-radius: 15px;
-
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05),
     /* Bottom-right shadow */ -5px -5px 15px rgba(0, 0, 0, 0.05),
     /* Top-left shadow */ 5px -5px 15px rgba(0, 0, 0, 0.05),
     /* Top-right shadow */ -5px 5px 15px rgba(0, 0, 0, 0.05); /* Bottom-left shadow */
+}
+
+.confirmed-Message {
+  height: 15%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: hsl(120, 56%, 52%);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  padding: 0 1.5rem;
 }
 
 .honour-button {
@@ -114,12 +123,13 @@ main {
 .honour-button:hover {
   background: var(--offwhite-background);
   color: black;
+  cursor: pointer;
 }
 
 @media (min-width: 768px) {
   .choice-button:hover {
     background-color: var(--offwhite-background);
-    color: rgb(29, 28, 28);
+    color: rgb(70, 54, 54);
     cursor: pointer;
   }
 }
