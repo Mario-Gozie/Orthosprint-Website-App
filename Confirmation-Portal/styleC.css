@@ -129,7 +129,17 @@ main {
   display: flex;
   flex-direction: row;
   align-self: flex-start;
-  margin: 1rem 1.5rem;
+  margin: 0.5rem 1.5rem;
+}
+
+.detail-time-container {
+  display: flex;
+  align-items: center;
+  margin: 0.5rem 1.5rem;
+}
+
+.detail-time-container p {
+  margin: 0 0.5rem;
 }
 
 .honour-button {
