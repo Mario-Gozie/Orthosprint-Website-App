@@ -98,6 +98,17 @@ main {
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /* Offset, blur, color */
 }
 
+.honour-button {
+  height: 2rem;
+  width: 10rem;
+  border: none;
+  border-radius: 10px;
+}
+
+.honour-button:hover {
+  background: var(--offwhite-background);
+}
+
 @media (min-width: 768px) {
   .choice-button:hover {
     background-color: var(--offwhite-background);
