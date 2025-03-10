@@ -99,6 +99,11 @@ main {
     /* Top-left shadow */ 5px -5px 15px rgba(0, 0, 0, 0.05),
     /* Top-right shadow */ -5px 5px 15px rgba(0, 0, 0, 0.05); /* Bottom-left shadow */
 }
+.confirmed-Message,
+.detail-container,
+.honour-button {
+  padding: 0 1.5rem;
+}
 
 .confirmed-Message {
   height: 15%;
@@ -109,6 +114,15 @@ main {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   padding: 0 1.5rem;
+}
+
+.detail-logo {
+  display: flex;
+  flex-direction: row;
+}
+
+.detail-logo p {
+  margin: 0 0.5rem;
 }
 
 .honour-button {
