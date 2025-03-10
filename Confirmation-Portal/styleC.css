@@ -86,6 +86,10 @@ main {
   justify-content: center;
 }
 
+.fa-solid {
+  height: 20px;
+}
+
 .confirmed-container {
   width: 40%;
   height: 60%;
