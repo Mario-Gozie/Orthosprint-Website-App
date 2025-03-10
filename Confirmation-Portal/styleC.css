@@ -88,6 +88,7 @@ main {
 
 .fa-solid {
   height: 20px;
+  color: hsl(0, 4%, 47%);
 }
 
 .confirmed-container {
@@ -116,6 +117,15 @@ main {
   padding: 0 1.5rem;
 }
 
+.detail-container > div,
+.detail-container > h3 {
+  margin: 1.5rem 0;
+}
+
+h3 {
+  justify-self: flex-start;
+}
+
 .detail-logo {
   display: flex;
   flex-direction: row;
@@ -123,13 +133,15 @@ main {
 
 .detail-logo p {
   margin: 0 1rem;
+  font-weight: 600;
+  color: hsl(0, 3%, 12%);
 }
 
 .detail {
   display: flex;
   flex-direction: row;
   align-self: flex-start;
-  margin: 0.5rem 1.5rem;
+  margin: 0.5rem 0 0.5rem 1.5rem;
 }
 
 .detail-time-container {
