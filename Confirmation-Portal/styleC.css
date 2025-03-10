@@ -91,11 +91,15 @@ main {
 }
 
 .confirmed-container {
-  width: 40%;
-  height: 60%;
+  width: 350px;
+  height: 500px;
   padding: 1rem 2rem;
   border-radius: 15px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /* Offset, blur, color */
+
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.05),
+    /* Bottom-right shadow */ -5px -5px 15px rgba(0, 0, 0, 0.05),
+    /* Top-left shadow */ 5px -5px 15px rgba(0, 0, 0, 0.05),
+    /* Top-right shadow */ -5px 5px 15px rgba(0, 0, 0, 0.05); /* Bottom-left shadow */
 }
 
 .honour-button {
@@ -103,10 +107,13 @@ main {
   width: 10rem;
   border: none;
   border-radius: 10px;
+  background: var(--linkedin-colour);
+  color: var(--pure-white);
 }
 
 .honour-button:hover {
   background: var(--offwhite-background);
+  color: black;
 }
 
 @media (min-width: 768px) {
