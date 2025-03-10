@@ -122,7 +122,14 @@ main {
 }
 
 .detail-logo p {
-  margin: 0 0.5rem;
+  margin: 0 1rem;
+}
+
+.detail {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-start;
+  margin: 1rem 1.5rem;
 }
 
 .honour-button {
