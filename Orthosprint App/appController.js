@@ -166,7 +166,9 @@ export default class appController {
       this.AppointmentsView.emptyAppointmentArray();
       return;
     } else {
-      this.AppointmentsView.gettingButtonsToRender();
+      this.AppointmentsView.gettingButtonsToRender(
+        MaxPageAndArray.MaxPageNumber
+      );
       this.AppointmentsView.filledAppointmentArray(
         MaxPageAndArray.arrayToRender
       );

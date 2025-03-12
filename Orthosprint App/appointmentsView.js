@@ -24,6 +24,7 @@ export default class AppointmentsView {
   }
 
   gettingButtonsToRender(MaxPageNo) {
+    console.log(MaxPageNo, this.getPage());
     if (this._page === MaxPageNo && MaxPageNo > 1) {
       this.previousButton.style.display = "flex";
       this.nextButton.style.display = "none";
