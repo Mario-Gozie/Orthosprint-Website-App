@@ -119,6 +119,7 @@ export default class appController {
   }
 
   updateUI() {
+    this.getAppointmentDataOnLoad(this.AppointmentsView.getPage());
     // this.AppointmentsView.renderAppointments(getActiveUserAppointmentArray());
     this.KPIpane.renderKPIs(getActiveUserAppointmentArray());
   }
@@ -159,7 +160,7 @@ export default class appController {
     MaxPageAndArray.arrayToRender;
     if (
       (MaxPageAndArray.MaxPageNumber === null ||
-        MaxPageAndArray.MaxPageNumber) &&
+        !MaxPageAndArray.MaxPageNumber) &&
       MaxPageAndArray.arrayToRender.length === 0
     ) {
       this.AppointmentsView.emptyAppointmentArray();
