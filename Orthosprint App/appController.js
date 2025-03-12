@@ -181,11 +181,7 @@ export default class appController {
       bookedTime,
       state
     );
-    // console.log(latestBooking.bookingDate);
     new ManageBookingApointments(latestBooking);
     this.updateUI();
-    // console.log(state.AllBookingDateTime);
-    // console.log(this.ActiveUser.bookings);
-    // console.log(state.bookingDetail);
   }
 }
