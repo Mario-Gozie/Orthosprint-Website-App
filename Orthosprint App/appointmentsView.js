@@ -24,20 +24,21 @@ export default class AppointmentsView {
   }
 
   gettingButtonsToRender(MaxPageNo) {
+    this.paginationContainer.style.display = "flex";
     console.log(MaxPageNo, this.getPage());
-    if (this._page === MaxPageNo && MaxPageNo > 1) {
-      this.previousButton.style.display = "flex";
-      this.nextButton.style.display = "none";
-    }
+    // if (this._page === MaxPageNo && MaxPageNo > 1) {
+    //   this.previousButton.style.display = "flex";
+    //   this.nextButton.style.display = "none";
+    // }
     if (this._page === 1 && MaxPageNo === 1) {
       this.previousButton.style.display = "none";
       this.nextButton.style.display = "none";
     }
 
-    if (this._page < MaxPageNo && this._page !== 1) {
-      this.previousButton.style.display = "flex";
-      this.nextButtonButton.style.display = "flex";
-    }
+    // if (this._page < MaxPageNo && this._page !== 1) {
+    //   this.previousButton.style.display = "flex";
+    //   this.nextButtonButton.style.display = "flex";
+    // }
 
     this._pageNoElement.textContent = `Page ${this._page}`;
   }
