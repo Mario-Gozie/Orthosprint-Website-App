@@ -1,5 +1,6 @@
 export default class AppointmentsView {
-  constructor() {
+  constructor(controller) {
+    this.controller = controller;
     this._page = 1;
     this.paginationContainer = document.querySelector(".pagination-container");
     this.nextButton = this.paginationContainer.querySelector(".appt-next");
@@ -32,9 +33,12 @@ export default class AppointmentsView {
     event.preventDefault(); // Prevent default action
     if (event.target === this.nextButton) {
       this._page += 1; // Increment the page number
-      console.log(this._page);
+      this.controller.getAppointmentDataOnLoad(this._page);
+      this._pageNoElement.textContent = `Page ${this._page}`;
     } else if (event.target === this.previousButton) {
       this._page -= 1; // Decrement the page number
+      this.controller.getAppointmentDataOnLoad(this._page);
+      this._pageNoElement.textContent = `Page ${this._page}`;
     } else {
       return;
     }

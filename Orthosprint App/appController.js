@@ -27,7 +27,7 @@ export default class appController {
     this.LoginView = new LoginView(this);
     this.mainView = new MainView(); // Instantiate main view
     this.WelcomeView = new WelcomeView();
-    this.AppointmentsView = new AppointmentsView();
+    this.AppointmentsView = new AppointmentsView(this);
     this.AppointmentBookingView = new AppointmentBookingView(this);
     this.dateTimeView = new DateTimeView(this);
     this.KPIpane = new KPIpane();
