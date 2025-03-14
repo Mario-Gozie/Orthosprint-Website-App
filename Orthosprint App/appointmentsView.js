@@ -18,9 +18,6 @@ export default class AppointmentsView {
     this.paginationContainer.addEventListener("click", (e) =>
       this.handlePagination(e)
     );
-
-    // this.previousButton.addEventListener("click", (e) => this.decreasePageNo());
-    // this.nextButton.addEventListener("click", (e) => this.increasePageNo());
   }
 
   getPage() {
