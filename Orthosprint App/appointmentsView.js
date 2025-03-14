@@ -26,24 +26,23 @@ export default class AppointmentsView {
   gettingButtonsToRender(MaxPageNo) {
     this.paginationContainer.style.display = "flex";
     console.log(MaxPageNo, this.getPage());
-    if (this._page === MaxPageNo && MaxPageNo > 1) {
-      this.previousButton.style.display = "flex";
-      this.nextButton.style.display = "none";
-    }
-    if (this._page === 1 && MaxPageNo === 1) {
+    console.log(`Current Page: ${this._page}, Max Page: ${MaxPageNo}`);
+
+    // HIDE BOTH BUTTONS IF THERE'S ONE PAGE OR LESS
+    if (MaxPageNo <= 1) {
       this.previousButton.style.display = "none";
       this.nextButton.style.display = "none";
+    } else {
+      // SHOW PREVIOUS BUTTON IF NOT ON FIRST PAGE
+      this.previousButton.style.display = this._page > 1 ? "block" : "none";
+
+      // SHOW NEXT BUTTON IF NOT ON LAST PAGE
+      this.nextButton.style.display = this._page < MaxPageNo ? "block" : "none";
     }
 
-    if (this._page < MaxPageNo && this._page !== 1) {
-      this.previousButton.style.display = "flex";
-      this.nextButtonButton.style.display = "flex";
-    }
-
+    // UPDATE PAGE NUMBER DISPLAY
     this._pageNoElement.textContent = `Page ${this._page}`;
   }
-
-  /* LOGIC I AM STILL WORKING ON */
 
   filledAppointmentArray(appointmentArray) {
     this.allApointmentsContainer.innerHTML = ""; // Clear previous appointments
@@ -62,34 +61,6 @@ export default class AppointmentsView {
       }
     });
   }
-
-  /* LOGIC I AM STILL WORKING ON ENDS HERE */
-
-  // renderAppointments(appoinmentArray) {
-  //   if (appoinmentArray.length === 0 || !appoinmentArray) {
-  //     this._emptyAppointmentArray();
-  //   }
-
-  //   if (appoinmentArray.length > 0) {
-  //     // SETTING PAGE NO
-
-  //     this.allApointmentsContainer.innerHTML = ""; // Clear previous appointments
-  //     appoinmentArray.forEach((appt) => {
-  //       // Use forEach instead of map
-  //       if (appt.status === "pending") {
-  //         const html = `<div class="appointment-container">
-  //                         <div class="appointment-detail">
-  //                           <h4>${appt.bookedDate} - ${appt.bookedTime}</h4>
-  //                           <p>${appt.service}</p>
-  //                         </div>
-  //                         <button class="cancel-btn">Cancel</button>
-  //                       </div>`;
-  //         this.allApointmentsContainer.insertAdjacentHTML("beforeend", html); // Append the HTML to the container
-  //       }
-  //     });
-  //     this.paginationContainer.style.display = "flex"; // Show pagination if there are appointments
-  //   }
-  // }
 
   emptyAppointmentArray() {
     const html = `<div style= "background: #e0e0e0; border-radius: 15px; height: 100%;  display:flex; flex-direction: column; justify-content: center; align-items: center"><i class="fa-regular fa-clock" style="margin: 1rem 0; font-size: 4rem; color: #0077b5;"></i><strong style="text-align: center; margin: 0.5rem 0 0 0" > All appointment will be here, lets get started </strong></div>`;
