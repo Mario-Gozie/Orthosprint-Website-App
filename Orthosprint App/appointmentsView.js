@@ -32,6 +32,7 @@ export default class AppointmentsView {
     event.preventDefault(); // Prevent default action
     if (event.target === this.nextButton) {
       this._page += 1; // Increment the page number
+      console.log(this._page);
     } else if (event.target === this.previousButton) {
       this._page -= 1; // Decrement the page number
     } else {
