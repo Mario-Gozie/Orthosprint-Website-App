@@ -289,12 +289,28 @@ main {
   display: flex;
   justify-content: space-between;
   margin: 0.5rem 0;
-  background-color: hsl(120, 100%, 90%); /* Very faint green */
+  /* Very faint green */
   /* background-color: hsla(120, 96%, 81%, 0.927); */
   padding: 1rem;
   cursor: pointer;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.pending {
+  background-color: hsl(58, 85%, 36%);
+}
+
+.missed {
+  background-color: hsl(0, 92%, 54%);
+}
+
+.honoured {
+  background-color: hsl(120, 100%, 90%);
+}
+
+.canceled {
+  background-color: hsl(90, 1%, 65%);
 }
 
 .cancel-btn {
