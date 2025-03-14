@@ -226,8 +226,8 @@ export const dataModel = new DataModel();
 
 // GETTING SEARCH RESULT BASED ON PAGE.
 export const getCurrentPageAppointment = (page) => {
-  const start = (page - 1) * 10;
-  const stop = page * 10;
+  const start = (page - 1) * 3;
+  const stop = page * 3;
   const MaxPageNumber = Math.ceil(ActiveUser.bookings.length / 3);
 
   const arrayToRender = ActiveUser.bookings.reverse().slice(start, stop);
