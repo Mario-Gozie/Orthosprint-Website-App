@@ -1,6 +1,5 @@
 export default class AppointmentsView {
   constructor() {
-    this.data;
     this._page = 1;
     this.paginationContainer = document.querySelector(".pagination-container");
     this.nextButton = this.paginationContainer.querySelector(".appt-next");
@@ -15,13 +14,32 @@ export default class AppointmentsView {
     console.log(this.allApointmentsContainer);
     // Event Listeners for Pagination
 
-    this.previousButton.addEventListener("click", (e) => this.decreasePageNo());
-    this.nextButton.addEventListener("click", (e) => this.increasePageNo());
+    this.paginationContainer.addEventListener("click", (e) =>
+      this.handlePagination(e)
+    );
+
+    // this.previousButton.addEventListener("click", (e) => this.decreasePageNo());
+    // this.nextButton.addEventListener("click", (e) => this.increasePageNo());
   }
 
   getPage() {
     return this._page;
   }
+
+  // Pagination Events functions
+
+  handlePagination(event) {
+    event.preventDefault(); // Prevent default action
+    if (event.target === this.nextButton) {
+      this._page += 1; // Increment the page number
+    } else if (event.target === this.previousButton) {
+      this._page -= 1; // Decrement the page number
+    } else {
+      return;
+    }
+  }
+
+  // RENDERING BUTTON LOGIC
 
   gettingButtonsToRender(MaxPageNo) {
     this.paginationContainer.style.display = "flex";
@@ -39,10 +57,11 @@ export default class AppointmentsView {
       // SHOW NEXT BUTTON IF NOT ON LAST PAGE
       this.nextButton.style.display = this._page < MaxPageNo ? "block" : "none";
     }
-
     // UPDATE PAGE NUMBER DISPLAY
     this._pageNoElement.textContent = `Page ${this._page}`;
   }
+
+  /// WHEN THE BOOKING ARRAY IS NOT EMPTY
 
   filledAppointmentArray(appointmentArray) {
     this.allApointmentsContainer.innerHTML = ""; // Clear previous appointments
@@ -61,6 +80,8 @@ export default class AppointmentsView {
       }
     });
   }
+
+  // WHEN THE BOOKING ARRAY IS NOT EMPTY
 
   emptyAppointmentArray() {
     const html = `<div style= "background: #e0e0e0; border-radius: 15px; height: 100%;  display:flex; flex-direction: column; justify-content: center; align-items: center"><i class="fa-regular fa-clock" style="margin: 1rem 0; font-size: 4rem; color: #0077b5;"></i><strong style="text-align: center; margin: 0.5rem 0 0 0" > All appointment will be here, lets get started </strong></div>`;
