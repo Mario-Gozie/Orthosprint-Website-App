@@ -12,6 +12,9 @@ export const state = {
   bookingDetail: [],
   //This array will have dates as key and booked times as array. I will use it to access if a particular time is booked. as well as is a date is booked.
   AllBookingDateTime: {},
+
+  //Enquires Array
+  enquiries: [],
 };
 
 // MAIN DATA WEBSITE CODE
@@ -234,3 +237,19 @@ export const getCurrentPageAppointment = (page) => {
 
   return { MaxPageNumber, arrayToRender };
 };
+
+export class ManagingEnquires {
+  constructor(name, email, message) {
+    this.name = name;
+    this.email = email;
+    this.message = message;
+  }
+
+  updateEnquiries() {
+    state.enquiries.push({
+      name: this.name,
+      email: this.email,
+      message: this.message,
+    });
+  }
+}
