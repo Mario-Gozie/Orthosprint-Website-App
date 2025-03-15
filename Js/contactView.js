@@ -2,7 +2,7 @@ export default class ContactView {
   constructor(controller) {
     this.controller = controller;
     this.contactForm = document.querySelector(".contact_form");
-    this.submitForm();
+    this.submitForm(this.controller.enquiresController);
   }
 
   // You neeed to work on changing values of this markup.
@@ -17,7 +17,7 @@ export default class ContactView {
           `;
   }
 
-  submitForm() {
+  submitForm(handler) {
     this.contactForm.addEventListener("submit", (e) => {
       e.preventDefault();
       const regForm = new FormData(this.contactForm);
@@ -28,7 +28,7 @@ export default class ContactView {
       if (name && email && message) {
         console.log(name, email, message);
         this.contactForm.reset();
-        // handler();
+        handler(name, email, message);
       } else {
         console.log("all fields needs to be filled");
       }

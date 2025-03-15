@@ -15,7 +15,8 @@ export default class Controller {
   }
 
   enquiresController(name, email, message) {
-    ManagingEnquires(name, email, message);
+    new ManagingEnquires(name, email, message);
+    console.log(state.enquiries);
   }
 
   newsletterController(emailAddress) {

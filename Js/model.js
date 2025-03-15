@@ -243,6 +243,7 @@ export class ManagingEnquires {
     this.name = name;
     this.email = email;
     this.message = message;
+    this.updateEnquiries();
   }
 
   updateEnquiries() {
