@@ -2,60 +2,62 @@ import view from "./view.js";
 
 import WebNewsModal from "./WebNewsModal.js";
 import WelcomeAnimations from "./welcomAnimations.js";
+import MobileSideBar from "./moblileSideBar.js";
 
 import { updateNewsletterList, state } from "./model.js";
 
 export default class Controller {
   constructor() {
-    WebNewsModal.addHandlerRender(newsletterModalOpen); // OpeningNewsletterModal
+    // WebNewsModal.addHandlerRender(newsletterModalOpen); // OpeningNewsletterModal
     WebNewsModal.closeNewsletterWindow(); // Closing Newsletter Modal
     new WelcomeAnimations();
+    new MobileSideBar();
   }
 }
 
-const menuOpen = document.querySelector(".menu__button");
-const menuClose = document.querySelector(".close__button");
-const sidebar = document.querySelector(".sidebar");
-const navbar = document.querySelector(".nav__bar");
+// const menuOpen = document.querySelector(".menu__button");
+// const menuClose = document.querySelector(".close__button");
+// const sidebar = document.querySelector(".sidebar");
+// const navbar = document.querySelector(".nav__bar");
+// // const navAndLogo = document.getElementById("nav");
+
+// // Opeining Menu
+// menuOpen.addEventListener("click", function (e) {
+//   e.preventDefault();
+//   sidebar.classList.add("sidebar__active");
+// });
+
+// // Closing Menu
+// menuClose.addEventListener("click", function (e) {
+//   e.preventDefault();
+//   sidebar.classList.remove("sidebar__active");
+// });
+
+// // IMPLEMENTING THE SCROLL STICKY
 // const navAndLogo = document.getElementById("nav");
+// const section1 = document.getElementById("about");
+// const initialCords = section1.getBoundingClientRect();
+// // console.log(initialCords);
 
-// Opeining Menu
-menuOpen.addEventListener("click", function (e) {
-  e.preventDefault();
-  sidebar.classList.add("sidebar__active");
-});
+// window.addEventListener("scroll", function (e) {
+//   // console.log(window.scrollY);
+//   if (window.scrollY > initialCords.top) {
+//     navAndLogo.classList.add("nav-sticky");
+//   } else {
+//     navAndLogo.classList.remove("nav-sticky");
+//   }
+// });
 
-// Closing Menu
-menuClose.addEventListener("click", function (e) {
-  e.preventDefault();
-  sidebar.classList.remove("sidebar__active");
-});
+// // Activating Smooth Scrolling this is done with event bubbling
 
-// IMPLEMENTING THE SCROLL STICKY
-const navAndLogo = document.getElementById("nav");
-const section1 = document.getElementById("about");
-const initialCords = section1.getBoundingClientRect();
-// console.log(initialCords);
-
-window.addEventListener("scroll", function (e) {
-  // console.log(window.scrollY);
-  if (window.scrollY > initialCords.top) {
-    navAndLogo.classList.add("nav-sticky");
-  } else {
-    navAndLogo.classList.remove("nav-sticky");
-  }
-});
-
-// Activating Smooth Scrolling this is done with event bubbling
-
-navbar.addEventListener("click", function (e) {
-  e.preventDefault();
-  // console.log(e.target);
-  if (e.target.classList.contains("nav__item")) {
-    const id = e.target.getAttribute("href");
-    document.querySelector(id).scrollIntoView({ behaviour: "smooth" });
-  }
-});
+// navbar.addEventListener("click", function (e) {
+//   e.preventDefault();
+//   // console.log(e.target);
+//   if (e.target.classList.contains("nav__item")) {
+//     const id = e.target.getAttribute("href");
+//     document.querySelector(id).scrollIntoView({ behaviour: "smooth" });
+//   }
+// });
 
 // MAKING ICONS MOVE
 
@@ -131,11 +133,3 @@ const newsletterModalOpen = function (data) {
   updateNewsletterList(data);
   console.log(state.newsletter);
 };
-
-// const init = function () {
-//   WebNewsModal.addHandlerRender(newsletterModalOpen); // OpeningNewsletterModal
-//   WebNewsModal.closeNewsletterWindow(); // Closing Newsletter Modal
-//   new WelcomeAnimations();
-// };
-
-// init();
