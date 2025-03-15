@@ -64,41 +64,6 @@ AllServicesContainer.forEach((AS) =>
   })
 );
 
-// implementing the click function for founder
-
-const founderBtn = document.querySelectorAll(".founder__btn");
-
-founderBtn.forEach((fb) => {
-  fb.addEventListener("click", function (e) {
-    e.preventDefault();
-    const targetData = fb.dataset.tab;
-
-    // Check if the button was previously active
-    const wasActive = fb.classList.contains("founder__active");
-    // console.log(wasActive);
-
-    // Remove active classes from all buttons and descriptions
-    founderBtn.forEach((fn) => fn.classList.remove("founder__active"));
-    document
-      .querySelectorAll(`.hidden`)
-      .forEach((hi) => hi.classList.remove("active"));
-
-    // If the button was previously active, remove both classes
-    if (wasActive) {
-      fb.classList.remove("founder__active");
-      document
-        .querySelector(`.description__${targetData}`)
-        .classList.remove("active");
-    } else {
-      // If it was not active, add the active classes
-      fb.classList.add("founder__active");
-      document
-        .querySelector(`.description__${targetData}`)
-        .classList.add("active");
-    }
-  });
-});
-
 // Code logic for slider, use data to get the sliders to show
 
 // SLIDERS

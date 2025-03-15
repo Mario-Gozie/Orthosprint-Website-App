@@ -6,4 +6,12 @@ export default class ModalWindowView {
       ".popup-message-container"
     );
   }
+
+  closeModalWindow() {
+    this.modalBtn.addEventListener("click", (e) => {
+      e.preventDefault(); // Checking if the input value is Empty.
+      // console.log(e.target);
+      this.modalWindow.classList.remove("open-popup");
+    });
+  }
 }

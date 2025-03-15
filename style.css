@@ -155,7 +155,20 @@ li .nav__item {
 /* Home */
 main {
   height: 100%;
-  /* position: relative; */
+}
+
+/* .error-container {
+  height: 70px;
+  width: 100px;
+  display: absolute;
+  z-index: 30;
+  top: -100px;
+  left: 500px;
+  background: red;
+} */
+
+.error-container h3 {
+  width: inherit;
 }
 
 .home {
@@ -164,6 +177,7 @@ main {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  /* position: relative; */
 }
 
 .home__wrapper {
