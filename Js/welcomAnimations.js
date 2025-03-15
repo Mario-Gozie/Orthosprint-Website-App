@@ -4,6 +4,7 @@ export default class WelcomeAnimations {
     this.homeP = home.getElementsByTagName("p");
     this.homeH = home.getElementsByTagName("h1");
     this.homeA = home.getElementsByTagName("a");
+    this.containers = document.querySelectorAll(".container");
 
     window.addEventListener("load", () => {
       const loadArray = [...this.homeP, ...this.homeH, ...this.homeA];
