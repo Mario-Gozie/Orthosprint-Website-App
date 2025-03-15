@@ -1032,14 +1032,19 @@ footer {
     margin: 0 0 1.5rem 0;
   }
 
-  .services__wrapper {
+  /* .services__wrapper {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
+  } */
+
+  .service__container {
+    display: flex;
+    justify-self: center;
   }
 
   .services__container {
-    width: 60%;
+    width: 100%;
     margin: 0 1rem 0 0;
   }
 
@@ -1194,6 +1199,12 @@ footer {
 
   .about__wrapper p {
     padding: 1rem 0 0 0;
+  }
+
+  .services__wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   /* WORKING ON TESTIMONIAL */
