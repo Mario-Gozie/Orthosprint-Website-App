@@ -1,4 +1,4 @@
-import view from "./view.js";
+// import view from "./view.js";
 
 import WebNewsModal from "./WebNewsModal.js";
 import WelcomeAnimations from "./welcomAnimations.js";
