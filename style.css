@@ -1207,6 +1207,12 @@ footer {
     justify-content: space-between;
   }
 
+  .service__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
   /* WORKING ON TESTIMONIAL */
 
   .testimonial__wrapper {
