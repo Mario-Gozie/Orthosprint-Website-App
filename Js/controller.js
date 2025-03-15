@@ -1,6 +1,7 @@
 import view from "./view.js";
 
 import WebNewsModal from "./WebNewsModal.js";
+import WelcomeAnimations from "./welcomAnimations.js";
 
 import { updateNewsletterList, state } from "./model.js";
 
@@ -176,6 +177,7 @@ const newsletterModalOpen = function (data) {
 const init = function () {
   WebNewsModal.addHandlerRender(newsletterModalOpen); // OpeningNewsletterModal
   WebNewsModal.closeNewsletterWindow(); // Closing Newsletter Modal
+  new WelcomeAnimations();
 };
 
 init();
