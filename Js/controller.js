@@ -12,18 +12,18 @@ const navbar = document.querySelector(".nav__bar");
 
 // IMPLEMENTING REVEALING OF HOME PAGE
 
-const home = document.querySelector(".home__wrapper");
-const homeP = home.getElementsByTagName("p");
-const homeH = home.getElementsByTagName("h1");
-const homeA = home.getElementsByTagName("a");
+// const home = document.querySelector(".home__wrapper");
+// const homeP = home.getElementsByTagName("p");
+// const homeH = home.getElementsByTagName("h1");
+// const homeA = home.getElementsByTagName("a");
 
-window.addEventListener("load", function () {
-  const loadArray = [...homeP, ...homeH, ...homeA];
-  loadArray.forEach((la) => {
-    la.style.opacity = 1;
-    la.style.transform = "translateX(0)";
-  });
-});
+// window.addEventListener("load", function () {
+//   const loadArray = [...homeP, ...homeH, ...homeA];
+//   loadArray.forEach((la) => {
+//     la.style.opacity = 1;
+//     la.style.transform = "translateX(0)";
+//   });
+// });
 
 // Opeining Menu
 menuOpen.addEventListener("click", function (e) {
