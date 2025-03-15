@@ -11,12 +11,6 @@ export default class NewsletterView extends ModalWindowView {
     this.addHandlerRender(this.controller.newsletterController);
   }
 
-  openPopup(value) {
-    // this.modalWindow.innerHTML = "";
-    this.popupMesageContainer.innerHTML = this._generateMarkup(value);
-    this.modalWindow.classList.add("open-popup"); // Fixed class name
-  }
-
   _generateMarkup(value) {
     return `
             <i class="fa-solid fa-check"></i>
@@ -36,8 +30,11 @@ export default class NewsletterView extends ModalWindowView {
       if (email.trim() === "") {
         alert("You have not given us any email");
       } else {
-        this.openPopup(email);
         handler(email); //This handler is simply the controller function
+        console.log(email);
+
+        this.openPopup();
+        this.popupMesageContainer.innerHTML = this._generateMarkup(email);
       }
     });
   }
