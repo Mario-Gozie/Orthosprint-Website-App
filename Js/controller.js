@@ -5,6 +5,14 @@ import WelcomeAnimations from "./welcomAnimations.js";
 
 import { updateNewsletterList, state } from "./model.js";
 
+export default class Controller {
+  constructor() {
+    WebNewsModal.addHandlerRender(newsletterModalOpen); // OpeningNewsletterModal
+    WebNewsModal.closeNewsletterWindow(); // Closing Newsletter Modal
+    new WelcomeAnimations();
+  }
+}
+
 const menuOpen = document.querySelector(".menu__button");
 const menuClose = document.querySelector(".close__button");
 const sidebar = document.querySelector(".sidebar");
@@ -124,10 +132,10 @@ const newsletterModalOpen = function (data) {
   console.log(state.newsletter);
 };
 
-const init = function () {
-  WebNewsModal.addHandlerRender(newsletterModalOpen); // OpeningNewsletterModal
-  WebNewsModal.closeNewsletterWindow(); // Closing Newsletter Modal
-  new WelcomeAnimations();
-};
+// const init = function () {
+//   WebNewsModal.addHandlerRender(newsletterModalOpen); // OpeningNewsletterModal
+//   WebNewsModal.closeNewsletterWindow(); // Closing Newsletter Modal
+//   new WelcomeAnimations();
+// };
 
-init();
+// init();
