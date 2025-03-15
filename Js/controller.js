@@ -1,17 +1,20 @@
-// import view from "./view.js";
-
-import WebNewsModal from "./WebNewsModal.js";
 import WelcomeAnimations from "./welcomAnimations.js";
 import MobileSideBar from "./moblileSideBar.js";
+import NewsletterView from "./newsletter.js";
 
 import { updateNewsletterList, state } from "./model.js";
 
 export default class Controller {
   constructor() {
-    // WebNewsModal.addHandlerRender(newsletterModalOpen); // OpeningNewsletterModal
-    WebNewsModal.closeNewsletterWindow(); // Closing Newsletter Modal
     new WelcomeAnimations();
     new MobileSideBar();
+    new NewsletterView(this);
+  }
+
+  newsletterController(emailAddress) {
+    // push the email address into the newsletter array.
+    updateNewsletterList(emailAddress);
+    console.log(state.newsletter);
   }
 }
 
@@ -126,10 +129,3 @@ dots.forEach((dot, index) => {
     goToSlide(index); // Navigate to the corresponding slide when a dot is clicked
   });
 });
-
-// NEWSLETTER SUBMISSION
-
-const newsletterModalOpen = function (data) {
-  updateNewsletterList(data);
-  console.log(state.newsletter);
-};

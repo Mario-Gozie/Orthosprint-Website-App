@@ -234,19 +234,3 @@ export const getCurrentPageAppointment = (page) => {
 
   return { MaxPageNumber, arrayToRender };
 };
-
-// export class ManageAppointmentRendering {
-//   constructor() {
-//     this.maxPageNumber = this._getMaxPageNo;
-//   }
-
-//   _getMaxPageNo() {
-//     Math.ceil(ActiveUser.bookings.reverse().length / 3);
-//   }
-
-//   returningDataToRender(page) {
-//     const start = (page - 1) * 3;
-//     const stop = page * 3;
-//     return ActiveUser.bookings.reverse().slice(start, stop);
-//   }
-// }

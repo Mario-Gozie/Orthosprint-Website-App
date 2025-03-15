@@ -1,12 +1,15 @@
-class NewsletterView {
-  constructor() {
+import ModalWindowView from "./modalWindowView.js";
+
+export default class NewsletterView extends ModalWindowView {
+  constructor(controller) {
+    super();
+    this.controller = controller;
     this.emailInput = document.querySelector(".newsletter__input");
     this.newsletterForm = document.getElementById("newsletterForm");
-    this.modalWindow = document.getElementById("modal-container");
-    this.modalBtn = document.querySelector(".modal-button");
-    this.popupMesageContainer = document.querySelector(
-      ".popup-message-container"
-    );
+
+    // EVENT LISTENER.
+
+    this.addHandlerRender(this.controller.newsletterController());
   }
 
   getEmail() {
@@ -52,5 +55,3 @@ class NewsletterView {
     });
   }
 }
-
-export default new NewsletterView();
