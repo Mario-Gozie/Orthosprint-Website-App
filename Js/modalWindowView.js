@@ -5,12 +5,17 @@ export default class ModalWindowView {
     this.popupMesageContainer = document.querySelector(
       ".popup-message-container"
     );
+    this.closeModalWindow();
+  }
+
+  openPopup(value) {
+    this.popupMesageContainer.innerHTML = this._generateMarkup(value);
+    this.modalWindow.classList.add("open-popup"); // Fixed class name
   }
 
   closeModalWindow() {
     this.modalBtn.addEventListener("click", (e) => {
-      e.preventDefault(); // Checking if the input value is Empty.
-      // console.log(e.target);
+      e.preventDefault();
       this.modalWindow.classList.remove("open-popup");
     });
   }

@@ -8,26 +8,13 @@ export default class NewsletterView extends ModalWindowView {
     this.newsletterForm = document.getElementById("newsletterForm");
 
     // EVENT LISTENER.
-
-    this.addHandlerRender(this.controller.newsletterController());
-  }
-
-  getEmail() {
-    return this.emailInput.value;
+    this.addHandlerRender(this.controller.newsletterController);
   }
 
   openPopup(value) {
     // this.modalWindow.innerHTML = "";
     this.popupMesageContainer.innerHTML = this._generateMarkup(value);
     this.modalWindow.classList.add("open-popup"); // Fixed class name
-  }
-
-  closeNewsletterWindow() {
-    this.modalBtn.addEventListener("click", (e) => {
-      e.preventDefault(); // Checking if the input value is Empty.
-      // console.log(e.target);
-      this.modalWindow.classList.remove("open-popup");
-    });
   }
 
   _generateMarkup(value) {
@@ -44,7 +31,7 @@ export default class NewsletterView extends ModalWindowView {
   addHandlerRender(handler) {
     newsletterForm.addEventListener("submit", (e) => {
       e.preventDefault(); // Checking if the input value is Empty.
-      const email = this.getEmail();
+      const email = this.emailInput.value;
       this.emailInput.value = "";
       if (email.trim() === "") {
         alert("You have not given us any email");
