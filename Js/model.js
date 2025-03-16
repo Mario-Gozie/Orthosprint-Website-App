@@ -1,4 +1,4 @@
-import { hasSelectionSupport } from "@testing-library/user-event/dist/utils";
+// import { hasSelectionSupport } from "@testing-library/user-event/dist/utils";
 
 export const state = {
   // This will contain all client details including password.
@@ -168,6 +168,7 @@ export class ManageBookingApointments {
 
   AddingToUserOrder(newBooking) {
     ActiveUser["bookings"].push(newBooking);
+    console.log(ActiveUser);
   }
 
   addToAllOrders(newBooking) {
@@ -195,50 +196,34 @@ export class ManageBookingApointments {
   }
 }
 
-export const cancelAppointment = () => {
-  // Remove Change the status of the client for both Appointmentdetail status needs to be changed.
-  // This can be achieved by setting the Data Attribute of all rendered Data to the order ID. with this Unique
-  // use the date value to search for the bookings array, and remove the time
-  // go to the Users array and change the status to cancelled.
+////// MANAGING APPOINTMENTS
+
+const gettingIndex = (bookingArray, uniqueID) => {
+  return bookingArray.findIndex((booking) => {
+    return booking.bookingID === uniqueID;
+  });
 };
 
-export class ManipulateStatus {
-  constructor(apptID) {}
+export const manipulateAppointmentStatus = (
+  arrayToManipulate,
+  uniqueID,
+  newStatus
+) => {
+  const index = gettingIndex(arrayToManipulate, uniqueID);
 
-  gettingIndex(bookingArray) {
-    return bookingArray.findIndex((booking) => {
-      booking.bookingID === apptID;
+  if (index !== -1) {
+    arrayToManipulate[index].status = newStatus;
+  }
+};
+
+export const deleteFromBookingArray = (date, timeToDelete) => {
+  if (state.booking[date] && Array.isArray(state.booking[date])) {
+    state.booking[date] = state.booking[date].filter((time) => {
+      return time !== timeToDelete;
     });
   }
+};
 
-  manipulateAppointmentStatus() {
-    const index = this.gettingIndex();
-  }
-
-  deleteFromBookingArray(date, timeToDelete) {
-    if (state.booking[date] && Array.isArray(state.booking[date])) {
-      state.booking[date] = state.booking[date].filter((time) => {
-        time !== timeToDelete;
-      });
-    }
-  }
-}
-
-export class CancelAppointment extends ManageBookingApointments {
-  constructor(date, time, apptID) {
-    this.super();
-    this.date = date;
-    this.time = time;
-  }
-
-  deleteFromBookingArray(date, timeToDelete) {
-    if (state.booking[date] && Array.isArray(state.booking[date])) {
-      state.booking[date] = state.booking[date].filter((time) => {
-        time !== timeToDelete;
-      });
-    }
-  }
-}
 // SAVING DATA
 
 class DataModel {
@@ -277,6 +262,7 @@ export const getCurrentPageAppointment = (page) => {
   return { MaxPageNumber, arrayToRender };
 };
 
+// MANAGING ENQUIRIES ON THE MAIN WEBPAGE
 export class ManagingEnquires {
   constructor(name, email, message) {
     this.name = name;
