@@ -200,6 +200,21 @@ export const cancelAppointment = () => {
   // go to the Users array and change the status to cancelled.
 };
 
+export class CancelAppointment {
+  constructor(date, time) {
+    this.date = date;
+    this.time = time;
+  }
+
+  deleteFromBookingArray(date, timeToDelete) {
+    if (state.booking[date] && Array.isArray(state.booking[date])) {
+      state.booking[date] = state.booking[date].filter((time) => {
+        time !== timeToDelete;
+      });
+    }
+  }
+}
+
 // SAVING DATA
 
 class DataModel {
