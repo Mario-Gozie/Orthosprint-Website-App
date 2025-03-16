@@ -8,6 +8,8 @@ import {
   ManageBookingApointments,
   getCurrentPageAppointment,
   getActiveUserAppointmentArray,
+  manipulateAppointmentStatus,
+  deleteFromBookingArray,
 } from "../Js/model.js";
 
 import MainView from "./mainView.js"; // Adjust the path as necessary
