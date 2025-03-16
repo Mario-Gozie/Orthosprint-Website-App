@@ -72,7 +72,7 @@ export default class AppointmentsView {
       // Use forEach instead of map
       if (appt.status === "pending") {
         const html = `<div class="appointment-container pending">
-                        <div class="appointment-detail">
+                        <div class="appointment-detail" data-order-id= ${appt.bookingID}>
                           <h4>${appt.bookedDate} - ${appt.bookedTime}</h4>
                           <p>${appt.service}</p>
                         </div>

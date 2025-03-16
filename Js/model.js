@@ -201,10 +201,20 @@ export const cancelAppointment = () => {
 };
 
 export class CancelAppointment {
-  constructor(date, time) {
+  constructor(date, time, apptID) {
     this.date = date;
     this.time = time;
   }
+
+  gettingIndex(bookingArray) {
+    const index = bookingArray.findIndex((booking) => {
+      booking.bookingID === apptID;
+    });
+
+    return index;
+  }
+
+  manipulateAppointmentStatus() {}
 
   deleteFromBookingArray(date, timeToDelete) {
     if (state.booking[date] && Array.isArray(state.booking[date])) {
