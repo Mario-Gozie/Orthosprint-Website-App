@@ -776,15 +776,22 @@ footer {
 
 .popup button {
   width: 100px;
-  height: 2rem;
+  height: 2.5rem;
   font-size: 1rem;
-  border-radius: 5px;
+  border-radius: 20px;
   margin: 0.3rem 0 0 0;
+  background: var(--linkedin-colour);
+  color: var(--pure-white);
   cursor: pointer;
   border: 0;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   margin: 1.5rem 0 0 0;
   position: relative;
+  transition: transform 0.1s;
+}
+
+.popup button:active {
+  transform: scale(0.95);
 }
 
 /* Reveal Effect Styles */
