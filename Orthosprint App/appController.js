@@ -16,6 +16,7 @@ import DateTimeView from "./dateTimeView.js";
 import LoginView from "./loginView.js";
 import AppointmentBookingView from "./appointmentBookingView.js";
 import AppointmentsView from "./appointmentsView.js";
+import AppointmentCancellation from "./appointmentCancellation.js";
 import KPIpane from "./kpiPane.js";
 
 export default class appController {
@@ -25,6 +26,7 @@ export default class appController {
     // Instances
 
     this.LoginView = new LoginView(this);
+    this.AppointmentCancellation = new AppointmentCancellation(this);
     this.mainView = new MainView(); // Instantiate main view
     this.WelcomeView = new WelcomeView();
     this.AppointmentsView = new AppointmentsView(this);

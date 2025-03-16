@@ -3,6 +3,7 @@ import MobileSideBar from "./moblileSideBar.js";
 import NewsletterView from "./newsletter.js";
 import ContactView from "./contactView.js";
 import TestimonialSlider from "./testimonialSlider.js";
+
 import { updateNewsletterList, state, ManagingEnquires } from "./model.js";
 
 export default class Controller {
