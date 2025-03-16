@@ -217,10 +217,15 @@ export const manipulateAppointmentStatus = (
 };
 
 export const deleteFromBookingArray = (date, timeToDelete) => {
-  if (state.booking[date] && Array.isArray(state.booking[date])) {
-    state.booking[date] = state.booking[date].filter((time) => {
-      return time !== timeToDelete;
-    });
+  if (
+    state.AllBookingDateTime[date] &&
+    Array.isArray(state.AllBookingDateTime[date])
+  ) {
+    state.AllBookingDateTime[date] = state.AllBookingDateTime[date].filter(
+      (time) => {
+        return time !== timeToDelete;
+      }
+    );
   }
 };
 

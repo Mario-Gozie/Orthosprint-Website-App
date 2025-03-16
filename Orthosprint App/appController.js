@@ -26,8 +26,6 @@ export default class appController {
   constructor() {
     // this.ActiveUser;
 
-    console.log(state.bookingDetail);
-
     // Instances
 
     this.LoginView = new LoginView(this);
@@ -146,7 +144,6 @@ export default class appController {
           this.location
         );
         this.updateUI();
-        console.log(ActiveUser.bookings);
 
         // THIS AREA IS TO BE VETTED
         this.getAppointmentDataOnLoad(this.AppointmentsView.getPage());
