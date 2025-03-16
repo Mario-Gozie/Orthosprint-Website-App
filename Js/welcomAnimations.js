@@ -4,14 +4,46 @@ export default class WelcomeAnimations {
     this.homeP = home.getElementsByTagName("p");
     this.homeH = home.getElementsByTagName("h1");
     this.homeA = home.getElementsByTagName("a");
-    this.containers = document.querySelectorAll(".container");
 
+    this.welcomeArray = [...this.homeP, ...this.homeH, ...this.homeA];
+
+    this.sections = document.querySelectorAll(".section"); // Select all sections
+    console.log(this.sections);
+    // Function Call
+    this.homeDisplay(this.welcomeArray);
+    this.ObserveIntersection(this.sections);
+  }
+
+  homeDisplay(array) {
     window.addEventListener("load", () => {
-      const loadArray = [...this.homeP, ...this.homeH, ...this.homeA];
-      loadArray.forEach((la) => {
+      array.forEach((la) => {
         la.style.opacity = 1;
         la.style.transform = "translateX(0)";
       });
+    });
+  }
+
+  // Observation Function
+  ObserveIntersection(sections) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          console.log("Entry:", entry); // Debug: Log each entry
+          if (entry.isIntersecting) {
+            console.log("Section is in view:", entry.target); // Log when in view
+            entry.target.classList.add("reveal");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.1,
+      }
+    );
+    sections.forEach((section) => {
+      observer.observe(section); // Observe each section
     });
   }
 }
