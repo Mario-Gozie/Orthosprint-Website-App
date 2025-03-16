@@ -28,9 +28,7 @@ export default class WelcomeAnimations {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          console.log("Entry:", entry); // Debug: Log each entry
           if (entry.isIntersecting) {
-            console.log("Section is in view:", entry.target); // Log when in view
             entry.target.classList.add("reveal");
             observer.unobserve(entry.target);
           }
