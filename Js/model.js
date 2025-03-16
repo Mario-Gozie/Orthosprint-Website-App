@@ -96,7 +96,7 @@ export class NewClient {
 
 // CURRENT USER
 
-let ActiveUser = {};
+export let ActiveUser = {};
 
 export const getUser = (identifier, password) => {
   console.log("just a check", identifier, password);
@@ -205,14 +205,14 @@ const gettingIndex = (bookingArray, uniqueID) => {
 };
 
 export const manipulateAppointmentStatus = (
-  arrayToManipulate,
+  bookingArray,
   uniqueID,
   newStatus
 ) => {
-  const index = gettingIndex(arrayToManipulate, uniqueID);
+  const index = gettingIndex(bookingArray, uniqueID);
 
   if (index !== -1) {
-    arrayToManipulate[index].status = newStatus;
+    bookingArray[index].status = newStatus;
   }
 };
 

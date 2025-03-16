@@ -1,6 +1,7 @@
 import {
   state,
   dataModel,
+  ActiveUser,
   getUser,
   ActiveUserUsername,
   availableTimeChecker,
@@ -24,6 +25,8 @@ import KPIpane from "./kpiPane.js";
 export default class appController {
   constructor() {
     // this.ActiveUser;
+
+    console.log(state.bookingDetail);
 
     // Instances
 
@@ -143,6 +146,7 @@ export default class appController {
           this.location
         );
         this.updateUI();
+        console.log(ActiveUser.bookings);
 
         // THIS AREA IS TO BE VETTED
         this.getAppointmentDataOnLoad(this.AppointmentsView.getPage());
@@ -189,5 +193,11 @@ export default class appController {
     );
     new ManageBookingApointments(latestBooking);
     this.updateUI();
+  }
+
+  cancellationController(uniqueID, date, time) {
+    manipulateAppointmentStatus(state.bookingDetail, uniqueID, "cancelled");
+    manipulateAppointmentStatus(ActiveUser.bookings, uniqueID, "canceled");
+    deleteFromBookingArray(date, time);
   }
 }

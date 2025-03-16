@@ -5,10 +5,10 @@ export default class AppointmentCancellation {
       ".all-appointment-container"
     );
 
-    this.cancelAppointment();
+    this.cancelAppointment(this.controller.cancellationController);
   }
 
-  cancelAppointment() {
+  cancelAppointment(handler) {
     this.allApointmentsContainer.addEventListener("click", (e) => {
       e.preventDefault();
       if (e.target.classList.contains("cancel-btn")) {
@@ -28,7 +28,7 @@ export default class AppointmentCancellation {
         console.log("Date:", date);
         console.log("Time:", time);
 
-        // handler();
+        handler(orderId, date, time);
       }
     });
   }
