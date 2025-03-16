@@ -10,7 +10,7 @@ export default class ModalWindowView {
 
   openPopup(value) {
     this.modalWindow.style.display = "flex";
-    this.popupMesageContainer.innerHTML = this._generateMarkup(value);
+
     this.modalWindow.classList.add("open-popup"); // Fixed class name
   }
 
