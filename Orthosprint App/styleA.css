@@ -177,6 +177,11 @@ main {
   width: inherit;
 }
 
+.popUp-image {
+  width: 100px;
+  height: 100px;
+}
+
 .welcome-section-wrapper {
   width: inherit;
   height: 8rem;
