@@ -19,7 +19,23 @@
 
 body {
   height: 100vh;
+  position: relative;
   /* background-color: var(--linkedin-colour); */
+}
+
+.popUp-container {
+  width: 200px;
+  height: 100px;
+  background: var(--pure-white);
+  position: absolute;
+  z-index: 3;
+  top: 10%;
+  left: 45%;
+  transform: translateX(-50%, -50%);
+}
+.popUp-image {
+  width: 50px;
+  height: 50px;
 }
 
 nav {
@@ -175,11 +191,6 @@ main {
 /* Welcome Section */
 .welcome-section {
   width: inherit;
-}
-
-.popUp-image {
-  width: 100px;
-  height: 100px;
 }
 
 .welcome-section-wrapper {
