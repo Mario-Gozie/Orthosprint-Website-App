@@ -56,6 +56,10 @@ body {
   color: green;
 }
 
+.fa-ban {
+  color: var(--border-shadow);
+}
+
 .close {
   font-size: 24px;
   cursor: pointer;

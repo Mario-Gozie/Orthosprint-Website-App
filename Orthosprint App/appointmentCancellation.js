@@ -1,11 +1,22 @@
-export default class AppointmentCancellation {
+import ModalWindow from "./modalWindow.js";
+
+export default class AppointmentCancellation extends ModalWindow {
   constructor(controller) {
+    super();
     this.controller = controller;
     this.allApointmentsContainer = document.querySelector(
       ".all-appointment-container"
     );
 
     this.cancelAppointment(this.controller.cancellationController);
+  }
+
+  cancelHTML() {
+    return `<i class="fa-solid fa-ban"></i>
+    <div class="message">
+      <h3>Uh-oh!</h3>
+      <p>Appointment Canceled</p>
+    </div>`;
   }
 
   cancelAppointment(handler) {
@@ -29,6 +40,8 @@ export default class AppointmentCancellation {
         console.log("Time:", time);
 
         handler(orderId, date, time);
+
+        this.openModalWindow(this.cancelHTML());
       }
     });
   }
