@@ -53,6 +53,10 @@ body {
   color: red;
 }
 
+.fa-thumbs-up {
+  color: green;
+}
+
 .close {
   font-size: 24px;
   cursor: pointer;

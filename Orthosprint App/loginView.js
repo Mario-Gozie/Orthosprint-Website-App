@@ -1,4 +1,6 @@
-export default class LoginView {
+import ModalWindow from "./modalWindow";
+
+export default class LoginView extends ModalWindow {
   constructor(controller) {
     this.controller = controller;
     this.usernameEmailContainer = document.querySelector(".username");

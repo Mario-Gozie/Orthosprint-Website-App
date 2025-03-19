@@ -15,7 +15,7 @@ export default class AppointmentBookingView extends ModalWindow {
   }
 
   successHTML() {
-    return `<i class="fa-solid fa-circle-exclamation"></i>
+    return `<i class="fa-solid fa-thumbs-up"></i>
         <div class="message">
           <h3>Success !</h3>
           <p>Appointment booked</p>
