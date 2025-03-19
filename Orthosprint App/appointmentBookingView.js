@@ -14,6 +14,22 @@ export default class AppointmentBookingView extends ModalWindow {
     });
   }
 
+  successHTML() {
+    return `<i class="fa-solid fa-circle-exclamation"></i>
+        <div class="message">
+          <h3>Success !</h3>
+          <p>Appointment booked</p>
+        </div>`;
+  }
+
+  errorHTML() {
+    return `<i class="fa-solid fa-circle-exclamation"></i>
+        <div class="message">
+          <h3>Opps!</h3>
+          <p>Incomplete detail</p>
+        </div>`;
+  }
+
   _handleTimeClick(event) {
     if (event.target.classList.contains("time-button")) {
       event.preventDefault();
