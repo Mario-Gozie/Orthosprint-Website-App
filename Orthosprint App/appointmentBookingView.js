@@ -1,4 +1,6 @@
-export default class AppointmentBookingView {
+import ModalWindow from "./modalWindow";
+
+export default class AppointmentBookingView extends ModalWindow {
   constructor(controller) {
     this.controller = controller;
     this.selectedTime = null;
