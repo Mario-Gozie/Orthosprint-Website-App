@@ -2,7 +2,7 @@ export default class ModalWindow {
   constructor() {
     this.modalWindowContainer = document.querySelector(".popUp-container");
     this.messageIcon = this.modalWindowContainer.querySelector(".message-icon");
-
+    this.closeButton = this.modalWindowContainer.querySelector(".close");
     this.isOpen = false; // Track whether the modal is currently open
 
     // Close modal on button click
