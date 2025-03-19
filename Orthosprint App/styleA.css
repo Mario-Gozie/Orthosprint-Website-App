@@ -31,8 +31,8 @@ body {
   padding: 0.5rem 1rem;
   border-radius: 15px;
   z-index: 3;
-  top: 10%;
-  left: 70%;
+  top: 12%;
+  left: 45%;
   opacity: 1;
 
   /* transform: scale(0.1); */
@@ -41,14 +41,13 @@ body {
 
 .message-icon {
   display: flex;
-  justify-content: space-between;
+
   align-items: center;
 }
 
 .fa-solid {
   font-size: 1.5rem;
-  /* width: 1.5rem;
-  height: 1.5rem; */
+  margin: 0 10px;
 }
 
 .fa-circle-exclamation {
