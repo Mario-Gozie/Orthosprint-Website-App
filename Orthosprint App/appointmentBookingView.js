@@ -57,6 +57,7 @@ export default class AppointmentBookingView extends ModalWindow {
     const appointmentDetails = this._getAppointmentDetail(this.appointmentForm);
 
     if (!this._validateAppointmentDetails(appointmentDetails)) {
+      this.openModalWindow();
       alert("All field is required to book an Appointment");
       return;
     } else {
