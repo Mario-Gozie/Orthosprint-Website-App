@@ -32,10 +32,10 @@ body {
   border-radius: 15px;
   z-index: 3;
   top: 12%;
-  left: 45%;
-  opacity: 1;
+  left: 70%;
+  opacity: 0;
 
-  /* transform: scale(0.1); */
+  transform: scale(0.1);
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 

@@ -152,7 +152,8 @@ export default class appController {
         this.mainView.show(); // Use main view to show the main section
       }, 1000);
     } else {
-      alert("Invalid login Details");
+      // Error message
+      this.ModalWindow.openModalWindow(this.LoginView.errorHTML());
     }
   }
 

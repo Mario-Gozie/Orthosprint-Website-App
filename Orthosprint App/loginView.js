@@ -1,7 +1,8 @@
-import ModalWindow from "./modalWindow";
+import ModalWindow from "./modalWindow.js";
 
 export default class LoginView extends ModalWindow {
   constructor(controller) {
+    super();
     this.controller = controller;
     this.usernameEmailContainer = document.querySelector(".username");
     this.loginSection = document.querySelector(".login-section");
@@ -12,6 +13,14 @@ export default class LoginView extends ModalWindow {
     this.loginForm.addEventListener("submit", (e) => this.loginEvent(e));
 
     this._showPassword();
+  }
+
+  errorHTML() {
+    return `<i class="fa-solid fa-circle-exclamation"></i>
+    <div class="message">
+      <h3>Opps!</h3>
+      <p>Wrong or Incomplete detail</p>
+    </div>`;
   }
 
   gettingLoginValue(form) {

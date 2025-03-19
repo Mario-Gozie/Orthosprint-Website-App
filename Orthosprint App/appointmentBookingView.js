@@ -1,7 +1,8 @@
-import ModalWindow from "./modalWindow";
+import ModalWindow from "./modalWindow.js";
 
 export default class AppointmentBookingView extends ModalWindow {
   constructor(controller) {
+    super();
     this.controller = controller;
     this.selectedTime = null;
     this.timeContainer = document.querySelector(".times-container");

@@ -1,21 +1,35 @@
 export default class ModalWindow {
   constructor() {
     this.modalWindowContainer = document.querySelector(".popUp-container");
-    this.messageIcon = this.modalWindowContainer.querySelector("message-icon");
+    this.messageIcon = this.modalWindowContainer.querySelector(".message-icon");
+
+    this.isOpen = false; // Track whether the modal is currently open
+
+    // Close modal on button click
+    this.closeButton.addEventListener("click", () => {
+      this.closeModalWindow();
+    });
   }
 
   openModalWindow(htmlElements) {
-    this.modalWindowContainer.classList.add("show-popUp"); // Add class to show the popup
-    this.messageIcon.innerHTML = htmlElements;
+    // Always update the message
+    this.messageIcon.innerHTML = htmlElements; // Update the message content
 
-    // Set a timeout to hide the modal after 3 seconds (3000 milliseconds)
-    setTimeout(() => {
-      this.closeModalWindow(); // Call the function to hide the modal
-    }, 3000);
+    if (!this.isOpen) {
+      // If the modal is not open, show it
+      this.modalWindowContainer.classList.add("show-popUp"); // Show the popup
+      this.isOpen = true; // Mark modal as open
+
+      // Optionally, set a timeout to auto-close the modal
+      setTimeout(() => {
+        this.closeModalWindow(); // Auto close after x seconds
+      }, 3000);
+    }
   }
 
   closeModalWindow() {
-    this.modalWindowContainer.classList.remove("show-popUp"); // Remove class to hide the popup
-    this.modalWindowContainer.innerHTML = ""; // Optional: clear the inner HTML if desired
+    this.modalWindowContainer.classList.remove("show-popUp"); // Hide the popup
+    this.isOpen = false; // Reset the state
+    this.messageIcon.innerHTML = ""; // Clear the message
   }
 }
