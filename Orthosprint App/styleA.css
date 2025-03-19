@@ -41,7 +41,6 @@ body {
 
 .message-icon {
   display: flex;
-
   align-items: center;
 }
 
@@ -51,6 +50,15 @@ body {
 }
 
 .fa-circle-exclamation {
+  color: red;
+}
+
+.close {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.close:hover {
   color: red;
 }
 
