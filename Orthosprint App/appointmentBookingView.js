@@ -74,8 +74,8 @@ export default class AppointmentBookingView extends ModalWindow {
     const appointmentDetails = this._getAppointmentDetail(this.appointmentForm);
 
     if (!this._validateAppointmentDetails(appointmentDetails)) {
-      this.openModalWindow();
-      alert("All field is required to book an Appointment");
+      this.openModalWindow(this.errorHTML()); // Error message
+      // alert("All field is required to book an Appointment");
       return;
     } else {
       const today = new Date();
@@ -97,6 +97,8 @@ export default class AppointmentBookingView extends ModalWindow {
       // you will need to remove the selected class and also hide the time frame. becuase clearing the form alone cannot do that.
 
       this._resetTimeSelection();
+
+      this.openModalWindow(this.successHTML());
     }
   }
 
