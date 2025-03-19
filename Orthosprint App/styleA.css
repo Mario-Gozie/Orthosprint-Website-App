@@ -28,14 +28,33 @@ body {
   height: 100px;
   background: var(--pure-white);
   position: absolute;
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
   z-index: 3;
   top: 10%;
   left: 70%;
   opacity: 1;
 
-  transform: scale(0.1);
+  /* transform: scale(0.1); */
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
+
+.message-icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fa-solid {
+  font-size: 1.5rem;
+  /* width: 1.5rem;
+  height: 1.5rem; */
+}
+
+.fa-circle-exclamation {
+  color: red;
+}
+
 .popUp-image {
   width: 50px;
   height: 50px;
