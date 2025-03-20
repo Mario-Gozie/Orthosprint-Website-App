@@ -73,8 +73,8 @@ export default class AppointmentsView {
       if (appt.status === "pending") {
         const html = `<div class="appointment-container pending">
                         <div class="appointment-detail" data-order-id= ${appt.bookingID}>
-                          <h4>${appt.bookedDate} - ${appt.bookedTime}</h4>
-                          <p>${appt.service}</p>
+                          <h4 class="date-time">${appt.bookedDate} - ${appt.bookedTime}</h4>
+                          <p class="service">${appt.service}</p>
                         </div>
                         <button class="cancel-btn">Cancel</button>
                       </div>`;

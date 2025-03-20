@@ -1,5 +1,6 @@
 export default class BarCodeCreator {
-  constructor() {
+  constructor(controller) {
+    this.controller = controller;
     this.allApointmentsContainer = document.querySelector(
       ".all-appointment-container"
     );
@@ -8,16 +9,17 @@ export default class BarCodeCreator {
 
   generateBarcode() {
     this.allApointmentsContainer.addEventListener("click", (e) => {
-      if (e.target.classList.contains("appointment-container")) {
+      const appointmentContainer = e.target.closest(".appointment-container"); // This will bubble events up to parent
+      if (appointmentContainer) {
         console.log("hello");
-        const bookingID = e.target.querySelector(".appointment-detail").dataset
-          .orderId;
-        console.log(bookingID);
-
-        // this.allApointmentsContainer.querySelector(".barcode-info-wrapper");
-        console.log(bookingID);
-      } else {
-        console.log("Hello");
+        const bookingID = appointmentContainer.querySelector(
+          ".appointment-detail"
+        ).dataset.orderId;
+        const service =
+          appointmentContainer.querySelector(".service").textContent;
+        const dateTime =
+          appointmentContainer.querySelector(".date-time").textContent;
+        console.log(bookingID, dateTime, service);
       }
     });
   }

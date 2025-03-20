@@ -42,6 +42,7 @@ export default class AppointmentCancellation extends ModalWindow {
         handler(orderId, date, time);
 
         this.openModalWindow(this.cancelHTML());
+        e.stopPropagation(); //this will make event not to bubble
       }
     });
   }
