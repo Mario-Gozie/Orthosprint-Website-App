@@ -10,9 +10,10 @@ export default class BarCodeCreator {
     this.allApointmentsContainer.addEventListener("click", (e) => {
       if (e.target.classList.contains("appointment-container")) {
         console.log("hello");
-        const bookingID = e.target
-          .closest(".appointment-detail")
-          .getAttribute("data-order-id");
+        const bookingID = e.target.querySelector(".appointment-detail").dataset
+          .orderId;
+        console.log(bookingID);
+
         // this.allApointmentsContainer.querySelector(".barcode-info-wrapper");
         console.log(bookingID);
       } else {
