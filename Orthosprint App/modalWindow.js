@@ -3,7 +3,6 @@ export default class ModalWindow {
     this.modalWindowContainer = document.querySelector(".popUp-container");
     this.messageIcon = this.modalWindowContainer.querySelector(".message-icon");
     this.closeButton = this.modalWindowContainer.querySelector(".close");
-    this.isOpen = false; // Track whether the modal is currently open
 
     // Close modal on button click
     this.closeButton.addEventListener("click", () => {
@@ -18,7 +17,6 @@ export default class ModalWindow {
     if (!this.isOpen) {
       // If the modal is not open, show it
       this.modalWindowContainer.classList.add("show-popUp"); // Show the popup
-      this.isOpen = true; // Mark modal as open
 
       // Optionally, set a timeout to auto-close the modal
       setTimeout(() => {
@@ -29,7 +27,7 @@ export default class ModalWindow {
 
   closeModalWindow() {
     this.modalWindowContainer.classList.remove("show-popUp"); // Hide the popup
-    this.isOpen = false; // Reset the state
+
     this.messageIcon.innerHTML = ""; // Clear the message
   }
 }
