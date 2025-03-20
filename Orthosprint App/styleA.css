@@ -32,22 +32,17 @@ body {
   border-radius: 15px;
   z-index: 3;
   top: 12%;
-  /* left: 70%; */
-  right: -250px; /* Position off-screen to the right based on width */
-  /* left: 70%; */
-  transform: translateX(0); /* Start with no translation */
-  /* visibility: hidden; */
-
+  left: 50%;
+  right: -100%; /* Position off-screen to the right based on width */
+  transform: translate(-50%, -50%) scale(0.1); /* Center and scale down */
   transform: scale(0.1);
   transition: transform 0.5s ease, visibility 0s;
 }
 
 .show-popUp {
-  /* left: 45%; */
   visibility: visible;
-  transform: scale(1);
+  transform: translate(-50%, -50%) scale(1); /* Center and scale to full size */
   transition: transform 0.5s ease;
-  transform: translateX(-250px); /* Slide from the right to its position */
 }
 
 .message-icon {
