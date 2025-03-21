@@ -58,6 +58,8 @@ export default class QRcodeGenerator {
 
         const qrCodeJsonString = JSON.stringify(qrCodeObject);
 
+        // Adding Small animation to the wrapper
+
         if (typeof QRCode === "undefined") {
           console.error(
             "QRCode library is not loaded. Please check the import statement."
