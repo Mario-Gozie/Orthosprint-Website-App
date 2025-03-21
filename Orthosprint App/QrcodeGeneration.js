@@ -66,11 +66,19 @@ export default class QRcodeGenerator {
         }
 
         // BarQRGerneration
-        new QRCode(qrCodeContainer, {
-          text: qrCodeJsonString,
-          width: 128,
-          height: 128,
-        });
+        QRCode.toCanvas(
+          qrCodeContainer,
+          qrCodeJsonString,
+          {
+            width: 128,
+          },
+          (error) => {
+            if (error) {
+              console.error(error);
+              console.log("QR Code generated");
+            }
+          }
+        );
 
         console.log(qrCodeJsonString);
       }
