@@ -4,10 +4,10 @@ export default class QRcodeGenerator {
     this.allApointmentsContainer = document.querySelector(
       ".all-appointment-container"
     );
-    this.generateBarcode();
+    this.generateQRcode();
   }
 
-  generateBarcode() {
+  generateQRcode() {
     this.allApointmentsContainer.addEventListener("click", (e) => {
       const appointmentContainer = e.target.closest(".appointment-container"); // This will bubble events up to parent
       if (appointmentContainer) {
@@ -25,7 +25,7 @@ export default class QRcodeGenerator {
         const { fullName, clientId, email } =
           this.controller.controllerGetUserbarCodeData();
 
-        const barcodeObject = {
+        const qrCodeObject = {
           fullName,
           clientId,
           email,
@@ -35,7 +35,9 @@ export default class QRcodeGenerator {
           service,
         };
 
-        console.log(barcodeObject);
+        const qrCodeJsonString = JSON.stringify(qrCodeObject);
+
+        console.log(qrCodeJsonString);
       }
     });
   }
