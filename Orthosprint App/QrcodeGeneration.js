@@ -20,8 +20,8 @@ export default class QRcodeGenerator {
         const dateTime =
           appointmentContainer.querySelector(".date-time").textContent;
         // I need customer Name, his emailaddress, customerID
-        this.controller.getUserID_Email();
-        console.log(bookingID, dateTime, service);
+        const { clientId, email } = this.controller.controllerId_Email();
+        console.log(clientId, email, bookingID, dateTime, service);
       }
     });
   }

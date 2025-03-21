@@ -133,8 +133,6 @@ export default class appController {
     this.getAppointmentDataOnLoad(this.AppointmentsView.getPage());
     // this.AppointmentsView.renderAppointments(getActiveUserAppointmentArray());
     this.KPIpane.renderKPIs(getActiveUserAppointmentArray());
-    const { clientId, email } = getUserID_Email();
-    console.log(clientId, email);
   }
 
   loginController(loginDetail) {
@@ -163,8 +161,14 @@ export default class appController {
     }
   }
 
+  // Checking available Times
   getAvailablebookingTimes(date) {
     return availableTimeChecker(date);
+  }
+
+  // Returning ClientID and his Email
+  controllerId_Email() {
+    return getUserID_Email();
   }
 
   // This will return an Object.
