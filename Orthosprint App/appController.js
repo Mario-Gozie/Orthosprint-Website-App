@@ -3,7 +3,7 @@ import {
   dataModel,
   getUser,
   ActiveUserUsername,
-  getUserID_Email,
+  getUserbarCodeData,
   availableTimeChecker,
   Booking,
   ManageBookingApointments,
@@ -167,8 +167,8 @@ export default class appController {
   }
 
   // Returning ClientID and his Email
-  controllerId_Email() {
-    return getUserID_Email();
+  controllerGetUserbarCodeData() {
+    return getUserbarCodeData();
   }
 
   // This will return an Object.

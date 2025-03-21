@@ -121,7 +121,7 @@ export const getActiveUserAppointmentArray = () => {
   return ActiveUser.bookings;
 };
 
-export const getUserID_Email = () => {
+export const getUserbarCodeData = () => {
   return { clientId: ActiveUser.clientId, email: ActiveUser.email };
 };
 
