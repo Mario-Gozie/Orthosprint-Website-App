@@ -37,8 +37,8 @@ body {
 }
 
 .QRcode-wrapper {
-  height: 200px;
-  width: 250px;
+  height: 300px;
+  width: 300px;
   display: flex;
   background-color: var(--pure-white);
   justify-content: center;
@@ -48,11 +48,11 @@ body {
 }
 
 .qrcode-container {
-  width: 60%;
+  height: 60%;
 }
 
 .appointment-id-container {
-  width: 10%;
+  height: 10%;
 }
 
 /* NOTIFICATION MODAL WINDOW */
