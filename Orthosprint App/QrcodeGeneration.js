@@ -1,4 +1,4 @@
-export default class BarCodeCreator {
+export default class QRcodeGenerator {
   constructor(controller) {
     this.controller = controller;
     this.allApointmentsContainer = document.querySelector(
@@ -19,6 +19,7 @@ export default class BarCodeCreator {
           appointmentContainer.querySelector(".service").textContent;
         const dateTime =
           appointmentContainer.querySelector(".date-time").textContent;
+        // I need customer Name, his emailaddress, customerID
         console.log(bookingID, dateTime, service);
       }
     });

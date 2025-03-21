@@ -22,7 +22,7 @@ import AppointmentsView from "./appointmentsView.js";
 import AppointmentCancellation from "./appointmentCancellation.js";
 import KPIpane from "./kpiPane.js";
 import ModalWindow from "./modalWindow.js";
-import BarCodeCreator from "./barcode.js";
+import QRcodeGenerator from "./qrcodeGeneration.js";
 
 export default class appController {
   constructor() {
@@ -39,7 +39,7 @@ export default class appController {
     this.dateTimeView = new DateTimeView(this);
     this.KPIpane = new KPIpane();
     this.ModalWindow = new ModalWindow();
-    this.BarCodeCreator = new BarCodeCreator();
+    this.QRcodeGenerator = new QRcodeGenerator();
 
     this.location;
 
