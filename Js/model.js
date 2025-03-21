@@ -122,7 +122,12 @@ export const getActiveUserAppointmentArray = () => {
 };
 
 export const getUserbarCodeData = () => {
-  return { clientId: ActiveUser.clientId, email: ActiveUser.email };
+  const fullName = [ActiveUser.firstName, ActiveUser.lastName].join(" ");
+  return {
+    fullName: fullName,
+    clientId: ActiveUser.clientId,
+    email: ActiveUser.email,
+  };
 };
 
 //  TAKING CARE OF BOOKINGS

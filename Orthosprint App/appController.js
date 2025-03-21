@@ -39,7 +39,7 @@ export default class appController {
     this.dateTimeView = new DateTimeView(this);
     this.KPIpane = new KPIpane();
     this.ModalWindow = new ModalWindow();
-    this.QRcodeGenerator = new QRcodeGenerator();
+    this.QRcodeGenerator = new QRcodeGenerator(this);
 
     this.location;
     // this.ActiveUserID = getActiveUserID();

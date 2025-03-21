@@ -19,11 +19,23 @@ export default class QRcodeGenerator {
           appointmentContainer.querySelector(".service").textContent;
         const dateTime =
           appointmentContainer.querySelector(".date-time").textContent;
+
+        const [bookedDate, bookedTime] = dateTime.split(" - ");
         // I need customer Name, his emailaddress, customerID
-        const { clientId, email } =
+        const { fullName, clientId, email } =
           this.controller.controllerGetUserbarCodeData();
 
-        console.log(clientId, email, bookingID, dateTime, service);
+        const barcodeObject = {
+          fullName,
+          clientId,
+          email,
+          bookingID,
+          bookedDate,
+          bookedTime,
+          service,
+        };
+
+        console.log(barcodeObject);
       }
     });
   }
