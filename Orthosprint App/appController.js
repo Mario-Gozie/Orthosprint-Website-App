@@ -1,9 +1,10 @@
 import {
   state,
   dataModel,
-  ActiveUser,
   getUser,
   ActiveUserUsername,
+  getActiveUserID,
+  getActiveUserEmail,
   availableTimeChecker,
   Booking,
   ManageBookingApointments,
@@ -42,6 +43,7 @@ export default class appController {
     this.QRcodeGenerator = new QRcodeGenerator();
 
     this.location;
+    this.ActiveUserID = getActiveUserID();
 
     // ROUGH WORK
 

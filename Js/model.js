@@ -121,6 +121,14 @@ export const getActiveUserAppointmentArray = () => {
   return ActiveUser.bookings;
 };
 
+export const getActiveUserID = () => {
+  return ActiveUser.clientID;
+};
+
+export const getActiveUserEmail = () => {
+  return ActiveUser.email;
+};
+
 //  TAKING CARE OF BOOKINGS
 
 export class Booking {
