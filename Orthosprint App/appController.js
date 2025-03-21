@@ -3,8 +3,7 @@ import {
   dataModel,
   getUser,
   ActiveUserUsername,
-  getActiveUserID,
-  getActiveUserEmail,
+  getUserID_Email,
   availableTimeChecker,
   Booking,
   ManageBookingApointments,
@@ -43,8 +42,8 @@ export default class appController {
     this.QRcodeGenerator = new QRcodeGenerator();
 
     this.location;
-    this.ActiveUserID = getActiveUserID();
-    this.ActiveUserEmail = getActiveUserEmail();
+    // this.ActiveUserID = getActiveUserID();
+    // this.ActiveUserEmail = getActiveUserEmail();
 
     // ROUGH WORK
 
@@ -134,6 +133,8 @@ export default class appController {
     this.getAppointmentDataOnLoad(this.AppointmentsView.getPage());
     // this.AppointmentsView.renderAppointments(getActiveUserAppointmentArray());
     this.KPIpane.renderKPIs(getActiveUserAppointmentArray());
+    const { clientId, email } = getUserID_Email();
+    console.log(clientId, email);
   }
 
   loginController(loginDetail) {
