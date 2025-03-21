@@ -44,6 +44,7 @@ export default class appController {
 
     this.location;
     this.ActiveUserID = getActiveUserID();
+    this.ActiveUserEmail = getActiveUserEmail();
 
     // ROUGH WORK
 
