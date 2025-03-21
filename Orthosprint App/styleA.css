@@ -23,6 +23,32 @@ body {
   /* background-color: var(--linkedin-colour); */
 }
 
+/* QRCODE MODAL WINDOW */
+
+.QRcode-Booking-container {
+  position: fixed;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.QRcode-wrapper {
+  height: 200px;
+  width: 250px;
+  display: flex;
+  border-radius: 15px;
+}
+
+.qrcode-container {
+  width: 60%;
+}
+
+.appointment-id-container {
+  width: 40%;
+}
+
+/* NOTIFICATION MODAL WINDOW */
 .popUp-container {
   width: 200px;
   height: 100px;
