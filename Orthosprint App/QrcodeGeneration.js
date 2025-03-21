@@ -1,3 +1,5 @@
+import QRCode from "qrcode"; // Importing the QR Code library. Initally installed it from npm
+
 export default class QRcodeGenerator {
   constructor(controller) {
     this.controller = controller;
@@ -35,7 +37,40 @@ export default class QRcodeGenerator {
           service,
         };
 
+        const Qrcode_AppIDcontainer = document.querySelector(
+          ".QRcode-Booking-container"
+        );
+
+        // Displaying the Qcode_Appointment container
+        Qrcode_AppIDcontainer.style.display = "flex";
+
+        // Displaying AppointmentID
+        const ApptIdElement = Qrcode_AppIDcontainer.querySelector(
+          ".appointment-id-container"
+        );
+        ApptIdElement.textContent = bookingID;
+
+        // Displaying barcode
+        const qrCodeContainer =
+          Qrcode_AppIDcontainer.querySelector(".qrcode-container");
+
+        qrCodeContainer.innerHTML = "";
+
         const qrCodeJsonString = JSON.stringify(qrCodeObject);
+
+        if (typeof QRCode === "undefined") {
+          console.error(
+            "QRCode library is not loaded. Please check the import statement."
+          ); // ERR LOGGING
+          return; // Stop execution here if QR code library is not available
+        }
+
+        // BarQRGerneration
+        new QRCode(qrCodeContainer, {
+          text: qrCodeJsonString,
+          width: 128,
+          height: 128,
+        });
 
         console.log(qrCodeJsonString);
       }
