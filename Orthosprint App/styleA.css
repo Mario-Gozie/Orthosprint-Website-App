@@ -51,11 +51,16 @@ body {
 }
 
 .qrcode-container {
+  margin: 0.5rem 0 0 0;
   height: 60%;
 }
 
 .appointment-id-container {
   height: 10%;
+}
+
+.QRcode-wrapperBigger {
+  transform: scale(1);
 }
 
 /* NOTIFICATION MODAL WINDOW */

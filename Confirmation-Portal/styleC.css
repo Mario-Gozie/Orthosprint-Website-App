@@ -91,6 +91,7 @@ main {
   color: hsl(0, 4%, 47%);
 }
 
+/* CONFIRMATION AREA */
 .confirmed-container {
   width: 350px;
   height: 500px;

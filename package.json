@@ -1,0 +1,23 @@
+{
+  "name": "orthosprint-website-app",
+  "version": "1.0.0",
+  "description": "standard website for a prosthetic and orthotic centre.",
+  "homepage": "https://github.com/Mario-Gozie/Orthosprint-Website-App#readme",
+  "bugs": {
+    "url": "https://github.com/Mario-Gozie/Orthosprint-Website-App/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mario-Gozie/Orthosprint-Website-App.git"
+  },
+  "license": "ISC",
+  "author": "Chigozirim",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "qrcode": "^1.5.4"
+  }
+}

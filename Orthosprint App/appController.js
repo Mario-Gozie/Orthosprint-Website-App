@@ -207,7 +207,7 @@ export default class appController {
 
   cancellationController(uniqueID, date, time) {
     manipulateAppointmentStatus(state.bookingDetail, uniqueID, "cancelled");
-    manipulateAppointmentStatus(ActiveUser.bookings, uniqueID, "canceled");
+    manipulateAppointmentStatus(ActiveUser.bookings, uniqueID, "cancelled");
     deleteFromBookingArray(date, time);
   }
 }

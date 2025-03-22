@@ -238,6 +238,26 @@ export const deleteFromBookingArray = (date, timeToDelete) => {
   }
 };
 
+// MANAGING APPOINTMENT CONFIRMATION
+
+let clientToUpdate;
+
+const gettingConfirmationDetail = (value) => {
+  clientToUpdate = state.clientsDetail.find((client) => {
+    // Also confirmDate
+    client.username === value ||
+      client.email === value ||
+      client.lastName === value;
+
+    if (clientToUpdate) {
+      return clientToUpdate;
+    }
+
+    // manipulateAppointmentStatus
+    // use the function above to sort out the rest.
+  });
+};
+
 // SAVING DATA
 
 class DataModel {

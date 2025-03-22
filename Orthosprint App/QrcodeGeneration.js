@@ -1,4 +1,4 @@
-import QRCode from "qrcode"; // Importing the QR Code library. Initally installed it from npm
+// import QRCode from "qrcode"; // Importing the QR Code library. Initally installed it from npm
 
 export default class QRcodeGenerator {
   constructor(controller) {
@@ -56,6 +56,8 @@ export default class QRcodeGenerator {
 
         qrCodeContainer.innerHTML = "";
 
+        // STRINGIFYING (JASON)
+
         const qrCodeJsonString = JSON.stringify(qrCodeObject);
 
         // Adding Small animation to the wrapper
@@ -68,19 +70,33 @@ export default class QRcodeGenerator {
         }
 
         // BarQRGerneration
-        QRCode.toCanvas(
-          qrCodeContainer,
-          qrCodeJsonString,
-          {
-            width: 128,
-          },
-          (error) => {
-            if (error) {
-              console.error(error);
-              console.log("QR Code generated");
-            }
-          }
-        );
+        new QRCode(qrCodeContainer, {
+          text: qrCodeJsonString,
+          width: 150,
+          height: 150,
+          correctLevel: QRCode.CorrectLevel.L, // Lowest error correction to fit more data
+          version: 10, // Increase the version (range: 1-40)
+        });
+
+        setTimeout(() => {
+          Qrcode_AppIDcontainer.querySelector(".QRcode-wrapper").classList.add(
+            "QRcode-wrapperBigger"
+          );
+        }, 1000);
+
+        // QRCode.toCanvas(
+        //   qrCodeContainer,
+        //   qrCodeJsonString,
+        //   {
+        //     width: 128,
+        //   },
+        //   (error) => {
+        //     if (error) {
+        //       console.error(error);
+        //       console.log("QR Code generated");
+        //     }
+        //   }
+        // );
 
         console.log(qrCodeJsonString);
       }
