@@ -19,11 +19,10 @@ import DateTimeView from "./dateTimeView.js";
 import LoginView from "./loginView.js";
 import AppointmentBookingView from "./appointmentBookingView.js";
 import AppointmentsView from "./appointmentsView.js";
-import AppointmentCancellation from "./appointmentCancellation.js";
+
 import KPIpane from "./kpiPane.js";
 import ModalWindow from "./modalWindow.js";
-// import AppointmentCancellation from "./appointmentCancellation.js";
-// import QRcodeGenerator from "./qrcodeGeneration.js";
+
 import ManageAppointmentView from "./manageAppointmentView.js";
 
 export default class appController {
@@ -33,7 +32,7 @@ export default class appController {
     // Instances
 
     this.LoginView = new LoginView(this);
-    this.AppointmentCancellation = new AppointmentCancellation(this);
+
     this.mainView = new MainView(); // Instantiate main view
     this.WelcomeView = new WelcomeView();
     this.AppointmentsView = new AppointmentsView(this);
@@ -42,42 +41,8 @@ export default class appController {
     this.KPIpane = new KPIpane();
     this.ModalWindow = new ModalWindow();
     this.ManageAppointmentView = new ManageAppointmentView(this);
-    // this.QRcodeGenerator = new QRcodeGenerator(this);
 
     this.location;
-    // this.ActiveUserID = getActiveUserID();
-    // this.ActiveUserEmail = getActiveUserEmail();
-
-    // ROUGH WORK
-
-    // const array = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
-
-    // const MaxPageNumber = Math.ceil(array.reverse().length / 3);
-
-    // let page = 1;
-    // console.log(page);
-    // const displayBasedOnPage = (page) => {
-    //   if (page === 1) {
-    //     const start = (page - 1) * 3;
-    //     const stop = page * 3;
-    //     console.log(array.slice(start, stop));
-    //     console.log("You just started");
-    //   }
-
-    //   if (page < MaxPageNumber && page > 1) {
-    //     const start = (page - 1) * 3;
-    //     const stop = page * 3;
-    //     console.log(array.slice(start, stop));
-    //   }
-    //   if (page === MaxPageNumber) {
-    //     const start = (page - 1) * 3;
-    //     const stop = page * 3;
-    //     console.log(array.slice(start, stop));
-    //     console.log("hide button");
-    //   }
-    // };
-
-    // displayBasedOnPage(page);
 
     // Functions
     this.loadSavedData();

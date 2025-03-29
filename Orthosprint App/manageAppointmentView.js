@@ -1,5 +1,3 @@
-// import ModalWindow from "./modalWindow";
-
 export default class ManageAppointmentView {
   constructor(controller) {
     this.allApointmentsContainer = document.querySelector(
