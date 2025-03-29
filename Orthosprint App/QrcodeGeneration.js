@@ -1,5 +1,3 @@
-// import QRCode from "qrcode"; // Importing the QR Code library. Initally installed it from npm
-
 export default class QRcodeGenerator {
   constructor(controller) {
     this.controller = controller;
