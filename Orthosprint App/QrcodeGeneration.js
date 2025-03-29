@@ -84,20 +84,6 @@ export default class QRcodeGenerator {
           );
         }, 1000);
 
-        // QRCode.toCanvas(
-        //   qrCodeContainer,
-        //   qrCodeJsonString,
-        //   {
-        //     width: 128,
-        //   },
-        //   (error) => {
-        //     if (error) {
-        //       console.error(error);
-        //       console.log("QR Code generated");
-        //     }
-        //   }
-        // );
-
         console.log(qrCodeJsonString);
       }
     });
