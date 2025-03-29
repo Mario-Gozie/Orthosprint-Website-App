@@ -80,6 +80,17 @@ export default class AppointmentsView {
                       </div>`;
         this.allApointmentsContainer.insertAdjacentHTML("beforeend", html); // Append the HTML to the container
       }
+
+      if (appt.status === "cancelled") {
+        const html = `<div class="appointment-container cancelled">
+                        <div class="appointment-detail" data-order-id= ${appt.bookingID}>
+                          <h4 class="date-time">${appt.bookedDate} - ${appt.bookedTime}</h4>
+                          <p class="service">${appt.service}</p>
+                        </div>
+                        
+                      </div>`;
+        this.allApointmentsContainer.insertAdjacentHTML("beforeend", html); // Append the HTML to the container
+      }
     });
   }
 
