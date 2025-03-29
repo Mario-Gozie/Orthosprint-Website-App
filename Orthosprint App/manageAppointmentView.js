@@ -1,8 +1,8 @@
-export default class ManageAppointmentView {
+import AllAppointmentContainer from "./allAppointmentContainer";
+
+export default class ManageAppointmentView extends AllAppointmentContainer {
   constructor() {
-    this.allApointmentsContainer = document.querySelector(
-      ".all-appointment-container"
-    );
+    super();
   }
 
   appointmentViewEvent() {
