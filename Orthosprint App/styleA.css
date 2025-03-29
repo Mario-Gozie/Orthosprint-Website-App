@@ -52,15 +52,29 @@ body {
 
 .qrcode-container {
   margin: 0.5rem 0 0 0;
-  height: 60%;
+  height: 50%;
 }
 
 .appointment-id-container {
+  margin-top: 10px;
   height: 10%;
 }
 
 .QRcode-wrapperBigger {
   transform: scale(1);
+}
+
+.QR-Ok-button {
+  width: 60px;
+  height: 10%;
+  border-radius: 10px;
+  background: var(--linkedin-colour);
+  border: none;
+  color: var(--pure-white);
+}
+
+.QR-Ok-button:active {
+  transform: scale(0.9);
 }
 
 /* NOTIFICATION MODAL WINDOW */

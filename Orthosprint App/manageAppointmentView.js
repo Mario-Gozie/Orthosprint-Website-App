@@ -143,6 +143,16 @@ export default class ManageAppointmentView {
       );
     }, 1000);
 
+    // HIDING THE QRCODE MODAL WINDOW
+
+    const okButton = Qrcode_AppIDcontainer.querySelector(".QR-Ok-button");
+
+    okButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      qrCodeContainer.innerHTML = "";
+      Qrcode_AppIDcontainer.style.display = "none";
+    });
+
     console.log(qrCodeJsonString);
   }
 }
