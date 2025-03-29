@@ -1,4 +1,5 @@
 import AllAppointmentContainer from "./allAppointmentContainer";
+import QRcodeGenerator from "./qrcodeGeneration";
 
 export default class ManageAppointmentView extends AllAppointmentContainer {
   constructor() {
