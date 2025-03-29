@@ -29,7 +29,7 @@ export default class KPIpane {
       </div>
       <div class="kpi-container cancellled-appointments">
         <h3>Canceled Appointments</h3>
-        <p>${this.renderBasedOnStatus(userBookingArray, "canceled")}</p>
+        <p>${this.renderBasedOnStatus(userBookingArray, "cancelled")}</p>
       </div>
       <div class="kpi-container pending-appointments">
         <h3>Pending Appointments</h3>

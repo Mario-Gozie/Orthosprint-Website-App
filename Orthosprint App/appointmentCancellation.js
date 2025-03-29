@@ -40,9 +40,9 @@ export default class AppointmentCancellation extends ModalWindow {
         console.log("Time:", time);
 
         handler(orderId, date, time);
-
+        this.controller.updateUI();
         this.openModalWindow(this.cancelHTML());
-        // e.stopPropagation(); //this will make event not to bubble
+        e.stopPropagation(); //this will make event not to bubble
       }
     });
   }

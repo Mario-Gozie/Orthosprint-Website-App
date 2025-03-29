@@ -24,6 +24,10 @@ export default class AppointmentsView {
     return this._page;
   }
 
+  resetPage() {
+    return (this._page = 1);
+  }
+
   // Pagination Events functions
 
   handlePagination(event) {
