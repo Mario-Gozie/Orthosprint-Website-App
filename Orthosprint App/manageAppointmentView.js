@@ -9,6 +9,7 @@ export default class ManageAppointmentView {
 
   appointmentViewEvent() {
     this.allApointmentsContainer.addEventListener("click", (e) => {
+      e.preventDefault();
       if (e.target.matches(".cancel-btn")) {
         // cancelation Actions
         this.cancelAppointment(this.controller.cancellationController);
