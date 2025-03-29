@@ -15,9 +15,14 @@ export default class ManageAppointmentView {
         // cancelation Actions
         this.cancelAppointment(this.controller.cancellationController);
         this.controller.ModalWindow.openModalWindow(this.cancelHTML());
-      } else {
+      } else if (
+        !e.target.matches(".cancel-btn") &&
+        e.target.closest(".Qr-code")
+      ) {
         //barcode actions
         this.useQRcodeAPI(e);
+      } else {
+        return;
       }
     });
   }

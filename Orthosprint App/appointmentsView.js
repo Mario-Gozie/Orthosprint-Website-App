@@ -75,7 +75,7 @@ export default class AppointmentsView {
     appointmentArray.forEach((appt) => {
       // Use forEach instead of map
       if (appt.status === "pending") {
-        const html = `<div class="appointment-container pending">
+        const html = `<div class="Qr-code appointment-container pending">
                         <div class="appointment-detail" data-order-id= ${appt.bookingID}>
                           <h4 class="date-time">${appt.bookedDate} - ${appt.bookedTime}</h4>
                           <p class="service">${appt.service}</p>
@@ -86,7 +86,7 @@ export default class AppointmentsView {
       }
 
       if (appt.status === "cancelled") {
-        const html = `<div class="appointment-container cancelled">
+        const html = `<div class="Qr-code appointment-container cancelled">
                         <div class="appointment-detail" data-order-id= ${appt.bookingID}>
                           <h4 class="date-time">${appt.bookedDate} - ${appt.bookedTime}</h4>
                           <p class="service">${appt.service}</p>
