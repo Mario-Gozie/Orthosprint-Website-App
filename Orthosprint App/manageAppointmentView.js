@@ -12,7 +12,7 @@ export default class ManageAppointmentView {
       e.preventDefault();
       if (e.target.matches(".cancel-btn")) {
         // cancelation Actions
-        this.cancelAppointment(this.controller.cancellationController);
+        this.cancelAppointment(e, this.controller.cancellationController);
         this.controller.ModalWindow.openModalWindow(this.cancelHTML());
       } else if (
         !e.target.matches(".cancel-btn") &&
@@ -36,32 +36,27 @@ export default class ManageAppointmentView {
     </div>`;
   }
 
-  cancelAppointment(handler) {
-    this.allApointmentsContainer.addEventListener("click", (e) => {
-      e.preventDefault();
-      if (e.target.classList.contains("cancel-btn")) {
-        const appointmentContainer = e.target.closest(".appointment-container");
-        const appointmentDetail = appointmentContainer.querySelector(
-          ".appointment-detail"
-        );
+  cancelAppointment(e, handler) {
+    const appointmentContainer = e.target.closest(".appointment-container");
+    const appointmentDetail = appointmentContainer.querySelector(
+      ".appointment-detail"
+    );
 
-        const orderId = appointmentDetail.getAttribute("data-order-id"); // Get data attribute
-        const dateTimeText = appointmentDetail.querySelector("h4").textContent; // Get date and time text
+    const orderId = appointmentDetail.getAttribute("data-order-id"); // Get data attribute
+    const dateTimeText = appointmentDetail.querySelector("h4").textContent; // Get date and time text
 
-        // Split date and time
-        const [date, time] = dateTimeText.split(" - ");
+    // Split date and time
+    const [date, time] = dateTimeText.split(" - ");
 
-        console.log("Cancel button clicked:", e.target.textContent);
-        console.log("Order ID:", orderId);
-        console.log("Date:", date);
-        console.log("Time:", time);
+    console.log("Cancel button clicked:", e.target.textContent);
+    console.log("Order ID:", orderId);
+    console.log("Date:", date);
+    console.log("Time:", time);
 
-        handler(orderId, date, time);
-        this.controller.updateUI();
-        // this.controller.ModalWindow.openModalWindow(this.cancelHTML());
-        e.stopPropagation(); //this will make event not to bubble
-      }
-    });
+    handler(orderId, date, time);
+    this.controller.updateUI();
+    // this.controller.ModalWindow.openModalWindow(this.cancelHTML());
+    e.stopPropagation(); //this will make event not to bubble
   }
 
   //////////////////////////////////////////////// GENERATING BARCODE FUNCTIONS ////////////////////////////////////////////////////////////////////////////
