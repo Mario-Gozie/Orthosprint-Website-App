@@ -7,24 +7,24 @@ export default class ManageAppointmentView {
     this.appointmentViewEvent();
   }
 
-  appointmentViewEvent() {
-    this.allApointmentsContainer.addEventListener("click", (e) => {
-      e.preventDefault();
-      if (e.target.matches(".cancel-btn")) {
-        // cancelation Actions
-        this.cancelAppointment(e, this.controller.cancellationController);
-        this.controller.ModalWindow.openModalWindow(this.cancelHTML());
-      } else if (
-        !e.target.matches(".cancel-btn") &&
-        e.target.closest(".Qr-code")
-      ) {
-        //barcode actions
-        this.useQRcodeAPI(e);
-      } else {
-        return;
-      }
-    });
-  }
+  // appointmentViewEvent() {
+  //   this.allApointmentsContainer.addEventListener("click", (e) => {
+  //     e.preventDefault();
+  //     if (e.target.matches(".cancel-btn")) {
+  //       // cancelation Actions
+  //       this.cancelAppointment(e, this.controller.cancellationController);
+  //       this.controller.ModalWindow.openModalWindow(this.cancelHTML());
+  //     } else if (
+  //       !e.target.matches(".cancel-btn") &&
+  //       e.target.closest(".Qr-code")
+  //     ) {
+  //       //barcode actions
+  //       this.useQRcodeAPI(e);
+  //     } else {
+  //       return;
+  //     }
+  //   });
+  // }
 
   //////////////////////////////////////////////////// APPOINTMENT CANCELLATION PROCESS ///////////////////////////////////////////////////////////////////
 
